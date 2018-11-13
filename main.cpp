@@ -92,7 +92,7 @@ char getchr(){
         cc = ll = 0;
         do {
             if (fscanf(fin, "%c", &ch) != EOF) {
-                line[ll++] = ch;
+                line[ll++] = char(tolower(ch));
             } else {
                 //line[ll] = '\0';
                 break;
