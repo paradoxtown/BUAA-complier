@@ -122,6 +122,33 @@ complier/fast:
 	$(MAKE) -f CMakeFiles\complier.dir\build.make CMakeFiles/complier.dir/build
 .PHONY : complier/fast
 
+lexer.obj: lexer.cpp.obj
+
+.PHONY : lexer.obj
+
+# target to build an object file
+lexer.cpp.obj:
+	$(MAKE) -f CMakeFiles\complier.dir\build.make CMakeFiles/complier.dir/lexer.cpp.obj
+.PHONY : lexer.cpp.obj
+
+lexer.i: lexer.cpp.i
+
+.PHONY : lexer.i
+
+# target to preprocess a source file
+lexer.cpp.i:
+	$(MAKE) -f CMakeFiles\complier.dir\build.make CMakeFiles/complier.dir/lexer.cpp.i
+.PHONY : lexer.cpp.i
+
+lexer.s: lexer.cpp.s
+
+.PHONY : lexer.s
+
+# target to generate assembly for a file
+lexer.cpp.s:
+	$(MAKE) -f CMakeFiles\complier.dir\build.make CMakeFiles/complier.dir/lexer.cpp.s
+.PHONY : lexer.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... complier
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... lexer.obj
+	@echo ... lexer.i
+	@echo ... lexer.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/complier.dir/main.cpp.obj"
+  "CMakeFiles/complier.dir/lexer.cpp.obj"
   "complier.pdb"
   "complier.exe"
   "complier.exe.manifest"

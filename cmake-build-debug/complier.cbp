@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/lexer.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/lexer.h">
+			<Option target="complier"/>
+		</Unit>
 		<Unit filename="C:/Users/MUSE/Desktop/complier/main.cpp">
 			<Option target="complier"/>
 		</Unit>

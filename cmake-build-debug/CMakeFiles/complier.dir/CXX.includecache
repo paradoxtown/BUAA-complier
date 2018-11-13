@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MUSE/Desktop/complier/main.cpp
+C:/Users/MUSE/Desktop/complier/lexer.cpp
 iostream
 -
 cstring
@@ -17,4 +17,14 @@ set
 -
 map
 -
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
+
+C:/Users/MUSE/Desktop/complier/lexer.h
+
+C:/Users/MUSE/Desktop/complier/main.cpp
+iostream
+-
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
 
