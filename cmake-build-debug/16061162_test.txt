@@ -1,5 +1,10 @@
+const char _abcdefghijklmnopqrstuvwxyz = 'a';
+const int __ABCDEFGHIJKLMNOPQRSTUVWXYZ = 1010;
+int arr[100];
+char str1[10];
+
 int sum(int a, int b){
-    return (a + b);
+    return (-(a + b) / (a - b));
 }
 
 int multi(int a, int b){
@@ -62,4 +67,8 @@ void main(){
         default: ;
         return;
     }
+    printf("!@@#@#$!@$@#%#$^$%^%#@!$#^^&^%*^%$^%^&%^&");
+    printf(" !#$%&'()*+,-./0123456789");
+    printf("sdkjfhasdkjfooijsdaioutfer_)(&*(^&T&*^&$%^kl`jlk{}()ajsfk");
+
 }

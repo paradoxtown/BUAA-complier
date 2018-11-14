@@ -1,9 +1,6 @@
 #include <iostream>
 #include "lexer.h"
 
-#define MAXN 20
-#define LENGTH 81
-
 using namespace std;
 
 int main() {

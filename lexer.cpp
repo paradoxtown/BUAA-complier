@@ -8,8 +8,8 @@
 #include <map>
 #include "lexer.h"
 
-#define MAXN 20
-#define LENGTH 81
+#define MAXN 50
+#define LENGTH 150
 
 using namespace std;
 
@@ -123,7 +123,7 @@ void error(){
 
 void print(char *str, symbol sym){
     auto *sy = (char *)(sym2str[sym]).data();
-    fprintf(fout, "SYMBOL: %s, CODE: %d, VALUE: \"%s\".\n", sy, sym, str);
+    fprintf(fout, "%3d, %12s, No.%3d : %s.\n", cnt, sy, sym, str);
 }
 
 void getsymInit(){
@@ -135,8 +135,8 @@ int getsym(){
     char ch;
     getsymInit();
     do ch = getchr(); while(isspace(ch));
-    if (isalpha(ch)){
-        while(isalpha(ch) || isdigit(ch)){
+    if (isalpha(ch) || ch == '_'){
+        while(isalpha(ch) || isdigit(ch) || ch == '_'){
             token[l ++] = ch;
             ch = getchr();
         }
@@ -219,8 +219,7 @@ int getsym(){
             print(token, result);
             cout << token << endl;
             getsymInit();
-            token[0] = '\"';
-            token[1] = '\0';
+            token[l ++] = '\"';
             result = DQUOSY;
         }
         else{

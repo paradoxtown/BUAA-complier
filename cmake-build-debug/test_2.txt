@@ -1,0 +1,113 @@
+const int _abcdefghijklmnopqrst_098765 = 123456,uvwxyz_ABCDEFG_4321 = 7890;
+const char HIJKLMNOPQRSTUVWXYZ = '+';
+const char _a= 'a', _A= 'A', _b= 'b', _B= 'B', _c= 'c', _C= 'C';
+const char _d= 'd', _D= 'D', _e= 'e', _E= 'E', _f= 'f', _F= 'F';
+const char _g= 'g', _G= 'G', _h= 'h', _H= 'H', _i= 'i', _I= 'I';
+const char _j= 'j', _J= 'J', _k= 'k', _K= 'K', _l= 'l', _L= 'L';
+const char _m= 'm', _M= 'M', _n= 'n', _N= 'N', _o= 'o', _O= 'O';
+const char _p= 'p', _P= 'P', _q= 'q', _Q= 'Q', _r= 'r', _R= 'R';
+const char _s= 's', _S= 'S', _t= 't', _T= 'T', _u= 'u', _U= 'U';
+const char _v= 'v', _V= 'V', _w= 'w', _W= 'W', _x= 'x', _X= 'X';
+const char _y= 'y', _Y= 'Y', _z= 'z', _Z= 'Z';
+const char _0= '0', _1= '1', _2= '2', _3= '3', _4= '4';
+const char _5= '5', _6= '6', _7= '7', _8= '8', _9= '9';
+const char _times = '*', _divs = '/', _plus = '+',_minus = '-';
+
+int g1,g2[007];
+char g3,g4[700];
+char iftest;
+
+int gcd(int a,int b)
+{
+    if (b == 0) 
+        if (a != 0) return (a);
+        else return (-188);
+    return (gcd(b,a-(a/b*b));
+}
+
+char f2
+{
+    if (c6) return('c');
+    else return ('b');
+}
+
+void p1(int ps1,char ps2)
+{
+    const int q1 = 100; 
+    int i = 0;
+    char q2 = '1';
+    while (q1 >= ps1) 
+    {
+        ps1 = ps1-(4/(1+1))*2 + 5;
+    }
+
+    for (i=1;i<q1;i=i+2)
+    {
+        ps1 = ps1+1;
+    }
+
+    printf("hhh!####");
+    printf(ps1/10);
+    printf("####");
+}
+
+void p2
+{
+    int a,b,c;
+    scanf(a,b,c);
+    printf(c);
+    printf(" ");
+    printf(b);
+    printf(" ");
+    printf(a);   
+    printf("####");
+}
+
+void IFTESTT(char TesT)
+{
+    if (TesT>=_h) printf("geq_h  ");
+    else 
+    if (TesT>_f) printf("grt_f  ");
+    else
+    if (TesT <=_a) printf("leq_a  ");
+    else
+    if (TesT < _c) printf("lss_c ");
+    else
+    if (TesT == _d) printf("eq_d ");
+    else
+    if (TesT != _e) printf("neq_e  ");
+    else
+    printf ("is e!!");  
+    return;
+}
+
+void main()
+{    
+    char q;
+    int w,e,r;
+    int nothing;
+
+    printf("string test!");
+    printf(" !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQ");
+    printf("RSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~");
+
+
+
+    q = f2;
+    scanf(w,e,iftest);
+    r = gcd(w,e);
+    printf("gcd = ");
+    printf(r);
+    printf("####");
+    IFTESTT(iftest)
+    printf('_');
+    printf(_0);
+    nothing = 1;
+    if (nothing) ;
+    g2 [4] = _abcdefghijklmnopqrst_098765;
+    g2 [3] = uvwxyz_ABCDEFG_4321;
+    printf(g2[2+2]+g2[4-1]);
+    printf("####");
+    p2;
+    p1(r,q);
+}
