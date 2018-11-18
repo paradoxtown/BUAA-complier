@@ -13,7 +13,8 @@
 
 using namespace std;
 
-char token[MAXN], line[LENGTH];
+char token[MAXN];
+char line[LENGTH];
 int num = 0;
 int cc = 0, ll = 0, l = 0, cnt = 0;
 FILE *fin, *fout;
@@ -275,4 +276,12 @@ int getsym(){
     print(token, result);
     cout << token << endl;
     return 1;
+}
+
+symbol returnsym(){
+    return result;
+}
+
+char *returnname(){
+    return token;
 }

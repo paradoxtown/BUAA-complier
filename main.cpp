@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include "lexer.h"
 #include "syntaxer.h"
 
@@ -10,6 +11,5 @@ int main() {
 //    init((char*)path.c_str());
 //    while(getsym() > 0) {}
     Syntaxer syntaxer;
-    syntaxer.enter();
     return 0;
 }

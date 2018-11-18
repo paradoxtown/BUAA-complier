@@ -21,7 +21,6 @@ const char * const reserved_word[] = {
         "return"
 };
 
-
 enum symbol {
     PLUSSY,
     MINUSSY,
@@ -72,5 +71,7 @@ void error();
 void print(char *str, symbol sym);
 void getsymInit();
 int getsym();
+symbol returnsym();
+char *returnname();
 
 #endif //COMPLIER_LEXER_H
