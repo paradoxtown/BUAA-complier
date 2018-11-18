@@ -80,6 +80,21 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/asmer.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/asmer.h">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/compiler.h">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/error.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/error.h">
+			<Option target="complier"/>
+		</Unit>
 		<Unit filename="C:/Users/MUSE/Desktop/complier/lexer.cpp">
 			<Option target="complier"/>
 		</Unit>
@@ -87,6 +102,24 @@
 			<Option target="complier"/>
 		</Unit>
 		<Unit filename="C:/Users/MUSE/Desktop/complier/main.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/optimizer.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/optimizer.h">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/quader.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/quader.h">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/syntaxer.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/syntaxer.h">
 			<Option target="complier"/>
 		</Unit>
 		<Unit filename="C:/Users/MUSE/Desktop/complier/CMakeLists.txt">

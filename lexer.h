@@ -1,7 +1,6 @@
 //
 // Created by MUSE on 2018/11/13.
 //
-
 #ifndef COMPLIER_LEXER_H
 #define COMPLIER_LEXER_H
 
@@ -64,8 +63,6 @@ enum symbol {
     STRINGSY,
     IDENTSY
 };
-
-
 
 void init(char *path);
 char getchr();

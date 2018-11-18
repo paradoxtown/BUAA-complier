@@ -4,8 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/MUSE/Desktop/complier/asmer.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/asmer.cpp.obj"
+  "C:/Users/MUSE/Desktop/complier/error.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/error.cpp.obj"
   "C:/Users/MUSE/Desktop/complier/lexer.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/lexer.cpp.obj"
   "C:/Users/MUSE/Desktop/complier/main.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/main.cpp.obj"
+  "C:/Users/MUSE/Desktop/complier/optimizer.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/optimizer.cpp.obj"
+  "C:/Users/MUSE/Desktop/complier/quader.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/quader.cpp.obj"
+  "C:/Users/MUSE/Desktop/complier/syntaxer.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

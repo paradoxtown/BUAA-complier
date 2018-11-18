@@ -27,4 +27,14 @@ iostream
 -
 lexer.h
 C:/Users/MUSE/Desktop/complier/lexer.h
+syntaxer.h
+C:/Users/MUSE/Desktop/complier/syntaxer.h
+
+C:/Users/MUSE/Desktop/complier/syntaxer.cpp
+syntaxer.h
+C:/Users/MUSE/Desktop/complier/syntaxer.h
+iostream
+-
+
+C:/Users/MUSE/Desktop/complier/syntaxer.h
 

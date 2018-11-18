@@ -6,4 +6,8 @@ CMakeFiles/complier.dir/lexer.cpp.obj: ../lexer.h
 
 CMakeFiles/complier.dir/main.cpp.obj: ../lexer.h
 CMakeFiles/complier.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/complier.dir/main.cpp.obj: ../syntaxer.h
+
+CMakeFiles/complier.dir/syntaxer.cpp.obj: ../syntaxer.cpp
+CMakeFiles/complier.dir/syntaxer.cpp.obj: ../syntaxer.h
 

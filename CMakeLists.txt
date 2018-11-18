@@ -3,4 +3,4 @@ project(complier)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(complier main.cpp lexer.h lexer.cpp)
+add_executable(complier main.cpp lexer.h lexer.cpp syntaxer.cpp syntaxer.h error.cpp error.h quader.cpp quader.h asmer.cpp asmer.h compiler.h optimizer.cpp optimizer.h)
