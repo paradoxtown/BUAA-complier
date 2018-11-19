@@ -12,8 +12,8 @@
 
 typedef struct{
     char name[NAMELEN];
-    obj object;
-    typ type;
+    obj object; // obj {constant, variable, typel, function};
+    typ type; // typ {ints, chars, voids};
     int lev;
     int value;
     int address; // the storage address of symbol or the offset
@@ -31,11 +31,14 @@ class Syntaxer {
 public:
     void enter(char *name, obj object, typ type, int lev, int value, int addr, int num);
     void pushtab(char *name, obj object, typ type, int lev, int value, int addr, int num);
+    int  searchtab(char *name, obj object);
     void funcdec();
-    void constantdef();
     void parameterlist();
+    void valuelist();
+    void constantdef();
     void constdec();
     void typedec();
+    void vardef();
     void vardec();
     void progress();
     void statement();
