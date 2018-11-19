@@ -32,13 +32,17 @@ public:
     void enter(char *name, obj object, typ type, int lev, int value, int addr, int num);
     void pushtab(char *name, obj object, typ type, int lev, int value, int addr, int num);
     int  searchtab(char *name, obj object);
-    void funcdec();
+    int  searchtab(char *name);
+    void retfuncdec();
+    void voidfuncdec();
+    void functionmain();
+    void param();
     void parameterlist();
     void valuelist();
     void characterlist();
     void constantdef();
     void constdec();
-    void typedec();
+    void dechead();
     void vardef();
     void vardec();
     void progress();
@@ -46,6 +50,8 @@ public:
     void expression();
     void term();
     void factor();
+    void callvoidfunc();
+    void callretfunc();
     void assignment();
     void statementlist();
     void compoundstatement();

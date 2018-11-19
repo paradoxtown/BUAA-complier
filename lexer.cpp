@@ -285,3 +285,7 @@ symbol returnsym(){
 char *returnname(){
     return token;
 }
+
+void back(){
+    cc --;
+};

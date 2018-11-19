@@ -62,104 +62,256 @@ void Syntaxer::pushtab(char *name, obj object, typ type, int lev, int value, int
     stab.element[stab.index].num = num;
 }
 
-int Syntaxer::searchtab(char *name, obj object){
-    if (object == function){
+int Syntaxer::searchtab(char *name, obj object) {
+    if (object == function) {
         int i;
-        for (i = 1; i < stab.pnum; i ++){
+        for (i = 1; i < stab.pnum; i++) {
             if (!strcmp(stab.element[stab.pindex[i]].name, name))
                 break;
         }
-        if (i >= stab.pnum){ // TODO: "==" also ok
+        if (i >= stab.pnum) { // TODO: "==" also ok
             return 0;
         }
-        if (stab.element[stab.pindex[i]].num != num){ // parameter number should be same
+        if (stab.element[stab.pindex[i]].num != num) { // parameter number should be same
             error();
             return -1;
         }
         return i;
     }
-    else { // ident: arr, const, var, typel
-        int i = stab.pindex[stab.pnum - 1];
-        for (; i < stab.index; i ++){
-            if (!strcmp(stab.element[i].name, name)){
-                break;
-            }
-        }
-        if (i == stab.index){ // may be define in the global
-            int len = stab.pindex[1];
-            for (i = 0; i < len; i ++){
-                if (!strcmp(stab.element[i].name, name))
-                    break;
-            }
-            if (i == len){ // undefined
-                return 0;
-            }
-            if (stab.element[i].object == variable ||
-                stab.element[i].object == arrays){
-                factortype = stab.element[i].type;
-                factorobj = stab.element[i].object;
-                // TODO: should i distinguish array to a boolean?
-                return stab.element[i].address;
-            }
-            if (stab.element[i].object == constant){
-                return stab.element[i].value;
-            }
-            if (stab.element[i].object == parameter){
-                return -1; // TODO
-            }
-            if (stab.element[i].object == typel){
-                return -1;
-            }
-        }
-        else {
-            if (stab.element[i].object == variable ||
-                stab.element[i].object == arrays){
-                factortype = stab.element[i].type;
-                factorobj = stab.element[i].object;
-                // TODO: should i distinguish array to a boolean?
-                return stab.element[i].address;
-            }
-            if (stab.element[i].object == constant){
-                return stab.element[i].value;
-            }
-            if (stab.element[i].object == parameter){
-                return -1; // TODO
-            }
-            if (stab.element[i].object == typel){
-                return -1;
-            }
-        }
-        return 1;
+    else {
+        cout << "Please use searchtab(char *name)." << endl;
+        return 0;
     }
 }
 
-// --------------------- syntax analysis -------------------
-void Syntaxer::funcdec() {
+int Syntaxer::searchtab(char *name) {
+    // ident: arr, const, var, typel
+    int i = stab.pindex[stab.pnum - 1];
+    for (; i < stab.index; i ++){
+        if (!strcmp(stab.element[i].name, name)){
+            break;
+        }
+    }
+    if (i == stab.index){ // may be define in the global
+        int len = stab.pindex[1];
+        for (i = 0; i < len; i ++){
+            if (!strcmp(stab.element[i].name, name))
+                break;
+        }
+        if (i == len){ // undefined
+            return 0;
+        }
+        if (stab.element[i].object == variable ||
+            stab.element[i].object == arrays){
+            factortype = stab.element[i].type;
+            factorobj = stab.element[i].object;
+            // TODO: should i distinguish array to a boolean?
+            return stab.element[i].address;
+        }
+        if (stab.element[i].object == constant){
+            return stab.element[i].value;
+        }
+        if (stab.element[i].object == parameter){
+            return -1; // TODO
+        }
+        if (stab.element[i].object == typel){
+            return -1;
+        }
+    }
+    else {
+        if (stab.element[i].object == variable ||
+            stab.element[i].object == arrays){
+            factortype = stab.element[i].type;
+            factorobj = stab.element[i].object;
+            // TODO: should i distinguish array to a boolean?
+            return stab.element[i].address;
+        }
+        if (stab.element[i].object == constant){
+            return stab.element[i].value;
+        }
+        if (stab.element[i].object == parameter){
+            return -1; // TODO
+        }
+        if (stab.element[i].object == typel){
+            return -1;
+        }
+    }
+    return 1;
+}
 
+// --------------------- syntax analysis -------------------
+// ＜有返回值函数定义＞ ::= ＜声明头部＞'('＜参数表＞')' '{'＜复合语句＞'}'
+void Syntaxer::retfuncdec() {
+    if (symtype == INTSY || symtype == CHARSY) {
+        nxtsym();
+        dechead();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        parameterlist();
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        if (symtype != LPRTSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        compoundstatement();
+        if (symtype != RPRTSY) {
+            error();
+            return;
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a declaration of function which have returning value." << endl;
+}
+
+// ＜无返回值函数定义＞ ::= void＜标识符＞'('＜参数表＞')''{'＜复合语句＞'}'
+void Syntaxer::voidfuncdec() {
+    if (symtype == VOIDSY) {
+        nxtsym();
+        nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        parameterlist();
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        if (symtype != LPRTSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        compoundstatement();
+        if (symtype != RPRTSY) {
+            error();
+            return;
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a declaration of function which don\'t have returning value." << endl;
+}
+
+// ＜主函数＞ ::= void main'('')''{'＜复合语句＞'}'
+void Syntaxer::functionmain() {
+    if (symtype == VOIDSY) {
+        nxtsym();
+        if (symtype != MAINSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        if (symtype != RPARSY) {
+            error();
+            return;;
+        }
+        nxtsym();
+        if (symtype != LPRTSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        compoundstatement();
+        if (symtype != RPRTSY) {
+            error();
+            return;
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    cout << "This is a declaration of function main." << endl;
+}
+
+// ＜参数＞ ::=  ＜类型标识符＞＜标识符＞
+void Syntaxer::param() {
+    if (symtype == INTSY || symtype == CHARSY){
+        nxtsym();
+        // TODO : search tab
+    }
+    nxtsym();
 }
 
 // ＜参数表＞ ::= ＜参数＞{,＜参数＞}| ＜空>
 void Syntaxer::parameterlist() {
-
+    if (symtype == INTSY || symtype == CHARSY) {
+        param();
+        if (symtype == COMMASY) {
+            do {
+                nxtsym();
+                param();
+            } while (symtype == COMMASY);
+        }
+    }
+    else if (symtype != RPARSY) {
+        error();
+        return;
+    }
 }
 
 // ＜值参数表＞ ::= ＜表达式＞{,＜表达式＞}｜＜空＞
 void Syntaxer::valuelist() {
-
+    if (symtype == RPARSY) {
+        nxtsym();
+        return;
+    }
+    expression();
+    if (symtype == COMMASY) {
+        do {
+            nxtsym();
+            expression();
+        } while (symtype == COMMASY);
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
 }
 
-//
+// ＜字符串＞ ::="｛十进制编码为32,33,35-126的ASCII字符｝"
 void Syntaxer::characterlist() {
-
+    if (symtype == DQUOSY) {
+        do {
+            nxtsym();
+        } while(symtype != DQUOSY);
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
 }
+
 // ＜constant(dec)＞ ::= int＜symbol＞＝＜integer＞{,＜symbol＞＝＜integer＞}|char＜标识符＞＝＜字符＞{,＜标识符＞＝＜字符＞}
 void Syntaxer::constantdef() {
     // we must have met the "const" before
-    getsym(); // TODO: should i read a symbol before i analysis it?
-    symtype = returnsym();
     if (symtype == INTSY) {
-        getsym();
-        symtype = returnsym();
+        nxtsym();
         do {
             if (symtype == IDENTSY) { // symbol
                 strcpy(symname, returnname());
@@ -202,8 +354,7 @@ void Syntaxer::constantdef() {
         }while(symtype == COMMASY);
     }
     else if (symtype == CHARSY){
-        getsym();
-        symtype = returnsym();
+        nxtsym();
         do {
             if (symtype == IDENTSY) {
                 getsym();
@@ -240,14 +391,12 @@ void Syntaxer::constantdef() {
 
 // ＜常量说明＞ ::=  const＜常量定义＞;{ const＜常量定义＞;}
 void Syntaxer::constdec() {
-    // getsym();
     if (symtype != CONSTSY){ // the symbol before i came in
         error();
         return;
     }
     else {
-        getsym();
-        symtype = returnsym();
+        nxtsym();
         constantdef();
         if (symtype != SEMISY){
             error();
@@ -255,14 +404,26 @@ void Syntaxer::constdec() {
         }
         do {
             constdec();
-            getsym();
-            symtype = returnsym();
+            nxtsym();
         }while(symtype == CONSTSY);
     }
 }
 
-void Syntaxer::typedec() {
-
+// ＜声明头部＞ ::= int＜标识符＞ |char＜标识符＞
+void Syntaxer::dechead() {
+    if (symtype == INTSY) {
+        nxtsym();
+        // TODO : should i search the tab
+    }
+    else if (symtype == CHARSY){
+        nxtsym();
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is the dechead";
 }
 
 // ＜变量定义＞ ::= ＜类型标识符＞(＜标识符＞|＜标识符＞'['＜无符号整数＞']'){,(＜标识符＞|＜标识符＞'['＜无符号整数＞']' )}
@@ -337,25 +498,125 @@ void Syntaxer::vardec() {
         if (symtype != SEMISY){
             error();
             do {
-                getsym();
-                symtype = returnsym();
+                nxtsym();
             }while(symtype != INTSY && symtype != CHARSY);
             return;
         }
-        getsym();
-        symtype = returnsym();
+        nxtsym();
     }while(symtype == INTSY || symtype == CHARSY);
 }
 
-//
+// ＜程序＞ ::=［＜常量说明＞］［＜变量说明＞］{＜有返回值函数定义＞|＜无返回值函数定义＞}＜主函数＞
 void Syntaxer::progress() {
-
+    nxtsym();
+    if (symtype == CONSTSY) {
+        nxtsym();
+        constdec();
+    }
+    else if (symtype == INTSY || symtype == CHARSY) {
+        symbol tmpsym = symtype;
+        nxtsym(); // identifier
+        nxtsym(); // '('
+        if (symtype == LPARSY) {
+            back();
+            back();
+            symtype = tmpsym;
+            retfuncdec();
+        }
+        else {
+            back();
+            back();
+            symtype = tmpsym;
+            vardec();
+        }
+    }
+    else if (symtype == VOIDSY) {
+        nxtsym();
+        if (symtype == MAINSY) {
+            back();
+            symtype = VOIDSY;
+            functionmain();
+        }
+        else {
+            back();
+            symtype = VOIDSY;
+            voidfuncdec();
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
 }
 
-// ＜语句＞ ::= ＜条件语句＞｜＜循环语句＞| '{'＜语句列＞'}'| ＜有返回值函数调用语句＞; |＜无返回值函数调用语句＞;｜＜赋值语句＞;｜＜读语句＞;｜＜写语句＞;｜＜空＞;|＜情况语句＞｜＜返回语句＞;
-//＜赋值语句＞ ::=  ＜标识符＞＝＜表达式＞|＜标识符＞'['＜表达式＞']'=＜表达式＞
+// ＜语句＞ ::= ＜条件语句＞｜＜循环语句＞| '{'＜语句列＞'}'| ＜有返回值函数调用语句＞; |＜无返回值函数调用语句＞;
+// ｜＜赋值语句＞;｜＜读语句＞;｜＜写语句＞;｜＜空＞;|＜情况语句＞｜＜返回语句＞;
 void Syntaxer::statement() {
-
+    int i;
+    if (symtype == IFSY) {
+        nxtsym();
+        ifstatement();
+    }
+    else if (symtype == LOOPSY) {
+        nxtsym();
+        whilestatement();
+    }
+    else if (symtype == LPRTSY) {
+        nxtsym();
+        statementlist();
+        if (symtype != RPRTSY) {
+            error();
+            return;
+        }
+        nxtsym();
+    }
+    else if (symtype == IDENTSY) {
+        i = searchtab(returnname(), function);
+        if (i > 0) { // it is the function
+            typ functype = stab.element[stab.pindex[i]].type;
+            if (functype == voids) {
+                nxtsym();
+                callvoidfunc();
+            }
+            else {
+                nxtsym();
+                callretfunc();
+            }
+        }
+        else {
+            i = searchtab(returnname());
+            if (i > 0) {
+                assignment();
+            }
+            else {
+                error();
+                return;
+            }
+        }
+    }
+    else if (symtype == SCANFSY) {
+        scanfstatement();
+    }
+    else if (symtype == PRINTSY) {
+        printfstatment();
+    }
+    else if (symtype == SWITCHSY) {
+        switchstatement();
+    }
+    else if (symtype == RETSY) {
+        returnstatement();
+    }
+    else if (symtype != SEMISY) {
+        error();
+        return;
+    }
+    if (symtype != SEMISY) {
+        error();
+        return;;
+    }
+    nxtsym();
+    cout << "This is a statement." << endl;
 }
 
 // ＜表达式＞ ::= ［＋｜－］＜项＞{＜加法运算符＞＜项＞}   //[+|-]只作用于第一个<项>
@@ -414,8 +675,7 @@ void Syntaxer::term() {
 void Syntaxer::factor() {
     int i;
     if (symtype == IDENTSY){
-        getsym();
-        symtype = returnsym();
+        nxtsym();
         if (symtype == LPARSY) { // function
             getsym();
             symtype = returnsym();
@@ -478,8 +738,7 @@ void Syntaxer::factor() {
         }
     }
     else if (symtype == LPARSY){ // '(' expression ')'
-        getsym();
-        symtype = returnsym();
+        nxtsym();
         expression(); // have getsym() at last
         if (symtype != RPARSY){ // ')'
             error();
@@ -515,12 +774,39 @@ void Syntaxer::factor() {
         }
     }
     else if (symtype == CHARACTERSY){ // character
-        getsym();
-        symtype = returnsym();
+        nxtsym();
     }
     else {
         error();
     }
+}
+
+// ＜有返回值函数调用语句＞ ::= ＜标识符＞'('＜值参数表＞')'
+void Syntaxer::callretfunc() {
+    if (symtype == IDENTSY) {
+        nxtsym();
+        valuelist();
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a call of returning function." << endl;
+}
+
+// ＜无返回值函数调用语句＞ ::= ＜标识符＞'('＜值参数表＞')'
+void Syntaxer::callvoidfunc() {
+    if (symtype == IDENTSY) {
+        nxtsym();
+        valuelist();
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a call of void function." << endl;
 }
 
 // ＜赋值语句＞ ::=  ＜标识符＞＝＜表达式＞|＜标识符＞'['＜表达式＞']'=＜表达式＞
@@ -734,16 +1020,77 @@ void Syntaxer::printfstatment() {
             error();
             return;
         }
-
+        nxtsym();
+        if (symtype != DQUOSY) {
+            nxtsym();
+            expression();
+        }
+        else if (symtype == DQUOSY) {
+            nxtsym();
+            characterlist();
+            if (symtype == COMMASY) {
+                nxtsym();
+                expression();
+            }
+        }
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
     }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a printf statement." << endl;
 }
 
 // ＜读语句＞ ::= scanf '('＜标识符＞{,＜标识符＞}')'
 void Syntaxer::scanfstatement() {
-
+    if (symtype == SCANFSY) {
+        nxtsym();
+        if (symtype == LPARSY) {
+            nxtsym();
+            // TODO : search the tab?
+            nxtsym();
+            if (symtype == COMMASY) {
+                do {
+                    nxtsym();
+                    nxtsym();
+                } while (symtype == COMMASY);
+            }
+        }
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a scanf statement." << endl;
 }
 
-// ＜返回语句＞   ::=  return['('＜表达式＞')']
+// ＜返回语句＞ ::= return['('＜表达式＞')']
 void Syntaxer::returnstatement() {
-
+    if (symtype == RETSY) {
+        nxtsym();
+        if (symtype == LPARSY) {
+            nxtsym();
+            expression();
+            if (symtype != RPARSY) {
+                error();
+                return;
+            }
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a return statement." << endl;
 }

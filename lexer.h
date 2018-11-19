@@ -73,5 +73,6 @@ void getsymInit();
 int getsym();
 symbol returnsym();
 char *returnname();
+void back();
 
 #endif //COMPLIER_LEXER_H
