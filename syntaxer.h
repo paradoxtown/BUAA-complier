@@ -35,6 +35,7 @@ public:
     void funcdec();
     void parameterlist();
     void valuelist();
+    void characterlist();
     void constantdef();
     void constdec();
     void typedec();
@@ -49,13 +50,16 @@ public:
     void statementlist();
     void compoundstatement();
     void ifstatement();
+    void condition();
     void whilestatement();
     void switchstatement();
+    void caselist();
     void casestatment();
     void defaultstatemnt();
     void printfstatment();
     void scanfstatement();
     void returnstatement();
+    void nxtsym();
 };
 
 

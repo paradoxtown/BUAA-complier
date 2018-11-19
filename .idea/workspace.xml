@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73e12b6b-a064-4935-990b-8814c28eb9f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/compiler.h" beforeDir="false" afterPath="$PROJECT_DIR$/compiler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syntaxer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syntaxer.h" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.h" afterDir="false" />
     </list>
@@ -35,133 +34,154 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="9057" />
-          <entry key="h" value="937" />
+          <entry key="cpp" value="11846" />
+          <entry key="h" value="997" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="9994" />
+          <entry key="ObjectiveC" value="12843" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="2" />
+          <entry key="cpp" value="3" />
           <entry key="h" value="4" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="6" />
+          <entry key="ObjectiveC" value="7" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lexer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-              <folding>
-                <element signature="e#352#847#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lexer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2578">
-              <caret line="287" selection-start-line="287" selection-end-line="287" />
-              <folding>
-                <element signature="e#40#59#0" expanded="true" />
-                <element signature="e#378#2146#0" />
-                <element signature="e#2148#2633#0" />
-                <element signature="e#2635#2772#0" />
-                <element signature="e#2928#3052#0" />
-                <element signature="e#3054#3203#0" />
-                <element signature="e#3205#3273#0" />
-                <element signature="e#6944#6970#0" />
-                <element signature="e#6986#7012#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-424">
-              <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
-              <folding>
-                <element signature="e#41#62#0" expanded="true" />
-                <element signature="e#364#386#0" />
-                <element signature="e#1560#1796#0" />
-                <element signature="e#165#194#0" />
-                <element signature="e#1654#1719#0" />
-                <element signature="e#1719#1754#0" />
-                <element signature="e#297#326#0" />
-                <element signature="e#4447#6504#0" />
-                <element signature="e#328#356#0" />
-                <element signature="e#358#388#0" />
-                <element signature="e#9814#10836#0" />
-                <element signature="e#9902#10140#0" />
-                <element signature="e#9845#11328#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compiler.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memory_helper.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/syntaxer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
-              <folding>
-                <element signature="e#97#115#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.46514747">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lexer.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="646">
+                  <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#352#847#1" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lexer.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2578">
+                  <caret line="287" selection-start-line="287" selection-end-line="287" />
+                  <folding>
+                    <element signature="e#40#59#0" expanded="true" />
+                    <element signature="e#378#2146#0" />
+                    <element signature="e#2148#2633#0" />
+                    <element signature="e#2635#2772#0" />
+                    <element signature="e#2928#3052#0" />
+                    <element signature="e#3054#3203#0" />
+                    <element signature="e#3205#3273#0" />
+                    <element signature="e#6944#6970#0" />
+                    <element signature="e#6986#7012#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="74">
+                  <caret line="548" column="5" selection-start-line="548" selection-start-column="5" selection-end-line="548" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#41#62#0" expanded="true" />
+                    <element signature="e#364#386#0" />
+                    <element signature="e#1560#1796#0" />
+                    <element signature="e#165#194#0" />
+                    <element signature="e#1654#1719#0" />
+                    <element signature="e#1719#1754#0" />
+                    <element signature="e#297#326#0" />
+                    <element signature="e#4447#6504#0" />
+                    <element signature="e#328#356#0" />
+                    <element signature="e#358#388#0" />
+                    <element signature="e#9902#10140#0" />
+                    <element signature="e#9845#11328#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/syntaxer.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="397">
+                  <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+                  <folding>
+                    <element signature="e#97#115#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/main.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="19" selection-start-column="19" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/compiler.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="133">
+                  <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/memory_helper.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="304">
+                  <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="416">
+                  <caret line="724" column="45" selection-start-line="724" selection-start-column="45" selection-end-line="724" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#41#62#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>EQUSY</find>
       <find>ASSIGNSY</find>
+      <find>getsym();</find>
+      <find>getsym\(\);\n        symtype = returnsym\(\);</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,8 +203,8 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/lexer.cpp" />
         <option value="$PROJECT_DIR$/lexer.h" />
-        <option value="$PROJECT_DIR$/syntaxer.h" />
         <option value="$PROJECT_DIR$/compiler.h" />
+        <option value="$PROJECT_DIR$/syntaxer.h" />
         <option value="$PROJECT_DIR$/syntaxer.cpp" />
       </list>
     </option>
@@ -196,10 +216,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="974" />
-    <option name="height" value="1057" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -294,15 +314,15 @@
       <workItem from="1542297721922" duration="865000" />
       <workItem from="1542443032663" duration="10144000" />
       <workItem from="1542465440494" duration="645000" />
-      <workItem from="1542522607526" duration="26907000" />
+      <workItem from="1542522607526" duration="33546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62760000" />
+    <option name="totallyTimeSpent" value="69399000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.4573304" />
@@ -429,6 +449,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lexer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2578">
@@ -447,17 +481,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+        <state relative-caret-position="397">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
           <folding>
             <element signature="e#97#115#0" expanded="true" />
           </folding>
@@ -466,36 +493,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/memory_helper.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+        <state relative-caret-position="304">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-424">
-          <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
+        <state relative-caret-position="416">
+          <caret line="724" column="45" selection-start-line="724" selection-start-column="45" selection-end-line="724" selection-end-column="45" />
           <folding>
             <element signature="e#41#62#0" expanded="true" />
-            <element signature="e#364#386#0" />
-            <element signature="e#1560#1796#0" />
-            <element signature="e#165#194#0" />
-            <element signature="e#1654#1719#0" />
-            <element signature="e#1719#1754#0" />
-            <element signature="e#297#326#0" />
-            <element signature="e#4447#6504#0" />
-            <element signature="e#328#356#0" />
-            <element signature="e#358#388#0" />
-            <element signature="e#9814#10836#0" />
-            <element signature="e#9902#10140#0" />
-            <element signature="e#9845#11328#0" />
           </folding>
         </state>
       </provider>

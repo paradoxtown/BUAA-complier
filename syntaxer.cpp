@@ -21,6 +21,11 @@ typ factortype;
 obj factorobj;
 char symname[NAMELEN];
 
+void Syntaxer::nxtsym() {
+    getsym();
+    symtype = returnsym();
+}
+
 void Syntaxer::enter(char *name, obj object, typ type, int lev, int value, int addr, int num) {
     if (stab.index > MAXTABLEN){
         error(); // TODO
@@ -143,90 +148,116 @@ void Syntaxer::valuelist() {
 
 }
 
+//
+void Syntaxer::characterlist() {
+
+}
 // ＜constant(dec)＞ ::= int＜symbol＞＝＜integer＞{,＜symbol＞＝＜integer＞}|char＜标识符＞＝＜字符＞{,＜标识符＞＝＜字符＞}
 void Syntaxer::constantdef() {
     // we must have met the "const" before
     getsym(); // TODO: should i read a symbol before i analysis it?
     symtype = returnsym();
-    if (symtype == IDENTSY){ // symbol
-        strcpy(symname, returnname());
+    if (symtype == INTSY) {
         getsym();
         symtype = returnsym();
-        if (symtype == ASSIGNSY){ // "="
-            getsym();
-            symtype = returnsym();
-            if (symtype == PLUSSY || symtype == MINUSSY){ // "+" | "-"
+        do {
+            if (symtype == IDENTSY) { // symbol
+                strcpy(symname, returnname());
                 getsym();
-                value = transNum(returnname()); // may i rename the "returnname" to " returntoken"?
-                value = symtype == PLUSSY ? value : - value;
-                addr ++; // TODO: i don't really understand the address and the num
-                num = - 1;
-                enter(symname, constant, ints, lev, value, addr, num);
+                symtype = returnsym();
+                if (symtype == ASSIGNSY) { // "="
+                    getsym();
+                    symtype = returnsym();
+                    if (symtype == PLUSSY || symtype == MINUSSY) { // "+" | "-"
+                        getsym();
+                        value = transNum(returnname()); // may i rename the "returnname" to " returntoken"?
+                        value = symtype == PLUSSY ? value : -value;
+                        addr++; // TODO: i don't really understand the address and the num
+                        num = -1;
+                        enter(symname, constant, ints, lev, value, addr, num);
 
-                // TODO: we will generate the 4-quad here in the future
-            }
-            else if (symtype == SQUOSY) { // "'"
-                // TODO: maybe we should optimize lexer
-                getsym();
-                symtype = returnsym(); // is a character
-                value = returnname()[0];
-                getsym();
-                if (returnsym() == SQUOSY) {
-                    addr++;
-                    num = 1;
-                    enter(symname, constant, chars, lev, value, addr, num);
-                    // TODO: we will generate the 4-quad here in the future
+                        // TODO: we will generate the 4-quad here in the future
+                    } else if (symtype == INTEGERSY) {
+                        //TODO: i forget to deal the first 0 problem
+                        value = transNum(returnname());
+                        addr++;
+                        num = -1;
+                        enter(symname, constant, ints, lev, value, addr, num);
+                        // TODO: we will generate the 4-quad here in the future
+                    } else {
+                        error();
+                        return;
+                    }
+                } else {
+                    error();
+                    return;
                 }
             }
-            else if (symtype == INTEGERSY) {
-                //TODO: i forget to deal the first 0 problem
-                value = transNum(returnname());
-                addr++;
-                num = -1;
-                enter(symname, constant, ints, lev, value, addr, num);
-                // TODO: we will generate the 4-quad here in the future
-            }
-            else{
+            else {
                 error();
                 return;
             }
-        }
-        else{
-            error();
-            return;
-        }
+            getsym();
+            symtype = returnsym();
+        }while(symtype == COMMASY);
+    }
+    else if (symtype == CHARSY){
+        getsym();
+        symtype = returnsym();
+        do {
+            if (symtype == IDENTSY) {
+                getsym();
+                symtype = returnsym();
+                if (symtype == ASSIGNSY) {
+                    if (symtype == SQUOSY) { // "'"
+                        // TODO: maybe we should optimize lexer
+                        getsym();
+                        symtype = returnsym(); // is a character
+                        value = returnname()[0];
+                        getsym();
+                        if (returnsym() == SQUOSY) {
+                            addr++;
+                            num = 1;
+                            enter(symname, constant, chars, lev, value, addr, num);
+                            // TODO: we will generate the 4-quad here in the future
+                        }
+                    }
+                }
+            }
+            else {
+                error();
+                return;
+            }
+            getsym();
+            symtype = returnsym();
+        }while(symtype == COMMASY);
+    }
+    else {
+        error();
+        return;
     }
 }
 
 // ＜常量说明＞ ::=  const＜常量定义＞;{ const＜常量定义＞;}
 void Syntaxer::constdec() {
     // getsym();
-    if (symtype != CONSTSY){
+    if (symtype != CONSTSY){ // the symbol before i came in
         error();
         return;
     }
-    getsym();
-    symtype = returnsym();
-    if (symtype != INTSY && symtype != CHARSY){
-        error();
-        return;
-    }
-    do{
+    else {
+        getsym();
+        symtype = returnsym();
         constantdef();
-        getsym();
-        symtype = returnsym();
-    }while(symtype == COMMASY);
-    if (symtype == SEMISY){
-        getsym();
-        symtype = returnsym();
-        if (symtype == CONSTSY){
-            constdec();
+        if (symtype != SEMISY){
+            error();
+            return;
         }
-        // TODO
-    }
-    else{
-        error();
-        return;
+        do {
+            constdec();
+            getsym();
+            symtype = returnsym();
+        }while(symtype == CONSTSY);
     }
 }
 
@@ -496,8 +527,31 @@ void Syntaxer::factor() {
 // <赋值语句> ::= <标识符>(=<表达式>|'['<表达式>']'=<表达式>)
 void Syntaxer::assignment() {
     if (symtype == IDENTSY) {
-
+        getsym();
+        returnsym();
+        if (symtype == ASSIGNSY) {
+            nxtsym();
+            expression();
+        }
+        else if (symtype == LBRACKSY){
+            nxtsym();
+            expression();
+            if (symtype != RBRACKSY){
+                error();
+                return;
+            }
+            nxtsym();
+            if (symtype == ASSIGNSY){
+                nxtsym();
+                expression();
+            }
+        }
     }
+    else {
+        error();
+        return;
+    }
+    cout << "This is a assignment statement." << endl; // it will break if something in the middle.
 }
 
 // ＜语句列＞ ::= ｛＜语句＞｝
@@ -509,42 +563,187 @@ void Syntaxer::statementlist() {
 
 // ＜复合语句＞ ::=［＜常量说明＞］［＜变量说明＞］＜语句列＞
 void Syntaxer::compoundstatement() {
-
+    if (symtype == CONSTSY) {
+        constdec();
+    }
+    else if (symtype == INTSY || symtype == CHARSY) {
+        vardec();
+    }
+    statementlist();
+    nxtsym();
 }
 
 // ＜条件语句＞ ::=  if '('＜条件＞')'＜语句＞
 void Syntaxer::ifstatement() {
+    if (symtype == IFSY){
+        nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        condition();
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        statement();
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a \"if\" statement." << endl;
 
+}
+
+// ＜条件＞ ::= ＜表达式＞＜关系运算符＞＜表达式＞｜＜表达式＞ //表达式为0条件为假，否则为真
+void Syntaxer::condition() {
+    expression();
+    nxtsym();
+    if (symtype == LSSY || symtype == LESY || symtype == GTSY ||
+        symtype == GESY || symtype == NEQSY || symtype == EQUSY){
+        nxtsym();
+        expression();
+    }
+    nxtsym();
+    cout << "This is a condition." << endl;
 }
 
 // ＜循环语句＞ ::=  while '('＜条件＞')'＜语句＞
 void Syntaxer::whilestatement() {
-
+    if (symtype == LOOPSY) {
+        nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        condition();
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        statement();
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a recurrent statement." << endl;
 }
 
 // ＜情况语句＞ ::=  switch '('＜表达式＞')' '{'＜情况表＞＜缺省＞ '}'
 void Syntaxer::switchstatement() {
+    if (symtype == SWITCHSY) {
+        nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        expression();
+        if (symtype != RPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        if (symtype != LPRTSY) {
+            error();
+            return;;
+        }
+        nxtsym();
+        caselist();
+        nxtsym();
+        defaultstatemnt();
+        if (symtype != RPRTSY) {
+            error();
+            return;
+        }
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a switch statement." << endl;
+}
 
+// ＜情况表＞ ::= ＜情况子语句＞{＜情况子语句＞}
+void Syntaxer::caselist() {
+    casestatment();
+    nxtsym();
+    if (symtype == CASESY) {
+        do {
+            casestatment();
+            nxtsym();
+        } while (symtype == CASESY);
+    }
+    cout << "This is the case list." << endl;
 }
 
 // ＜情况子语句＞::=  case＜常量＞：＜语句＞
 void Syntaxer::casestatment() {
-
+    if (symtype == CASESY) {
+        nxtsym();
+        constantdef();
+        if (symtype != COLONSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        statement();
+    }
+    else {
+        error();
+        return;
+    }
+    nxtsym();
+    cout << "This is a case sub statement." << endl;
 }
 
-//
+// ＜缺省＞ ::=  default : ＜语句＞|＜空＞
 void Syntaxer::defaultstatemnt() {
-
+    if (symtype == DEFAULTSY) {
+        nxtsym();
+        if (symtype != COLONSY) {
+            error();
+            return;
+        }
+        nxtsym();
+        if (symtype != RPRTSY) {
+            nxtsym();
+            statement();
+        }
+    }
+    else {
+        error();
+        return;
+    }
 }
 
+// ＜写语句＞ ::= printf ('(' ＜字符串＞(,＜表达式＞|<空> ') | '('＜表达式＞')')
 void Syntaxer::printfstatment() {
+    if (symtype == PRINTSY) {
+        nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
 
+    }
 }
 
+// ＜读语句＞ ::= scanf '('＜标识符＞{,＜标识符＞}')'
 void Syntaxer::scanfstatement() {
 
 }
 
+// ＜返回语句＞   ::=  return['('＜表达式＞')']
 void Syntaxer::returnstatement() {
 
 }
