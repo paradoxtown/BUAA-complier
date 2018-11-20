@@ -41,6 +41,8 @@ public:
     void parameterlist();
     void valuelist();
     void characterlist();
+    void ischaracter();
+    void isnumber();
     void constantdef();
     void constdec();
     void dechead();

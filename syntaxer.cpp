@@ -284,7 +284,7 @@ void Syntaxer::valuelist() {
         nxtsym();
         return;
     }
-    nxtsym();
+    // nxtsym();
     expression();
     if (symtype == COMMASY) {
         do {
@@ -301,16 +301,60 @@ void Syntaxer::valuelist() {
 
 // ＜字符串＞ ::="｛十进制编码为32,33,35-126的ASCII字符｝"
 void Syntaxer::characterlist() {
-    if (symtype == DQUOSY) {
+    if (token[0] == '\"') {
+        int tokenpoint = 0;
         do {
-            nxtsym();
-        } while(symtype != DQUOSY);
+            tokenpoint ++;
+        } while(token[tokenpoint] != '\"');
     }
     else {
         error();
         return;
     }
+    nxtsym();
     cout << "This is a character list." << endl;
+}
+
+// ＜字符＞ ::= '＜加法运算符＞'｜'＜乘法运算符＞'｜'＜字母＞'｜'＜数字＞'
+void Syntaxer::ischaracter() {
+    if (token[0] == '\''/*symtype == SQUOSY*/) { // "'"
+        // TODO: maybe we should optimize lexer
+        value = token[1];
+        if (token[2] == '\''/* symtype == SQUOSY */) {
+            addr++;
+            number = 1;
+            enter(symname, constant, chars, lev, value, addr, number);
+            // TODO: we will generate the 4-quad here in the future
+        }
+        else {
+            error();
+            return;
+        }
+    }
+}
+
+// ＜整数＞ ::= ［＋｜－］＜无符号整数＞
+void Syntaxer::isnumber() {
+    if (symtype == PLUSSY || symtype == MINUSSY) { // "+" | "-"
+        nxtsym();
+        value = transNum(token); // may i rename the "returnname" to " returntoken"?
+        value = symtype == PLUSSY ? value : -value;
+        addr++; // TODO: i don't really understand the address and the num
+        number = -1;
+        enter(symname, constant, ints, lev, value, addr, number);
+
+        // TODO: we will generate the 4-quad here in the future
+    } else if (symtype == INTEGERSY) {
+        //TODO: i forget to deal the first 0 problem
+        value = transNum(returnname());
+        addr++;
+        number = -1;
+        enter(symname, constant, ints, lev, value, addr, number);
+        // TODO: we will generate the 4-quad here in the future
+    } else {
+        error();
+        return;
+    }
 }
 
 // ＜constant(dec)＞ ::= int＜symbol＞＝＜integer＞{,＜symbol＞＝＜integer＞}|char＜标识符＞＝＜字符＞{,＜标识符＞＝＜字符＞}
@@ -324,26 +368,7 @@ void Syntaxer::constantdef() {
                 nxtsym();
                 if (symtype == ASSIGNSY) { // "="
                     nxtsym();
-                    if (symtype == PLUSSY || symtype == MINUSSY) { // "+" | "-"
-                        nxtsym();
-                        value = transNum(token); // may i rename the "returnname" to " returntoken"?
-                        value = symtype == PLUSSY ? value : -value;
-                        addr++; // TODO: i don't really understand the address and the num
-                        number = -1;
-                        enter(symname, constant, ints, lev, value, addr, number);
-
-                        // TODO: we will generate the 4-quad here in the future
-                    } else if (symtype == INTEGERSY) {
-                        //TODO: i forget to deal the first 0 problem
-                        value = transNum(returnname());
-                        addr++;
-                        number = -1;
-                        enter(symname, constant, ints, lev, value, addr, number);
-                        // TODO: we will generate the 4-quad here in the future
-                    } else {
-                        error();
-                        return;
-                    }
+                    isnumber();
                 } else {
                     error();
                     return;
@@ -363,22 +388,7 @@ void Syntaxer::constantdef() {
                 nxtsym();
                 if (symtype == ASSIGNSY) {
                     nxtsym();
-                    if (token[0] == '\''/*symtype == SQUOSY*/) { // "'"
-                        // TODO: maybe we should optimize lexer
-                        // nxtsym(); // is a character
-                        value = token[1];
-                        // nxtsym();
-                        if (token[2] == '\''/* symtype == SQUOSY */) {
-                            addr++;
-                            number = 1;
-                            enter(symname, constant, chars, lev, value, addr, number);
-                            // TODO: we will generate the 4-quad here in the future
-                        }
-                        else {
-                            error();
-                            return;
-                        }
-                    }
+                    ischaracter();
                 }
             }
             else {
@@ -728,7 +738,7 @@ void Syntaxer::factor() {
             nxtsym();
             strcpy(symname, token);
             valuelist();
-            if (symtype != RPRTSY) {
+            if (symtype != RPARSY) {
                 error();
 //                do {
 //                    nxtsym();
@@ -790,26 +800,28 @@ void Syntaxer::factor() {
         nxtsym();
     }
     else if (symtype == INTEGERSY || symtype == MINUSSY || symtype == PLUSSY){ // [+/-] <integer>
-        if (symtype == MINUSSY || symtype == PLUSSY){
-            int op = symtype == MINUSSY ? 1 : -1;
-            nxtsym();
-            if (symtype != INTEGERSY){
-                error();
-//                do {
-//                    nxtsym();
-//                }while(symtype != SEMISY);
-                return;
-            }
-            NUM = transNum(returnname()) * op;
-            // nxtsym();
-        }
-        else {
-            NUM = transNum(returnname());
-            // nxtsym();
-        }
+//        if (symtype == MINUSSY || symtype == PLUSSY){
+//            int op = symtype == MINUSSY ? 1 : -1;
+//            nxtsym();
+//            if (symtype != INTEGERSY){
+//                error();
+////                do {
+////                    nxtsym();
+////                }while(symtype != SEMISY);
+//                return;
+//            }
+//            NUM = transNum(returnname()) * op;
+//            // nxtsym();
+//        }
+//        else {
+//            NUM = transNum(returnname());
+//            // nxtsym();
+//        }
+        isnumber();
         nxtsym();
     }
-    else if (symtype == CHARACTERSY){ // character
+    else if (symtype == SQUOSY){ // character
+        isnumber();
         nxtsym();
     }
     else {
@@ -979,7 +991,7 @@ void Syntaxer::switchstatement() {
         }
         nxtsym();
         caselist();
-        nxtsym();
+        // nxtsym(); // TODO : judge
         defaultstatemnt();
         if (symtype != RPRTSY) {
             error();
@@ -997,11 +1009,9 @@ void Syntaxer::switchstatement() {
 // ＜情况表＞ ::= ＜情况子语句＞{＜情况子语句＞}
 void Syntaxer::caselist() {
     casestatment();
-    nxtsym();
     if (symtype == CASESY) {
         do {
             casestatment();
-            nxtsym();
         } while (symtype == CASESY);
     }
     cout << "This is the case list." << endl;
@@ -1011,24 +1021,30 @@ void Syntaxer::caselist() {
 void Syntaxer::casestatment() {
     if (symtype == CASESY) {
         nxtsym();
-        constantdef();
-        if (symtype != COLONSY) {
+        if (token[0] == '\'') {
+            ischaracter();
+        }
+        else {
+            isnumber();
+        }
+        nxtsym();
+        if (symtype != COLONSY) { // ':'
             error();
             return;
         }
         nxtsym();
-        statement();
+        statement(); // it has had a nxtsym();
     }
     else {
         error();
         return;
     }
-    nxtsym();
     cout << "This is a case sub statement." << endl;
 }
 
 // ＜缺省＞ ::=  default : ＜语句＞|＜空＞
 void Syntaxer::defaultstatemnt() {
+    cout << "This is the head of default statement." << endl;
     if (symtype == DEFAULTSY) {
         nxtsym();
         if (symtype != COLONSY) {
@@ -1040,11 +1056,20 @@ void Syntaxer::defaultstatemnt() {
             nxtsym();
             statement();
         }
+        else if (symtype == RPRTSY) {
+            nxtsym();
+            return;
+        }
+        else {
+            error();
+            return;
+        }
     }
-    else {
+    else if (symtype != RPRTSY){
         error();
         return;
     }
+    cout << "This is a default statement." << endl;
 }
 
 // ＜写语句＞ ::= printf ('(' ＜字符串＞(,＜表达式＞|<空> ') | '('＜表达式＞')')
@@ -1056,12 +1081,11 @@ void Syntaxer::printfstatment() {
             return;
         }
         nxtsym();
-        if (symtype != DQUOSY) {
+        if (token[0] != '\"') { // isn't string
             nxtsym();
             expression();
         }
-        else if (symtype == DQUOSY) {
-            nxtsym();
+        else if (token[0] == '\"') { // is string
             characterlist();
             if (symtype == COMMASY) {
                 nxtsym();
@@ -1077,7 +1101,6 @@ void Syntaxer::printfstatment() {
         error();
         return;
     }
-    nxtsym();
     cout << "This is a printf statement." << endl;
 }
 
@@ -1105,7 +1128,6 @@ void Syntaxer::scanfstatement() {
         error();
         return;
     }
-    nxtsym();
     cout << "This is a scanf statement." << endl;
 }
 

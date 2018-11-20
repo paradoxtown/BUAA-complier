@@ -152,6 +152,7 @@ char *returnname(){
 }
 
 void back(int symnumber){
+    symnum --; // because we also need to retract the symnum for symbol in correct position
     int index = syminfolist[symnumber % SYMNUM].prev;
     cnt = syminfolist[index].rownum;
     cc = syminfolist[index].columnnum;
@@ -207,14 +208,14 @@ int getsym(){
     else if (ch == '\''){
         token[l ++] = ch;
         result = SQUOSY;
-        setinfo();
+ //       setinfo();
 //        print(token, result);
 //        getsymInit();
 
         ch = getchr();
         token[l ++ ] = ch;
         result = CHARACTERSY;
-        setinfo();
+ //       setinfo();
 //        print(token[l - 1], result);
 //        getsymInit();
         ch = getchr();
@@ -231,7 +232,7 @@ int getsym(){
     else if (ch == '\"'){
         token[l] = ch;
         result = DQUOSY;
-        setinfo();
+        // setinfo();
         print(token, result);
         // cout << token << endl;
         getsymInit();
@@ -242,7 +243,7 @@ int getsym(){
         if (ch == '\"'){
             token[l - 1] = '\0';
             result = STRINGSY;
-            setinfo();
+            // setinfo();
             print(token, result);
             // cout << token << endl;
             getsymInit();

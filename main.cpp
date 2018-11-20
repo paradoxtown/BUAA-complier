@@ -20,7 +20,11 @@ int main() {
 //    syntaxer.expression();
 //    syntaxer.statement();
 //    syntaxer.retfuncdec();
-    syntaxer.whilestatement();
+//    syntaxer.whilestatement();
 //    syntaxer.assignment();
+//    syntaxer.switchstatement();
+    syntaxer.printfstatment();
+//    syntaxer.scanfstatement();
+//    syntaxer.returnstatement();
     return 0;
 }

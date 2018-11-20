@@ -1,0 +1,6 @@
+  1,      PRINTSY, No. 33 : printf.
+  1,       LPAESY, No. 11 : (.
+  1,      IDENTSY, No. 38 : a.
+  1,       PLUSSY, No.  0 : +.
+  1,      IDENTSY, No. 38 : b.
+  1,       RPARSY, No. 12 : ).

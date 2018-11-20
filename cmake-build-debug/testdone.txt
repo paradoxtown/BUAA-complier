@@ -20,4 +20,62 @@ retruning function:
 int sum(int a, int b){
     return (-(a + b));
 }
------------------------------
+------------------------------
+while:
+while(a < 10) {
+    a = a + 1;
+    func();
+}
+
+while(a < 10) {
+    func();
+}
+
+while(a < 10) {
+    a = a + 1;
+}
+------------------------------
+switch:
+switch(a) {
+    case 'x' : a = 'X';
+    case 'y' : a = 'Y';
+    case 'z' : a = 'Z';
+    default : a = a + 1;
+}
+
+switch(a) {
+    case 'x' : a = 'X';
+    case 'y' : a = 'Y';
+    case 'z' : a = 'Z';
+    default : 
+}
+
+switch(a) {
+    case 1 : a = 4;
+    case 2 : a = 5;
+    case 3 : a = 6;
+    default : 
+}
+------------------------------
+printf:
+printf("asdfasd", a + b)
+
+prtint(a + b)
+
+printf("aaa")
+------------------------------
+scanf:
+scanf(a, b, c)
+
+scanf(a)
+------------------------------
+return:
+return (a)
+
+return (-(a + b) / (a - b))
+
+return (f(a))
+
+return
+
+return (f())
