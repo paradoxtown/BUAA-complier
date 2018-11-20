@@ -577,6 +577,7 @@ void Syntaxer::statement() {
             return;
         }
         nxtsym();
+        return;
     }
     else if (symtype == IDENTSY) {
         // TODO: jest for logic test
@@ -622,6 +623,7 @@ void Syntaxer::statement() {
     }
     else if (symtype == SWITCHSY) {
         switchstatement();
+        return;
     }
     else if (symtype == RETSY) {
         returnstatement();
@@ -636,6 +638,23 @@ void Syntaxer::statement() {
     }
     nxtsym();
     cout << "This is a statement." << endl;
+}
+
+// ＜语句列＞ ::= ｛＜语句＞｝
+void Syntaxer::statementlist() {
+    if (symtype == IFSY || symtype == LOOPSY || symtype == LPRTSY ||
+        symtype == IDENTSY || symtype == SCANFSY || symtype == PRINTSY ||
+        symtype == SWITCHSY || symtype == RETSY) {
+        do {
+            statement();
+        } while (symtype == IFSY || symtype == LOOPSY || symtype == LPRTSY ||
+                 symtype == IDENTSY || symtype == SCANFSY || symtype == PRINTSY ||
+                 symtype == SWITCHSY || symtype == RETSY); // TODO
+    }
+    else {
+        error();
+        return;
+    }
 }
 
 // ＜表达式＞ ::= ［＋｜－］＜项＞{＜加法运算符＞＜项＞}   //[+|-]只作用于第一个<项>
@@ -803,13 +822,17 @@ void Syntaxer::factor() {
 void Syntaxer::callretfunc() {
     if (symtype == IDENTSY) {
         nxtsym();
+        if (symtype != LPARSY) {
+            error();
+            return;
+        }
+        nxtsym();
         valuelist();
     }
     else {
         error();
         return;
     }
-    nxtsym();
     cout << "This is a call of returning function." << endl;
 }
 
@@ -857,13 +880,6 @@ void Syntaxer::assignment() {
     cout << "This is a assignment statement." << endl; // it will break if something in the middle.
 }
 
-// ＜语句列＞ ::= ｛＜语句＞｝
-void Syntaxer::statementlist() {
-    do {
-        statement();
-    }while (symtype == IFSY); // TODO
-}
-
 // ＜复合语句＞ ::=［＜常量说明＞］［＜变量说明＞］＜语句列＞
 void Syntaxer::compoundstatement() {
     if (symtype == CONSTSY) {
@@ -905,13 +921,15 @@ void Syntaxer::ifstatement() {
 // ＜条件＞ ::= ＜表达式＞＜关系运算符＞＜表达式＞｜＜表达式＞ //表达式为0条件为假，否则为真
 void Syntaxer::condition() {
     expression();
-    nxtsym();
     if (symtype == LSSY || symtype == LESY || symtype == GTSY ||
         symtype == GESY || symtype == NEQSY || symtype == EQUSY){
         nxtsym();
         expression();
     }
-    nxtsym();
+    else {
+        error();
+        return;
+    }
     cout << "This is a condition." << endl;
 }
 

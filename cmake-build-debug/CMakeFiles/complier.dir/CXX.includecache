@@ -6,27 +6,21 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MUSE/Desktop/complier/error.h
-
 C:/Users/MUSE/Desktop/complier/lexer.h
 
-C:/Users/MUSE/Desktop/complier/main.h
-lexer.h
-C:/Users/MUSE/Desktop/complier/lexer.h
-
-C:/Users/MUSE/Desktop/complier/syntaxer.cpp
-syntaxer.h
-C:/Users/MUSE/Desktop/complier/syntaxer.h
-lexer.h
-C:/Users/MUSE/Desktop/complier/lexer.h
-main.h
-C:/Users/MUSE/Desktop/complier/main.h
-error.h
-C:/Users/MUSE/Desktop/complier/error.h
-string.h
--
+C:/Users/MUSE/Desktop/complier/main.cpp
 iostream
 -
+cstdio
+-
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
+syntaxer.h
+C:/Users/MUSE/Desktop/complier/syntaxer.h
+
+C:/Users/MUSE/Desktop/complier/main.h
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
 
 C:/Users/MUSE/Desktop/complier/syntaxer.h
 lexer.h
