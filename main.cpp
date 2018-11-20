@@ -16,15 +16,19 @@ int main() {
 //    while(getsym() > 0) {}
     Syntaxer syntaxer;
     syntaxer.nxtsym();
-//    syntaxer.progress();
+    syntaxer.progress();
 //    syntaxer.expression();
 //    syntaxer.statement();
 //    syntaxer.retfuncdec();
 //    syntaxer.whilestatement();
 //    syntaxer.assignment();
 //    syntaxer.switchstatement();
-    syntaxer.printfstatment();
+//    syntaxer.printfstatment();
 //    syntaxer.scanfstatement();
 //    syntaxer.returnstatement();
+//    syntaxer.voidfuncdec();
+//    syntaxer.retfuncdec();
+//    syntaxer.vardec();
+//    syntaxer.statement();
     return 0;
 }

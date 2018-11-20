@@ -1,6 +1,4 @@
-switch(a) {
-    case 'x' : a = 'X';
-    case 'y' : a = 'Y';
-    case 'z' : a = 'Z';
-    default : 
+switch(ch){
+    case 'a': ch = 'A';
+    default: ch = 'C';
 }

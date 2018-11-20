@@ -12,20 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73e12b6b-a064-4935-990b-8814c28eb9f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/lexer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/lexer.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/complier.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/complier.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/return_test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/testdone.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/testdone.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/while.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/while.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lexer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lexer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syntaxer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/syntaxer.h" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,14 +34,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="22571" />
+          <entry key="cpp" value="23677" />
           <entry key="h" value="1783" />
           <entry key="mm" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="24427" />
+          <entry key="ObjectiveC" value="25533" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -76,17 +64,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lexer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="114">
               <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="342">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -97,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lexer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="248" column="25" lean-forward="true" selection-start-line="248" selection-start-column="25" selection-end-line="248" selection-end-column="25" />
+            <state relative-caret-position="155">
+              <caret line="163" selection-start-line="163" selection-end-line="163" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
               </folding>
@@ -109,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/syntaxer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+            <state relative-caret-position="-242">
+              <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
               <folding>
                 <element signature="e#97#115#0" expanded="true" />
               </folding>
@@ -118,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="811">
-              <caret line="740" column="36" lean-forward="true" selection-start-line="740" selection-start-column="36" selection-end-line="740" selection-end-column="36" />
+            <state relative-caret-position="261">
+              <caret line="647" column="26" selection-start-line="647" selection-start-column="26" selection-end-line="647" selection-end-column="26" />
               <folding>
                 <element signature="e#41#62#0" expanded="true" />
                 <element signature="e#418#651#0" />
@@ -131,30 +119,16 @@
                 <element signature="e#2257#3968#0" />
                 <element signature="e#3970#4796#0" />
                 <element signature="e#4798#5552#0" />
-                <element signature="e#5554#6316#0" />
                 <element signature="e#6318#6485#0" />
                 <element signature="e#6769#7153#0" />
-                <element signature="e#7829#7912#0" />
+                <element signature="e#7545#7883#0" />
                 <element signature="e#7910#7969#0" />
                 <element signature="e#7688#10716#0" />
                 <element signature="e#10718#11253#0" />
                 <element signature="e#11274#11614#0" />
-                <element signature="e#11616#13683#0" />
-                <element signature="e#13685#14024#0" />
-                <element signature="e#14026#14924#0" />
-                <element signature="e#14926#16513#0" />
-                <element signature="e#17184#17520#0" />
-                <element signature="e#21060#21330#0" />
-                <element signature="e#21332#21598#0" />
-                <element signature="e#21600#22373#0" />
-                <element signature="e#22499#22741#0" />
-                <element signature="e#22743#23220#0" />
-                <element signature="e#23222#23572#0" />
-                <element signature="e#23574#24062#0" />
-                <element signature="e#24064#24799#0" />
-                <element signature="e#24801#25075#0" />
-                <element signature="e#25077#25456#0" />
-                <element signature="e#26553#26875#0" />
+                <element signature="e#27425#28104#1" />
+                <element signature="e#28145#28722#1" />
+                <element signature="e#28758#29152#1" />
               </folding>
             </state>
           </provider>
@@ -172,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memory_helper.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="209">
+              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -222,8 +196,8 @@
         <option value="$PROJECT_DIR$/error.cpp" />
         <option value="$PROJECT_DIR$/syntaxer.h" />
         <option value="$PROJECT_DIR$/lexer.cpp" />
-        <option value="$PROJECT_DIR$/syntaxer.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/syntaxer.cpp" />
       </list>
     </option>
   </component>
@@ -332,12 +306,12 @@
       <workItem from="1542443032663" duration="10144000" />
       <workItem from="1542465440494" duration="645000" />
       <workItem from="1542522607526" duration="41889000" />
-      <workItem from="1542625072632" duration="40982000" />
+      <workItem from="1542625072632" duration="52671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118724000" />
+    <option name="totallyTimeSpent" value="130413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,13 +326,13 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19349681" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19349681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4914163" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.48819742" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36158797" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
@@ -407,8 +381,58 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>1134</line>
-          <option name="timeStamp" value="43" />
+          <line>180</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>925</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>445</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>212</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>569</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>586</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>673</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>236</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>932</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>678</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>977</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -591,25 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/memory_helper.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lexer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="248" column="25" lean-forward="true" selection-start-line="248" selection-start-column="25" selection-end-line="248" selection-end-column="25" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lexer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        <state relative-caret-position="209">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -620,10 +627,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lexer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="69" column="9" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+        <state relative-caret-position="-242">
+          <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
           <folding>
             <element signature="e#97#115#0" expanded="true" />
           </folding>
@@ -632,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="740" column="36" lean-forward="true" selection-start-line="740" selection-start-column="36" selection-end-line="740" selection-end-column="36" />
+        <state relative-caret-position="261">
+          <caret line="647" column="26" selection-start-line="647" selection-start-column="26" selection-end-line="647" selection-end-column="26" />
           <folding>
             <element signature="e#41#62#0" expanded="true" />
             <element signature="e#418#651#0" />
@@ -642,40 +676,16 @@
             <element signature="e#2257#3968#0" />
             <element signature="e#3970#4796#0" />
             <element signature="e#4798#5552#0" />
-            <element signature="e#5554#6316#0" />
             <element signature="e#6318#6485#0" />
             <element signature="e#6769#7153#0" />
-            <element signature="e#7829#7912#0" />
+            <element signature="e#7545#7883#0" />
             <element signature="e#7910#7969#0" />
             <element signature="e#7688#10716#0" />
             <element signature="e#10718#11253#0" />
             <element signature="e#11274#11614#0" />
-            <element signature="e#11616#13683#0" />
-            <element signature="e#13685#14024#0" />
-            <element signature="e#14026#14924#0" />
-            <element signature="e#14926#16513#0" />
-            <element signature="e#17184#17520#0" />
-            <element signature="e#21060#21330#0" />
-            <element signature="e#21332#21598#0" />
-            <element signature="e#21600#22373#0" />
-            <element signature="e#22499#22741#0" />
-            <element signature="e#22743#23220#0" />
-            <element signature="e#23222#23572#0" />
-            <element signature="e#23574#24062#0" />
-            <element signature="e#24064#24799#0" />
-            <element signature="e#24801#25075#0" />
-            <element signature="e#25077#25456#0" />
-            <element signature="e#26553#26875#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#27425#28104#1" />
+            <element signature="e#28145#28722#1" />
+            <element signature="e#28758#29152#1" />
           </folding>
         </state>
       </provider>
