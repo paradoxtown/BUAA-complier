@@ -7,22 +7,23 @@
 #include <set>
 #include <map>
 #include "lexer.h"
-
-#define MAXN 50
-#define LENGTH 150
+#include "main.h"
 
 using namespace std;
-
-char token[MAXN];
-char line[LENGTH];
-int num = 0;
+// TODO : tolower
+//char token[MAXN];
+char line[ROWLENGTH][LENGTH];
+int num = 0, rows = 0;
 int cc = 0, ll = 0, l = 0, cnt = 0;
 FILE *fin, *fout;
-symbol result;
+//symbol result;
+int symnum = 0;
 map<string, symbol> key2sym;
 map<symbol, string> sym2str;
+syminfo syminfolist[SYMNUM + 1];
 
 void init(char *path){
+    symnum = 0;
     fin = fopen(path, "r");
     fout = fopen("./result.txt", "w");
     key2sym["int"] = INTSY;
@@ -79,27 +80,36 @@ void init(char *path){
     sym2str[IDENTSY] = "IDENTSY";
 }
 
+void readcode(){
+    while(true) {
+        fgets(line[rows], sizeof(line[rows]), fin);
+        if (line[rows][0] == '\0' || feof(fin)) {
+            for (ll = 0; line[rows][ll] != '\0'; ll ++);
+            if (ll > 0) rows ++;// the last line has sentence
+            fclose(fin);
+            cc = 0;
+            break;
+        }
+        for (ll = 0; line[rows][ll] != '\n'; ll ++);
+        if (ll == 0) line[rows][ll ++] = ' ';
+        line[rows][ll] = '\0'; // 0 -> end
+        rows ++;
+    }
+    ll = 0;
+}
+
 char getchr(){
     char ch;
     if (cc == ll) {
-        cnt ++;
-        if (feof(fin)){
-            fclose(fin);
-            cc = 0;
+        if (cnt == rows){
             return EOF;
         }
-        cc = ll = 0;
-        do {
-            if (fscanf(fin, "%c", &ch) != EOF) {
-                line[ll++] = char(tolower(ch));
-            } else {
-                break;
-            }
-        } while (ch != '\n');
-        line[ll] = '\0';
-        cout << line << endl;
+        cnt ++;
+        cc = 0;
+        for (ll = 0; line[cnt - 1][ll] != '\0'; ll ++);
     }
-    ch = line[cc ++];
+    ch = line[cnt - 1][cc ++];
+    // cout << ch << endl;
     return ch;
 }
 
@@ -117,7 +127,7 @@ int transNum(char* word){
     return ret;
 }
 
-void error(){
+void lexerror(){
     fprintf(fout, "ERROR occurs at line %d columns %d\n", cnt, cc);
     cout << "exit with code -1" << endl;
 }
@@ -130,6 +140,21 @@ void print(char *str, symbol sym){
 void getsymInit(){
     memset(token, 0, sizeof(token));
     l = 0;
+}
+
+symbol returnsym(){
+    cout << "am i wrong ?" << endl;
+    return result;
+}
+
+char *returnname(){
+    return token;
+}
+
+void back(int symnumber){
+    int index = syminfolist[symnumber % SYMNUM].prev;
+    cnt = syminfolist[index].rownum;
+    cc = syminfolist[index].columnnum;
 }
 
 int getsym(){
@@ -152,7 +177,7 @@ int getsym(){
         result = INTEGERSY;
         cc --;
         num = transNum(token);
-        printf("The decimal number is %d\n", num);
+        // printf("The decimal number is %d\n", num);
     }
     else if (ch == '+'){ token[l ++] = ch; result = PLUSSY;}
     else if (ch == '-'){ token[l ++] = ch; result = MINUSSY;}
@@ -180,35 +205,35 @@ int getsym(){
         }
     }
     else if (ch == '\''){
-        token[l] = ch;
+        token[l ++] = ch;
         result = SQUOSY;
-        print(token, result);
-        cout << token << endl;
-        getsymInit();
+        setinfo();
+//        print(token, result);
+//        getsymInit();
 
         ch = getchr();
-        token[l] = ch;
+        token[l ++ ] = ch;
         result = CHARACTERSY;
-        print(token, result);
-        cout << token << endl;
-        getsymInit();
-
+        setinfo();
+//        print(token[l - 1], result);
+//        getsymInit();
         ch = getchr();
         if (ch == '\''){
             token[l ++] = ch;
             result = SQUOSY;
+            // setinfo();
         }
         else{
-            error();
+            lexerror();
             return -1;
         }
     }
     else if (ch == '\"'){
         token[l] = ch;
         result = DQUOSY;
-
+        setinfo();
         print(token, result);
-        cout << token << endl;
+        // cout << token << endl;
         getsymInit();
         do {
             ch = getchr();
@@ -217,14 +242,15 @@ int getsym(){
         if (ch == '\"'){
             token[l - 1] = '\0';
             result = STRINGSY;
+            setinfo();
             print(token, result);
-            cout << token << endl;
+            // cout << token << endl;
             getsymInit();
             token[l ++] = '\"';
             result = DQUOSY;
         }
         else{
-            error();
+            lexerror();
             return -1;
         }
     }
@@ -236,7 +262,7 @@ int getsym(){
             result = NEQSY;
         }
         else{
-            error();
+            lexerror();
             return -1;
         }
     }
@@ -269,23 +295,22 @@ int getsym(){
         return 0;
     }
     else {
-        error();
+        lexerror();
         return -1;
     }
     token[l] = '\0';
+    setinfo();
     print(token, result);
-    cout << token << endl;
+    // cout << token << endl;
     return 1;
 }
 
-symbol returnsym(){
-    return result;
+void setinfo(){
+    int index = symnum % SYMNUM;
+    syminfolist[index].sym = result;
+    strcpy(syminfolist[index].name, token);
+    syminfolist[index].rownum = cnt;
+    syminfolist[index].columnnum = cc; // the end column of this symbol
+    syminfolist[index].prev = symnum == 0 ? 0 : ((symnum - 1) % SYMNUM);
+    symnum ++;
 }
-
-char *returnname(){
-    return token;
-}
-
-void back(){
-    cc --;
-};

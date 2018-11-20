@@ -3,11 +3,14 @@
 //
 
 #include "error.h"
+#include <iostream>
 
-void Error::test() {
+using namespace std;
+
+void test() {
 
 }
 
-void Error::error() {
-
+void error() {
+    cout << "Some thing wrong." << endl;
 }

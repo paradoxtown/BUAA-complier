@@ -6,65 +6,21 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MUSE/Desktop/complier/asmer.cpp
-asmer.h
-C:/Users/MUSE/Desktop/complier/asmer.h
-
-C:/Users/MUSE/Desktop/complier/asmer.h
-
-C:/Users/MUSE/Desktop/complier/compiler.h
-
-C:/Users/MUSE/Desktop/complier/error.cpp
-error.h
 C:/Users/MUSE/Desktop/complier/error.h
 
-C:/Users/MUSE/Desktop/complier/error.h
+C:/Users/MUSE/Desktop/complier/lexer.h
 
-C:/Users/MUSE/Desktop/complier/lexer.cpp
-iostream
--
-cstring
--
-cstdio
--
-set
--
-map
--
+C:/Users/MUSE/Desktop/complier/main.h
 lexer.h
 C:/Users/MUSE/Desktop/complier/lexer.h
-
-C:/Users/MUSE/Desktop/complier/lexer.h
-
-C:/Users/MUSE/Desktop/complier/main.cpp
-iostream
--
-cstdio
--
-lexer.h
-C:/Users/MUSE/Desktop/complier/lexer.h
-syntaxer.h
-C:/Users/MUSE/Desktop/complier/syntaxer.h
-
-C:/Users/MUSE/Desktop/complier/optimizer.cpp
-optimizer.h
-C:/Users/MUSE/Desktop/complier/optimizer.h
-
-C:/Users/MUSE/Desktop/complier/optimizer.h
-
-C:/Users/MUSE/Desktop/complier/quader.cpp
-quader.h
-C:/Users/MUSE/Desktop/complier/quader.h
-
-C:/Users/MUSE/Desktop/complier/quader.h
 
 C:/Users/MUSE/Desktop/complier/syntaxer.cpp
 syntaxer.h
 C:/Users/MUSE/Desktop/complier/syntaxer.h
 lexer.h
 C:/Users/MUSE/Desktop/complier/lexer.h
-compiler.h
-C:/Users/MUSE/Desktop/complier/compiler.h
+main.h
+C:/Users/MUSE/Desktop/complier/main.h
 error.h
 C:/Users/MUSE/Desktop/complier/error.h
 string.h
@@ -75,6 +31,6 @@ iostream
 C:/Users/MUSE/Desktop/complier/syntaxer.h
 lexer.h
 C:/Users/MUSE/Desktop/complier/lexer.h
-compiler.h
-C:/Users/MUSE/Desktop/complier/compiler.h
+main.h
+C:/Users/MUSE/Desktop/complier/main.h
 

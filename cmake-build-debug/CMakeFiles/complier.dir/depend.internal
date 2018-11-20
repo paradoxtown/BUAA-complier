@@ -10,10 +10,11 @@ CMakeFiles/complier.dir/error.cpp.obj
 CMakeFiles/complier.dir/lexer.cpp.obj
  C:/Users/MUSE/Desktop/complier/lexer.cpp
  C:/Users/MUSE/Desktop/complier/lexer.h
+ C:/Users/MUSE/Desktop/complier/main.h
 CMakeFiles/complier.dir/main.cpp.obj
- C:/Users/MUSE/Desktop/complier/compiler.h
  C:/Users/MUSE/Desktop/complier/lexer.h
  C:/Users/MUSE/Desktop/complier/main.cpp
+ C:/Users/MUSE/Desktop/complier/main.h
  C:/Users/MUSE/Desktop/complier/syntaxer.h
 CMakeFiles/complier.dir/optimizer.cpp.obj
  C:/Users/MUSE/Desktop/complier/optimizer.cpp
@@ -22,8 +23,8 @@ CMakeFiles/complier.dir/quader.cpp.obj
  C:/Users/MUSE/Desktop/complier/quader.cpp
  C:/Users/MUSE/Desktop/complier/quader.h
 CMakeFiles/complier.dir/syntaxer.cpp.obj
- C:/Users/MUSE/Desktop/complier/compiler.h
  C:/Users/MUSE/Desktop/complier/error.h
  C:/Users/MUSE/Desktop/complier/lexer.h
+ C:/Users/MUSE/Desktop/complier/main.h
  C:/Users/MUSE/Desktop/complier/syntaxer.cpp
  C:/Users/MUSE/Desktop/complier/syntaxer.h

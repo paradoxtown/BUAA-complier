@@ -1,0 +1,1 @@
+const int a = 1; const char b = 'a', c = 's';

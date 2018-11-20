@@ -3,7 +3,10 @@
 //
 #ifndef COMPLIER_LEXER_H
 #define COMPLIER_LEXER_H
-
+#define MAXN 100
+#define LENGTH 200
+#define ROWLENGTH 100000
+#define SYMNUM 5
 
 const char * const reserved_word[] = {
         "int",
@@ -63,16 +66,26 @@ enum symbol {
     IDENTSY
 };
 
+typedef struct {
+    symbol sym;
+    char name[MAXN];
+    int rownum;
+    int columnnum; // cc
+    int prev;
+}syminfo;
+
 void init(char *path);
+void readcode();
 char getchr();
 symbol isReserved(char *word);
 int transNum(char *word);
-void error();
+void lexerror();
+void setinfo();
+symbol returnsym();
+char *returnname();
 void print(char *str, symbol sym);
 void getsymInit();
 int getsym();
-symbol returnsym();
-char *returnname();
-void back();
+void back(int symnumber);
 
 #endif //COMPLIER_LEXER_H

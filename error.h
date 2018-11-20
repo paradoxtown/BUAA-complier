@@ -6,11 +6,9 @@
 #define COMPLIER_ERROR_H
 
 
-class Error {
-public:
-    void error();
-    void test();
-};
+void error();
+void test();
+
 
 
 #endif //COMPLIER_ERROR_H

@@ -9,10 +9,11 @@ CMakeFiles/complier.dir/error.cpp.obj: ../error.h
 
 CMakeFiles/complier.dir/lexer.cpp.obj: ../lexer.cpp
 CMakeFiles/complier.dir/lexer.cpp.obj: ../lexer.h
+CMakeFiles/complier.dir/lexer.cpp.obj: ../main.h
 
-CMakeFiles/complier.dir/main.cpp.obj: ../compiler.h
 CMakeFiles/complier.dir/main.cpp.obj: ../lexer.h
 CMakeFiles/complier.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/complier.dir/main.cpp.obj: ../main.h
 CMakeFiles/complier.dir/main.cpp.obj: ../syntaxer.h
 
 CMakeFiles/complier.dir/optimizer.cpp.obj: ../optimizer.cpp
@@ -21,9 +22,9 @@ CMakeFiles/complier.dir/optimizer.cpp.obj: ../optimizer.h
 CMakeFiles/complier.dir/quader.cpp.obj: ../quader.cpp
 CMakeFiles/complier.dir/quader.cpp.obj: ../quader.h
 
-CMakeFiles/complier.dir/syntaxer.cpp.obj: ../compiler.h
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../error.h
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../lexer.h
+CMakeFiles/complier.dir/syntaxer.cpp.obj: ../main.h
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../syntaxer.cpp
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../syntaxer.h
 

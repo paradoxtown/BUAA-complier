@@ -5,7 +5,7 @@
 #ifndef COMPLIER_SYNTAXER_H
 #define COMPLIER_SYNTAXER_H
 #include "lexer.h"
-#include "compiler.h"
+#include "main.h"
 #define NAMELEN 50
 #define ELELEN 100
 #define PINDEXLEN 100
@@ -29,6 +29,7 @@ typedef struct{
 
 class Syntaxer {
 public:
+    void nxtsym();
     void enter(char *name, obj object, typ type, int lev, int value, int addr, int num);
     void pushtab(char *name, obj object, typ type, int lev, int value, int addr, int num);
     int  searchtab(char *name, obj object);
@@ -65,7 +66,6 @@ public:
     void printfstatment();
     void scanfstatement();
     void returnstatement();
-    void nxtsym();
 };
 
 

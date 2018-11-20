@@ -1,0 +1,19 @@
+statement :
+int sum(int a, int b){
+    return (-(a + b) / (a - b));
+}
+------------------------------
+expression:
+(-(a + b))
+------------------------------
+void function:
+void print(char * str){
+    printf("Unexpection imformation: ", str);
+}
+// 像printf这样的就要先enter
+------------------------------
+retruning function:
+int sum(int a, int b){
+    return (-(a + b));
+}
+-----------------------------
