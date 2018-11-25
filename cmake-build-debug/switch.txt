@@ -1,4 +1,7 @@
 switch(ch){
     case 'a': ch = 'A';
-    default: ch = 'C';
+    case 'b': ch = 'B';
+    case 'c': ch = 'C';
+    case 'd': ch = 'D';
+    default: ch = 'E';
 }

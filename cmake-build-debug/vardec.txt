@@ -1,1 +1,4 @@
-int a, b, c[10];
+int tmp1,tmp2,tmp3,tmp4;
+char tmp5,tmp6;
+int a1,a2,a3;
+int cnt;

@@ -22,7 +22,7 @@ typedef struct{
 
 typedef struct{
     item element[ELELEN];
-    int index; // the top pointer of symbol stack
+    int top; // the top pointer of symbol stack
     int pnum; // the total number of the sub programs
     int pindex[PINDEXLEN]; // index of sub program
 }tab;
@@ -48,7 +48,7 @@ public:
     void dechead();
     void vardef();
     void vardec();
-    void progress();
+    void program();
     void statement();
     void expression();
     void term();

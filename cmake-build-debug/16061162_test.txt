@@ -1,4 +1,51 @@
+const char _abcdefghijklmnopqrstuvwxyz = 'a', sadfjsadkl = 'z';
+const int __ABCDEFGHIJKLMNOPQRSTUVWXYZ = 1010;
+int arr[100];
+char str1[10];
+
+int sum(int a, int b){
+    return (-(a + b) / (a - b));
+}
+
+int multi(int a, int b){
+    return (a * b);
+}
+
+void testttt(){
+    a = a + 1;
+    return;
+}
+
+int fib(int n){
+    if (n == 1){
+        return (1);
+    }
+    if (n == 2){
+        return (1);
+    }
+    return (fib(n - 1) + fib(n - 2));
+}
+
+void print(char s){
+    printf("Unexpection imformation: ", s);
+}
+
 void main(){
+    int n, tmp, result;
+    char str[20], ch;
+    printf("Please input a integer: ");
+    scanf(n);
+    tmp = 0;
+
+    while(tmp != n){
+        result = fib(tmp + 1);
+        printf("The nth fib number is", result);
+        tmp = tmp + 1;
+    }
+    printf("Please input a string: ");
+    scanf(str);
+
+    tmp = 0;
     while (tmp < 20){
         if (str[tmp] < 'a'){
             if (str[tmp] > 'Z'){
@@ -16,7 +63,7 @@ void main(){
         }
     }
 
-    scanf(ch)
+    scanf(ch);
     switch(ch){
         case 'a': ch = 'A';
         case 'b': ch = 'B';
@@ -24,7 +71,4 @@ void main(){
         case 'd': ch = 'D';
         default: ch = 'E';
     }
-    printf("!@@#@#$!@$@#%#$^$%^%#@!$#^^&^%*^%$^%^&%^&");
-    printf(" !#$%&'()*+,-./0123456789");
-    printf("sdkjfhasdkjfooijsdaioutfer_)(&*(^&T&*^&$%^kl`jlk{}()ajsfk");
 }

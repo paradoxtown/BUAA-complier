@@ -1,0 +1,77 @@
+const int const_int1 = +12 , const_int2 = -0;
+const char const_char1 = '+' , const_char2 = '9' , const_char3 = 'Z';
+
+int var_int1 , var_int_array1[12];
+char var_char1 , var_char_array1[1];
+
+void testprint(){
+	printf(const_int1);
+	printf(const_int2);
+	printf(const_char1);
+	printf(const_char2);
+	printf(const_char3);
+	return (const_int1);
+}
+
+void testswitch(int v1){
+	switch (v1){
+		case 0:
+			printf("enter case 0");
+		case 1:
+			printf("enter case 1");
+		default : 
+			printf("enter case default");
+	}
+}
+
+int Fibnaci(int n){
+    if(n==1)
+        return (1);
+    if(n==2)
+	return (2);
+     
+    return (Fibnaci(n-1)+Fibnaci(n-2));
+}
+
+void testif(int a){
+	if(a == 1){
+		printf("a = 1");
+		return ; 
+	}
+	printf("a = ",a);
+}
+
+int two(){
+	return (2);
+}
+
+void main(){
+	int int_testswitch[3];
+	int n;
+	int index;
+	int fibo;
+
+	n = 0;
+	int_testswitch[0] = 0;
+	int_testswitch[1] = 1;
+	int_testswitch[2] = 2;
+
+	printf("test complex:", ((1 + 3) * 'a'  / (two())));
+
+	testprint();
+	while(n <= 2){	
+		testswitch(n);
+		n = n + 1;
+	}
+	testif(1);
+	testif(100);
+
+	scanf(index);
+	
+	fibo = Fibnaci(index);
+
+	printf("number ",index);
+	printf(" fib num is ",fibo);
+
+
+}

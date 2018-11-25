@@ -1,30 +1,38 @@
-const int a = 3,c = +7;const int b = -5;const char d = 'o';
+const int a = 3;
+const int b = -5;
+const char d = 'o';
 int x;int y;char z;char xx[20];
 int _a,_a1,_a1a;
 int _b1,_c2,_d3,_e4,_f5,_g6,_h7,_i8,_j9,_k0,_l,_m,_n,_o,_p,_q,_r,_s,_t,_u,_v,_w,_x,_y,_z;
 char _A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z; 
+
 int func1(int i){
 	if(i == 0)return (1);
-	if(i < 0)return 0;
+	if(i < 0)return (0);
 	return (func1(i - 1) + 1);
 }
-int func2{
+
+int func2(){
 	return (y * y - (x * x + 5) / 2);
 }
+
 char func3(char i){
 	return (i);
 }
+
 void func4(int i,int j,int k){
 	y = x * i + y * j + k;
 }
-void func5{
+
+void func5(){
 	x = y * y + x * x;
 }
+
 void func6(char i,char j,char k,char l){
-	printf(i,j,k,l);
+	printf(i);
 }
 void main(){
-	const int abcd12 = 0213;
+	const int abcd12 = 213;
 	int tmp1,tmp2,tmp3,tmp4;
 	char tmp5,tmp6;
 	int a1,a2,a3;
@@ -37,22 +45,16 @@ void main(){
 	printf("Please input a character z:");
 	scanf(z); 
 	if(x > 10){tmp1 = func1(x);cnt = cnt + 1;}
-	else tmp1 = func2 + 5;
 	if(x >= 5){tmp2 = func1(6);cnt = cnt + 1;}
-	else tmp2 = func2 * 6 - 20;
 	if(y + 5 < 3 * x){tmp3 = func1(b);cnt = cnt + 1;} 
-	else tmp3 = func2;
 	if(y <= 5){tmp4 = func1(+y-x*6+8);cnt = cnt + 1;}
-	else tmp2 = (func2 == 1);
 	if(z == '*'){tmp5 = func3(z);cnt = cnt + 1;}
-	else tmp5 = func3(d);
 	if(z != '+'){tmp6 = func3('a');cnt = cnt + 1;}
-	else tmp6 = func3(z);
 	printf("Please input three numbers:");
 	scanf(a1,a2,a3);
 	func4(a1,a2,a3);
 	printf("now y equals to ",y);
-	func5;
+	func5();
 	printf("now x equals to ",x);
 	func6('x','y','z','r');
 	xx[cnt] = 2;
@@ -64,8 +66,5 @@ void main(){
 	    default:printf("More than two conditions are satisfied");
 	    }
 	;;;;;
-	do {
-		y = y + 1;
-	}while(x * 3 >= y * 2)
 	printf("_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
 }

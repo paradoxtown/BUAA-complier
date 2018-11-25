@@ -16,7 +16,7 @@ int main() {
 //    while(getsym() > 0) {}
     Syntaxer syntaxer;
     syntaxer.nxtsym();
-    syntaxer.progress();
+    syntaxer.program();
 //    syntaxer.expression();
 //    syntaxer.statement();
 //    syntaxer.retfuncdec();

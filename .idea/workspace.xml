@@ -12,8 +12,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73e12b6b-a064-4935-990b-8814c28eb9f4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/16061162_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/16061162_test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/16061171_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/lexer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/lexer.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/complier.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/complier.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/retfunction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/retfunction.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/switch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/switch.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/testdone.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/testdone.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/vardec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/vardec.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/voidfunction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/voidfunction.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/while.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/while.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lexer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/main.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syntaxer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/syntaxer.h" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,33 +46,35 @@
     <session id="577060165">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="23677" />
-          <entry key="h" value="1783" />
-          <entry key="mm" value="73" />
+          <entry key="cpp" value="24832" />
+          <entry key="h" value="1842" />
+          <entry key="mm" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="25533" />
+          <entry key="ObjectiveC" value="26753" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="7" />
-          <entry key="h" value="14" />
+          <entry key="cpp" value="10" />
+          <entry key="h" value="17" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="21" />
+          <entry key="ObjectiveC" value="27" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -62,10 +83,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lexer.h">
+        <entry file="file://$PROJECT_DIR$/syntaxer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#97#115#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+              <folding>
+                <element signature="e#41#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quader.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/quader.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
-              <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lexer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -83,62 +146,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lexer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
-              <folding>
-                <element signature="e#40#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/syntaxer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-242">
-              <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
-              <folding>
-                <element signature="e#97#115#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="647" column="26" selection-start-line="647" selection-start-column="26" selection-end-line="647" selection-end-column="26" />
-              <folding>
-                <element signature="e#41#62#0" expanded="true" />
-                <element signature="e#418#651#0" />
-                <element signature="e#653#1668#0" />
-                <element signature="e#1670#2255#0" />
-                <element signature="e#2257#3968#0" />
-                <element signature="e#3970#4796#0" />
-                <element signature="e#4798#5552#0" />
-                <element signature="e#6318#6485#0" />
-                <element signature="e#6769#7153#0" />
-                <element signature="e#7545#7883#0" />
-                <element signature="e#7910#7969#0" />
-                <element signature="e#7688#10716#0" />
-                <element signature="e#10718#11253#0" />
-                <element signature="e#11274#11614#0" />
-                <element signature="e#27425#28104#1" />
-                <element signature="e#28145#28722#1" />
-                <element signature="e#28758#29152#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="266">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -147,7 +158,7 @@
         <entry file="file://$PROJECT_DIR$/memory_helper.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="16" />
+              <caret line="11" column="16" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -156,8 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EQUSY</find>
-      <find>ASSIGNSY</find>
       <find>getsym();</find>
       <find>getsym\(\);\n        symtype = returnsym\(\);</find>
       <find>back</find>
@@ -166,13 +175,33 @@
       <find>error\(\)</find>
       <find>re</find>
       <find>returnname</find>
-      <find>statement</find>
       <find>characterlist</find>
+      <find>condi</find>
+      <find>voidfunc</find>
+      <find>Some thing wrong</find>
+      <find>some thing</find>
+      <find>something</find>
+      <find>someth</find>
+      <find>if</find>
+      <find>ifsta</find>
+      <find>whilestate</find>
+      <find>ifstate</find>
+      <find>some</find>
+      <find>while</find>
+      <find>swi</find>
+      <find>statement</find>
+      <find>printf</find>
+      <find>progre</find>
+      <find>value</find>
+      <find>valuelist</find>
+      <find>callre</find>
+      <find>index</find>
     </findStrings>
     <replaceStrings>
       <replace>nxtsym();</replace>
       <replace>lexerror()</replace>
       <replace>lexerror\(\)</replace>
+      <replace>top</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -190,14 +219,14 @@
         <option value="$PROJECT_DIR$/optimizer.h" />
         <option value="$PROJECT_DIR$/optimizer.cpp" />
         <option value="$PROJECT_DIR$/compiler.h" />
-        <option value="$PROJECT_DIR$/main.h" />
         <option value="$PROJECT_DIR$/lexer.h" />
         <option value="$PROJECT_DIR$/error.h" />
         <option value="$PROJECT_DIR$/error.cpp" />
-        <option value="$PROJECT_DIR$/syntaxer.h" />
         <option value="$PROJECT_DIR$/lexer.cpp" />
+        <option value="$PROJECT_DIR$/main.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/syntaxer.cpp" />
+        <option value="$PROJECT_DIR$/syntaxer.h" />
       </list>
     </option>
   </component>
@@ -207,10 +236,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1057" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1052" />
+    <option name="y" value="208" />
+    <option name="width" value="781" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -218,17 +248,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="complier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="complier" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Source Files">
           <expand>
@@ -244,6 +263,17 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="complier" type="cbb8eebc:String" user="complier" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="complier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="complier" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,12 +336,15 @@
       <workItem from="1542443032663" duration="10144000" />
       <workItem from="1542465440494" duration="645000" />
       <workItem from="1542522607526" duration="41889000" />
-      <workItem from="1542625072632" duration="52671000" />
+      <workItem from="1542625072632" duration="53875000" />
+      <workItem from="1542764476577" duration="8775000" />
+      <workItem from="1542783749358" duration="11858000" />
+      <workItem from="1543058292325" duration="4988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130413000" />
+    <option name="totallyTimeSpent" value="157238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,20 +356,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19349681" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14498934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36158797" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45386267" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38304722" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.6223176" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.6502146" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32725322" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -348,18 +381,18 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.45682302" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19349681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3282123" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993576" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28540772" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3025751" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.4441341" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3282123" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.6212446" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32725322" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.40879828" />
@@ -380,59 +413,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>180</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>18</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.h</url>
+          <line>62</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>925</line>
-          <option name="timeStamp" value="48" />
+          <line>988</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>445</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>212</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>569</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>586</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>673</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>236</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>932</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>678</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
-          <line>977</line>
-          <option name="timeStamp" value="60" />
+          <line>1115</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -454,11 +452,17 @@
         <watch expression="symnum" language="ObjectiveC" />
         <watch expression="line[cnt]" />
         <watch expression="symnumber" language="ObjectiveC" />
+        <watch expression="isbackfromvardec" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>isbackfromvardec</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>symnumber</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -504,11 +508,6 @@
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>token</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -516,13 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -544,13 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -596,51 +581,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error.h">
+    <entry file="file://$PROJECT_DIR$/lexer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/error.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="4256">
+          <caret line="224" column="20" selection-start-line="224" selection-start-column="20" selection-end-line="224" selection-end-column="20" />
           <folding>
-            <element signature="e#41#59#0" expanded="true" />
+            <element signature="e#40#59#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memory_helper.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lexer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lexer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="247">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -654,10 +608,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/error.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memory_helper.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+        <state relative-caret-position="399">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#97#115#0" expanded="true" />
           </folding>
@@ -666,27 +651,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="647" column="26" selection-start-line="647" selection-start-column="26" selection-end-line="647" selection-end-column="26" />
+        <state relative-caret-position="456">
+          <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
           <folding>
             <element signature="e#41#62#0" expanded="true" />
-            <element signature="e#418#651#0" />
-            <element signature="e#653#1668#0" />
-            <element signature="e#1670#2255#0" />
-            <element signature="e#2257#3968#0" />
-            <element signature="e#3970#4796#0" />
-            <element signature="e#4798#5552#0" />
-            <element signature="e#6318#6485#0" />
-            <element signature="e#6769#7153#0" />
-            <element signature="e#7545#7883#0" />
-            <element signature="e#7910#7969#0" />
-            <element signature="e#7688#10716#0" />
-            <element signature="e#10718#11253#0" />
-            <element signature="e#11274#11614#0" />
-            <element signature="e#27425#28104#1" />
-            <element signature="e#28145#28722#1" />
-            <element signature="e#28758#29152#1" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>

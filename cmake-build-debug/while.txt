@@ -1,3 +1,16 @@
 while (tmp < 20){
-    tmp = 20;
+    if (str[tmp] < 'a'){
+        if (str[tmp] > 'Z'){
+            tmp = 20;
+            print(str);
+        }
+    }
+    if (str[tmp] > 'z'){
+        tmp = 20;
+        print(str);
+    }
+    if (str[tmp] < 'A'){
+        tmp = 20;
+        print(str);
+    }
 }

@@ -171,14 +171,28 @@ int getsym(){
         cc --;
     }
     else if (isdigit(ch)) {
-        while (isdigit(ch)) {
-            token[l++] = ch;
-            ch = getchr();
+        if (ch != '0') {
+            while (isdigit(ch)) {
+                token[l++] = ch;
+                ch = getchr();
+            }
+            num = transNum(token);
+            result = INTEGERSY;
+            cc--;
+            // printf("The decimal number is %d\n", num);
         }
-        result = INTEGERSY;
-        cc --;
-        num = transNum(token);
-        // printf("The decimal number is %d\n", num);
+        else {
+            ch = getchr();
+            if (isdigit(ch)) {
+                lexerror();
+                return - 1;
+            }
+            else {
+                num = 0;
+                result = INTEGERSY;
+                cc --;
+            }
+        }
     }
     else if (ch == '+'){ token[l ++] = ch; result = PLUSSY;}
     else if (ch == '-'){ token[l ++] = ch; result = MINUSSY;}

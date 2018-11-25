@@ -1,3 +1,5 @@
-int apple(int a){
-    return (a);
+int func1(int i){
+    if(i == 0)return (1);
+    if(i < 0)return (0);
+    return (func1(i - 1) + 1);
 }
