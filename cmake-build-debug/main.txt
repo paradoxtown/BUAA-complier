@@ -1,0 +1,7 @@
+void func6(char i,char j,char k,char l){
+    printf(i);
+}
+
+void main(){
+    func6('x','y','z','r');
+}

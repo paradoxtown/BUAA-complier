@@ -4,6 +4,8 @@
 
 #include "quader.h"
 
+
+
 void Quader::emit() {
 
 }

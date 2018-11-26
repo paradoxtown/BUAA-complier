@@ -27,6 +27,8 @@ string.h
 -
 iostream
 -
+vector
+-
 
 C:/Users/MUSE/Desktop/complier/syntaxer.h
 lexer.h

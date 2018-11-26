@@ -12,7 +12,6 @@ int multi(int a, int b){
 }
 
 void testttt(){
-    a = a + 1;
     return;
 }
 

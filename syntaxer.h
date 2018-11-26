@@ -14,10 +14,10 @@ typedef struct{
     char name[NAMELEN];
     obj object; // obj {constant, variable, typel, function};
     typ type; // typ {ints, chars, voids};
-    int lev;
+    int level;
     int value;
     int address; // the storage address of symbol or the offset
-    int num; // means the number of parameter of function or the length of array
+    int number; // means the number of parameter of function or the length of array
 }item;
 
 typedef struct{
@@ -33,7 +33,6 @@ public:
     void enter(char *name, obj object, typ type, int lev, int value, int addr, int num);
     void pushtab(char *name, obj object, typ type, int lev, int value, int addr, int num);
     int  searchtab(char *name, obj object);
-    int  searchtab(char *name);
     void retfuncdec();
     void voidfuncdec();
     void functionmain();

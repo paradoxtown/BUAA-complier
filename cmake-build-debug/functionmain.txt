@@ -1,3 +1,0 @@
-void fun(){
-    func5();
-}
