@@ -250,17 +250,18 @@ int getsym(){
         print(token, result);
         // cout << token << endl;
         getsymInit();
+        token[l ++] = '\"';
         do {
             ch = getchr();
             token[l ++] = ch;
         }while (cc == ll || ch != '\"');
         if (ch == '\"'){
-            token[l - 1] = '\0';
+            token[l] = '\0';
             result = STRINGSY;
             // setinfo();
             print(token, result);
             // cout << token << endl;
-            getsymInit();
+            // getsymInit();
             token[l ++] = '\"';
             result = DQUOSY;
         }

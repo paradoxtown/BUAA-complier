@@ -8,11 +8,33 @@
 
 C:/Users/MUSE/Desktop/complier/error.h
 
+C:/Users/MUSE/Desktop/complier/lexer.cpp
+iostream
+-
+cstring
+-
+cstdio
+-
+set
+-
+map
+-
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
+main.h
+C:/Users/MUSE/Desktop/complier/main.h
+
 C:/Users/MUSE/Desktop/complier/lexer.h
 
 C:/Users/MUSE/Desktop/complier/main.h
 lexer.h
 C:/Users/MUSE/Desktop/complier/lexer.h
+
+C:/Users/MUSE/Desktop/complier/quader.h
+main.h
+C:/Users/MUSE/Desktop/complier/main.h
+iostream
+-
 
 C:/Users/MUSE/Desktop/complier/syntaxer.cpp
 syntaxer.h
@@ -23,6 +45,8 @@ main.h
 C:/Users/MUSE/Desktop/complier/main.h
 error.h
 C:/Users/MUSE/Desktop/complier/error.h
+quader.h
+C:/Users/MUSE/Desktop/complier/quader.h
 string.h
 -
 iostream
