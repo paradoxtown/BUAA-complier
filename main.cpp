@@ -3,11 +3,16 @@
 #include "lexer.h"
 #include "syntaxer.h"
 #include "quader.h"
+#include "asmer.h"
 
 using namespace std;
 
 char token[MAXN];
 symbol result;
+
+string t[REGISTERNUM];
+map<string, int>tmpvar;
+map<string, int>localvar;
 
 int main() {
     string path;
@@ -22,6 +27,8 @@ int main() {
     syntaxer.nxtsym();
     syntaxer.program();
     printquads();
+    quad2asm();
+//    testoffset();
 
 //    syntaxer.expression();
 //    syntaxer.statement();

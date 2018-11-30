@@ -1,0 +1,109 @@
+string  "error" _str0
+jump    main
+sum
+para    int a
+para    int b
+func    int sum 2
+factor  t0 a
+factor  t1 b
+mult    t2 t0 t1
+factor  t3 a
+factor  t4 b
+sub     t5 t3 t4
+mult    t6 t2 t5
+sub     t7 0 t6
+factor  t8 a
+factor  t9 b
+add     t10 t8 t9
+factor  t11 b
+sub     t12 t10 t11
+add     t13 t7 t12
+ret     t13
+jr      $ra
+main
+func    void main 0
+var     int a
+var     int b
+var     int c
+var     char ch
+read    a int
+read    b int
+call    sum
+factor  t1 a
+push    t1
+factor  t2 b
+push    t2
+jal     sum
+factor  t0 $v0
+assign  c t0
+factor  t3 c
+write   t3 2
+read    ch char
+factor  t4 ch
+beq     t4 97 label1
+jump    label2
+label1
+factor  t5 c
+bltz    t5 10 label3
+jump    label4
+label3
+write   10 2
+label4
+factor  t6 c
+bgez    t6 10 label5
+jump    label6
+label5
+factor  t7 c
+write   t7 2
+label6
+jump    label0
+label2
+beq     t4 98 label7
+jump    label8
+label7
+factor  t8 c
+add     t9 t8 100
+assign  c t9
+factor  t10 c
+write   t10 2
+jump    label0
+label8
+beq     t4 99 label9
+jump    label10
+label9
+label12
+factor  t11 c
+bgtz    t11 0 label13
+jump    label11
+label13
+factor  t12 c
+write   t12 2
+factor  t13 c
+sub     t14 t13 1
+assign  c t14
+jump    label12
+label11
+jump    label0
+label10
+beq     t4 100 label14
+jump    label15
+label14
+factor  t15 c
+beq     t15 8 label17
+jump    label18
+label17
+write   121 1
+jump    label16
+label18
+beq     t15 0 label19
+jump    label20
+label19
+write   110 1
+jump    label16
+label20
+write   _str0 1 str
+label16
+jump    label0
+label15
+write   106 1
+label0

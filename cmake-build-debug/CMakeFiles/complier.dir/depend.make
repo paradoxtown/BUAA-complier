@@ -3,6 +3,9 @@
 
 CMakeFiles/complier.dir/asmer.cpp.obj: ../asmer.cpp
 CMakeFiles/complier.dir/asmer.cpp.obj: ../asmer.h
+CMakeFiles/complier.dir/asmer.cpp.obj: ../lexer.h
+CMakeFiles/complier.dir/asmer.cpp.obj: ../main.h
+CMakeFiles/complier.dir/asmer.cpp.obj: ../quader.h
 
 CMakeFiles/complier.dir/error.cpp.obj: ../error.cpp
 CMakeFiles/complier.dir/error.cpp.obj: ../error.h
@@ -11,6 +14,7 @@ CMakeFiles/complier.dir/lexer.cpp.obj: ../lexer.cpp
 CMakeFiles/complier.dir/lexer.cpp.obj: ../lexer.h
 CMakeFiles/complier.dir/lexer.cpp.obj: ../main.h
 
+CMakeFiles/complier.dir/main.cpp.obj: ../asmer.h
 CMakeFiles/complier.dir/main.cpp.obj: ../lexer.h
 CMakeFiles/complier.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/complier.dir/main.cpp.obj: ../main.h

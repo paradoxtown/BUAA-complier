@@ -10,6 +10,7 @@
 #define ELELEN 100
 #define PINDEXLEN 100
 
+
 typedef struct{
     char name[NAMELEN];
     obj object; // obj {constant, variable, typel, function};
@@ -44,7 +45,6 @@ public:
     void isnumber();
     void constantdef();
     void constdec();
-    void dechead();
     void vardef();
     void vardec();
     void program();
@@ -52,8 +52,8 @@ public:
     void expression();
     void term();
     void factor();
-    void callvoidfunc();
-    void callretfunc();
+    void callvoidfunc(string funcname);
+    void callretfunc(string funcname);
     void assignment();
     void statementlist();
     void compoundstatement();
@@ -67,6 +67,7 @@ public:
     void printfstatment();
     void scanfstatement();
     void returnstatement();
+    // void printtab();
 };
 
 

@@ -4,6 +4,9 @@
 CMakeFiles/complier.dir/asmer.cpp.obj
  C:/Users/MUSE/Desktop/complier/asmer.cpp
  C:/Users/MUSE/Desktop/complier/asmer.h
+ C:/Users/MUSE/Desktop/complier/lexer.h
+ C:/Users/MUSE/Desktop/complier/main.h
+ C:/Users/MUSE/Desktop/complier/quader.h
 CMakeFiles/complier.dir/error.cpp.obj
  C:/Users/MUSE/Desktop/complier/error.cpp
  C:/Users/MUSE/Desktop/complier/error.h
@@ -12,6 +15,7 @@ CMakeFiles/complier.dir/lexer.cpp.obj
  C:/Users/MUSE/Desktop/complier/lexer.h
  C:/Users/MUSE/Desktop/complier/main.h
 CMakeFiles/complier.dir/main.cpp.obj
+ C:/Users/MUSE/Desktop/complier/asmer.h
  C:/Users/MUSE/Desktop/complier/lexer.h
  C:/Users/MUSE/Desktop/complier/main.cpp
  C:/Users/MUSE/Desktop/complier/main.h

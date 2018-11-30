@@ -10,8 +10,6 @@
 #include "main.h"
 
 using namespace std;
-// TODO : tolower
-//char token[MAXN];
 char line[ROWLENGTH][LENGTH];
 int num = 0, rows = 0;
 int cc = 0, ll = 0, l = 0, cnt = 0;
@@ -110,7 +108,7 @@ char getchr(){
     }
     ch = line[cnt - 1][cc ++];
     // cout << ch << endl;
-    return ch;
+    return char(tolower(ch));
 }
 
 symbol isReserved(char* word){
@@ -262,7 +260,7 @@ int getsym(){
             print(token, result);
             // cout << token << endl;
             // getsymInit();
-            token[l ++] = '\"';
+            // token[l ++] = '\"';
             result = DQUOSY;
         }
         else{

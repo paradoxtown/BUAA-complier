@@ -4,14 +4,11 @@ int arr[100];
 char str1[10];
 
 int sum(int a, int b){
-    return (-(a + b) / (a - b));
-}
-
-int multi(int a, int b){
-    return (a * b);
+    return (-(a * b) * (a - b) + ((a + b) - b));
 }
 
 void testttt(){
+    int x[100];
     return;
 }
 
@@ -27,47 +24,49 @@ int fib(int n){
 
 void print(char s){
     printf("Unexpection imformation: ", s);
+    return;
 }
 
 void main(){
-    int n, tmp, result;
+    int n, result, tmp, c;
     char str[20], ch;
     printf("Please input a integer: ");
     scanf(n);
     tmp = 0;
-
     while(tmp != n){
         result = fib(tmp + 1);
         printf("The nth fib number is", result);
         tmp = tmp + 1;
     }
-    printf("Please input a string: ");
-    scanf(str);
-
-    tmp = 0;
-    while (tmp < 20){
-        if (str[tmp] < 'a'){
-            if (str[tmp] > 'Z'){
-                tmp = 20;
-                print(str);
+    c = sum(n, tmp);
+    printf("The number c is: ", c);
+    printf("Please input a character: ");
+    scanf(ch);
+    print(ch);
+    switch(ch) {
+        case 'a': {
+            if (c < 10) {
+                printf(10);
+            }
+            if (c >= 10){
+                printf(c);
             }
         }
-        if (str[tmp] > 'z'){
-            tmp = 20;
-            print(str);
+        case 'b': {
+            c = c + 100;
+            printf(c);
         }
-        if (str[tmp] < 'A'){
-            tmp = 20;
-            print(str);
+        case 'c': 
+        while(c > 0){
+            printf(c);
+            c = c - 1;
         }
-    }
-
-    scanf(ch);
-    switch(ch){
-        case 'a': ch = 'A';
-        case 'b': ch = 'B';
-        case 'c': ch = 'C';
-        case 'd': ch = 'D';
-        default: ch = 'E';
+        case 'd': 
+        switch(c){
+            case 8: printf('y');
+            case 0: printf('n');
+            default: printf("ERROR");
+        }
+        default: printf('j');
     }
 }

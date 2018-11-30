@@ -4,27 +4,12 @@
 
 #ifndef COMPLIER_ASMER_H
 #define COMPLIER_ASMER_H
+#include "quader.h"
 
-
-class Asmer {
-public:
-    void push();
-    void getaddr();
-    void entercode();
-    void constdeccode();
-    void vardeccode();
-    void callcode();
-    void parametercode();
-    void setlabel();
-    void jumpcode();
-    void assigncode();
-    void whilecode();
-    void ifcode();
-    void switchcode();
-    void scanfcode();
-    void printfcode();
-    void returncode();
-    void quad2asm();
-};
+void initdata(quad midcode);
+void quad2asm();
+int getidx(string reg);
+bool isconst(string opnum);
+void testoffset();
 
 #endif //COMPLIER_ASMER_H

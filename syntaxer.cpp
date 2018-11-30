@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by MUSE on 2018/11/17.
 //
@@ -18,15 +20,16 @@ using namespace std;
 
 tab stab;
 int level = 0, value, address, number, idx, funcidx = 0;
-int regnum = 0, labelnum = 0;
-string labeln, labelm, labelout, tn, tm, to;
+int regnum = 0, labelnum = 0, strnum = 0;
+int ischar = 0;
+int funcaddr;
+string labeln, labelm, switchout, tn, tm, to;
+string switchcase;
 int symnumber = 0;
 bool isbackfromvardec = false;
 bool havemain = false;
-bool isarray = false;
+bool lock = true;
 symbol symtype;
-typ factortype;
-obj factorobj;
 char symname[NAMELEN];
 char name4back[NAMELEN];
 
@@ -49,7 +52,7 @@ void Syntaxer::pushtab(char *name, obj object, typ type, int level, int value, i
     if (object == function){
         for (int i = 1; i < stab.pnum; i ++){ // to match the sub program's name
             if (!strcmp(stab.element[stab.pindex[i]].name, name)){
-                error(); // TODO
+                error();
                 return;
             }
         }
@@ -58,8 +61,8 @@ void Syntaxer::pushtab(char *name, obj object, typ type, int level, int value, i
     else { // object is const, var, typel
         int i = stab.pindex[stab.pnum - 1]; // find the current sub program
         for ( ; i < stab.top; i ++){
-            if (!strcmp(stab.element[i].name, name)){ // if it has been defined
-                error(); // TODO
+            if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object){ // if it has been defined
+                error();
                 return;
             }
         }
@@ -82,49 +85,21 @@ int Syntaxer::searchtab(char *name, obj object) {
                 && stab.element[stab.pindex[i] - 1].object == function)
                 break;
         }
-        if (i >= stab.pnum) { // TODO: "==" also ok
+        if (i >= stab.pnum) {
             return 0; // hasn't been defined
         }
         return i;
     }
     else { // is not function
         // int i = stab.pindex[stab.pnum - 1];
-        int i = 1; // cuz we should visit the external var, for example: when we call a function in the main function.
-        for (; i < stab.top; i ++){
-            if (!strcmp(stab.element[i].name, name)){
+        int i = stab.top - 1; // cuz we should visit the external var, for example: when we call a function in the main function.
+        for (; i > 0; i --){ // and we should use the latest value to confirm our query object
+            if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object){
                 break;
             }
         }
-        if (i == stab.top) {
+        if (i == 0) {
             return 0;
-        }
-//        if (i == stab.top){ // hasn't not been found, may be define in the global
-//            int len = stab.pindex[1];
-//            for (i = 0; i < len; i ++){
-//                if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object)
-//                    break;
-//            }
-//            if (i == len){ // undefined
-//                return 0;
-//            }
-//            if (stab.element[i].object == variable ||
-//                stab.element[i].object == arrays) {
-//                factortype = stab.element[i].type;
-//                factorobj = stab.element[i].object;
-//                // TODO: should i distinguish array to a boolean?
-//                // return stab.element[i].address;
-//                return i;
-//            }
-//        }
-        else {
-            if (stab.element[i].object == variable ||
-                stab.element[i].object == arrays){
-                factortype = stab.element[i].type;
-                factorobj = stab.element[i].object;
-                // TODO: should i distinguish array to a boolean? maybe we should do something here.
-                // return stab.element[i].address; // where we can get the value
-                return i;
-            }
         }
         return i;
     }
@@ -134,13 +109,16 @@ int Syntaxer::searchtab(char *name, obj object) {
 // ＜有返回值函数定义＞ ::= ＜声明头部＞'('＜参数表＞')' '{'＜复合语句＞'}'
 void Syntaxer::retfuncdec() {
     if (symtype == INTSY || symtype == CHARSY) {
+        address = 0;
+        regnum = 0; // TODO: in the function the register can start from 0
+        emit(label, symname, "", ""); // TODO: the function name shouldn't be same with the inst
         char funcname[NAMELEN];
         typ typl = symtype == INTSY ? ints : chars;
-        nxtsym(); // TODO: enter in tab
+        nxtsym();
         strcpy(funcname, token); // function name
         idx = searchtab(funcname, function);
         if (idx == 0) {
-            enter(funcname, function, typl, level + 1, 0, address=0, number);
+            enter(funcname, function, typl, level, 0, address, number); // we need to set space for function
         }
         else {
             error();
@@ -155,13 +133,15 @@ void Syntaxer::retfuncdec() {
         nxtsym();
         parameterlist(); // get para list length
         stab.element[funcidx].number = number; // attention on this funcidx, reset the number of function
-        emit(func, typl == ints ? "int" : "char", funcname, to_string(number));
+        emit(func, typl == ints ? "int" : "char", funcname, to_string(number)); // we need to use emit2
         if (symtype != LPRTSY) {
             error();
             return;
         }
         nxtsym();
         compoundstatement();
+        tmpvar[funcname] = regnum; // record the number of tmpvar
+        localvar[funcname] = address / 4;
         if (symtype != RPRTSY) {
             error();
             return;
@@ -173,18 +153,23 @@ void Syntaxer::retfuncdec() {
         return;
     }
     nxtsym();
+    emit(jr, "$ra", "", "");
     cout << "This is a declaration of function which have returning value." << endl;
 }
 
 // ＜无返回值函数定义＞ ::= void＜标识符＞'('＜参数表＞')''{'＜复合语句＞'}'
 void Syntaxer::voidfuncdec() {
-    cout << "This is the head of void function" << endl;
     if (symtype == VOIDSY) {
+        address = 0;
+        regnum = 0;
+        emit(label, symname, "", "");
+        char funcname[NAMELEN];
         nxtsym();
+        strcpy(funcname, token);
         strcpy(symname, token);
         idx = searchtab(symname, function);
         if (idx == 0) {
-            enter(symname, function, voids, level + 1, value=0, address=0, number);
+            enter(symname, function, voids, level, value=0, address, number);
         }
         else {
             error();
@@ -199,12 +184,15 @@ void Syntaxer::voidfuncdec() {
         nxtsym();
         parameterlist();
         stab.element[funcidx].number = number;
+        emit(func, "void", funcname, to_string(number));
         if (symtype != LPRTSY) {
             error();
             return;
         }
         nxtsym();
         compoundstatement();
+        tmpvar[funcname] = regnum;
+        localvar[funcname] = address / 4;
         if (symtype != RPRTSY) {
             error();
             return;
@@ -216,14 +204,17 @@ void Syntaxer::voidfuncdec() {
         return;
     }
     nxtsym();
+    emit(jr, "$ra", "", "");
     cout << "This is a declaration of function which don\'t have returning value." << endl;
 }
 
 // ＜主函数＞ ::= void main'('')''{'＜复合语句＞'}'
 void Syntaxer::functionmain() {
-    cout << "This is the head of function main." << endl;
-    level = 1;
     if (symtype == VOIDSY) {
+        address = 0;
+        regnum = 0;
+        emit(label, "main", "", "");
+        emit(func, "void", "main", "0");
         nxtsym();
         if (symtype != MAINSY) {
             error();
@@ -246,6 +237,8 @@ void Syntaxer::functionmain() {
         }
         nxtsym();
         compoundstatement();
+        tmpvar["main"] = regnum;
+        localvar["main"] = address / 4;
         if (symtype != RPRTSY) {
             error();
             return;
@@ -265,12 +258,11 @@ void Syntaxer::param() {
         typ typl = symtype == INTSY ? ints : chars;
         nxtsym();
         strcpy(symname, token);
-        // TODO : search tab and insert tab.
-        idx = searchtab(symname, variable);
+        idx = searchtab(symname, parameter);
         if (idx == 0) {
-            address ++;
-            enter(symname, variable, typl, level, 0, address, 1);
+            enter(symname, parameter, typl, level, 0, address, 1);
             emit(para, typl == ints ? "int" : "char", symname, "");
+            address += 4;
         }
         else {
             error();
@@ -313,15 +305,18 @@ void Syntaxer::valuelist() {
     }
     expression();
     number ++;
-    tn = "t" + to_string(regnum - 1);
-    emit(push, tn, "", "");
+    int tmpaddr = 0; // be relative to the function's address in the stack, this is the offset
+    // tn = "t" + to_string(regnum - 1);
+    emit(push, to, "", "", false, tmpaddr); // TODO: use to register which is the returning value from expression
+    tmpaddr += 4;
     if (symtype == COMMASY) {
         do {
             nxtsym();
             expression();
             number ++;
-            tn = "t" + to_string(regnum - 1);
-            emit(push, tn, "", "");
+            // tn = "t" + to_string(regnum - 1);
+            emit(push, to, "", "", false, tmpaddr);
+            tmpaddr += 4;
         } while (symtype == COMMASY);
     }
     else if (symtype != RPARSY){
@@ -337,9 +332,10 @@ void Syntaxer::characterlist() {
     if (token[0] == '\"') {
         int tokenpoint = 1;
         do {
-            emit(write, to_string(int(token[tokenpoint])), "", "");
+            // emit(write, to_string(int(token[tokenpoint])), "1", "");
             tokenpoint ++;
         } while(token[tokenpoint] != '\"');
+        emit(str, token, "_str" + to_string(strnum),  "", true, 0);
     }
     else {
         error();
@@ -352,11 +348,9 @@ void Syntaxer::characterlist() {
 // ＜字符＞ ::= '＜加法运算符＞'｜'＜乘法运算符＞'｜'＜字母＞'｜'＜数字＞'
 void Syntaxer::ischaracter() {
     if (token[0] == '\''/*symtype == SQUOSY*/) { // "'"
-        // TODO: maybe we should optimize lexer
         value = token[1];
         if (token[2] == '\''/* symtype == SQUOSY */) {
             address++;
-            // TODO: we will generate the 4-quad here in the future
         }
         else {
             error();
@@ -371,14 +365,8 @@ void Syntaxer::isnumber() {
         nxtsym();
         value = transNum(token); // may i rename the "returnname" to " returntoken"?
         value = symtype == PLUSSY ? value : -value;
-        address++; // TODO: i don't really understand the address and the num
-        // enter(symname, constant, ints, level, value, address, number);
-        // TODO: we will generate the 4-quad here in the future
     } else if (symtype == INTEGERSY) {
-        //TODO: i forget to deal the first 0 problem
         value = transNum(returnname());
-        address++;
-        // TODO: we will generate the 4-quad here in the future
     } else {
         error();
         return;
@@ -401,7 +389,8 @@ void Syntaxer::constantdef() {
                     if (idx == 0) {
                         number = 1;
                         enter(symname, constant, ints, level, value, address, number);
-                        emit(cons, "int", symname, to_string(value));
+                        emit(cons, "int", symname, to_string(value), level == 1, address);
+                        address += 4;
                     }
                     else {
                         error();
@@ -432,7 +421,8 @@ void Syntaxer::constantdef() {
                     if (idx == 0) {
                         number = 1;
                         enter(symname, constant, chars, level, value, address, number);
-                        emit(cons, "char", symname, to_string(value)); // token is 'ch'
+                        address += 4;
+                        emit(cons, "char", symname, to_string(value), level == 1, address); // token is 'ch'
                     }
                 }
             }
@@ -497,11 +487,11 @@ void Syntaxer::vardef() {
                     nxtsym();
                     if (symtype == RBRACKSY){
                         value = 0;
-                        address += number;
                         idx = searchtab(symname, arrays);
                         if (idx == 0) {
                             enter(symname, variable, tmpsym == INTSY ? ints : chars, level, value, address, number);
-                            emit(arr, tmpsym == INTSY ? "int" : "char", symname, to_string(number)); // array
+                            emit(arr, tmpsym == INTSY ? "int" : "char", symname, to_string(number), level == 1, address); // array
+                            address += number * 4;
                         }
                         else {
                             error();
@@ -516,12 +506,12 @@ void Syntaxer::vardef() {
                 }
                 else { // is not array
                     value = 0;
-                    address ++;
                     number = 1;
                     idx = searchtab(symname, variable);
                     if (idx == 0) {
                         enter(symname, variable, tmpsym == INTSY ? ints : chars, level, value, address, number);
-                        emit(var, tmpsym == INTSY ? "int" : "char", symname, "");
+                        emit(var, tmpsym == INTSY ? "int" : "char", symname, "", level == 1, address);
+                        address += 4;
                     }
                     else {
                         error();
@@ -544,6 +534,7 @@ void Syntaxer::vardec() {
     do {
         symbol tmpsym = symtype;
         nxtsym(); // identifier
+        strcpy(symname, token);
         nxtsym(); // ( or =
         if (symtype == LPARSY) {
             BACK
@@ -572,6 +563,8 @@ void Syntaxer::program() {
     stab.pnum = 2;
     stab.top = 1;
     stab.pindex[1] = 1;
+    address = hb;
+    bool funcdecbegin = true;
     cout << "This is the head of progress." << endl;
     if (symtype == CONSTSY) {
         constdec();
@@ -581,6 +574,7 @@ void Syntaxer::program() {
             if (symtype == INTSY || symtype == CHARSY) { // vardec or retfuncdec
                 symbol tmpsym = symtype;
                 nxtsym(); // identifier
+                strcpy(symname, token);
                 nxtsym(); // '('
                 if (symtype != LPARSY) {
                     BACK
@@ -591,15 +585,25 @@ void Syntaxer::program() {
                     BACK
                     BACK
                     symtype = tmpsym;
+                    if (funcdecbegin) {
+                        emit(jump, "main", "", "");
+                        funcdecbegin = false;
+                        level = 2; // use for judge whether is global
+                    }
                     retfuncdec();
                 }
                 if (isbackfromvardec) {
+                    emit(jump, "main", "", "");
+                    funcdecbegin = false;
+                    level = 2; // use for judge whether is global
                     isbackfromvardec = false;
                     retfuncdec();
                 }
             }
             if (symtype == VOIDSY) {
+                level = 2;
                 nxtsym();
+                strcpy(symname, token);
                 if (symtype == MAINSY) {
                     BACK
                     havemain = true;
@@ -608,6 +612,10 @@ void Syntaxer::program() {
                 } else {
                     BACK
                     symtype = VOIDSY;
+                    if (funcdecbegin) {
+                        emit(jump, "main", "", "");
+                        funcdecbegin = false;
+                    }
                     voidfuncdec();
                 }
             }
@@ -663,17 +671,20 @@ void Syntaxer::statement() {
         }
         else {
             BACK
+            string tmpname = symname;
             symtype = IDENTSY;
             idx = searchtab(symname, function);
             funcidx = idx;
             if (idx > 0) {
                 typ functyp = stab.element[stab.pindex[idx] - 1].type;
+                funcaddr = stab.element[stab.pindex[idx] - 1].address;
                 if (functyp == voids) {
-                    callvoidfunc();
+                    callvoidfunc(tmpname);
                 }
                 else {
-                    callretfunc();
+                    callretfunc(tmpname);
                 }
+                // emit(call, tmpname, "", "");
             }
             else {
                 error();
@@ -716,7 +727,7 @@ void Syntaxer::statementlist() {
             statement();
         } while (symtype == IFSY || symtype == LOOPSY || symtype == LPRTSY ||
                  symtype == IDENTSY || symtype == SCANFSY || symtype == PRINTSY ||
-                 symtype == SWITCHSY || symtype == RETSY || symtype == SEMISY); // TODO
+                 symtype == SWITCHSY || symtype == RETSY || symtype == SEMISY);
     }
 }
 
@@ -731,36 +742,40 @@ void Syntaxer::expression() {
         else { // - a + b
             nxtsym();
             term();
+            string preto = to;
             to = "t" + to_string(regnum);
-            tn = "t" + to_string(regnum - 1);
             regnum ++;
-            emit(sub, to, "0", tn); // to = 0 - tn
+            emit(sub, to, "0", preto); // to = 0 - tn
         }
+        string pretn = to;
         if (symtype == PLUSSY || symtype == MINUSSY) {
             do {
                 symbol tmpsym = symtype;
+                pretn = to;
                 nxtsym();
                 term();
+                string preto = to;
                 to = "t" + to_string(regnum);
-                tn = "t" + to_string(regnum - 1);
-                tm = "t" + to_string(regnum - 2);
                 regnum ++;
-                emit(tmpsym == PLUSSY ? add : sub, to, tn, tm); // to = tn op tm
+                emit(tmpsym == PLUSSY ? add : sub, to, pretn, preto); // to = tn op tm
             } while (symtype == PLUSSY || symtype == MINUSSY);
         }
     }
     else { // a + b
         term();
+        string pretn = to;
         if (symtype == PLUSSY || symtype == MINUSSY) {
             do {
                 symbol tmpsym = symtype;
+                //string tmptn = "t" + to_string(regnum - 1);
+                pretn = to;
                 nxtsym();
                 term();
+                string preto = to;
                 to = "t" + to_string(regnum);
-                tn = "t" + to_string(regnum - 1);
-                tm = "t" + to_string(regnum - 2);
+                // tn = "t" + to_string(regnum - 1);
                 regnum ++;
-                emit(tmpsym == PLUSSY ? add : sub, to, tn, tm); // to = tn op tm
+                emit(tmpsym == PLUSSY ? add : sub, to, pretn, preto); // to = tn op tm
             } while (symtype == PLUSSY || symtype == MINUSSY);
         }
     }
@@ -771,16 +786,19 @@ void Syntaxer::expression() {
 void Syntaxer::term() {
     cout << "This is the head of term." << endl;
     factor();
+    string pretn = to;
     if (symtype == MULTSY || symtype == DIVSY) {
         do {
             symbol tmpsym = symtype;
+            //string tmptn = "t" + to_string(regnum - 1);
+            pretn = to; // current to is the tn = "t" + to_string(regnum - 1); but we need the value if it is constant
             nxtsym();
             factor();
+            string preto = to;
             to = "t" + to_string(regnum);
-            tn = "t" + to_string(regnum - 1);
-            tm = "t" + to_string(regnum - 2);
+            // tn = "t" + to_string(regnum - 1);
             regnum ++;
-            emit(tmpsym == MULTSY ? mult : divide, to, tn, tm); // to = tn op tm
+            emit(tmpsym == MULTSY ? mult : divide, to, pretn, preto); // to = tn op tm
         } while (symtype == MULTSY || symtype == DIVSY);
     }
     cout << "This is a term." << endl;
@@ -791,13 +809,13 @@ void Syntaxer::factor() {
     cout << "This is the head of factor." << endl;
     to = "t" + to_string(regnum);
     string tmpto = to;
-    regnum ++;
     if (symtype == IDENTSY){
         char tmpname[NAMELEN];
         strcpy(tmpname, token);
         strcpy(symname, token);
         nxtsym();
         if (symtype == LPARSY) { // function
+            regnum ++;
             idx = searchtab(symname, function);
             funcidx = idx;
             if (idx == 0) {
@@ -807,16 +825,21 @@ void Syntaxer::factor() {
                 error();
                 return;
             }
+            emit(call, tmpname, "", "");
+            if(lock) stab.element[stab.pindex[idx] - 1].type == ints ? ischar += 2 : ischar ++;
             nxtsym();
             valuelist();
             if (symtype != RPARSY) {
                 error();
                 return;
             }
-            emit(fact, tmpto, "$v0", ""); // fact to $v0
+            emit(jal, tmpname, "", "");
+            emit(fact, tmpto, "$v0", "");
+            to = tmpto;
             nxtsym();
         }
         else if (symtype == LBRACKSY){ // array
+            regnum ++;
             idx = searchtab(symname, arrays);
             if (idx == 0) {
                 error();
@@ -825,47 +848,60 @@ void Syntaxer::factor() {
                 error();
                 return;
             }
+            if(lock) stab.element[stab.pindex[idx] - 1].type == ints ? ischar += 2 : ischar ++;
+            int tmpaddr = stab.element[stab.pindex[idx] - 1].address;
+            bool isglobal = stab.element[stab.pindex[idx] - 1].level == 1;
             nxtsym();
+            lock = false;
             expression(); // array[ expression ]
+            lock = true;
             if (symtype != RBRACKSY){ // missing ']'
                 error();
                 return;
             }
-            tn = "t" + to_string(regnum - 1);
-            emit(fact, tmpto, tmpname, tn); // tn is the expression's value, fact to arr, i
+            // tn = "t" + to_string(regnum - 1);
+            emit(fact, tmpto, tmpname, to, isglobal, tmpaddr); // tn is the expression's value, fact to arr, i
+            to = tmpto;
             nxtsym();
         }
         else { // identifier -> variable
-            idx = searchtab(symname, variable);
+            regnum ++;
+            idx = searchtab(symname, parameter);
             if (idx == 0) {
-                error();
-                return;
+                idx = searchtab(symname, variable);
+                if (idx == 0) {
+                    error();
+                    return;
+                }
             }
-            else {
-                emit(fact, tmpto, tmpname, ""); // fact to a
-            }
+            if(lock) stab.element[idx].type == ints ? ischar += 2 : ischar ++;
+            int tmpaddr = stab.element[idx].address;
+            bool isglobal = stab.element[idx].level == 1;
+            emit(fact, tmpto, tmpname, "", isglobal, tmpaddr); // fact to a
+            to = tmpto;
+            // why there is no nxtsym, cuz we have done it when we get in
         }
     }
     else if (symtype == LPARSY){ // '(' expression ')'
         nxtsym();
         expression(); // have getsym() at last
-        tn = "t" + to_string(regnum - 1);
+        // tn = "t" + to_string(regnum - 1);
         if (symtype != RPARSY){ // ')'
             error();
             return;
         }
-        emit(fact, tmpto, tn, ""); // fact to a
         nxtsym();
     }
     else if (symtype == INTEGERSY || symtype == MINUSSY || symtype == PLUSSY){ // [+/-] <integer>
         isnumber();
-        emit(fact, tmpto, to_string(value), ""); // fact to i
+        if(lock) ischar += 2;
+        to = to_string(value);
         nxtsym();
     }
     else if (symtype == SQUOSY){ // character
         ischaracter();
-        // emit(fact, tmpto, token, ""); // fact to i
-        emit(fact, tmpto, to_string(value), "");
+        if(lock) ischar ++;
+        to = to_string(value);
         nxtsym();
     }
     else {
@@ -876,8 +912,9 @@ void Syntaxer::factor() {
 }
 
 // ＜有返回值函数调用语句＞ ::= ＜标识符＞'('＜值参数表＞')'
-void Syntaxer::callretfunc() {
+void Syntaxer::callretfunc(string funcname) {
     if (symtype == IDENTSY) {
+        emit(call, funcname, "", "");
         nxtsym();
         if (symtype != LPARSY) {
             error();
@@ -893,6 +930,7 @@ void Syntaxer::callretfunc() {
             error();
             return;
         }
+        emit(jal, funcname, "", "");
     }
     else {
         error();
@@ -903,8 +941,9 @@ void Syntaxer::callretfunc() {
 }
 
 // ＜无返回值函数调用语句＞ ::= ＜标识符＞'('＜值参数表＞')'
-void Syntaxer::callvoidfunc() {
+void Syntaxer::callvoidfunc(string funcname) {
     if (symtype == IDENTSY) {
+        emit(call, funcname, "", "");
         nxtsym();
         if (symtype != LPARSY) {
             error();
@@ -920,6 +959,7 @@ void Syntaxer::callvoidfunc() {
             error();
             return;
         }
+        emit(jal, funcname, "", "");
     }
     else {
         error();
@@ -937,13 +977,26 @@ void Syntaxer::assignment() {
         if (symtype == ASSIGNSY) {
             nxtsym();
             expression();
-            tn = "t" + to_string(regnum - 1);
-            emit(assign, name4back, tn, ""); // assign a tn
+
+            idx = searchtab(name4back, parameter);
+            if (idx == 0) {
+                idx = searchtab(name4back, variable);
+                if (idx == 0) {
+                    error();
+                    return;
+                }
+            }
+            int tmpaddr = stab.element[idx].address;
+            bool isglobal = stab.element[idx].level == 1;
+
+            // tn = "t" + to_string(regnum - 1);
+            emit(assign, name4back, to, "", isglobal, tmpaddr); // assign a tn
         }
         else if (symtype == LBRACKSY){ // is array '['
             nxtsym();
             expression();
-            string tmptn = "t" + to_string(regnum - 1); // the length of array
+            // string tmptn = "t" + to_string(regnum - 1); // the length of array
+            string preto = to;
             if (symtype != RBRACKSY){ //
                 error();
                 return;
@@ -952,8 +1005,17 @@ void Syntaxer::assignment() {
             if (symtype == ASSIGNSY){
                 nxtsym();
                 expression();
-                tn = "t" + to_string(regnum - 1);
-                emit(assign, name4back, tmptn, tn); // assign a i b
+
+                idx = searchtab(name4back, variable);
+                if (idx == 0) {
+                    error();
+                    return;
+                }
+                int tmpaddr = stab.element[idx].address;
+                bool isglobal = stab.element[idx].level == 1;
+
+                // tn = "t" + to_string(regnum - 1);
+                emit(assign, name4back, preto, to, isglobal, tmpaddr); // assign a i b
             }
         }
     }
@@ -990,23 +1052,15 @@ void Syntaxer::ifstatement() {
             error();
             return;
         }
-
-        // to see the doc for more information
-        tn = "t" + to_string(regnum - 1);
-        labelm = "label" + to_string(labelnum);
-        labelnum ++;
         labeln = "label" + to_string(labelnum);
         labelnum ++;
-        emit(beq, tn, "1", labelm);
-        emit(jump, labeln, "", ""); // if not equal, we need jump without condition
+        emit(jump, labeln, "", "");
         emit(label, labelm, "", "");
-
+        string tmplabel = labeln;
         nxtsym();
         statement();
         // if statement also has label, so we should use the latest labelnum
-        labeln = "label" + to_string(labelnum);
-        labelnum ++;
-        emit(label, labeln, "", "");
+        emit(label, tmplabel, "", "");
     }
     else {
         error();
@@ -1020,21 +1074,22 @@ void Syntaxer::ifstatement() {
 void Syntaxer::condition() {
     cout << "This is the head of condition." << endl;
     expression();
+    string preto = to;
     if (symtype == LSSY || symtype == LESY || symtype == GTSY ||
         symtype == GESY || symtype == NEQSY || symtype == EQUSY){
         symbol tmpsym = symtype;
         nxtsym();
         expression();
-        to = "t" + to_string(regnum);
-        tn = "t" + to_string(regnum - 1);
-        tm = "t" + to_string(regnum - 2);
+        labelm = "label" + to_string(labelnum);
+        labelnum ++;
+
         switch(tmpsym){
-            case LSSY:  emit(ls, to, tn, tm);
-            case LESY:  emit(le, to, tn, tm);
-            case GTSY:  emit(gt, to, tn, tm);
-            case GESY:  emit(ge, to, tn, tm);
-            case EQUSY: emit(eq, to, tn, tm);
-            case NEQSY: emit(neq, to, tn, tm);
+            case LSSY:  emit(bltz, preto, to, labelm); break;
+            case LESY:  emit(blez, preto, to, labelm); break;
+            case GTSY:  emit(bgtz, preto, to, labelm); break;
+            case GESY:  emit(bgez, preto, to, labelm); break;
+            case EQUSY: emit(beq, preto, to, labelm); break;
+            case NEQSY: emit(bne, preto, to, labelm); break;
             default:;
         }
     }
@@ -1047,11 +1102,10 @@ void Syntaxer::condition() {
 
 // ＜循环语句＞ ::=  while '('＜条件＞')'＜语句＞
 void Syntaxer::whilestatement() {
-    labelout = "label" + to_string(labelnum);
+    string whileout = "label" + to_string(labelnum);
     labelnum ++;
-    labeln = "label" + to_string(labelnum);
+    string beginlabel = "label" + to_string(labelnum);
     labelnum ++;
-    string beginlabel = labeln;
     emit(label, beginlabel, "", "");
 
     cout << "This is the head of while statement." << endl;
@@ -1068,13 +1122,7 @@ void Syntaxer::whilestatement() {
             return;
         }
 
-        tn = "t" + to_string(regnum - 1);
-        labelm = "label" + to_string(labelnum);
-        labelnum ++;
-        labeln = "label" + to_string(labelnum);
-        labelnum ++;
-        emit(beq, tn, "1", labelm);
-        emit(jump, labeln, "", ""); // if not equal
+        emit(jump, whileout, "", ""); // if not equal
         emit(label, labelm, "", "");
 
         nxtsym();
@@ -1086,12 +1134,15 @@ void Syntaxer::whilestatement() {
         error();
         return;
     }
-    emit(label, labelout, "", "");
+    emit(label, whileout, "", "");
     cout << "This is a recurrent statement." << endl;
 }
 
 // ＜情况语句＞ ::=  switch '('＜表达式＞')' '{'＜情况表＞＜缺省＞ '}'
 void Syntaxer::switchstatement() {
+    switchout = "label" + to_string(labelnum);
+    labelnum ++;
+    string tmpswitchout = switchout;
     if (symtype == SWITCHSY) {
         nxtsym();
         if (symtype != LPARSY) {
@@ -1099,7 +1150,8 @@ void Syntaxer::switchstatement() {
             return;
         }
         nxtsym();
-        expression(); // tn = expression
+        expression();
+        switchcase = to;
         if (symtype != RPARSY) {
             error();
             return;
@@ -1122,14 +1174,12 @@ void Syntaxer::switchstatement() {
         return;
     }
     nxtsym();
-    emit(label, labelout, "", "");
+    emit(label, tmpswitchout, "", "");
     cout << "This is a switch statement." << endl;
 }
 
 // ＜情况表＞ ::= ＜情况子语句＞{＜情况子语句＞}
 void Syntaxer::caselist() {
-    labelout = "label" + to_string(labelnum);
-    labelnum ++;
     casestatment();
     if (symtype == CASESY) {
         do {
@@ -1142,17 +1192,12 @@ void Syntaxer::caselist() {
 // ＜情况子语句＞::=  case＜常量＞：＜语句＞
 void Syntaxer::casestatment() {
     if (symtype == CASESY) {
-        to = "t" + to_string(regnum);
-        tn = "t" + to_string(regnum - 1);
-        regnum ++;
         nxtsym();
         if (token[0] == '\'') {
             ischaracter(); // we don't use register in it, so we needn't to use tmp
-            emit(eq, to, tn, to_string(value));
         }
         else {
             isnumber();
-            emit(eq, to, tn, to_string(value));
         }
 
         nxtsym();
@@ -1160,23 +1205,21 @@ void Syntaxer::casestatment() {
             error();
             return;
         }
-
-        tn = "t" + to_string(regnum - 1);
+        string tmpswitchcase = switchcase;
         labelm = "label" + to_string(labelnum);
         labelnum ++;
         labeln = "label" + to_string(labelnum);
         labelnum ++;
-        emit(beq, tn, "1", labelm);
+        emit(beq, tmpswitchcase, to_string(value), labelm);
         emit(jump, labeln, "", ""); // if not equal
         emit(label, labelm, "", "");
-
+        string tmplabel = labeln;
+        string tmpswitchout = switchout;
         nxtsym();
         statement();
 
-        emit(jump, labelout, "", "");
-        labeln = "label" + to_string(labelnum);
-        labelnum ++;
-        emit(label, labeln, "", "");
+        emit(jump, tmpswitchout, "", "");
+        emit(label, tmplabel, "", "");
     }
     else {
         error();
@@ -1212,6 +1255,7 @@ void Syntaxer::defaultstatemnt() {
 
 // ＜写语句＞ ::= printf ('(' ＜字符串＞(,＜表达式＞|<空> ') | '('＜表达式＞')')
 void Syntaxer::printfstatment() {
+    ischar = 0;
     if (symtype == PRINTSY) {
         nxtsym();
         if (symtype != LPARSY) {
@@ -1221,16 +1265,16 @@ void Syntaxer::printfstatment() {
         nxtsym();
         if (token[0] != '\"') { // isn't string
             expression();
-            tn = "t" + to_string(regnum - 1);
-            emit(write, tn, "", "");
+            emit(write, to, to_string(ischar), "");
         }
         else if (token[0] == '\"') { // is string
             characterlist(); // the emit is in it
+            emit(write, "_str" + to_string(strnum), "1", "str");
+            strnum ++;
             if (symtype == COMMASY) {
                 nxtsym();
                 expression();
-                tn = "t" + to_string(regnum - 1);
-                emit(write, tn, "", "");
+                emit(write, to, to_string(ischar), "");
             }
         }
         if (symtype != RPARSY) {
@@ -1257,7 +1301,9 @@ void Syntaxer::scanfstatement() {
                 error();
                 return;
             }
-            emit(read, token, "", ""); // TODO: or use register?
+            string typl = stab.element[idx].type == ints ? "int" : "char";
+            bool isglobal = stab.element[idx].level == 1;
+            emit(read, token, typl, "", isglobal, stab.element[idx].address); // TODO: or use register?
             nxtsym();
             if (symtype == COMMASY) {
                 do {
@@ -1267,7 +1313,9 @@ void Syntaxer::scanfstatement() {
                         error();
                         return;
                     }
-                    emit(read, token, "", "");
+                    typl = stab.element[idx].type == ints ? "int" : "char";
+                    isglobal = stab.element[idx].level == 1;
+                    emit(read, token, typl, "", isglobal, stab.element[idx].address);
                     nxtsym();
                 } while (symtype == COMMASY);
             }
@@ -1296,8 +1344,10 @@ void Syntaxer::returnstatement() {
                 error();
                 return;
             }
+            // tn = "t" + to_string(regnum - 1);
             nxtsym();
         }
+        emit(ret, to, "", "");
     }
     else {
         error();
