@@ -36,6 +36,14 @@ void main(){
     char str[20], ch;
     printf("Please input a integer: ");
     scanf(n);
+    str[n] = 'a';
+    str1[n] = 'b';
+    str[5] = 'c';
+    str1[5] = 'd';
+    printf(str[n]);
+    printf(str1[n]);
+    printf(str[5]);
+    printf(str1[5]);
     tmp = 0;
     while(tmp != n){
         result = fib(tmp + 1);

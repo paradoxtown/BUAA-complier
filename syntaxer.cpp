@@ -878,6 +878,7 @@ void Syntaxer::factor() {
             error();
             return;
         }
+        ischar += 2;
         nxtsym();
     }
     else if (symtype == INTEGERSY || symtype == MINUSSY || symtype == PLUSSY){ // [+/-] <integer>

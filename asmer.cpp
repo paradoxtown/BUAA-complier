@@ -46,7 +46,7 @@ bool isconst(string opnum){
 void quad2asm() {
     bool isdata = true;
     cout << ".data" << endl;
-    cout << R"(enter:   .asciiz "\n")" << endl;
+    cout << "enter:\t" << ".asciiz \"\\n\"" << endl;
     for (int i = 0; i < quadlist.size(); i ++) {
         if (isdata) { // .data
             while (quadlist[i].isglobal) {
@@ -100,7 +100,7 @@ void quad2asm() {
                     else {
                         offset = quadlist[i].offset;
                         cout << "add\t" << t2 << ", " << t2 << ", " << offset << endl;
-                        cout << "add\t" << t2 << ", " << t2 << ", " << "$sp" << endl; // t2 = t2 * 4 + offset + sp
+                        cout << "sub\t" << t2 << ", $sp" << ", " << t2 << endl; // t2 = sp - t2 * 4 + offset
                     }
                     t3 = "$t" + to_string(regidx % 3);
                     regidx ++;
@@ -385,11 +385,18 @@ void quad2asm() {
             }
             else if (quadlist[i].op == assign) {
                 if (!quadlist[i].opnum2.empty()) { // assign str tn n
-                    int offset = getidx(quadlist[i].opnum1) * 4;
                     string pret3 = "$t" + to_string(regidx % 3);
                     regidx ++;
-                    cout << "lw\t" << pret3 << ", -" << offset << "($s0)" << endl;
-                    cout << "mul\t" << pret3 << ", " << pret3 << ", 4" << endl;
+                    int offset;
+                    if (isconst(quadlist[i].opnum1)) {
+                        offset = stoi(quadlist[i].opnum1) * 4;
+                        cout << "li\t" << pret3 << ", " << offset << endl;
+                    }
+                    else {
+                        offset = getidx(quadlist[i].opnum1) * 4;
+                        cout << "lw\t" << pret3 << ", -" << offset << "($s0)" << endl;
+                        cout << "mul\t" << pret3 << ", " << pret3 << ", 4" << endl;
+                    }
                     if (quadlist[i].isglobal) {
                         t3 = "$t" + to_string(regidx % 3);
                         regidx ++;
@@ -399,7 +406,7 @@ void quad2asm() {
                     else {
                         offset = quadlist[i].offset;
                         cout << "add\t" << pret3 << ", " << pret3 << ", " << offset << endl;
-                        cout << "add\t" << pret3 << ", " << pret3 << ", $sp" << endl;
+                        cout << "sub\t" << pret3 << ", $sp" << ", " << pret3 << endl;
                     }
                     t3 = "$t" + to_string(regidx % 3);
                     regidx ++;
