@@ -22,7 +22,6 @@ tab stab;
 int level = 0, value, address, number, idx, funcidx = 0;
 int regnum = 0, labelnum = 0, strnum = 0;
 int ischar = 0;
-int funcaddr;
 string labeln, labelm, switchout, tn, tm, to;
 string switchcase;
 int symnumber = 0;
@@ -91,7 +90,6 @@ int Syntaxer::searchtab(char *name, obj object) {
         return i;
     }
     else { // is not function
-        // int i = stab.pindex[stab.pnum - 1];
         int i = stab.top - 1; // cuz we should visit the external var, for example: when we call a function in the main function.
         for (; i > 0; i --){ // and we should use the latest value to confirm our query object
             if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object){
@@ -153,7 +151,6 @@ void Syntaxer::retfuncdec() {
         return;
     }
     nxtsym();
-    emit(jr, "$ra", "", "");
     cout << "This is a declaration of function which have returning value." << endl;
 }
 
@@ -204,7 +201,6 @@ void Syntaxer::voidfuncdec() {
         return;
     }
     nxtsym();
-    emit(jr, "$ra", "", "");
     cout << "This is a declaration of function which don\'t have returning value." << endl;
 }
 
@@ -487,7 +483,7 @@ void Syntaxer::vardef() {
                     nxtsym();
                     if (symtype == RBRACKSY){
                         value = 0;
-                        idx = searchtab(symname, arrays);
+                        idx = searchtab(symname, variable);
                         if (idx == 0) {
                             enter(symname, variable, tmpsym == INTSY ? ints : chars, level, value, address, number);
                             emit(arr, tmpsym == INTSY ? "int" : "char", symname, to_string(number), level == 1, address); // array
@@ -563,7 +559,7 @@ void Syntaxer::program() {
     stab.pnum = 2;
     stab.top = 1;
     stab.pindex[1] = 1;
-    address = hb;
+    address = 0;
     bool funcdecbegin = true;
     cout << "This is the head of progress." << endl;
     if (symtype == CONSTSY) {
@@ -677,14 +673,12 @@ void Syntaxer::statement() {
             funcidx = idx;
             if (idx > 0) {
                 typ functyp = stab.element[stab.pindex[idx] - 1].type;
-                funcaddr = stab.element[stab.pindex[idx] - 1].address;
                 if (functyp == voids) {
                     callvoidfunc(tmpname);
                 }
                 else {
                     callretfunc(tmpname);
                 }
-                // emit(call, tmpname, "", "");
             }
             else {
                 error();
@@ -767,13 +761,11 @@ void Syntaxer::expression() {
         if (symtype == PLUSSY || symtype == MINUSSY) {
             do {
                 symbol tmpsym = symtype;
-                //string tmptn = "t" + to_string(regnum - 1);
                 pretn = to;
                 nxtsym();
                 term();
                 string preto = to;
                 to = "t" + to_string(regnum);
-                // tn = "t" + to_string(regnum - 1);
                 regnum ++;
                 emit(tmpsym == PLUSSY ? add : sub, to, pretn, preto); // to = tn op tm
             } while (symtype == PLUSSY || symtype == MINUSSY);
@@ -790,13 +782,11 @@ void Syntaxer::term() {
     if (symtype == MULTSY || symtype == DIVSY) {
         do {
             symbol tmpsym = symtype;
-            //string tmptn = "t" + to_string(regnum - 1);
             pretn = to; // current to is the tn = "t" + to_string(regnum - 1); but we need the value if it is constant
             nxtsym();
             factor();
             string preto = to;
             to = "t" + to_string(regnum);
-            // tn = "t" + to_string(regnum - 1);
             regnum ++;
             emit(tmpsym == MULTSY ? mult : divide, to, pretn, preto); // to = tn op tm
         } while (symtype == MULTSY || symtype == DIVSY);
@@ -840,7 +830,7 @@ void Syntaxer::factor() {
         }
         else if (symtype == LBRACKSY){ // array
             regnum ++;
-            idx = searchtab(symname, arrays);
+            idx = searchtab(symname, variable);
             if (idx == 0) {
                 error();
                 return;
@@ -848,9 +838,9 @@ void Syntaxer::factor() {
                 error();
                 return;
             }
-            if(lock) stab.element[stab.pindex[idx] - 1].type == ints ? ischar += 2 : ischar ++;
-            int tmpaddr = stab.element[stab.pindex[idx] - 1].address;
-            bool isglobal = stab.element[stab.pindex[idx] - 1].level == 1;
+            if(lock) stab.element[idx].type == ints ? ischar += 2 : ischar ++;
+            int tmpaddr = stab.element[idx].address;
+            bool isglobal = stab.element[idx].level == 1;
             nxtsym();
             lock = false;
             expression(); // array[ expression ]
@@ -859,7 +849,6 @@ void Syntaxer::factor() {
                 error();
                 return;
             }
-            // tn = "t" + to_string(regnum - 1);
             emit(fact, tmpto, tmpname, to, isglobal, tmpaddr); // tn is the expression's value, fact to arr, i
             to = tmpto;
             nxtsym();
@@ -868,7 +857,7 @@ void Syntaxer::factor() {
             regnum ++;
             idx = searchtab(symname, parameter);
             if (idx == 0) {
-                idx = searchtab(symname, variable);
+                idx = searchtab(symname, variable) + searchtab(symname, constant);
                 if (idx == 0) {
                     error();
                     return;
@@ -885,7 +874,6 @@ void Syntaxer::factor() {
     else if (symtype == LPARSY){ // '(' expression ')'
         nxtsym();
         expression(); // have getsym() at last
-        // tn = "t" + to_string(regnum - 1);
         if (symtype != RPARSY){ // ')'
             error();
             return;
@@ -988,8 +976,6 @@ void Syntaxer::assignment() {
             }
             int tmpaddr = stab.element[idx].address;
             bool isglobal = stab.element[idx].level == 1;
-
-            // tn = "t" + to_string(regnum - 1);
             emit(assign, name4back, to, "", isglobal, tmpaddr); // assign a tn
         }
         else if (symtype == LBRACKSY){ // is array '['
@@ -1013,8 +999,6 @@ void Syntaxer::assignment() {
                 }
                 int tmpaddr = stab.element[idx].address;
                 bool isglobal = stab.element[idx].level == 1;
-
-                // tn = "t" + to_string(regnum - 1);
                 emit(assign, name4back, preto, to, isglobal, tmpaddr); // assign a i b
             }
         }
@@ -1344,7 +1328,6 @@ void Syntaxer::returnstatement() {
                 error();
                 return;
             }
-            // tn = "t" + to_string(regnum - 1);
             nxtsym();
         }
         emit(ret, to, "", "");

@@ -7,6 +7,10 @@ int sum(int a, int b){
     return (-(a * b) * (a - b) + ((a + b) - b));
 }
 
+int cacul(int a, int b){
+    return ((a * 10 - a * b) / (a / 2 + b / 3));
+}
+
 void testttt(){
     int x[100];
     return;
@@ -42,7 +46,6 @@ void main(){
     printf("The number c is: ", c);
     printf("Please input a character: ");
     scanf(ch);
-    print(ch);
     switch(ch) {
         case 'a': {
             if (c < 10) {
@@ -65,8 +68,15 @@ void main(){
         switch(c){
             case 8: printf('y');
             case 0: printf('n');
-            default: printf("ERROR");
+            default: print(ch);
         }
         default: printf('j');
+    }
+    tmp = 0;
+    while (tmp != n) {
+        scanf(c);
+        result = cacul(cacul(4, 5), c);
+        printf("The answer of cacul is ", result);
+        tmp = tmp + 1;
     }
 }

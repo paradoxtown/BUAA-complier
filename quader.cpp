@@ -37,7 +37,6 @@ void quaderinit(){
     op2str[read] = "read";
     op2str[write] = "write";
     op2str[ret] = "ret";
-    op2str[jr] = "jr";
     op2str[jal] = "jal";
 }
 

@@ -1,0 +1,45 @@
+const char _abcdefghijklmnopqrstuvwxyz = 'a', sadfjsadkl = 'z';
+const int __ABCDEFGHIJKLMNOPQRSTUVWXYZ = 1010;
+int arr[100];
+char str1[10];
+
+int sum(int a, int b){
+    return (-(a * b) * (a - b) + ((a + b) - b));
+}
+
+int cacul(int a, int b){
+    return ((a * 10 - a * b) / (a / 2 + b / 3));
+}
+
+void testttt(){
+    int x[100];
+    return;
+}
+
+int fib(int n){
+    if (n == 1){
+        return (1);
+    }
+    if (n == 2){
+        return (1);
+    }
+    return (fib(n - 1) + fib(n - 2));
+}
+
+void print(char s){
+    printf("Unexpection imformation: ", s);
+    return;
+}
+
+void main(){
+    int n, result, tmp;
+    printf("Please input a integer: ");
+    scanf(n);
+    sum(1, 7);
+    tmp = 0;
+    while (tmp != n) {
+        result = cacul(cacul(4, 5), 5);
+        printf("The answer of cacul is ", result);
+        tmp = tmp + 1;
+    }
+}

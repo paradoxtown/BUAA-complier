@@ -1,4 +1,11 @@
-string  "error" _str0
+string  "the answer of cacul is " _str2
+string  "please input a integer: " _str1
+string  "unexpection imformation: " _str0
+const   char _abcdefghijklmnopqrstuvwxyz 97
+const   char sadfjsadkl 122
+const   int __abcdefghijklmnopqrstuvwxyz 1010
+array   int arr 100
+array   char str1 10
 jump    main
 sum
 para    int a
@@ -19,91 +26,96 @@ factor  t11 b
 sub     t12 t10 t11
 add     t13 t7 t12
 ret     t13
-jr      $ra
+cacul
+para    int a
+para    int b
+func    int cacul 2
+factor  t0 a
+mult    t1 t0 10
+factor  t2 a
+factor  t3 b
+mult    t4 t2 t3
+sub     t5 t1 t4
+factor  t6 a
+div     t7 t6 2
+factor  t8 b
+div     t9 t8 3
+add     t10 t7 t9
+div     t11 t5 t10
+ret     t11
+testttt
+func    void testttt 0
+array   int x 100
+ret     t11
+fib
+para    int n
+func    int fib 1
+factor  t0 n
+beq     t0 1 label0
+jump    label1
+label0
+ret     1
+label1
+factor  t1 n
+beq     t1 2 label2
+jump    label3
+label2
+ret     1
+label3
+call    fib
+factor  t3 n
+sub     t4 t3 1
+push    t4
+jal     fib
+factor  t2 $v0
+call    fib
+factor  t6 n
+sub     t7 t6 2
+push    t7
+jal     fib
+factor  t5 $v0
+add     t8 t2 t5
+ret     t8
+print
+para    char s
+func    void print 1
+write   _str0 1 str
+factor  t0 s
+write   t0 1
+ret     t0
 main
 func    void main 0
-var     int a
-var     int b
+var     int n
+var     int result
+var     int tmp
 var     int c
+array   char str 20
 var     char ch
-read    a int
-read    b int
-call    sum
-factor  t1 a
-push    t1
-factor  t2 b
-push    t2
-jal     sum
-factor  t0 $v0
-assign  c t0
-factor  t3 c
-write   t3 2
-read    ch char
-factor  t4 ch
-beq     t4 97 label1
-jump    label2
-label1
-factor  t5 c
-bltz    t5 10 label3
-jump    label4
-label3
-write   10 2
-label4
-factor  t6 c
-bgez    t6 10 label5
-jump    label6
+write   _str1 1 str
+read    n int
+assign  tmp 0
 label5
-factor  t7 c
-write   t7 2
+factor  t0 tmp
+factor  t1 n
+bne     t0 t1 label6
+jump    label4
 label6
-jump    label0
-label2
-beq     t4 98 label7
-jump    label8
-label7
-factor  t8 c
-add     t9 t8 100
-assign  c t9
-factor  t10 c
-write   t10 2
-jump    label0
-label8
-beq     t4 99 label9
-jump    label10
-label9
-label12
-factor  t11 c
-bgtz    t11 0 label13
-jump    label11
-label13
-factor  t12 c
-write   t12 2
-factor  t13 c
-sub     t14 t13 1
-assign  c t14
-jump    label12
-label11
-jump    label0
-label10
-beq     t4 100 label14
-jump    label15
-label14
-factor  t15 c
-beq     t15 8 label17
-jump    label18
-label17
-write   121 1
-jump    label16
-label18
-beq     t15 0 label19
-jump    label20
-label19
-write   110 1
-jump    label16
-label20
-write   _str0 1 str
-label16
-jump    label0
-label15
-write   106 1
-label0
+call    cacul
+call    cacul
+push    4
+push    5
+jal     cacul
+factor  t3 $v0
+push    t3
+push    5
+jal     cacul
+factor  t2 $v0
+assign  result t2
+write   _str2 1 str
+factor  t4 result
+write   t4 2
+factor  t5 tmp
+add     t6 t5 1
+assign  tmp t6
+jump    label5
+label4

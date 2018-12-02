@@ -6,6 +6,7 @@
 #include "main.h"
 #include <iostream>
 #include <cstring>
+#include <vector>
 
 using namespace std;
 int sp = 0x7fffeffc, fb = 0; // stack pointer
@@ -13,11 +14,14 @@ int spoffset = 0, varoffset = 0;
 int regidx = 0;
 string t3, t2, t1;
 string curfuncname;
-int offset1, offset2;
+int offset1 = 0, offset2 = 0;
+vector<int> offsetstack;
+vector<string> functionname;
+int depth = 0;
 
 void initdata(quad midcode) {
     if (midcode.op == var) {
-        cout << midcode.opnum1 << ":\t.word " << endl;
+        cout << midcode.opnum1 << ":\t.word 0" << endl;
     }
     else if (midcode.op == cons) {
         cout << midcode.opnum1 << ":\t.word " << midcode.opnum2 << endl;
@@ -57,28 +61,68 @@ void quad2asm() {
             if (quadlist[i].op == label) {
                 cout << quadlist[i].rst << ":" << endl;
             }
-            else if (quadlist[i].op == fact) {
+            else if (quadlist[i].op == cons) { // const int a value
                 t3 = "$t" + to_string(regidx % 3);
                 regidx ++;
+                int offset = quadlist[i].offset;
+                cout << "li\t" << t3 << ", " << quadlist[i].opnum2 << endl;
+                cout << "sw\t" << t3 << ", -" << offset << "($sp)" << endl;
+            }
+            else if (quadlist[i].op == fact) {
                 int offset;
                 if (isconst(quadlist[i].opnum2)) { // fact register variable length
-                    offset = quadlist[i].offset * stoi(quadlist[i].opnum2);
+                    offset = stoi(quadlist[i].opnum2) * 4;
+                    t3 = "$t" + to_string(regidx % 3);
+                    regidx ++;
+                    if (quadlist[i].opnum1 == "$v0") {
+                        cout << "add\t" << t3 << ", $0, $v0" << endl;
+                    }
+                    else {
+                        if (quadlist[i].isglobal) { // var is global
+                            cout << "la\t" << t3 << ", " << quadlist[i].opnum1 << endl;
+                            cout << "add\t" << t3 << ", " << t3 << ", " << offset << endl;
+                            cout << "lw\t" << t3 << ", -0(" << t3 << ")" << endl;
+                        } else { // is the local, so we need know the basic address of function
+                            offset += quadlist[i].offset;
+                            cout << "lw\t" << t3 << ", -" << offset << "($sp)" << endl;
+                        }
+                    }
+                }
+                else if(!quadlist[i].opnum2.empty()) {
+                    t2 = "$t" + to_string((regidx - 1) % 3);
+                    cout << "mul\t" << t2 << ", " << t2 << ", 4" << endl;
+                    if (quadlist[i].isglobal) {
+                        t3 = "$t" + to_string(regidx % 3);
+                        regidx ++;
+                        cout << "la\t" << t3 << ", " << quadlist[i].opnum1 << endl;
+                        cout << "add\t" << t2 << ", " << t2 << ", " << t3 << endl;
+                    }
+                    else {
+                        offset = quadlist[i].offset;
+                        cout << "add\t" << t2 << ", " << t2 << ", " << offset << endl;
+                        cout << "add\t" << t2 << ", " << t2 << ", " << "$sp" << endl; // t2 = t2 * 4 + offset + sp
+                    }
+                    t3 = "$t" + to_string(regidx % 3);
+                    regidx ++;
+                    cout << "lw\t" << t3 << ", 0(" << t2 << ")" << endl;
                 }
                 else { // fact register variable
                     offset = quadlist[i].offset;
+                    t3 = "$t" + to_string(regidx % 3);
+                    regidx ++;
+                    if (quadlist[i].opnum1 == "$v0") {
+                        cout << "add\t" << t3 << ", $0, $v0" << endl;
+                    }
+                    else {
+                        if (quadlist[i].isglobal) { // var is global
+                            cout << "lw\t" << t3 << ", " << quadlist[i].opnum1 << endl;
+                        } else { // is the local, so we need know the basic address of function
+                            cout << "lw\t" << t3 << ", -" << to_string(offset) << "($sp)" << endl;
+                        }
+                    }
                 }
                 // first we need lw the value of local var from the memory,
                 // second we sw the value to the memory which is the tmp var
-                if (quadlist[i].opnum1 == "$v0") {
-                    cout << "add\t" << t3 << ", $0, $v0" << endl;
-                }
-                else {
-                    if (quadlist[i].isglobal) { // var is global
-                        cout << "lw\t" << t3 << ", " << quadlist[i].opnum1 << endl;
-                    } else { // is the local, so we need know the basic address of function
-                        cout << "lw\t" << t3 << ", -" << to_string(offset) << "($sp)" << endl;
-                    }
-                }
                 offset = getidx(quadlist[i].rst) * 4; // offset should be the
                 cout << "sw\t" << t3 << ", -" << to_string(offset) << "($s0)" << endl;
             }
@@ -160,37 +204,36 @@ void quad2asm() {
             else if (quadlist[i].op == mult) { // c = a * b
                 bool isconst1 = isconst(quadlist[i].opnum1), isconst2 = isconst(quadlist[i].opnum2);
                 if (isconst1 && isconst2) {
-                    t3 = "$t" + to_string(regidx % 3); // c
+                    t3 = "$t" + to_string(regidx % 3);
                     regidx ++;
                     cout << "li\t" << t3 << ", " << quadlist[i].opnum1 << endl;
-                    cout << "mult\t" << t3 << ", " << quadlist[i].opnum2 << endl;
+                    cout << "mul\t" << t3 << ", " << t3 << ", " << quadlist[i].opnum2 << endl;
                 }
                 else if(isconst1) {
                     t3 = "$t" + to_string(regidx % 3); // c
                     regidx ++;
                     int offset = getidx(quadlist[i].opnum2) * 4;
-                    cout << "lw\t" << t3 << ", -" << offset << "($s0)" << endl;
-                    cout << "mult\t" << t3 << ", " << quadlist[i].opnum1 << endl;
+                    cout << "lw\t" << t3 << ", -" << offset << "($s0)" << endl; // opnum2
+                    cout << "mul\t" << t3 << ", " << t3 << ", " << quadlist[i].opnum1 << endl;
                 }
                 else if(isconst2) {
-                    t3 = "$t" + to_string(regidx % 3); // c
+                    t3 = "$t" + to_string(regidx % 3);
                     regidx ++;
                     int offset = getidx(quadlist[i].opnum1) * 4;
                     cout << "lw\t" << t3 << ", -" << offset << "($s0)" << endl;
-                    cout << "mult\t" << t3 << ", " << quadlist[i].opnum2 << endl;
+                    cout << "mul\t" << t3 << ", " << t3 << ", " << quadlist[i].opnum2 << endl;
                 }
                 else {
-                    t2 = "$t" + to_string(regidx % 3); // c
+                    t2 = "$t" + to_string(regidx % 3);
                     regidx ++;
-                    t3 = "$t" + to_string(regidx % 3); // c
+                    t3 = "$t" + to_string(regidx % 3);
                     regidx ++;
                     int offset = getidx(quadlist[i].opnum1) * 4;
                     cout << "lw\t" << t2 << ", -" << offset << "($s0)" << endl;
                     offset = getidx(quadlist[i].opnum2) * 4;
                     cout << "lw\t" << t3 << ", -" << offset << "($s0)" << endl;
-                    cout << "mult\t" << t3 << ", " << t2 << endl;
+                    cout << "mul\t" << t3 << ", " << t3 << ", " << t2 << endl;
                 }
-                cout << "mflo\t" << t3 << endl;
                 int offset = getidx(quadlist[i].rst) * 4;
                 cout << "sw\t" << t3 << ", -" << to_string(offset) << "($s0)" << endl;
             }
@@ -210,14 +253,14 @@ void quad2asm() {
                     cout << "li\t" << t3 << ", " << quadlist[i].opnum1 << endl;
                     int offset = getidx(quadlist[i].opnum2) * 4;
                     cout << "lw\t" << t2 << ", -" << offset << "($s0)" << endl;
-                    cout << "div\t" << t3 << ", " << t2 << endl;
+                    cout << "div\t" << t3 << ", " << t3 << ", " << t2 << endl;
                 }
                 else if(isconst2) {
                     t3 = "$t" + to_string(regidx % 3); // c
                     regidx ++;
                     int offset = getidx(quadlist[i].opnum1) * 4;
                     cout << "lw\t" << t3 << ", -" << offset << "($s0)" << endl;
-                    cout << "div\t" << t3 << ", " << quadlist[i].opnum2 << endl;
+                    cout << "div\t" << t3 << ", " << t3 << ", " << quadlist[i].opnum2 << endl;
                 }
                 else {
                     t2 = "$t" + to_string(regidx % 3); // c
@@ -225,12 +268,11 @@ void quad2asm() {
                     t3 = "$t" + to_string(regidx % 3); // c
                     regidx ++;
                     int offset = getidx(quadlist[i].opnum1) * 4;
-                    cout << "lw\t" << t2 << ", -" << offset << "($s0)" << endl;
-                    offset = getidx(quadlist[i].opnum2) * 4;
                     cout << "lw\t" << t3 << ", -" << offset << "($s0)" << endl;
-                    cout << "mult\t" << t2 << ", " << t3 << endl;
+                    offset = getidx(quadlist[i].opnum2) * 4;
+                    cout << "lw\t" << t2 << ", -" << offset << "($s0)" << endl;
+                    cout << "div\t" << t3 << ", " << t3 << ", " << t2 << endl;
                 }
-                cout << "mfhi\t" << t3 << endl;
                 int offset = getidx(quadlist[i].rst) * 4;
                 cout << "sw\t" << t3 << ", -" << to_string(offset) << "($s0)" << endl;
             }
@@ -342,24 +384,51 @@ void quad2asm() {
                 cout << inst << t3 << ", " << quadlist[i].opnum2 << endl;
             }
             else if (quadlist[i].op == assign) {
-                int offset = quadlist[i].offset;
-                if (isconst(quadlist[i].opnum1)) { // assign a = 1
+                if (!quadlist[i].opnum2.empty()) { // assign str tn n
+                    int offset = getidx(quadlist[i].opnum1) * 4;
+                    string pret3 = "$t" + to_string(regidx % 3);
+                    regidx ++;
+                    cout << "lw\t" << pret3 << ", -" << offset << "($s0)" << endl;
+                    cout << "mul\t" << pret3 << ", " << pret3 << ", 4" << endl;
+                    if (quadlist[i].isglobal) {
+                        t3 = "$t" + to_string(regidx % 3);
+                        regidx ++;
+                        cout << "la\t" << t3 << ", " << quadlist[i].rst << endl;
+                        cout << "add\t" << pret3 << ", " << pret3 << ", " << t3 << endl;
+                    }
+                    else {
+                        offset = quadlist[i].offset;
+                        cout << "add\t" << pret3 << ", " << pret3 << ", " << offset << endl;
+                        cout << "add\t" << pret3 << ", " << pret3 << ", $sp" << endl;
+                    }
                     t3 = "$t" + to_string(regidx % 3);
                     regidx ++;
-                    cout << "li\t" << t3 << ", " << quadlist[i].opnum1 << endl; // li t3 1
-                    if (quadlist[i].isglobal) {
-                        cout << "la\t$a0, " << quadlist[i].rst << endl;
-                        cout << "sw\t" << t3 << ", " << "0($a0)" << endl;
+                    if (isconst(quadlist[i].opnum2)) {
+                        cout << "li\t" << t3 << ", " << quadlist[i].opnum2 << endl;
                     }
-                    else cout << "sw\t" << t3 << ", -" << to_string(offset) << "($sp)" << endl;
+                    else {
+                        offset = getidx(quadlist[i].opnum2);
+                        cout << "lw\t" << t3 << ", " << offset << "($s0)" << endl;
+                    }
+                    cout << "sw\t" << t3 << ", 0(" << pret3 << ")" << endl;
                 }
-                else { // assign a = b
-                    t2 = "$t" + to_string((regidx - 1) % 3);
-                    if (quadlist[i].isglobal) {
-                        cout << "la\t$a0, " << quadlist[i].rst << endl;
-                        cout << "sw\t" << t2 << ", " << "0($a0)" << endl;
+                else {
+                    int offset = quadlist[i].offset;
+                    if (isconst(quadlist[i].opnum1)) { // assign a = 1
+                        t3 = "$t" + to_string(regidx % 3);
+                        regidx++;
+                        cout << "li\t" << t3 << ", " << quadlist[i].opnum1 << endl; // li t3 1
+                        if (quadlist[i].isglobal) {
+                            cout << "la\t$a0, " << quadlist[i].rst << endl;
+                            cout << "sw\t" << t3 << ", " << "0($a0)" << endl;
+                        } else cout << "sw\t" << t3 << ", -" << to_string(offset) << "($sp)" << endl;
+                    } else { // assign a = b
+                        t2 = "$t" + to_string((regidx - 1) % 3);
+                        if (quadlist[i].isglobal) {
+                            cout << "la\t$a0, " << quadlist[i].rst << endl;
+                            cout << "sw\t" << t2 << ", " << "0($a0)" << endl;
+                        } else cout << "sw\t" << t2 << ", -" << to_string(offset) << "($sp)" << endl;
                     }
-                    else cout << "sw\t" << t2 << ", -" << to_string(offset) << "($sp)" << endl;
                 }
             }
             else if (quadlist[i].op == jump) {
@@ -368,12 +437,16 @@ void quad2asm() {
             else if (quadlist[i].op == call) {
                 // the offset of tmp variable
                 // offset = local var offset + tmp var offset
-                offset1 = tmpvar[curfuncname] * 4 + localvar[curfuncname] * 4;
-                offset2 = tmpvar[curfuncname] * 4 + localvar[quadlist[i].rst] * 4;
+                offset1 += tmpvar[curfuncname] * 4 + localvar[curfuncname] * 4 + 4 * depth;
+                offset2 += tmpvar[curfuncname] * 4 + localvar[quadlist[i].rst] * 4 + 4 * depth;
+                offsetstack.push_back(offset2);
+                offsetstack.push_back(offset1);
                 curfuncname = quadlist[i].rst;
-
+                functionname.push_back(curfuncname);
+                depth ++;
             }
             else if (quadlist[i].op == push) {
+                offset1 = offsetstack.back();
                 int offset = quadlist[i].offset + offset1 + 4; // the 4 is the ra space offset
                 if (isconst(quadlist[i].rst)) {
                     // li t3 im number
@@ -397,6 +470,10 @@ void quad2asm() {
                 }
             }
             else if (quadlist[i].op == jal) {
+                offset1 = offsetstack.back();
+                offsetstack.pop_back();
+                offset2 = offsetstack.back();
+                offsetstack.pop_back();
                 cout << "sub\t$sp, $sp, " << offset1 << endl; // it is the begin of the new function
                 cout << "sw\t$ra, 0($sp)" << endl;
                 // cout << "sub\t$sp, $sp, 4" << endl;
@@ -405,6 +482,11 @@ void quad2asm() {
                 cout << "lw\t$ra, 0($sp)" << endl;
                 cout << "add\t$sp, $sp, " << offset1 << endl;
                 cout << "add\t$s0, $s0, " << (offset2 + 4) << endl;
+                offset1 = 0;
+                offset2 = 0;
+                depth --;
+                functionname.pop_back();
+                curfuncname = functionname.back();
             }
             else if (quadlist[i].op == ret) {
                 if (isconst(quadlist[i].rst)) {
@@ -416,9 +498,6 @@ void quad2asm() {
                 }
                 cout << "jr\t$ra" << endl;
             }
-//            else if (quadlist[i].op == jr) {
-//                cout << "jr\t" << "$ra" << endl;
-//            }
             else if (quadlist[i].op == write) {
                 if (quadlist[i].opnum1 == "1") {
                     if (quadlist[i].opnum2 == "str") {
@@ -468,6 +547,7 @@ void quad2asm() {
             }
             else if (quadlist[i].op == func) {
                 curfuncname = quadlist[i].opnum1;
+                functionname.push_back(curfuncname);
                 int offset = localvar[quadlist[i].opnum1] * 4; // this is the number of parameter + local var
                 cout << "sub\t$sp, $sp, 4" << endl; // alloc space for $ra
                 cout << "sub\t$s0, $sp, " << offset << endl;

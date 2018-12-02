@@ -17,33 +17,11 @@ enum obj { constant, variable, function, arrays, parameter };
 enum typ { ints, chars, voids };
 enum operation { cons, var, arr, str, func, para, assign, add, divide, mult, sub,
                  fact, bltz, blez, bgtz, bgez, beq, bne, jump, label, push, call,
-                 read, write, ret, jr, jal };
-//enum inst {
-//    madd,
-//    maddi,
-//    mbeq,
-//    mdiv,
-//    mj,
-//    mjal,
-//    mjr,
-//    mlw,
-//    mmfhi,
-//    mmflo,
-//    mmthi,
-//    mmtlo,
-//    mmult,
-//    msw,
-//    msll,
-//    msub,
-//    msyscall
-//};
-
+                 read, write, ret, jal };
 extern char token[MAXN];
 extern map<string, int>tmpvar;
 extern map<string, int>localvar;
 extern symbol result;
-const int hb = 0; // heap basic address
-const int sb = 3000; // stack basic address
 extern string t[REGISTERNUM];
 
 #endif //COMPLIER_MAIN_H

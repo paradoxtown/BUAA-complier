@@ -1,26 +1,5 @@
-void print(char s){
-    printf("test", s);
-}
-
 void main(){
-    char str[101];
-    int a, b, c;
-    int tmp;
-    tmp = 0;
-    while (tmp < 20){
-        if (str[tmp] < 'a'){
-            if (str[tmp] > 'Z'){
-                tmp = 20;
-                print(str);
-            }
-        }
-        if (str[tmp] > 'z'){
-            tmp = 20;
-            print(str);
-        }
-        if (str[tmp] < 'A'){
-            tmp = 20;
-            print(str);
-        }
-    }
+    char str[100];
+    str[n] = 'z';
+    printf(str[n]);
 }

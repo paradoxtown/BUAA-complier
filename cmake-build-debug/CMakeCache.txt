@@ -46,20 +46,19 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh
 // for the GCC compiler
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc-ranlib.exe
 
-//Flags used by the compiler during all build types.
+//Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
 
-//Flags used by the compiler during debug builds.
+//Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
-//Flags used by the compiler during release builds for minimum
-// size.
+//Flags used by the CXX compiler during MINSIZEREL builds.
 CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
-//Flags used by the compiler during release builds.
+//Flags used by the CXX compiler during RELEASE builds.
 CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
-//Flags used by the compiler during release builds with debug info.
+//Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Libraries linked by default with all C++ applications.
@@ -76,38 +75,37 @@ CMAKE_C_COMPILER_AR:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-r
 // for the GCC compiler
 CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc-ranlib.exe
 
-//Flags used by the compiler during all build types.
+//Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
 
-//Flags used by the compiler during debug builds.
+//Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-g
 
-//Flags used by the compiler during release builds for minimum
-// size.
+//Flags used by the C compiler during MINSIZEREL builds.
 CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
-//Flags used by the compiler during release builds.
+//Flags used by the C compiler during RELEASE builds.
 CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
-//Flags used by the compiler during release builds with debug info.
+//Flags used by the C compiler during RELWITHDEBINFO builds.
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Libraries linked by default with all C applications.
 CMAKE_C_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
-//Flags used by the linker.
+//Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during debug builds.
+//Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during release minsize builds.
+//Flags used by the linker during MINSIZEREL builds.
 CMAKE_EXE_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during release builds.
+//Flags used by the linker during RELEASE builds.
 CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during Release with Debug Info builds.
+//Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Convert GNU import libraries to MS format (requires Visual Studio)
@@ -122,19 +120,24 @@ CMAKE_LINKER:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-re
 //make program
 CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe
 
-//Flags used by the linker during the creation of modules.
+//Flags used by the linker during the creation of modules during
+// all build types.
 CMAKE_MODULE_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during debug builds.
+//Flags used by the linker during the creation of modules during
+// DEBUG builds.
 CMAKE_MODULE_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during release minsize builds.
+//Flags used by the linker during the creation of modules during
+// MINSIZEREL builds.
 CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during release builds.
+//Flags used by the linker during the creation of modules during
+// RELEASE builds.
 CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during Release with Debug Info builds.
+//Flags used by the linker during the creation of modules during
+// RELWITHDEBINFO builds.
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
@@ -155,39 +158,42 @@ CMAKE_RANLIB:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-re
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/windres.exe
 
-//Flags for Windows Resource Compiler.
+//Flags for Windows Resource Compiler during all build types.
 CMAKE_RC_FLAGS:STRING=
 
-//Flags for Windows Resource Compiler during debug builds.
+//Flags for Windows Resource Compiler during DEBUG builds.
 CMAKE_RC_FLAGS_DEBUG:STRING=
 
-//Flags for Windows Resource Compiler during release builds for
-// minimum size.
+//Flags for Windows Resource Compiler during MINSIZEREL builds.
 CMAKE_RC_FLAGS_MINSIZEREL:STRING=
 
-//Flags for Windows Resource Compiler during release builds.
+//Flags for Windows Resource Compiler during RELEASE builds.
 CMAKE_RC_FLAGS_RELEASE:STRING=
 
-//Flags for Windows Resource Compiler during release builds with
-// debug info.
+//Flags for Windows Resource Compiler during RELWITHDEBINFO builds.
 CMAKE_RC_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
 CMAKE_SH:FILEPATH=CMAKE_SH-NOTFOUND
 
-//Flags used by the linker during the creation of dll's.
+//Flags used by the linker during the creation of shared libraries
+// during all build types.
 CMAKE_SHARED_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during debug builds.
+//Flags used by the linker during the creation of shared libraries
+// during DEBUG builds.
 CMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during release minsize builds.
+//Flags used by the linker during the creation of shared libraries
+// during MINSIZEREL builds.
 CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during release builds.
+//Flags used by the linker during the creation of shared libraries
+// during RELEASE builds.
 CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during Release with Debug Info builds.
+//Flags used by the linker during the creation of shared libraries
+// during RELWITHDEBINFO builds.
 CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //If set, runtime paths are not added when installing shared libraries,
@@ -197,19 +203,24 @@ CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 //If set, runtime paths are not added when using shared libraries.
 CMAKE_SKIP_RPATH:BOOL=NO
 
-//Flags used by the linker during the creation of static libraries.
+//Flags used by the linker during the creation of static libraries
+// during all build types.
 CMAKE_STATIC_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during debug builds.
+//Flags used by the linker during the creation of static libraries
+// during DEBUG builds.
 CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during release minsize builds.
+//Flags used by the linker during the creation of static libraries
+// during MINSIZEREL builds.
 CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during release builds.
+//Flags used by the linker during the creation of static libraries
+// during RELEASE builds.
 CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during Release with Debug Info builds.
+//Flags used by the linker during the creation of static libraries
+// during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
