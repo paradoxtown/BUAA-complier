@@ -6,23 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MUSE/Desktop/complier/asmer.cpp
-asmer.h
-C:/Users/MUSE/Desktop/complier/asmer.h
-main.h
-C:/Users/MUSE/Desktop/complier/main.h
-iostream
--
-cstring
--
-vector
--
-
 C:/Users/MUSE/Desktop/complier/asmer.h
 quader.h
 C:/Users/MUSE/Desktop/complier/quader.h
 
 C:/Users/MUSE/Desktop/complier/lexer.h
+
+C:/Users/MUSE/Desktop/complier/main.cpp
+iostream
+-
+cstdio
+-
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
+syntaxer.h
+C:/Users/MUSE/Desktop/complier/syntaxer.h
+quader.h
+C:/Users/MUSE/Desktop/complier/quader.h
+asmer.h
+C:/Users/MUSE/Desktop/complier/asmer.h
 
 C:/Users/MUSE/Desktop/complier/main.h
 lexer.h
@@ -43,4 +45,10 @@ vector
 -
 map
 -
+
+C:/Users/MUSE/Desktop/complier/syntaxer.h
+lexer.h
+C:/Users/MUSE/Desktop/complier/lexer.h
+main.h
+C:/Users/MUSE/Desktop/complier/main.h
 

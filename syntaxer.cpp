@@ -1,9 +1,8 @@
-#include <utility>
+
 
 //
 // Created by MUSE on 2018/11/17.
 //
-
 #include "syntaxer.h"
 #include "lexer.h"
 #include "main.h"
@@ -27,7 +26,7 @@ string switchcase;
 int symnumber = 0;
 bool isbackfromvardec = false;
 bool havemain = false;
-bool lock = true;
+//bool lock = true;
 symbol symtype;
 char symname[NAMELEN];
 char name4back[NAMELEN];
@@ -299,7 +298,7 @@ void Syntaxer::valuelist() {
         // empty, no emit
         return;
     }
-    expression();
+    expression(false);
     number ++;
     int tmpaddr = 0; // be relative to the function's address in the stack, this is the offset
     // tn = "t" + to_string(regnum - 1);
@@ -308,7 +307,7 @@ void Syntaxer::valuelist() {
     if (symtype == COMMASY) {
         do {
             nxtsym();
-            expression();
+            expression(false);
             number ++;
             // tn = "t" + to_string(regnum - 1);
             emit(push, to, "", "", false, tmpaddr);
@@ -726,16 +725,16 @@ void Syntaxer::statementlist() {
 }
 
 // ＜表达式＞ ::= ［＋｜－］＜项＞{＜加法运算符＞＜项＞}   //[+|-]只作用于第一个<项>
-void Syntaxer::expression() {
+void Syntaxer::expression(bool lock) {
     cout << "This is the head of expression." << endl;
     if (symtype == PLUSSY || symtype == MINUSSY){
         if (symtype == PLUSSY){ // + a + b, there is no influence
             nxtsym();
-            term();
+            term(lock);
         }
         else { // - a + b
             nxtsym();
-            term();
+            term(lock);
             string preto = to;
             to = "t" + to_string(regnum);
             regnum ++;
@@ -747,7 +746,7 @@ void Syntaxer::expression() {
                 symbol tmpsym = symtype;
                 pretn = to;
                 nxtsym();
-                term();
+                term(lock);
                 string preto = to;
                 to = "t" + to_string(regnum);
                 regnum ++;
@@ -756,14 +755,14 @@ void Syntaxer::expression() {
         }
     }
     else { // a + b
-        term();
+        term(lock);
         string pretn = to;
         if (symtype == PLUSSY || symtype == MINUSSY) {
             do {
                 symbol tmpsym = symtype;
                 pretn = to;
                 nxtsym();
-                term();
+                term(lock);
                 string preto = to;
                 to = "t" + to_string(regnum);
                 regnum ++;
@@ -775,16 +774,16 @@ void Syntaxer::expression() {
 }
 
 // ＜项＞ ::= ＜因子＞{＜乘法运算符＞＜因子＞}
-void Syntaxer::term() {
+void Syntaxer::term(bool lock) {
     cout << "This is the head of term." << endl;
-    factor();
+    factor(lock);
     string pretn = to;
     if (symtype == MULTSY || symtype == DIVSY) {
         do {
             symbol tmpsym = symtype;
             pretn = to; // current to is the tn = "t" + to_string(regnum - 1); but we need the value if it is constant
             nxtsym();
-            factor();
+            factor(lock);
             string preto = to;
             to = "t" + to_string(regnum);
             regnum ++;
@@ -795,7 +794,7 @@ void Syntaxer::term() {
 }
 
 // ＜因子＞ ::= ＜标识符＞｜＜标识符＞'['＜表达式＞']'|'('＜表达式＞')'｜＜整数＞|＜字符＞｜＜有返回值函数调用语句＞
-void Syntaxer::factor() {
+void Syntaxer::factor(bool lock) {
     cout << "This is the head of factor." << endl;
     to = "t" + to_string(regnum);
     string tmpto = to;
@@ -842,9 +841,9 @@ void Syntaxer::factor() {
             int tmpaddr = stab.element[idx].address;
             bool isglobal = stab.element[idx].level == 1;
             nxtsym();
-            lock = false;
-            expression(); // array[ expression ]
-            lock = true;
+//            lock = false;
+            expression(false); // array[ expression ]
+//            lock = true;
             if (symtype != RBRACKSY){ // missing ']'
                 error();
                 return;
@@ -873,12 +872,12 @@ void Syntaxer::factor() {
     }
     else if (symtype == LPARSY){ // '(' expression ')'
         nxtsym();
-        expression(); // have getsym() at last
+        expression(lock); // have getsym() at last
         if (symtype != RPARSY){ // ')'
             error();
             return;
         }
-        ischar += 2;
+        if (lock) ischar += 2;
         nxtsym();
     }
     else if (symtype == INTEGERSY || symtype == MINUSSY || symtype == PLUSSY){ // [+/-] <integer>
@@ -965,7 +964,7 @@ void Syntaxer::assignment() {
         nxtsym();
         if (symtype == ASSIGNSY) {
             nxtsym();
-            expression();
+            expression(false);
 
             idx = searchtab(name4back, parameter);
             if (idx == 0) {
@@ -981,7 +980,7 @@ void Syntaxer::assignment() {
         }
         else if (symtype == LBRACKSY){ // is array '['
             nxtsym();
-            expression();
+            expression(false);
             // string tmptn = "t" + to_string(regnum - 1); // the length of array
             string preto = to;
             if (symtype != RBRACKSY){ //
@@ -991,7 +990,7 @@ void Syntaxer::assignment() {
             nxtsym();
             if (symtype == ASSIGNSY){
                 nxtsym();
-                expression();
+                expression(false);
 
                 idx = searchtab(name4back, variable);
                 if (idx == 0) {
@@ -1058,13 +1057,13 @@ void Syntaxer::ifstatement() {
 // ＜条件＞ ::= ＜表达式＞＜关系运算符＞＜表达式＞｜＜表达式＞ //表达式为0条件为假，否则为真
 void Syntaxer::condition() {
     cout << "This is the head of condition." << endl;
-    expression();
+    expression(false);
     string preto = to;
     if (symtype == LSSY || symtype == LESY || symtype == GTSY ||
         symtype == GESY || symtype == NEQSY || symtype == EQUSY){
         symbol tmpsym = symtype;
         nxtsym();
-        expression();
+        expression(false);
         labelm = "label" + to_string(labelnum);
         labelnum ++;
 
@@ -1135,7 +1134,7 @@ void Syntaxer::switchstatement() {
             return;
         }
         nxtsym();
-        expression();
+        expression(false);
         switchcase = to;
         if (symtype != RPARSY) {
             error();
@@ -1249,16 +1248,16 @@ void Syntaxer::printfstatment() {
         }
         nxtsym();
         if (token[0] != '\"') { // isn't string
-            expression();
+            expression(true);
             emit(write, to, to_string(ischar), "");
         }
         else if (token[0] == '\"') { // is string
             characterlist(); // the emit is in it
             emit(write, "_str" + to_string(strnum), "1", "str");
             strnum ++;
-            if (symtype == COMMASY) {
+            if (symtype == COMMASY) { // string + expression
                 nxtsym();
-                expression();
+                expression(true);
                 emit(write, to, to_string(ischar), "");
             }
         }
@@ -1324,7 +1323,7 @@ void Syntaxer::returnstatement() {
         nxtsym();
         if (symtype == LPARSY) {
             nxtsym();
-            expression();
+            expression(false);
             if (symtype != RPARSY) {
                 error();
                 return;

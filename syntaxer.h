@@ -49,9 +49,9 @@ public:
     void vardec();
     void program();
     void statement();
-    void expression();
-    void term();
-    void factor();
+    void expression(bool lock);
+    void term(bool lock);
+    void factor(bool lock);
     void callvoidfunc(string funcname);
     void callretfunc(string funcname);
     void assignment();

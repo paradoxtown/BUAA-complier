@@ -1,9 +1,10 @@
 char str1[10];
 
 void main(){
-    int n;
+    int n, array[100];
     char str[20];
     scanf(n);
+    array[n] = 2;
     str[n] = 'a';
     str1[n] = 'b';
     str[5] = 'c';
@@ -11,5 +12,5 @@ void main(){
     printf(str[n]);
     printf(str1[n]);
     printf(str[5]);
-    printf(str1[5]);
+    printf((str1[array[n] + 1 * 4]));
 }
