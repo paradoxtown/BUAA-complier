@@ -26,7 +26,7 @@ string switchcase;
 int symnumber = 0;
 bool isbackfromvardec = false;
 bool havemain = false;
-//bool lock = true;
+bool ismain = false;
 symbol symtype;
 char symname[NAMELEN];
 char name4back[NAMELEN];
@@ -48,23 +48,23 @@ void Syntaxer::enter(char *name, obj object, typ type, int level, int value, int
 
 void Syntaxer::pushtab(char *name, obj object, typ type, int level, int value, int address, int number){
     if (object == function){
-        for (int i = 1; i < stab.pnum; i ++){ // to match the sub program's name
-            if (!strcmp(stab.element[stab.pindex[i]].name, name)){
-                error();
-                return;
-            }
-        }
+//        for (int i = 1; i < stab.pnum; i ++){ // to match the sub program's name
+//            if (!strcmp(stab.element[stab.pindex[i]].name, name)){
+//                error();
+//                return;
+//            }
+//        }
         stab.pindex[stab.pnum ++] = stab.top + 1; // set this function to the stack's top
     }
-    else { // object is const, var, typel
-        int i = stab.pindex[stab.pnum - 1]; // find the current sub program
-        for ( ; i < stab.top; i ++){
-            if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object){ // if it has been defined
-                error();
-                return;
-            }
-        }
-    }
+//    else { // object is const, var, typel
+//        int i = stab.pindex[stab.pnum - 1]; // find the current sub program
+//        for ( ; i < stab.top; i ++){
+//            if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object){ // if it has been defined
+//                error();
+//                return;
+//            }
+//        }
+//    }
     strcpy(stab.element[stab.top].name, name);
     stab.element[stab.top].object = object;
     stab.element[stab.top].type = type;
@@ -205,6 +205,7 @@ void Syntaxer::voidfuncdec() {
 
 // ＜主函数＞ ::= void main'('')''{'＜复合语句＞'}'
 void Syntaxer::functionmain() {
+    ismain = true;
     if (symtype == VOIDSY) {
         address = 0;
         regnum = 0;
@@ -238,6 +239,7 @@ void Syntaxer::functionmain() {
             error();
             return;
         }
+        emit(label, "end", "", "");
     }
     else {
         error();
@@ -357,9 +359,10 @@ void Syntaxer::ischaracter() {
 // ＜整数＞ ::= ［＋｜－］＜无符号整数＞
 void Syntaxer::isnumber() {
     if (symtype == PLUSSY || symtype == MINUSSY) { // "+" | "-"
+        symbol tmpsym = symtype;
         nxtsym();
         value = transNum(token); // may i rename the "returnname" to " returntoken"?
-        value = symtype == PLUSSY ? value : -value;
+        value = tmpsym == PLUSSY ? value : -value;
     } else if (symtype == INTEGERSY) {
         value = transNum(returnname());
     } else {
@@ -483,7 +486,7 @@ void Syntaxer::vardef() {
                     if (symtype == RBRACKSY){
                         value = 0;
                         idx = searchtab(symname, variable);
-                        if (idx == 0) {
+                        if (idx == 0 || (level != 1 && stab.element[idx].level == 1)) {
                             enter(symname, variable, tmpsym == INTSY ? ints : chars, level, value, address, number);
                             emit(arr, tmpsym == INTSY ? "int" : "char", symname, to_string(number), level == 1, address); // array
                             address += number * 4;
@@ -503,7 +506,7 @@ void Syntaxer::vardef() {
                     value = 0;
                     number = 1;
                     idx = searchtab(symname, variable);
-                    if (idx == 0) {
+                    if (idx == 0 || (level != 1 && stab.element[idx].level == 1)) {
                         enter(symname, variable, tmpsym == INTSY ? ints : chars, level, value, address, number);
                         emit(var, tmpsym == INTSY ? "int" : "char", symname, "", level == 1, address);
                         address += 4;
@@ -654,7 +657,14 @@ void Syntaxer::statement() {
         if (symtype == ASSIGNSY || symtype == LBRACKSY) {
             BACK
             symtype = IDENTSY;
-            idx = searchtab(symname, variable);
+            idx = searchtab(symname, parameter);
+            if (idx == 0) {
+                idx = searchtab(symname, variable);
+                if (idx == 0) {
+                    error();
+                    return;
+                }
+            }
             if (idx > 0) {
                 assignment();
             }
@@ -733,6 +743,7 @@ void Syntaxer::expression(bool lock) {
             term(lock);
         }
         else { // - a + b
+            if (lock) ischar += 2;
             nxtsym();
             term(lock);
             string preto = to;
@@ -947,7 +958,7 @@ void Syntaxer::callvoidfunc(string funcname) {
             error();
             return;
         }
-        emit(jal, funcname, "", "");
+        emit(jal, funcname, "", ""); // 1 means it is void
     }
     else {
         error();
@@ -1078,8 +1089,9 @@ void Syntaxer::condition() {
         }
     }
     else {
-        error();
-        return;
+        labelm = "label" + to_string(labelnum);
+        labelnum ++;
+        emit(bne, preto, "0", labelm);
     }
     cout << "This is a condition." << endl;
 }
@@ -1329,8 +1341,11 @@ void Syntaxer::returnstatement() {
                 return;
             }
             nxtsym();
+            emit(ret, to, "", "", ismain, 0);
         }
-        emit(ret, to, "", "");
+        else if(symtype == SEMISY) {
+            emit(ret, "", "", "", ismain, 0);
+        }
     }
     else {
         error();

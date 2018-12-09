@@ -1,0 +1,63 @@
+int n, m, ans;
+int vis[10];
+int edge[100];
+
+int getid(int a, int b) {
+    a = a * n;
+    return (a + b);
+}
+
+void dfs(int u, int step) {
+    int i;
+    if (step == n) {
+        if (edge[getid(u, 0)]) {
+            ans = 1;
+        }
+        return;
+    }
+    i = 0;
+    while (i != n) {
+        if (vis[i] == 0) {
+            if (edge[getid(u, i)]) {
+                vis[i] = 1;
+                dfs(i, step + 1);
+                if (ans) return;
+                vis[i] = 0;
+            }
+        }
+        i = i + 1;
+    }
+    return;
+}
+
+void main() {
+    int i, a, b, c;
+    scanf(n);
+    scanf(m);
+    i = 0;
+    while (i != m) {
+        scanf(a);
+        scanf(b);
+        a = a - 1;
+        b = b - 1;
+        c = edge[getid(a, b)];
+        edge[getid(a, b)] = c + 1;
+        edge[getid(b, a)] = c + 1;
+        i = i + 1;
+    }
+    if (n == 1) {
+        printf("1");
+        return;
+    }
+    if (n == 2) {
+        if (edge[getid(0, 1)] >= 2) {
+            printf("1");
+            return;
+        }
+        printf("0");
+        return;
+    }
+    vis[0] = 1;
+    dfs(0, 1);
+    printf(ans);
+}

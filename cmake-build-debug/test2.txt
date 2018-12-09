@@ -1,19 +1,6 @@
-int sum(int a, int b) {
-    return (-(a * b) * (a - b) + ((a + b) - b));
-}
-
 void main(){
-    int a, b, c;
-    char ch;
-    scanf(a, b);
-    c = sum(a, b);
-    printf(c);
-    scanf(ch);
-    switch(ch) {
-        case 'a': printf('e');
-        case 'b': printf('f');
-        case 'c': printf('j');
-        case 'd': printf('h');
-        default: printf('j');
-    }
+    int a;
+    a = ++1;
+    printf(a);
+    return;
 }

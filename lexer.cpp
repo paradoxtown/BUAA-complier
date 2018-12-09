@@ -13,7 +13,7 @@ using namespace std;
 char line[ROWLENGTH][LENGTH];
 int num = 0, rows = 0;
 int cc = 0, ll = 0, l = 0, cnt = 0;
-FILE *fin, *fout;
+FILE *fin, *foutput;
 //symbol result;
 int symnum = 0;
 map<string, symbol> key2sym;
@@ -23,7 +23,7 @@ syminfo syminfolist[SYMNUM + 1];
 void init(char *path){
     symnum = 0;
     fin = fopen(path, "r");
-    fout = fopen("./result.txt", "w");
+    foutput = fopen("./result.txt", "w");
     key2sym["int"] = INTSY;
     key2sym["char"] = CHARSY;
     key2sym["const"] = CONSTSY;
@@ -108,6 +108,7 @@ char getchr(){
     }
     ch = line[cnt - 1][cc ++];
     // cout << ch << endl;
+    if (line[cnt - 1][cc - 2] == '\'' && line[cnt - 1][cc] == '\'') return ch;
     return char(tolower(ch));
 }
 
@@ -126,13 +127,13 @@ int transNum(char* word){
 }
 
 void lexerror(){
-    fprintf(fout, "ERROR occurs at line %d columns %d\n", cnt, cc);
+    fprintf(foutput, "ERROR occurs at line %d columns %d\n", cnt, cc);
     cout << "exit with code -1" << endl;
 }
 
 void print(char *str, symbol sym){
     auto *sy = (char *)(sym2str[sym]).data();
-    fprintf(fout, "%3d, %12s, No.%3d : %s.\n", cnt, sy, sym, str);
+    fprintf(foutput, "%3d, %12s, No.%3d : %s.\n", cnt, sy, sym, str);
 }
 
 void getsymInit(){
@@ -305,7 +306,7 @@ int getsym(){
         }
     }
     else if (ch == EOF || ch == '\0'){
-        fclose(fout);
+        fclose(foutput);
         return 0;
     }
     else {
