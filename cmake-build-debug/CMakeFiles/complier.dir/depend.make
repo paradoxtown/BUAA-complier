@@ -45,6 +45,7 @@ CMakeFiles/complier.dir/syntaxer.cpp.obj: ../main.h
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../quader.h
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../syntaxer.cpp
 CMakeFiles/complier.dir/syntaxer.cpp.obj: ../syntaxer.h
+CMakeFiles/complier.dir/syntaxer.cpp.obj: ../tools.h
 
 CMakeFiles/complier.dir/tools.cpp.obj: ../tools.cpp
 CMakeFiles/complier.dir/tools.cpp.obj: ../tools.h

@@ -16,7 +16,7 @@ string switchcase;
 int symnumber = 0;
 bool isbackfromvardec = false;
 bool havemain = false;
-bool ismain = false, isvoid = false;
+bool ismain = false, isvoid = false, isover = false;
 bool functyp;
 symbol symtype;
 char symname[NAMELEN];
@@ -24,7 +24,7 @@ char name4back[NAMELEN];
 map<string, params> ptab;
 
 void Syntaxer::nxtsym() {
-    if (getsym() < 0) exit(0) ;
+    if (getsym() == 0) isover = true;
     symtype = result;
     symnumber ++;
     cout << token << endl;
@@ -720,6 +720,7 @@ void Syntaxer::statementlist() {
         symtype == IDENTSY || symtype == SCANFSY || symtype == PRINTSY ||
         symtype == SWITCHSY || symtype == RETSY || symtype == SEMISY) {
         do {
+            if (isover) return;
             statement();
         } while (symtype == IFSY || symtype == LOOPSY || symtype == LPRTSY ||
                  symtype == IDENTSY || symtype == SCANFSY || symtype == PRINTSY ||
@@ -740,10 +741,15 @@ void Syntaxer::expression(bool lock) {
             if (lock) ischar += 2; // for - 'a'
             nxtsym();
             term(lock);
-            string preto = to;
-            to = "T" + to_string(regnum);
-            regnum ++;
-            emit(sub, to, "0", preto); // to = 0 - tn
+            if (isconst(to)) {
+                to = to_string(-stoi(to));
+            }
+            else {
+                string preto = to;
+                to = "T" + to_string(regnum);
+                regnum++;
+                emit(sub, to, "0", preto); // to = 0 - tn
+            }
         }
         string pretn = to;
         if (symtype == PLUSSY || symtype == MINUSSY) {
@@ -839,10 +845,24 @@ void Syntaxer::factor(bool lock) {
                 error(NOTBEENDEFINED, linenumber);
             }
             if(lock) stab.element[idx].type == ints ? ischar += 2 : ischar ++;
+            int length = stab.element[idx].number;
             int tmpaddr = stab.element[idx].address;
             bool isglobal = stab.element[idx].level == 1;
             nxtsym();
-            expression(false); // array[ expression ]
+            int tmpischar = ischar;
+            ischar = 0;
+            expression(true); // array[ expression ]
+            if (ischar == 1) {
+                error(NOTINTEGER, linenumber);
+            }
+            ischar = tmpischar;
+
+            if (isconst(to)) {
+                if (!(0 <= stoi(to) && stoi(to) <= length)) {
+                    error(OUTSTACK, linenumber);
+                }
+            }
+
             if (symtype != RBRACKSY){ // missing ']'
                 error(NOTRBRA, linenumber);
             }
@@ -977,7 +997,7 @@ void Syntaxer::assignment() {
             if (expression1 != ints) {
                 error(NOTINTEGER, linenumber);
             }
-            string preto = to;
+            string preto = to; // preto is the length, it may be the tn, or it may be the integer
             if (symtype != RBRACKSY){ // ']'
                 error(NOTRBRA, linenumber);
             }
@@ -990,6 +1010,12 @@ void Syntaxer::assignment() {
                 idx = searchtab(name4back, variable);
                 if (idx == 0) {
                     error(NOTBEENDEFINED, linenumber);
+                }
+                int length = stab.element[idx].number;
+                if (isconst(preto)) {
+                    if (!(0 <= stoi(preto) && stoi(preto) <= length)) {
+                        error(OUTSTACK, linenumber);
+                    }
                 }
                 typ array1 = stab.element[idx].type;
                 if (array1 != expression2) {

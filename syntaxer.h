@@ -8,6 +8,7 @@
 #include "main.h"
 #include "error.h"
 #include "quader.h"
+#include "tools.h"
 #include <string.h>
 #include <iostream>
 #include <vector>

@@ -3,9 +3,12 @@ int aaaa(int a, int b, char c){
 }
 
 void main(){
+    int arr[10];
     int a;
     int b;
     char c;
-    aaaa(a, b, a);
+    a = arr[-1];
+    arr[11] = 1;
+    aaaa(a, b, c);
     return;
 }

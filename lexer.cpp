@@ -15,7 +15,6 @@ int num = 0, rows = 0;
 int linenumber;
 int cc = 0, ll = 0, l = 0, cnt = 0;
 FILE *fin, *foutput;
-//symbol result;
 int symnum = 0;
 map<string, symbol> key2sym;
 map<symbol, string> sym2str;

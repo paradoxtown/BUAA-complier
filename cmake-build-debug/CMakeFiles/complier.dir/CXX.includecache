@@ -47,10 +47,16 @@ error.h
 C:/Users/MUSE/Desktop/complier/error.h
 quader.h
 C:/Users/MUSE/Desktop/complier/quader.h
+tools.h
+C:/Users/MUSE/Desktop/complier/tools.h
 string.h
 -
 iostream
 -
 vector
+-
+
+C:/Users/MUSE/Desktop/complier/tools.h
+iostream
 -
 
