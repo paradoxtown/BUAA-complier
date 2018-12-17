@@ -1,1958 +1,2997 @@
   1,      CONSTSY, No. 24 : const.
   1,        INTSY, No. 22 : int.
-  1,      IDENTSY, No. 38 : const_int_1.
+  1,      IDENTSY, No. 38 : const_1.
   1,     ASSIGNSY, No. 10 : =.
-  1,    INTEGERSY, No. 35 : 12345679.
+  1,    INTEGERSY, No. 35 : 1.
   1,      COMMASY, No. 18 : ,.
-  1,      IDENTSY, No. 38 : const_int_2.
+  1,      IDENTSY, No. 38 : const_2.
   1,     ASSIGNSY, No. 10 : =.
-  1,    INTEGERSY, No. 35 : .
+  1,    INTEGERSY, No. 35 : 2.
   1,       SEMISY, No. 19 : ;.
   2,      CONSTSY, No. 24 : const.
   2,        INTSY, No. 22 : int.
-  2,      IDENTSY, No. 38 : const_int_3.
+  2,      IDENTSY, No. 38 : const_3.
   2,     ASSIGNSY, No. 10 : =.
-  2,      MINUSSY, No.  1 : -.
-  2,    INTEGERSY, No. 35 : .
-  2,      COMMASY, No. 18 : ,.
-  2,      IDENTSY, No. 38 : const_int_4.
-  2,     ASSIGNSY, No. 10 : =.
-  2,      MINUSSY, No.  1 : -.
-  2,    INTEGERSY, No. 35 : 12345679.
+  2,    INTEGERSY, No. 35 : 3.
   2,       SEMISY, No. 19 : ;.
   3,      CONSTSY, No. 24 : const.
   3,       CHARSY, No. 23 : char.
-  3,      IDENTSY, No. 38 : const_char_1.
+  3,      IDENTSY, No. 38 : const_a.
   3,     ASSIGNSY, No. 10 : =.
-  3,       SQUOSY, No. 20 : '9'.
+  3,       SQUOSY, No. 20 : 'a'.
   3,      COMMASY, No. 18 : ,.
-  3,      IDENTSY, No. 38 : const_char_2.
+  3,      IDENTSY, No. 38 : const_b.
   3,     ASSIGNSY, No. 10 : =.
-  3,       SQUOSY, No. 20 : '_'.
-  3,      COMMASY, No. 18 : ,.
-  3,      IDENTSY, No. 38 : const_char_3.
-  3,     ASSIGNSY, No. 10 : =.
-  3,       SQUOSY, No. 20 : '+'.
-  3,      COMMASY, No. 18 : ,.
-  3,      IDENTSY, No. 38 : const_char_4.
-  3,     ASSIGNSY, No. 10 : =.
-  3,       SQUOSY, No. 20 : '*'.
+  3,       SQUOSY, No. 20 : 'b'.
   3,       SEMISY, No. 19 : ;.
-  5,        INTSY, No. 22 : int.
-  5,      IDENTSY, No. 38 : global_int_array_1.
-  5,     LBRACKSY, No. 13 : [.
-  5,      IDENTSY, No. 38 : global_int_array_1.
-  5,     LBRACKSY, No. 13 : [.
-  5,      IDENTSY, No. 38 : global_int_array_1.
-  5,     LBRACKSY, No. 13 : [.
-  5,    INTEGERSY, No. 35 : 5.
-  5,     RBRACKSY, No. 14 : ].
-  5,      COMMASY, No. 18 : ,.
-  5,      IDENTSY, No. 38 : global_int_1.
+  4,      CONSTSY, No. 24 : const.
+  4,       CHARSY, No. 23 : char.
+  4,      IDENTSY, No. 38 : const_c.
+  4,     ASSIGNSY, No. 10 : =.
+  4,       SQUOSY, No. 20 : 'c'.
+  4,       SEMISY, No. 19 : ;.
+  5,      CONSTSY, No. 24 : const.
+  5,       CHARSY, No. 23 : char.
+  5,      IDENTSY, No. 38 : const_.
+  5,     ASSIGNSY, No. 10 : =.
+  5,       SQUOSY, No. 20 : '_'.
   5,       SEMISY, No. 19 : ;.
-  6,       CHARSY, No. 23 : char.
-  6,      IDENTSY, No. 38 : global_char_array_1.
+  6,        INTSY, No. 22 : int.
+  6,      IDENTSY, No. 38 : count.
+  6,      COMMASY, No. 18 : ,.
+  6,      IDENTSY, No. 38 : count.
+  6,      COMMASY, No. 18 : ,.
+  6,      IDENTSY, No. 38 : count.
+  6,      COMMASY, No. 18 : ,.
+  6,      IDENTSY, No. 38 : num.
   6,     LBRACKSY, No. 13 : [.
-  6,      IDENTSY, No. 38 : global_char_array_1.
+  6,    INTEGERSY, No. 35 : 10.
+  6,     RBRACKSY, No. 14 : ].
+  6,      COMMASY, No. 18 : ,.
+  6,      IDENTSY, No. 38 : letter.
   6,     LBRACKSY, No. 13 : [.
   6,    INTEGERSY, No. 35 : 5.
   6,     RBRACKSY, No. 14 : ].
-  6,      COMMASY, No. 18 : ,.
-  6,      IDENTSY, No. 38 : global_char_1.
   6,       SEMISY, No. 19 : ;.
-  7,        INTSY, No. 22 : int.
-  7,      IDENTSY, No. 38 : global_int_2.
-  7,      COMMASY, No. 18 : ,.
-  7,      IDENTSY, No. 38 : global_int_2.
-  7,      COMMASY, No. 18 : ,.
-  7,      IDENTSY, No. 38 : global_int_array_2.
-  7,     LBRACKSY, No. 13 : [.
-  7,    INTEGERSY, No. 35 : 5.
-  7,     RBRACKSY, No. 14 : ].
+  7,       CHARSY, No. 23 : char.
+  7,      IDENTSY, No. 38 : s.
   7,       SEMISY, No. 19 : ;.
-  8,       CHARSY, No. 23 : char.
-  8,      IDENTSY, No. 38 : global_char_2.
+  7,      IDENTSY, No. 38 : s.
+  7,       SEMISY, No. 19 : ;.
+  8,        INTSY, No. 22 : int.
+  8,      IDENTSY, No. 38 : _.
   8,      COMMASY, No. 18 : ,.
-  8,      IDENTSY, No. 38 : global_char_2.
+  8,      IDENTSY, No. 38 : _.
   8,      COMMASY, No. 18 : ,.
-  8,      IDENTSY, No. 38 : global_char_array_2.
-  8,     LBRACKSY, No. 13 : [.
-  8,    INTEGERSY, No. 35 : 5.
-  8,     RBRACKSY, No. 14 : ].
+  8,      IDENTSY, No. 38 : __.
   8,      COMMASY, No. 18 : ,.
-  8,      IDENTSY, No. 38 : global_char_array_3.
-  8,     LBRACKSY, No. 13 : [.
-  8,    INTEGERSY, No. 35 : 10.
-  8,     RBRACKSY, No. 14 : ].
+  8,      IDENTSY, No. 38 : ___.
+  8,      COMMASY, No. 18 : ,.
+  8,      IDENTSY, No. 38 : __a__.
+  8,      COMMASY, No. 18 : ,.
+  8,      IDENTSY, No. 38 : _a_.
   8,       SEMISY, No. 19 : ;.
- 10,       VOIDSY, No. 25 : void.
- 10,      IDENTSY, No. 38 : hanoi.
- 10,      IDENTSY, No. 38 : hanoi.
- 10,       LPAESY, No. 11 : (.
- 10,        INTSY, No. 22 : int.
- 10,      IDENTSY, No. 38 : n.
- 10,      COMMASY, No. 18 : ,.
- 10,       CHARSY, No. 23 : char.
- 10,      IDENTSY, No. 38 : from.
- 10,      COMMASY, No. 18 : ,.
- 10,       CHARSY, No. 23 : char.
- 10,      IDENTSY, No. 38 : tmp.
- 10,      COMMASY, No. 18 : ,.
- 10,       CHARSY, No. 23 : char.
- 10,      IDENTSY, No. 38 : to.
- 10,       RPARSY, No. 12 : ).
- 11,       LPRTSY, No. 15 : {.
- 12,         IFSY, No. 30 : if.
+  9,        INTSY, No. 22 : int.
+  9,      IDENTSY, No. 38 : judge.
+  9,       SEMISY, No. 19 : ;.
+  9,      IDENTSY, No. 38 : judge.
+  9,       SEMISY, No. 19 : ;.
+ 12,        INTSY, No. 22 : int.
+ 12,      IDENTSY, No. 38 : get_sum.
  12,       LPAESY, No. 11 : (.
- 12,      IDENTSY, No. 38 : n.
- 12,         GTSY, No.  6 : >.
- 12,    INTEGERSY, No. 35 : .
+ 12,      IDENTSY, No. 38 : get_sum.
+ 12,       LPAESY, No. 11 : (.
+ 12,        INTSY, No. 22 : int.
+ 12,      IDENTSY, No. 38 : a.
  12,       RPARSY, No. 12 : ).
- 12,       LPRTSY, No. 15 : {.
- 13,      IDENTSY, No. 38 : hanoi.
- 13,       LPAESY, No. 11 : (.
- 13,       LPAESY, No. 11 : (.
- 13,      IDENTSY, No. 38 : n.
- 13,      MINUSSY, No.  1 : -.
- 13,    INTEGERSY, No. 35 : 1.
- 13,      COMMASY, No. 18 : ,.
- 13,      IDENTSY, No. 38 : from.
- 13,      COMMASY, No. 18 : ,.
- 13,      IDENTSY, No. 38 : to.
- 13,      COMMASY, No. 18 : ,.
- 13,      IDENTSY, No. 38 : tmp.
- 13,       RPARSY, No. 12 : ).
- 13,       SEMISY, No. 19 : ;.
- 14,      PRINTSY, No. 33 : printf.
- 14,       LPAESY, No. 11 : (.
- 14,       DQUOSY, No. 21 : ".
- 14,     STRINGSY, No. 37 : "take".
- 14,       DQUOSY, No. 21 : "take".
- 14,       RPARSY, No. 12 : ).
+ 13,       LPRTSY, No. 15 : {.
+ 14,        INTSY, No. 22 : int.
+ 14,      IDENTSY, No. 38 : b.
  14,       SEMISY, No. 19 : ;.
- 15,      PRINTSY, No. 33 : printf.
- 15,       LPAESY, No. 11 : (.
- 15,      IDENTSY, No. 38 : n.
- 15,       RPARSY, No. 12 : ).
+ 14,      IDENTSY, No. 38 : b.
+ 14,       SEMISY, No. 19 : ;.
+ 15,      IDENTSY, No. 38 : judge.
+ 15,     ASSIGNSY, No. 10 : =.
+ 15,     ASSIGNSY, No. 10 : =.
+ 15,      IDENTSY, No. 38 : judge.
+ 15,       PLUSSY, No.  0 : +.
+ 15,    INTEGERSY, No. 35 : 1.
  15,       SEMISY, No. 19 : ;.
- 16,      PRINTSY, No. 33 : printf.
- 16,       LPAESY, No. 11 : (.
- 16,       DQUOSY, No. 21 : ".
- 16,     STRINGSY, No. 37 : "from".
- 16,       DQUOSY, No. 21 : "from".
- 16,       RPARSY, No. 12 : ).
+ 16,      IDENTSY, No. 38 : count.
+ 16,     ASSIGNSY, No. 10 : =.
+ 16,     ASSIGNSY, No. 10 : =.
+ 16,      IDENTSY, No. 38 : count.
+ 16,       PLUSSY, No.  0 : +.
+ 16,    INTEGERSY, No. 35 : 1.
  16,       SEMISY, No. 19 : ;.
- 17,      PRINTSY, No. 33 : printf.
- 17,       LPAESY, No. 11 : (.
- 17,      IDENTSY, No. 38 : from.
- 17,       RPARSY, No. 12 : ).
+ 17,      IDENTSY, No. 38 : b.
+ 17,     ASSIGNSY, No. 10 : =.
+ 17,     ASSIGNSY, No. 10 : =.
+ 17,    INTEGERSY, No. 35 : .
  17,       SEMISY, No. 19 : ;.
- 18,      PRINTSY, No. 33 : printf.
+ 18,         IFSY, No. 30 : if.
  18,       LPAESY, No. 11 : (.
- 18,       DQUOSY, No. 21 : ".
- 18,     STRINGSY, No. 37 : "to".
- 18,       DQUOSY, No. 21 : "to".
+ 18,      IDENTSY, No. 38 : a.
+ 18,        NEQSY, No.  8 : !=.
+ 18,    INTEGERSY, No. 35 : 1.
  18,       RPARSY, No. 12 : ).
- 18,       SEMISY, No. 19 : ;.
- 19,      PRINTSY, No. 33 : printf.
+ 18,       LPRTSY, No. 15 : {.
+ 19,      IDENTSY, No. 38 : b.
+ 19,     ASSIGNSY, No. 10 : =.
+ 19,     ASSIGNSY, No. 10 : =.
+ 19,      IDENTSY, No. 38 : get_sum.
  19,       LPAESY, No. 11 : (.
- 19,      IDENTSY, No. 38 : to.
+ 19,      IDENTSY, No. 38 : a.
+ 19,      MINUSSY, No.  1 : -.
+ 19,    INTEGERSY, No. 35 : 1.
  19,       RPARSY, No. 12 : ).
  19,       SEMISY, No. 19 : ;.
- 20,      IDENTSY, No. 38 : hanoi.
- 20,       LPAESY, No. 11 : (.
- 20,       LPAESY, No. 11 : (.
- 20,      IDENTSY, No. 38 : n.
- 20,      MINUSSY, No.  1 : -.
+ 20,      IDENTSY, No. 38 : judge.
+ 20,     ASSIGNSY, No. 10 : =.
+ 20,     ASSIGNSY, No. 10 : =.
+ 20,      IDENTSY, No. 38 : judge.
+ 20,       PLUSSY, No.  0 : +.
  20,    INTEGERSY, No. 35 : 1.
- 20,      COMMASY, No. 18 : ,.
- 20,      IDENTSY, No. 38 : tmp.
- 20,      COMMASY, No. 18 : ,.
- 20,      IDENTSY, No. 38 : from.
- 20,      COMMASY, No. 18 : ,.
- 20,      IDENTSY, No. 38 : to.
- 20,       RPARSY, No. 12 : ).
  20,       SEMISY, No. 19 : ;.
  21,       RPRTSY, No. 16 : }.
  22,        RETSY, No. 34 : return.
+ 22,       LPAESY, No. 11 : (.
+ 22,      IDENTSY, No. 38 : b.
+ 22,       PLUSSY, No.  0 : +.
+ 22,      IDENTSY, No. 38 : a.
+ 22,       RPARSY, No. 12 : ).
  22,       SEMISY, No. 19 : ;.
- 23,       RPRTSY, No. 16 : }.
- 25,        INTSY, No. 22 : int.
- 25,      IDENTSY, No. 38 : Fibonacci.
- 25,       LPAESY, No. 11 : (.
- 25,      IDENTSY, No. 38 : Fibonacci.
- 25,       LPAESY, No. 11 : (.
- 25,        INTSY, No. 22 : int.
- 25,      IDENTSY, No. 38 : n.
- 25,       RPARSY, No. 12 : ).
- 25,       LPRTSY, No. 15 : {.
- 26,         IFSY, No. 30 : if.
+ 24,       RPRTSY, No. 16 : }.
+ 26,        INTSY, No. 22 : int.
+ 26,      IDENTSY, No. 38 : count_to_10.
  26,       LPAESY, No. 11 : (.
- 26,      IDENTSY, No. 38 : n.
- 26,        EQUSY, No.  9 : ==.
- 26,    INTEGERSY, No. 35 : .
+ 26,      IDENTSY, No. 38 : count_to_10.
+ 26,       LPAESY, No. 11 : (.
  26,       RPARSY, No. 12 : ).
- 27,        RETSY, No. 34 : return.
- 27,       LPAESY, No. 11 : (.
- 27,    INTEGERSY, No. 35 : .
- 27,       RPARSY, No. 12 : ).
- 27,       SEMISY, No. 19 : ;.
- 28,         IFSY, No. 30 : if.
- 28,       LPAESY, No. 11 : (.
- 28,      IDENTSY, No. 38 : n.
- 28,        EQUSY, No.  9 : ==.
+ 27,       LPRTSY, No. 15 : {.
+ 28,      IDENTSY, No. 38 : judge.
+ 28,     ASSIGNSY, No. 10 : =.
+ 28,     ASSIGNSY, No. 10 : =.
+ 28,      IDENTSY, No. 38 : judge.
+ 28,       PLUSSY, No.  0 : +.
  28,    INTEGERSY, No. 35 : 1.
- 28,       RPARSY, No. 12 : ).
+ 28,       SEMISY, No. 19 : ;.
  29,        RETSY, No. 34 : return.
  29,       LPAESY, No. 11 : (.
- 29,    INTEGERSY, No. 35 : 1.
+ 29,      IDENTSY, No. 38 : get_sum.
+ 29,       LPAESY, No. 11 : (.
+ 29,    INTEGERSY, No. 35 : 10.
+ 29,       RPARSY, No. 12 : ).
  29,       RPARSY, No. 12 : ).
  29,       SEMISY, No. 19 : ;.
- 30,        RETSY, No. 34 : return.
- 30,       LPAESY, No. 11 : (.
- 30,      IDENTSY, No. 38 : Fibonacci.
- 30,       LPAESY, No. 11 : (.
- 30,      IDENTSY, No. 38 : n.
- 30,      MINUSSY, No.  1 : -.
- 30,    INTEGERSY, No. 35 : 1.
- 30,       RPARSY, No. 12 : ).
- 30,       PLUSSY, No.  0 : +.
- 30,      IDENTSY, No. 38 : Fibonacci.
- 30,       LPAESY, No. 11 : (.
- 30,      IDENTSY, No. 38 : n.
- 30,      MINUSSY, No.  1 : -.
- 30,    INTEGERSY, No. 35 : 2.
- 30,       RPARSY, No. 12 : ).
- 30,       RPARSY, No. 12 : ).
- 30,       SEMISY, No. 19 : ;.
- 31,       RPRTSY, No. 16 : }.
- 33,        INTSY, No. 22 : int.
- 33,      IDENTSY, No. 38 : fac.
- 33,       LPAESY, No. 11 : (.
- 33,      IDENTSY, No. 38 : fac.
- 33,       LPAESY, No. 11 : (.
- 33,        INTSY, No. 22 : int.
- 33,      IDENTSY, No. 38 : n.
- 33,       RPARSY, No. 12 : ).
+ 30,       RPRTSY, No. 16 : }.
+ 32,       CHARSY, No. 23 : char.
+ 32,      IDENTSY, No. 38 : higher.
+ 32,       LPAESY, No. 11 : (.
+ 32,      IDENTSY, No. 38 : higher.
+ 32,       LPAESY, No. 11 : (.
+ 32,       CHARSY, No. 23 : char.
+ 32,      IDENTSY, No. 38 : a.
+ 32,       RPARSY, No. 12 : ).
  33,       LPRTSY, No. 15 : {.
- 34,         IFSY, No. 30 : if.
+ 34,        RETSY, No. 34 : return.
  34,       LPAESY, No. 11 : (.
- 34,      IDENTSY, No. 38 : n.
- 34,        EQUSY, No.  9 : ==.
- 34,    INTEGERSY, No. 35 : 1.
+ 34,       SQUOSY, No. 20 : 'A'.
  34,       RPARSY, No. 12 : ).
- 35,        RETSY, No. 34 : return.
- 35,       LPAESY, No. 11 : (.
- 35,    INTEGERSY, No. 35 : 1.
- 35,       RPARSY, No. 12 : ).
- 35,       SEMISY, No. 19 : ;.
- 36,        RETSY, No. 34 : return.
- 36,       LPAESY, No. 11 : (.
- 36,      IDENTSY, No. 38 : n.
- 36,       MULTSY, No.  2 : *.
- 36,      IDENTSY, No. 38 : fac.
- 36,       LPAESY, No. 11 : (.
- 36,      IDENTSY, No. 38 : n.
- 36,      MINUSSY, No.  1 : -.
- 36,    INTEGERSY, No. 35 : 1.
- 36,       RPARSY, No. 12 : ).
- 36,       RPARSY, No. 12 : ).
- 36,       SEMISY, No. 19 : ;.
- 37,       RPRTSY, No. 16 : }.
- 39,       VOIDSY, No. 25 : void.
- 39,      IDENTSY, No. 38 : initGlobalArray.
- 39,      IDENTSY, No. 38 : initGlobalArray.
- 39,       LPAESY, No. 11 : (.
- 39,       RPARSY, No. 12 : ).
+ 34,       SEMISY, No. 19 : ;.
+ 35,       RPRTSY, No. 16 : }.
+ 38,       CHARSY, No. 23 : char.
+ 38,      IDENTSY, No. 38 : prt_message.
+ 38,       LPAESY, No. 11 : (.
+ 38,      IDENTSY, No. 38 : prt_message.
+ 38,       LPAESY, No. 11 : (.
+ 38,       RPARSY, No. 12 : ).
  39,       LPRTSY, No. 15 : {.
- 40,      IDENTSY, No. 38 : global_int_array_1.
- 40,     LBRACKSY, No. 13 : [.
- 40,     LBRACKSY, No. 13 : [.
- 40,    INTEGERSY, No. 35 : .
- 40,     RBRACKSY, No. 14 : ].
+ 40,      IDENTSY, No. 38 : judge.
  40,     ASSIGNSY, No. 10 : =.
- 40,    INTEGERSY, No. 35 : .
+ 40,     ASSIGNSY, No. 10 : =.
+ 40,      IDENTSY, No. 38 : judge.
+ 40,       PLUSSY, No.  0 : +.
+ 40,    INTEGERSY, No. 35 : 1.
  40,       SEMISY, No. 19 : ;.
- 41,      IDENTSY, No. 38 : global_int_array_1.
- 41,     LBRACKSY, No. 13 : [.
- 41,     LBRACKSY, No. 13 : [.
- 41,    INTEGERSY, No. 35 : 1.
- 41,     RBRACKSY, No. 14 : ].
- 41,     ASSIGNSY, No. 10 : =.
- 41,    INTEGERSY, No. 35 : 1.
+ 41,      PRINTSY, No. 33 : printf.
+ 41,       LPAESY, No. 11 : (.
+ 41,       DQUOSY, No. 21 : ".
+ 41,     STRINGSY, No. 37 : " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~".
+ 41,       DQUOSY, No. 21 : " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~".
+ 41,       RPARSY, No. 12 : ).
  41,       SEMISY, No. 19 : ;.
- 42,      IDENTSY, No. 38 : global_int_array_1.
- 42,     LBRACKSY, No. 13 : [.
- 42,     LBRACKSY, No. 13 : [.
- 42,    INTEGERSY, No. 35 : 2.
- 42,     RBRACKSY, No. 14 : ].
- 42,     ASSIGNSY, No. 10 : =.
- 42,      IDENTSY, No. 38 : global_int_array_1.
- 42,     LBRACKSY, No. 13 : [.
- 42,    INTEGERSY, No. 35 : .
- 42,     RBRACKSY, No. 14 : ].
- 42,       PLUSSY, No.  0 : +.
- 42,      IDENTSY, No. 38 : global_int_array_1.
- 42,     LBRACKSY, No. 13 : [.
- 42,    INTEGERSY, No. 35 : 1.
- 42,     RBRACKSY, No. 14 : ].
+ 42,        RETSY, No. 34 : return.
+ 42,       LPAESY, No. 11 : (.
+ 42,       SQUOSY, No. 20 : 'a'.
+ 42,       RPARSY, No. 12 : ).
  42,       SEMISY, No. 19 : ;.
- 43,      IDENTSY, No. 38 : global_int_array_1.
- 43,     LBRACKSY, No. 13 : [.
- 43,     LBRACKSY, No. 13 : [.
- 43,    INTEGERSY, No. 35 : 3.
- 43,     RBRACKSY, No. 14 : ].
- 43,     ASSIGNSY, No. 10 : =.
- 43,      IDENTSY, No. 38 : global_int_array_1.
- 43,     LBRACKSY, No. 13 : [.
- 43,    INTEGERSY, No. 35 : 2.
- 43,     RBRACKSY, No. 14 : ].
- 43,       PLUSSY, No.  0 : +.
- 43,      IDENTSY, No. 38 : global_int_array_1.
- 43,     LBRACKSY, No. 13 : [.
- 43,    INTEGERSY, No. 35 : 1.
- 43,     RBRACKSY, No. 14 : ].
- 43,       SEMISY, No. 19 : ;.
- 44,      IDENTSY, No. 38 : global_int_array_1.
- 44,     LBRACKSY, No. 13 : [.
- 44,     LBRACKSY, No. 13 : [.
- 44,    INTEGERSY, No. 35 : 4.
- 44,     RBRACKSY, No. 14 : ].
- 44,     ASSIGNSY, No. 10 : =.
- 44,      IDENTSY, No. 38 : global_int_array_1.
- 44,     LBRACKSY, No. 13 : [.
- 44,    INTEGERSY, No. 35 : 3.
- 44,     RBRACKSY, No. 14 : ].
- 44,       PLUSSY, No.  0 : +.
- 44,      IDENTSY, No. 38 : global_int_array_1.
- 44,     LBRACKSY, No. 13 : [.
- 44,    INTEGERSY, No. 35 : 2.
- 44,     RBRACKSY, No. 14 : ].
- 44,       SEMISY, No. 19 : ;.
- 45,      IDENTSY, No. 38 : global_int_array_2.
- 45,     LBRACKSY, No. 13 : [.
- 45,     LBRACKSY, No. 13 : [.
- 45,    INTEGERSY, No. 35 : .
- 45,     RBRACKSY, No. 14 : ].
- 45,     ASSIGNSY, No. 10 : =.
- 45,      IDENTSY, No. 38 : global_int_array_1.
- 45,     LBRACKSY, No. 13 : [.
- 45,    INTEGERSY, No. 35 : 1.
- 45,     RBRACKSY, No. 14 : ].
- 45,       SEMISY, No. 19 : ;.
- 46,      IDENTSY, No. 38 : global_int_array_2.
- 46,     LBRACKSY, No. 13 : [.
- 46,     LBRACKSY, No. 13 : [.
- 46,    INTEGERSY, No. 35 : 1.
- 46,     RBRACKSY, No. 14 : ].
- 46,     ASSIGNSY, No. 10 : =.
- 46,      IDENTSY, No. 38 : global_int_array_2.
- 46,     LBRACKSY, No. 13 : [.
- 46,    INTEGERSY, No. 35 : .
- 46,     RBRACKSY, No. 14 : ].
- 46,       MULTSY, No.  2 : *.
- 46,      IDENTSY, No. 38 : global_int_array_1.
- 46,     LBRACKSY, No. 13 : [.
- 46,    INTEGERSY, No. 35 : 2.
- 46,     RBRACKSY, No. 14 : ].
- 46,       SEMISY, No. 19 : ;.
- 47,      IDENTSY, No. 38 : global_int_array_2.
- 47,     LBRACKSY, No. 13 : [.
- 47,     LBRACKSY, No. 13 : [.
- 47,    INTEGERSY, No. 35 : 2.
- 47,     RBRACKSY, No. 14 : ].
- 47,     ASSIGNSY, No. 10 : =.
- 47,      IDENTSY, No. 38 : global_int_array_2.
- 47,     LBRACKSY, No. 13 : [.
- 47,    INTEGERSY, No. 35 : 1.
- 47,     RBRACKSY, No. 14 : ].
- 47,       MULTSY, No.  2 : *.
- 47,      IDENTSY, No. 38 : global_int_array_1.
- 47,     LBRACKSY, No. 13 : [.
- 47,    INTEGERSY, No. 35 : 3.
- 47,     RBRACKSY, No. 14 : ].
- 47,       SEMISY, No. 19 : ;.
- 48,      IDENTSY, No. 38 : global_int_array_2.
- 48,     LBRACKSY, No. 13 : [.
- 48,     LBRACKSY, No. 13 : [.
- 48,    INTEGERSY, No. 35 : 3.
- 48,     RBRACKSY, No. 14 : ].
- 48,     ASSIGNSY, No. 10 : =.
- 48,      IDENTSY, No. 38 : global_int_array_2.
- 48,     LBRACKSY, No. 13 : [.
- 48,    INTEGERSY, No. 35 : 2.
- 48,     RBRACKSY, No. 14 : ].
- 48,       MULTSY, No.  2 : *.
- 48,      IDENTSY, No. 38 : global_int_array_1.
- 48,     LBRACKSY, No. 13 : [.
- 48,    INTEGERSY, No. 35 : 4.
- 48,     RBRACKSY, No. 14 : ].
+ 43,       RPRTSY, No. 16 : }.
+ 46,       VOIDSY, No. 25 : void.
+ 46,      IDENTSY, No. 38 : test_global_variable.
+ 46,      IDENTSY, No. 38 : test_global_variable.
+ 46,       LPAESY, No. 11 : (.
+ 46,       RPARSY, No. 12 : ).
+ 47,       LPRTSY, No. 15 : {.
+ 48,        INTSY, No. 22 : int.
+ 48,      IDENTSY, No. 38 : a.
+ 48,      COMMASY, No. 18 : ,.
+ 48,      IDENTSY, No. 38 : a.
+ 48,      COMMASY, No. 18 : ,.
+ 48,      IDENTSY, No. 38 : flag.
  48,       SEMISY, No. 19 : ;.
- 49,      IDENTSY, No. 38 : global_int_array_2.
- 49,     LBRACKSY, No. 13 : [.
- 49,     LBRACKSY, No. 13 : [.
- 49,    INTEGERSY, No. 35 : 4.
- 49,     RBRACKSY, No. 14 : ].
+ 49,      IDENTSY, No. 38 : judge.
  49,     ASSIGNSY, No. 10 : =.
- 49,      IDENTSY, No. 38 : global_int_array_2.
- 49,     LBRACKSY, No. 13 : [.
- 49,    INTEGERSY, No. 35 : 3.
- 49,     RBRACKSY, No. 14 : ].
- 49,        DIVSY, No.  3 : /.
- 49,      IDENTSY, No. 38 : global_int_array_1.
- 49,     LBRACKSY, No. 13 : [.
- 49,    INTEGERSY, No. 35 : 4.
- 49,     RBRACKSY, No. 14 : ].
+ 49,     ASSIGNSY, No. 10 : =.
+ 49,      IDENTSY, No. 38 : judge.
+ 49,       PLUSSY, No.  0 : +.
+ 49,    INTEGERSY, No. 35 : 1.
  49,       SEMISY, No. 19 : ;.
- 50,      IDENTSY, No. 38 : global_char_array_1.
- 50,     LBRACKSY, No. 13 : [.
- 50,     LBRACKSY, No. 13 : [.
- 50,    INTEGERSY, No. 35 : .
- 50,     RBRACKSY, No. 14 : ].
+ 50,      IDENTSY, No. 38 : a.
  50,     ASSIGNSY, No. 10 : =.
- 50,       SQUOSY, No. 20 : 'a'.
+ 50,     ASSIGNSY, No. 10 : =.
+ 50,    INTEGERSY, No. 35 : .
  50,       SEMISY, No. 19 : ;.
- 51,      IDENTSY, No. 38 : global_char_array_1.
- 51,     LBRACKSY, No. 13 : [.
- 51,     LBRACKSY, No. 13 : [.
- 51,    INTEGERSY, No. 35 : 1.
- 51,     RBRACKSY, No. 14 : ].
+ 51,      IDENTSY, No. 38 : flag.
  51,     ASSIGNSY, No. 10 : =.
- 51,       SQUOSY, No. 20 : 'A'.
+ 51,     ASSIGNSY, No. 10 : =.
+ 51,    INTEGERSY, No. 35 : .
  51,       SEMISY, No. 19 : ;.
- 52,      IDENTSY, No. 38 : global_char_array_1.
- 52,     LBRACKSY, No. 13 : [.
- 52,     LBRACKSY, No. 13 : [.
- 52,    INTEGERSY, No. 35 : 2.
- 52,     RBRACKSY, No. 14 : ].
+ 52,      IDENTSY, No. 38 : count.
  52,     ASSIGNSY, No. 10 : =.
- 52,       SQUOSY, No. 20 : 'z'.
+ 52,     ASSIGNSY, No. 10 : =.
+ 52,    INTEGERSY, No. 35 : 2.
  52,       SEMISY, No. 19 : ;.
- 53,      IDENTSY, No. 38 : global_char_array_1.
+ 53,      IDENTSY, No. 38 : letter.
  53,     LBRACKSY, No. 13 : [.
  53,     LBRACKSY, No. 13 : [.
- 53,    INTEGERSY, No. 35 : 3.
+ 53,    INTEGERSY, No. 35 : .
  53,     RBRACKSY, No. 14 : ].
  53,     ASSIGNSY, No. 10 : =.
- 53,       SQUOSY, No. 20 : 'Z'.
+ 53,       SQUOSY, No. 20 : 'a'.
  53,       SEMISY, No. 19 : ;.
- 54,      IDENTSY, No. 38 : global_char_array_1.
+ 54,      IDENTSY, No. 38 : letter.
  54,     LBRACKSY, No. 13 : [.
  54,     LBRACKSY, No. 13 : [.
- 54,    INTEGERSY, No. 35 : 4.
+ 54,    INTEGERSY, No. 35 : 1.
  54,     RBRACKSY, No. 14 : ].
  54,     ASSIGNSY, No. 10 : =.
- 54,       SQUOSY, No. 20 : '_'.
+ 54,       SQUOSY, No. 20 : '1'.
  54,       SEMISY, No. 19 : ;.
- 55,      IDENTSY, No. 38 : global_char_array_2.
+ 55,      IDENTSY, No. 38 : letter.
  55,     LBRACKSY, No. 13 : [.
  55,     LBRACKSY, No. 13 : [.
- 55,    INTEGERSY, No. 35 : .
+ 55,    INTEGERSY, No. 35 : 2.
  55,     RBRACKSY, No. 14 : ].
  55,     ASSIGNSY, No. 10 : =.
- 55,       SQUOSY, No. 20 : '+'.
+ 55,       SQUOSY, No. 20 : '_'.
  55,       SEMISY, No. 19 : ;.
- 56,      IDENTSY, No. 38 : global_char_array_2.
+ 56,      IDENTSY, No. 38 : letter.
  56,     LBRACKSY, No. 13 : [.
  56,     LBRACKSY, No. 13 : [.
- 56,    INTEGERSY, No. 35 : 1.
+ 56,    INTEGERSY, No. 35 : 3.
  56,     RBRACKSY, No. 14 : ].
  56,     ASSIGNSY, No. 10 : =.
- 56,       SQUOSY, No. 20 : '-'.
+ 56,       SQUOSY, No. 20 : '+'.
  56,       SEMISY, No. 19 : ;.
- 57,      IDENTSY, No. 38 : global_char_array_2.
+ 57,      IDENTSY, No. 38 : letter.
  57,     LBRACKSY, No. 13 : [.
  57,     LBRACKSY, No. 13 : [.
- 57,    INTEGERSY, No. 35 : 2.
+ 57,    INTEGERSY, No. 35 : 4.
  57,     RBRACKSY, No. 14 : ].
  57,     ASSIGNSY, No. 10 : =.
- 57,       SQUOSY, No. 20 : '*'.
+ 57,       SQUOSY, No. 20 : 'A'.
  57,       SEMISY, No. 19 : ;.
- 58,      IDENTSY, No. 38 : global_char_array_2.
- 58,     LBRACKSY, No. 13 : [.
- 58,     LBRACKSY, No. 13 : [.
- 58,    INTEGERSY, No. 35 : 3.
- 58,     RBRACKSY, No. 14 : ].
- 58,     ASSIGNSY, No. 10 : =.
- 58,       SQUOSY, No. 20 : '/'.
+ 58,      PRINTSY, No. 33 : printf.
+ 58,       LPAESY, No. 11 : (.
+ 58,      IDENTSY, No. 38 : count.
+ 58,       RPARSY, No. 12 : ).
  58,       SEMISY, No. 19 : ;.
- 59,      IDENTSY, No. 38 : global_char_array_2.
+ 59,      PRINTSY, No. 33 : printf.
+ 59,       LPAESY, No. 11 : (.
+ 59,      IDENTSY, No. 38 : letter.
  59,     LBRACKSY, No. 13 : [.
- 59,     LBRACKSY, No. 13 : [.
- 59,    INTEGERSY, No. 35 : 4.
+ 59,    INTEGERSY, No. 35 : .
  59,     RBRACKSY, No. 14 : ].
- 59,     ASSIGNSY, No. 10 : =.
- 59,       SQUOSY, No. 20 : '6'.
+ 59,       RPARSY, No. 12 : ).
  59,       SEMISY, No. 19 : ;.
- 60,        RETSY, No. 34 : return.
- 60,       SEMISY, No. 19 : ;.
- 61,       RPRTSY, No. 16 : }.
- 63,       VOIDSY, No. 25 : void.
- 63,      IDENTSY, No. 38 : assignGlobal.
- 63,      IDENTSY, No. 38 : assignGlobal.
- 63,       LPAESY, No. 11 : (.
- 63,        INTSY, No. 22 : int.
- 63,      IDENTSY, No. 38 : a.
- 63,      COMMASY, No. 18 : ,.
- 63,       CHARSY, No. 23 : char.
- 63,      IDENTSY, No. 38 : b.
- 63,      COMMASY, No. 18 : ,.
- 63,        INTSY, No. 22 : int.
- 63,      IDENTSY, No. 38 : c.
- 63,      COMMASY, No. 18 : ,.
- 63,       CHARSY, No. 23 : char.
- 63,      IDENTSY, No. 38 : d.
- 63,       RPARSY, No. 12 : ).
- 63,       LPRTSY, No. 15 : {.
- 64,      IDENTSY, No. 38 : global_int_1.
- 64,     ASSIGNSY, No. 10 : =.
- 64,     ASSIGNSY, No. 10 : =.
- 64,      IDENTSY, No. 38 : a.
- 64,       SEMISY, No. 19 : ;.
- 65,      IDENTSY, No. 38 : global_char_1.
- 65,     ASSIGNSY, No. 10 : =.
- 65,     ASSIGNSY, No. 10 : =.
- 65,      IDENTSY, No. 38 : b.
- 65,       SEMISY, No. 19 : ;.
- 66,      IDENTSY, No. 38 : global_int_2.
+ 61,         IFSY, No. 30 : if.
+ 61,       LPAESY, No. 11 : (.
+ 61,      IDENTSY, No. 38 : count.
+ 61,        EQUSY, No.  9 : ==.
+ 61,    INTEGERSY, No. 35 : 2.
+ 61,       RPARSY, No. 12 : ).
+ 61,       LPRTSY, No. 15 : {.
+ 62,      IDENTSY, No. 38 : judge.
+ 62,     ASSIGNSY, No. 10 : =.
+ 62,     ASSIGNSY, No. 10 : =.
+ 62,      IDENTSY, No. 38 : judge.
+ 62,       PLUSSY, No.  0 : +.
+ 62,    INTEGERSY, No. 35 : 1.
+ 62,       SEMISY, No. 19 : ;.
+ 63,       RPRTSY, No. 16 : }.
+ 65,         IFSY, No. 30 : if.
+ 65,       LPAESY, No. 11 : (.
+ 65,      IDENTSY, No. 38 : count.
+ 65,        EQUSY, No.  9 : ==.
+ 65,    INTEGERSY, No. 35 : 1.
+ 65,       RPARSY, No. 12 : ).
+ 65,       LPRTSY, No. 15 : {.
+ 66,      IDENTSY, No. 38 : judge.
  66,     ASSIGNSY, No. 10 : =.
  66,     ASSIGNSY, No. 10 : =.
- 66,      IDENTSY, No. 38 : c.
+ 66,      IDENTSY, No. 38 : judge.
+ 66,       PLUSSY, No.  0 : +.
+ 66,    INTEGERSY, No. 35 : 1.
  66,       SEMISY, No. 19 : ;.
- 67,      IDENTSY, No. 38 : global_char_2.
+ 67,      IDENTSY, No. 38 : flag.
  67,     ASSIGNSY, No. 10 : =.
  67,     ASSIGNSY, No. 10 : =.
- 67,      IDENTSY, No. 38 : d.
+ 67,    INTEGERSY, No. 35 : 1.
  67,       SEMISY, No. 19 : ;.
- 68,        RETSY, No. 34 : return.
- 68,       SEMISY, No. 19 : ;.
- 69,       RPRTSY, No. 16 : }.
- 71,       VOIDSY, No. 25 : void.
- 71,      IDENTSY, No. 38 : printGlobalConst.
- 71,      IDENTSY, No. 38 : printGlobalConst.
- 71,       LPAESY, No. 11 : (.
- 71,       RPARSY, No. 12 : ).
- 71,       LPRTSY, No. 15 : {.
- 72,      PRINTSY, No. 33 : printf.
- 72,       LPAESY, No. 11 : (.
- 72,      IDENTSY, No. 38 : const_int_1.
- 72,       RPARSY, No. 12 : ).
- 72,       SEMISY, No. 19 : ;.
- 73,      PRINTSY, No. 33 : printf.
- 73,       LPAESY, No. 11 : (.
- 73,      IDENTSY, No. 38 : const_int_2.
- 73,       RPARSY, No. 12 : ).
+ 68,       RPRTSY, No. 16 : }.
+ 69,         IFSY, No. 30 : if.
+ 69,       LPAESY, No. 11 : (.
+ 69,      IDENTSY, No. 38 : flag.
+ 69,        EQUSY, No.  9 : ==.
+ 69,    INTEGERSY, No. 35 : .
+ 69,       RPARSY, No. 12 : ).
+ 69,       LPRTSY, No. 15 : {.
+ 70,      IDENTSY, No. 38 : judge.
+ 70,     ASSIGNSY, No. 10 : =.
+ 70,     ASSIGNSY, No. 10 : =.
+ 70,      IDENTSY, No. 38 : judge.
+ 70,       PLUSSY, No.  0 : +.
+ 70,    INTEGERSY, No. 35 : 1.
+ 70,       SEMISY, No. 19 : ;.
+ 71,       RPRTSY, No. 16 : }.
+ 73,      IDENTSY, No. 38 : _.
+ 73,     ASSIGNSY, No. 10 : =.
+ 73,     ASSIGNSY, No. 10 : =.
+ 73,    INTEGERSY, No. 35 : 1.
  73,       SEMISY, No. 19 : ;.
- 74,      PRINTSY, No. 33 : printf.
- 74,       LPAESY, No. 11 : (.
- 74,      IDENTSY, No. 38 : const_int_3.
- 74,       RPARSY, No. 12 : ).
+ 74,      IDENTSY, No. 38 : __.
+ 74,     ASSIGNSY, No. 10 : =.
+ 74,     ASSIGNSY, No. 10 : =.
+ 74,    INTEGERSY, No. 35 : 2.
  74,       SEMISY, No. 19 : ;.
- 75,      PRINTSY, No. 33 : printf.
- 75,       LPAESY, No. 11 : (.
- 75,      IDENTSY, No. 38 : const_int_4.
- 75,       RPARSY, No. 12 : ).
+ 75,      IDENTSY, No. 38 : ___.
+ 75,     ASSIGNSY, No. 10 : =.
+ 75,     ASSIGNSY, No. 10 : =.
+ 75,    INTEGERSY, No. 35 : 3.
  75,       SEMISY, No. 19 : ;.
- 76,      PRINTSY, No. 33 : printf.
- 76,       LPAESY, No. 11 : (.
- 76,      IDENTSY, No. 38 : const_char_1.
- 76,       RPARSY, No. 12 : ).
+ 76,      IDENTSY, No. 38 : __a__.
+ 76,     ASSIGNSY, No. 10 : =.
+ 76,     ASSIGNSY, No. 10 : =.
+ 76,    INTEGERSY, No. 35 : 4.
  76,       SEMISY, No. 19 : ;.
- 77,      PRINTSY, No. 33 : printf.
- 77,       LPAESY, No. 11 : (.
- 77,      IDENTSY, No. 38 : const_char_2.
- 77,       RPARSY, No. 12 : ).
+ 77,      IDENTSY, No. 38 : _a_.
+ 77,     ASSIGNSY, No. 10 : =.
+ 77,     ASSIGNSY, No. 10 : =.
+ 77,    INTEGERSY, No. 35 : 5.
  77,       SEMISY, No. 19 : ;.
- 78,      PRINTSY, No. 33 : printf.
- 78,       LPAESY, No. 11 : (.
- 78,      IDENTSY, No. 38 : const_char_3.
- 78,       RPARSY, No. 12 : ).
- 78,       SEMISY, No. 19 : ;.
- 79,      PRINTSY, No. 33 : printf.
- 79,       LPAESY, No. 11 : (.
- 79,      IDENTSY, No. 38 : const_char_4.
- 79,       RPARSY, No. 12 : ).
+ 79,      IDENTSY, No. 38 : flag.
+ 79,     ASSIGNSY, No. 10 : =.
+ 79,     ASSIGNSY, No. 10 : =.
+ 79,    INTEGERSY, No. 35 : .
  79,       SEMISY, No. 19 : ;.
- 80,        RETSY, No. 34 : return.
- 80,       SEMISY, No. 19 : ;.
- 81,       RPRTSY, No. 16 : }.
- 83,       VOIDSY, No. 25 : void.
- 83,      IDENTSY, No. 38 : printGlobalVar.
- 83,      IDENTSY, No. 38 : printGlobalVar.
+ 80,         IFSY, No. 30 : if.
+ 80,       LPAESY, No. 11 : (.
+ 80,      IDENTSY, No. 38 : _.
+ 80,        EQUSY, No.  9 : ==.
+ 80,    INTEGERSY, No. 35 : 1.
+ 80,       RPARSY, No. 12 : ).
+ 80,       LPRTSY, No. 15 : {.
+ 81,      IDENTSY, No. 38 : judge.
+ 81,     ASSIGNSY, No. 10 : =.
+ 81,     ASSIGNSY, No. 10 : =.
+ 81,      IDENTSY, No. 38 : judge.
+ 81,       PLUSSY, No.  0 : +.
+ 81,    INTEGERSY, No. 35 : 1.
+ 81,       SEMISY, No. 19 : ;.
+ 82,       RPRTSY, No. 16 : }.
+ 83,         IFSY, No. 30 : if.
  83,       LPAESY, No. 11 : (.
+ 83,      IDENTSY, No. 38 : _.
+ 83,        EQUSY, No.  9 : ==.
+ 83,    INTEGERSY, No. 35 : .
  83,       RPARSY, No. 12 : ).
  83,       LPRTSY, No. 15 : {.
- 84,      PRINTSY, No. 33 : printf.
- 84,       LPAESY, No. 11 : (.
- 84,      IDENTSY, No. 38 : global_int_1.
- 84,       RPARSY, No. 12 : ).
+ 84,      IDENTSY, No. 38 : flag.
+ 84,     ASSIGNSY, No. 10 : =.
+ 84,     ASSIGNSY, No. 10 : =.
+ 84,    INTEGERSY, No. 35 : 1.
  84,       SEMISY, No. 19 : ;.
- 85,      PRINTSY, No. 33 : printf.
- 85,       LPAESY, No. 11 : (.
- 85,      IDENTSY, No. 38 : global_int_2.
- 85,       RPARSY, No. 12 : ).
- 85,       SEMISY, No. 19 : ;.
- 86,      PRINTSY, No. 33 : printf.
+ 85,       RPRTSY, No. 16 : }.
+ 86,         IFSY, No. 30 : if.
  86,       LPAESY, No. 11 : (.
- 86,      IDENTSY, No. 38 : global_char_1.
+ 86,      IDENTSY, No. 38 : flag.
+ 86,        EQUSY, No.  9 : ==.
+ 86,    INTEGERSY, No. 35 : .
  86,       RPARSY, No. 12 : ).
- 86,       SEMISY, No. 19 : ;.
- 87,      PRINTSY, No. 33 : printf.
- 87,       LPAESY, No. 11 : (.
- 87,      IDENTSY, No. 38 : global_char_2.
- 87,       RPARSY, No. 12 : ).
+ 86,       LPRTSY, No. 15 : {.
+ 87,      IDENTSY, No. 38 : judge.
+ 87,     ASSIGNSY, No. 10 : =.
+ 87,     ASSIGNSY, No. 10 : =.
+ 87,      IDENTSY, No. 38 : judge.
+ 87,       PLUSSY, No.  0 : +.
+ 87,    INTEGERSY, No. 35 : 1.
  87,       SEMISY, No. 19 : ;.
- 88,        RETSY, No. 34 : return.
- 88,       SEMISY, No. 19 : ;.
- 89,       RPRTSY, No. 16 : }.
- 90,       VOIDSY, No. 25 : void.
- 90,      IDENTSY, No. 38 : printGlobalArray.
- 90,      IDENTSY, No. 38 : printGlobalArray.
- 90,       LPAESY, No. 11 : (.
- 90,       RPARSY, No. 12 : ).
- 90,       LPRTSY, No. 15 : {.
- 91,      PRINTSY, No. 33 : printf.
+ 88,       RPRTSY, No. 16 : }.
+ 90,      IDENTSY, No. 38 : flag.
+ 90,     ASSIGNSY, No. 10 : =.
+ 90,     ASSIGNSY, No. 10 : =.
+ 90,    INTEGERSY, No. 35 : .
+ 90,       SEMISY, No. 19 : ;.
+ 91,         IFSY, No. 30 : if.
  91,       LPAESY, No. 11 : (.
- 91,      IDENTSY, No. 38 : global_int_array_1.
- 91,     LBRACKSY, No. 13 : [.
- 91,    INTEGERSY, No. 35 : .
- 91,     RBRACKSY, No. 14 : ].
+ 91,      IDENTSY, No. 38 : __.
+ 91,        EQUSY, No.  9 : ==.
+ 91,    INTEGERSY, No. 35 : 2.
  91,       RPARSY, No. 12 : ).
- 91,       SEMISY, No. 19 : ;.
- 92,      PRINTSY, No. 33 : printf.
- 92,       LPAESY, No. 11 : (.
- 92,      IDENTSY, No. 38 : global_int_array_1.
- 92,     LBRACKSY, No. 13 : [.
+ 91,       LPRTSY, No. 15 : {.
+ 92,      IDENTSY, No. 38 : judge.
+ 92,     ASSIGNSY, No. 10 : =.
+ 92,     ASSIGNSY, No. 10 : =.
+ 92,      IDENTSY, No. 38 : judge.
+ 92,       PLUSSY, No.  0 : +.
  92,    INTEGERSY, No. 35 : 1.
- 92,     RBRACKSY, No. 14 : ].
- 92,       RPARSY, No. 12 : ).
  92,       SEMISY, No. 19 : ;.
- 93,      PRINTSY, No. 33 : printf.
- 93,       LPAESY, No. 11 : (.
- 93,      IDENTSY, No. 38 : global_int_array_1.
- 93,     LBRACKSY, No. 13 : [.
- 93,    INTEGERSY, No. 35 : 2.
- 93,     RBRACKSY, No. 14 : ].
- 93,       RPARSY, No. 12 : ).
- 93,       SEMISY, No. 19 : ;.
- 94,      PRINTSY, No. 33 : printf.
+ 93,       RPRTSY, No. 16 : }.
+ 94,         IFSY, No. 30 : if.
  94,       LPAESY, No. 11 : (.
- 94,      IDENTSY, No. 38 : global_int_array_1.
- 94,     LBRACKSY, No. 13 : [.
- 94,    INTEGERSY, No. 35 : 3.
- 94,     RBRACKSY, No. 14 : ].
+ 94,      IDENTSY, No. 38 : __.
+ 94,        EQUSY, No.  9 : ==.
+ 94,    INTEGERSY, No. 35 : .
  94,       RPARSY, No. 12 : ).
- 94,       SEMISY, No. 19 : ;.
- 95,      PRINTSY, No. 33 : printf.
- 95,       LPAESY, No. 11 : (.
- 95,      IDENTSY, No. 38 : global_int_array_1.
- 95,     LBRACKSY, No. 13 : [.
- 95,    INTEGERSY, No. 35 : 4.
- 95,     RBRACKSY, No. 14 : ].
- 95,       RPARSY, No. 12 : ).
+ 94,       LPRTSY, No. 15 : {.
+ 95,      IDENTSY, No. 38 : judge.
+ 95,     ASSIGNSY, No. 10 : =.
+ 95,     ASSIGNSY, No. 10 : =.
+ 95,      IDENTSY, No. 38 : judge.
+ 95,       PLUSSY, No.  0 : +.
+ 95,    INTEGERSY, No. 35 : 1.
  95,       SEMISY, No. 19 : ;.
- 96,      PRINTSY, No. 33 : printf.
- 96,       LPAESY, No. 11 : (.
- 96,      IDENTSY, No. 38 : global_int_array_2.
- 96,     LBRACKSY, No. 13 : [.
- 96,    INTEGERSY, No. 35 : .
- 96,     RBRACKSY, No. 14 : ].
- 96,       RPARSY, No. 12 : ).
+ 96,      IDENTSY, No. 38 : flag.
+ 96,     ASSIGNSY, No. 10 : =.
+ 96,     ASSIGNSY, No. 10 : =.
+ 96,    INTEGERSY, No. 35 : 1.
  96,       SEMISY, No. 19 : ;.
- 97,      PRINTSY, No. 33 : printf.
- 97,       LPAESY, No. 11 : (.
- 97,      IDENTSY, No. 38 : global_int_array_2.
- 97,     LBRACKSY, No. 13 : [.
- 97,    INTEGERSY, No. 35 : 1.
- 97,     RBRACKSY, No. 14 : ].
- 97,       RPARSY, No. 12 : ).
- 97,       SEMISY, No. 19 : ;.
- 98,      PRINTSY, No. 33 : printf.
+ 97,       RPRTSY, No. 16 : }.
+ 98,         IFSY, No. 30 : if.
  98,       LPAESY, No. 11 : (.
- 98,      IDENTSY, No. 38 : global_int_array_2.
- 98,     LBRACKSY, No. 13 : [.
- 98,    INTEGERSY, No. 35 : 2.
- 98,     RBRACKSY, No. 14 : ].
+ 98,      IDENTSY, No. 38 : flag.
+ 98,        EQUSY, No.  9 : ==.
+ 98,    INTEGERSY, No. 35 : .
  98,       RPARSY, No. 12 : ).
- 98,       SEMISY, No. 19 : ;.
- 99,      PRINTSY, No. 33 : printf.
- 99,       LPAESY, No. 11 : (.
- 99,      IDENTSY, No. 38 : global_int_array_2.
- 99,     LBRACKSY, No. 13 : [.
- 99,    INTEGERSY, No. 35 : 3.
- 99,     RBRACKSY, No. 14 : ].
- 99,       RPARSY, No. 12 : ).
+ 98,       LPRTSY, No. 15 : {.
+ 99,      IDENTSY, No. 38 : judge.
+ 99,     ASSIGNSY, No. 10 : =.
+ 99,     ASSIGNSY, No. 10 : =.
+ 99,      IDENTSY, No. 38 : judge.
+ 99,       PLUSSY, No.  0 : +.
+ 99,    INTEGERSY, No. 35 : 1.
  99,       SEMISY, No. 19 : ;.
-100,      PRINTSY, No. 33 : printf.
-100,       LPAESY, No. 11 : (.
-100,      IDENTSY, No. 38 : global_int_array_2.
-100,     LBRACKSY, No. 13 : [.
-100,    INTEGERSY, No. 35 : 4.
-100,     RBRACKSY, No. 14 : ].
-100,       RPARSY, No. 12 : ).
-100,       SEMISY, No. 19 : ;.
-101,      PRINTSY, No. 33 : printf.
-101,       LPAESY, No. 11 : (.
-101,      IDENTSY, No. 38 : global_char_array_1.
-101,     LBRACKSY, No. 13 : [.
-101,    INTEGERSY, No. 35 : .
-101,     RBRACKSY, No. 14 : ].
-101,       RPARSY, No. 12 : ).
-101,       SEMISY, No. 19 : ;.
-102,      PRINTSY, No. 33 : printf.
-102,       LPAESY, No. 11 : (.
-102,      IDENTSY, No. 38 : global_char_array_1.
-102,     LBRACKSY, No. 13 : [.
-102,    INTEGERSY, No. 35 : 1.
-102,     RBRACKSY, No. 14 : ].
-102,       RPARSY, No. 12 : ).
+100,       RPRTSY, No. 16 : }.
+102,      IDENTSY, No. 38 : flag.
+102,     ASSIGNSY, No. 10 : =.
+102,     ASSIGNSY, No. 10 : =.
+102,    INTEGERSY, No. 35 : .
 102,       SEMISY, No. 19 : ;.
-103,      PRINTSY, No. 33 : printf.
+103,         IFSY, No. 30 : if.
 103,       LPAESY, No. 11 : (.
-103,      IDENTSY, No. 38 : global_char_array_1.
-103,     LBRACKSY, No. 13 : [.
-103,    INTEGERSY, No. 35 : 2.
-103,     RBRACKSY, No. 14 : ].
+103,      IDENTSY, No. 38 : ___.
+103,        EQUSY, No.  9 : ==.
+103,    INTEGERSY, No. 35 : 3.
 103,       RPARSY, No. 12 : ).
-103,       SEMISY, No. 19 : ;.
-104,      PRINTSY, No. 33 : printf.
-104,       LPAESY, No. 11 : (.
-104,      IDENTSY, No. 38 : global_char_array_1.
-104,     LBRACKSY, No. 13 : [.
-104,    INTEGERSY, No. 35 : 3.
-104,     RBRACKSY, No. 14 : ].
-104,       RPARSY, No. 12 : ).
+103,       LPRTSY, No. 15 : {.
+104,      IDENTSY, No. 38 : judge.
+104,     ASSIGNSY, No. 10 : =.
+104,     ASSIGNSY, No. 10 : =.
+104,      IDENTSY, No. 38 : judge.
+104,       PLUSSY, No.  0 : +.
+104,    INTEGERSY, No. 35 : 1.
 104,       SEMISY, No. 19 : ;.
-105,      PRINTSY, No. 33 : printf.
-105,       LPAESY, No. 11 : (.
-105,      IDENTSY, No. 38 : global_char_array_1.
-105,     LBRACKSY, No. 13 : [.
-105,    INTEGERSY, No. 35 : 4.
-105,     RBRACKSY, No. 14 : ].
-105,       RPARSY, No. 12 : ).
-105,       SEMISY, No. 19 : ;.
-106,      PRINTSY, No. 33 : printf.
+105,       RPRTSY, No. 16 : }.
+106,         IFSY, No. 30 : if.
 106,       LPAESY, No. 11 : (.
-106,      IDENTSY, No. 38 : global_char_array_2.
-106,     LBRACKSY, No. 13 : [.
+106,      IDENTSY, No. 38 : ___.
+106,        EQUSY, No.  9 : ==.
 106,    INTEGERSY, No. 35 : .
-106,     RBRACKSY, No. 14 : ].
 106,       RPARSY, No. 12 : ).
-106,       SEMISY, No. 19 : ;.
-107,      PRINTSY, No. 33 : printf.
-107,       LPAESY, No. 11 : (.
-107,      IDENTSY, No. 38 : global_char_array_2.
-107,     LBRACKSY, No. 13 : [.
+106,       LPRTSY, No. 15 : {.
+107,      IDENTSY, No. 38 : judge.
+107,     ASSIGNSY, No. 10 : =.
+107,     ASSIGNSY, No. 10 : =.
+107,      IDENTSY, No. 38 : judge.
+107,       PLUSSY, No.  0 : +.
 107,    INTEGERSY, No. 35 : 1.
-107,     RBRACKSY, No. 14 : ].
-107,       RPARSY, No. 12 : ).
 107,       SEMISY, No. 19 : ;.
-108,      PRINTSY, No. 33 : printf.
-108,       LPAESY, No. 11 : (.
-108,      IDENTSY, No. 38 : global_char_array_2.
-108,     LBRACKSY, No. 13 : [.
-108,    INTEGERSY, No. 35 : 2.
-108,     RBRACKSY, No. 14 : ].
-108,       RPARSY, No. 12 : ).
+108,      IDENTSY, No. 38 : flag.
+108,     ASSIGNSY, No. 10 : =.
+108,     ASSIGNSY, No. 10 : =.
+108,    INTEGERSY, No. 35 : 1.
 108,       SEMISY, No. 19 : ;.
-109,      PRINTSY, No. 33 : printf.
-109,       LPAESY, No. 11 : (.
-109,      IDENTSY, No. 38 : global_char_array_2.
-109,     LBRACKSY, No. 13 : [.
-109,    INTEGERSY, No. 35 : 3.
-109,     RBRACKSY, No. 14 : ].
-109,       RPARSY, No. 12 : ).
-109,       SEMISY, No. 19 : ;.
-110,      PRINTSY, No. 33 : printf.
+109,       RPRTSY, No. 16 : }.
+110,         IFSY, No. 30 : if.
 110,       LPAESY, No. 11 : (.
-110,      IDENTSY, No. 38 : global_char_array_2.
-110,     LBRACKSY, No. 13 : [.
-110,    INTEGERSY, No. 35 : 4.
-110,     RBRACKSY, No. 14 : ].
+110,      IDENTSY, No. 38 : flag.
+110,        EQUSY, No.  9 : ==.
+110,    INTEGERSY, No. 35 : .
 110,       RPARSY, No. 12 : ).
-110,       SEMISY, No. 19 : ;.
-111,        RETSY, No. 34 : return.
+110,       LPRTSY, No. 15 : {.
+111,      IDENTSY, No. 38 : judge.
+111,     ASSIGNSY, No. 10 : =.
+111,     ASSIGNSY, No. 10 : =.
+111,      IDENTSY, No. 38 : judge.
+111,       PLUSSY, No.  0 : +.
+111,    INTEGERSY, No. 35 : 1.
 111,       SEMISY, No. 19 : ;.
 112,       RPRTSY, No. 16 : }.
-114,       VOIDSY, No. 25 : void.
-114,      IDENTSY, No. 38 : testGlobal.
-114,      IDENTSY, No. 38 : testGlobal.
-114,       LPAESY, No. 11 : (.
-114,       RPARSY, No. 12 : ).
-114,       LPRTSY, No. 15 : {.
-115,      IDENTSY, No. 38 : initGlobalArray.
+114,      IDENTSY, No. 38 : flag.
+114,     ASSIGNSY, No. 10 : =.
+114,     ASSIGNSY, No. 10 : =.
+114,    INTEGERSY, No. 35 : .
+114,       SEMISY, No. 19 : ;.
+115,         IFSY, No. 30 : if.
 115,       LPAESY, No. 11 : (.
-115,       LPAESY, No. 11 : (.
+115,      IDENTSY, No. 38 : __a__.
+115,        EQUSY, No.  9 : ==.
+115,    INTEGERSY, No. 35 : 4.
 115,       RPARSY, No. 12 : ).
-115,       SEMISY, No. 19 : ;.
-116,      IDENTSY, No. 38 : assignGlobal.
-116,       LPAESY, No. 11 : (.
-116,       LPAESY, No. 11 : (.
-116,      IDENTSY, No. 38 : const_int_1.
-116,      COMMASY, No. 18 : ,.
-116,      IDENTSY, No. 38 : const_char_1.
-116,      COMMASY, No. 18 : ,.
-116,      IDENTSY, No. 38 : const_int_4.
-116,      COMMASY, No. 18 : ,.
-116,      IDENTSY, No. 38 : const_char_4.
-116,       RPARSY, No. 12 : ).
+115,       LPRTSY, No. 15 : {.
+116,      IDENTSY, No. 38 : judge.
+116,     ASSIGNSY, No. 10 : =.
+116,     ASSIGNSY, No. 10 : =.
+116,      IDENTSY, No. 38 : judge.
+116,       PLUSSY, No.  0 : +.
+116,    INTEGERSY, No. 35 : 1.
 116,       SEMISY, No. 19 : ;.
-117,      IDENTSY, No. 38 : printGlobalConst.
-117,       LPAESY, No. 11 : (.
-117,       LPAESY, No. 11 : (.
-117,       RPARSY, No. 12 : ).
-117,       SEMISY, No. 19 : ;.
-118,      IDENTSY, No. 38 : printGlobalVar.
+117,       RPRTSY, No. 16 : }.
+118,         IFSY, No. 30 : if.
 118,       LPAESY, No. 11 : (.
-118,       LPAESY, No. 11 : (.
+118,      IDENTSY, No. 38 : __a__.
+118,        EQUSY, No.  9 : ==.
+118,    INTEGERSY, No. 35 : .
 118,       RPARSY, No. 12 : ).
-118,       SEMISY, No. 19 : ;.
-119,      IDENTSY, No. 38 : printGlobalArray.
-119,       LPAESY, No. 11 : (.
-119,       LPAESY, No. 11 : (.
-119,       RPARSY, No. 12 : ).
+118,       LPRTSY, No. 15 : {.
+119,      IDENTSY, No. 38 : judge.
+119,     ASSIGNSY, No. 10 : =.
+119,     ASSIGNSY, No. 10 : =.
+119,      IDENTSY, No. 38 : judge.
+119,       PLUSSY, No.  0 : +.
+119,    INTEGERSY, No. 35 : 1.
 119,       SEMISY, No. 19 : ;.
-120,        RETSY, No. 34 : return.
+120,      IDENTSY, No. 38 : flag.
+120,     ASSIGNSY, No. 10 : =.
+120,     ASSIGNSY, No. 10 : =.
+120,    INTEGERSY, No. 35 : 1.
 120,       SEMISY, No. 19 : ;.
 121,       RPRTSY, No. 16 : }.
-123,        INTSY, No. 22 : int.
-123,      IDENTSY, No. 38 : testReturnInt.
-123,       LPAESY, No. 11 : (.
-123,      IDENTSY, No. 38 : testReturnInt.
-123,       LPAESY, No. 11 : (.
-123,        INTSY, No. 22 : int.
-123,      IDENTSY, No. 38 : a.
-123,       RPARSY, No. 12 : ).
-123,       LPRTSY, No. 15 : {.
-124,        RETSY, No. 34 : return.
-124,       LPAESY, No. 11 : (.
-124,      IDENTSY, No. 38 : a.
-124,       PLUSSY, No.  0 : +.
-124,    INTEGERSY, No. 35 : 1.
-124,       RPARSY, No. 12 : ).
-124,       SEMISY, No. 19 : ;.
-125,       RPRTSY, No. 16 : }.
-127,       CHARSY, No. 23 : char.
-127,      IDENTSY, No. 38 : testReturnChar.
+122,         IFSY, No. 30 : if.
+122,       LPAESY, No. 11 : (.
+122,      IDENTSY, No. 38 : flag.
+122,        EQUSY, No.  9 : ==.
+122,    INTEGERSY, No. 35 : .
+122,       RPARSY, No. 12 : ).
+122,       LPRTSY, No. 15 : {.
+123,      IDENTSY, No. 38 : judge.
+123,     ASSIGNSY, No. 10 : =.
+123,     ASSIGNSY, No. 10 : =.
+123,      IDENTSY, No. 38 : judge.
+123,       PLUSSY, No.  0 : +.
+123,    INTEGERSY, No. 35 : 1.
+123,       SEMISY, No. 19 : ;.
+124,       RPRTSY, No. 16 : }.
+126,      IDENTSY, No. 38 : flag.
+126,     ASSIGNSY, No. 10 : =.
+126,     ASSIGNSY, No. 10 : =.
+126,    INTEGERSY, No. 35 : .
+126,       SEMISY, No. 19 : ;.
+127,         IFSY, No. 30 : if.
 127,       LPAESY, No. 11 : (.
-127,      IDENTSY, No. 38 : testReturnChar.
-127,       LPAESY, No. 11 : (.
-127,        INTSY, No. 22 : int.
-127,      IDENTSY, No. 38 : a.
+127,      IDENTSY, No. 38 : _a_.
+127,        EQUSY, No.  9 : ==.
+127,    INTEGERSY, No. 35 : 5.
 127,       RPARSY, No. 12 : ).
 127,       LPRTSY, No. 15 : {.
-128,     SWITCHSY, No. 27 : switch.
-128,       LPAESY, No. 11 : (.
-128,      IDENTSY, No. 38 : a.
-128,       RPARSY, No. 12 : ).
-128,       LPRTSY, No. 15 : {.
-129,       CASESY, No. 28 : case.
-129,    INTEGERSY, No. 35 : 1.
-129,      COLONSY, No. 17 : :.
-130,        RETSY, No. 34 : return.
+128,      IDENTSY, No. 38 : judge.
+128,     ASSIGNSY, No. 10 : =.
+128,     ASSIGNSY, No. 10 : =.
+128,      IDENTSY, No. 38 : judge.
+128,       PLUSSY, No.  0 : +.
+128,    INTEGERSY, No. 35 : 1.
+128,       SEMISY, No. 19 : ;.
+129,       RPRTSY, No. 16 : }.
+130,         IFSY, No. 30 : if.
 130,       LPAESY, No. 11 : (.
-130,       SQUOSY, No. 20 : 'a'.
+130,      IDENTSY, No. 38 : _a_.
+130,        EQUSY, No.  9 : ==.
+130,    INTEGERSY, No. 35 : .
 130,       RPARSY, No. 12 : ).
-130,       SEMISY, No. 19 : ;.
-131,       CASESY, No. 28 : case.
-131,    INTEGERSY, No. 35 : 2.
-131,      COLONSY, No. 17 : :.
-132,        RETSY, No. 34 : return.
-132,       LPAESY, No. 11 : (.
-132,       SQUOSY, No. 20 : 'b'.
-132,       RPARSY, No. 12 : ).
+130,       LPRTSY, No. 15 : {.
+131,      IDENTSY, No. 38 : judge.
+131,     ASSIGNSY, No. 10 : =.
+131,     ASSIGNSY, No. 10 : =.
+131,      IDENTSY, No. 38 : judge.
+131,       PLUSSY, No.  0 : +.
+131,    INTEGERSY, No. 35 : 1.
+131,       SEMISY, No. 19 : ;.
+132,      IDENTSY, No. 38 : flag.
+132,     ASSIGNSY, No. 10 : =.
+132,     ASSIGNSY, No. 10 : =.
+132,    INTEGERSY, No. 35 : 1.
 132,       SEMISY, No. 19 : ;.
-133,       CASESY, No. 28 : case.
-133,    INTEGERSY, No. 35 : 3.
-133,      COLONSY, No. 17 : :.
-134,        RETSY, No. 34 : return.
+133,       RPRTSY, No. 16 : }.
+134,         IFSY, No. 30 : if.
 134,       LPAESY, No. 11 : (.
-134,       SQUOSY, No. 20 : 'c'.
+134,      IDENTSY, No. 38 : flag.
+134,        EQUSY, No.  9 : ==.
+134,    INTEGERSY, No. 35 : .
 134,       RPARSY, No. 12 : ).
-134,       SEMISY, No. 19 : ;.
-135,    DEFAULTSY, No. 29 : default.
-135,      COLONSY, No. 17 : :.
-135,       LPRTSY, No. 15 : {.
-137,       RPRTSY, No. 16 : }.
+134,       LPRTSY, No. 15 : {.
+135,      IDENTSY, No. 38 : judge.
+135,     ASSIGNSY, No. 10 : =.
+135,     ASSIGNSY, No. 10 : =.
+135,      IDENTSY, No. 38 : judge.
+135,       PLUSSY, No.  0 : +.
+135,    INTEGERSY, No. 35 : 1.
+135,       SEMISY, No. 19 : ;.
+136,       RPRTSY, No. 16 : }.
+137,        RETSY, No. 34 : return.
+137,       SEMISY, No. 19 : ;.
 138,       RPRTSY, No. 16 : }.
-139,        RETSY, No. 34 : return.
-139,       LPAESY, No. 11 : (.
-139,       SQUOSY, No. 20 : '_'.
-139,       RPARSY, No. 12 : ).
-139,       SEMISY, No. 19 : ;.
-140,       RPRTSY, No. 16 : }.
-142,       VOIDSY, No. 25 : void.
-142,      IDENTSY, No. 38 : testReturn.
-142,      IDENTSY, No. 38 : testReturn.
-142,       LPAESY, No. 11 : (.
-142,       RPARSY, No. 12 : ).
-142,       LPRTSY, No. 15 : {.
-143,      PRINTSY, No. 33 : printf.
-143,       LPAESY, No. 11 : (.
-143,      IDENTSY, No. 38 : testReturnInt.
-143,       LPAESY, No. 11 : (.
-143,      IDENTSY, No. 38 : Fibonacci.
-143,       LPAESY, No. 11 : (.
-143,      IDENTSY, No. 38 : fac.
-143,       LPAESY, No. 11 : (.
-143,    INTEGERSY, No. 35 : 3.
-143,       RPARSY, No. 12 : ).
-143,       PLUSSY, No.  0 : +.
-143,      IDENTSY, No. 38 : fac.
-143,       LPAESY, No. 11 : (.
+140,       VOIDSY, No. 25 : void.
+140,      IDENTSY, No. 38 : test_global_const.
+140,      IDENTSY, No. 38 : test_global_const.
+140,       LPAESY, No. 11 : (.
+140,       RPARSY, No. 12 : ).
+140,       LPRTSY, No. 15 : {.
+141,        INTSY, No. 22 : int.
+141,      IDENTSY, No. 38 : x.
+141,       SEMISY, No. 19 : ;.
+141,      IDENTSY, No. 38 : x.
+141,       SEMISY, No. 19 : ;.
+142,       CHARSY, No. 23 : char.
+142,      IDENTSY, No. 38 : y.
+142,       SEMISY, No. 19 : ;.
+142,      IDENTSY, No. 38 : y.
+142,       SEMISY, No. 19 : ;.
+143,        INTSY, No. 22 : int.
+143,      IDENTSY, No. 38 : num.
+143,     LBRACKSY, No. 13 : [.
+143,      IDENTSY, No. 38 : num.
+143,     LBRACKSY, No. 13 : [.
 143,    INTEGERSY, No. 35 : 2.
-143,       RPARSY, No. 12 : ).
-143,       RPARSY, No. 12 : ).
-143,       RPARSY, No. 12 : ).
-143,       RPARSY, No. 12 : ).
+143,     RBRACKSY, No. 14 : ].
 143,       SEMISY, No. 19 : ;.
-144,      PRINTSY, No. 33 : printf.
-144,       LPAESY, No. 11 : (.
-144,      IDENTSY, No. 38 : testReturnChar.
-144,       LPAESY, No. 11 : (.
-144,    INTEGERSY, No. 35 : 1.
-144,       RPARSY, No. 12 : ).
-144,       RPARSY, No. 12 : ).
+144,        INTSY, No. 22 : int.
+144,      IDENTSY, No. 38 : _.
 144,       SEMISY, No. 19 : ;.
-145,      PRINTSY, No. 33 : printf.
-145,       LPAESY, No. 11 : (.
-145,      IDENTSY, No. 38 : testReturnChar.
-145,       LPAESY, No. 11 : (.
-145,    INTEGERSY, No. 35 : 2.
-145,       RPARSY, No. 12 : ).
-145,       RPARSY, No. 12 : ).
+144,      IDENTSY, No. 38 : _.
+144,       SEMISY, No. 19 : ;.
+145,      IDENTSY, No. 38 : _.
+145,     ASSIGNSY, No. 10 : =.
+145,     ASSIGNSY, No. 10 : =.
+145,    INTEGERSY, No. 35 : 100.
 145,       SEMISY, No. 19 : ;.
-146,      PRINTSY, No. 33 : printf.
+146,         IFSY, No. 30 : if.
 146,       LPAESY, No. 11 : (.
-146,      IDENTSY, No. 38 : testReturnChar.
-146,       LPAESY, No. 11 : (.
-146,    INTEGERSY, No. 35 : 3.
+146,      IDENTSY, No. 38 : _.
+146,        EQUSY, No.  9 : ==.
+146,    INTEGERSY, No. 35 : 100.
 146,       RPARSY, No. 12 : ).
-146,       RPARSY, No. 12 : ).
-146,       SEMISY, No. 19 : ;.
-147,      PRINTSY, No. 33 : printf.
-147,       LPAESY, No. 11 : (.
-147,      IDENTSY, No. 38 : testReturnChar.
-147,       LPAESY, No. 11 : (.
-147,    INTEGERSY, No. 35 : 4.
-147,       RPARSY, No. 12 : ).
-147,       RPARSY, No. 12 : ).
+146,       LPRTSY, No. 15 : {.
+147,      IDENTSY, No. 38 : judge.
+147,     ASSIGNSY, No. 10 : =.
+147,     ASSIGNSY, No. 10 : =.
+147,      IDENTSY, No. 38 : judge.
+147,       PLUSSY, No.  0 : +.
+147,    INTEGERSY, No. 35 : 1.
 147,       SEMISY, No. 19 : ;.
-148,        RETSY, No. 34 : return.
-148,       SEMISY, No. 19 : ;.
-149,       RPRTSY, No. 16 : }.
-151,       VOIDSY, No. 25 : void.
-151,      IDENTSY, No. 38 : testAssignAndExp.
-151,      IDENTSY, No. 38 : testAssignAndExp.
+148,       RPRTSY, No. 16 : }.
+149,      IDENTSY, No. 38 : num.
+149,     LBRACKSY, No. 13 : [.
+149,     LBRACKSY, No. 13 : [.
+149,    INTEGERSY, No. 35 : .
+149,     RBRACKSY, No. 14 : ].
+149,     ASSIGNSY, No. 10 : =.
+149,    INTEGERSY, No. 35 : 100.
+149,       SEMISY, No. 19 : ;.
+150,      IDENTSY, No. 38 : num.
+150,     LBRACKSY, No. 13 : [.
+150,     LBRACKSY, No. 13 : [.
+150,    INTEGERSY, No. 35 : 1.
+150,     RBRACKSY, No. 14 : ].
+150,     ASSIGNSY, No. 10 : =.
+150,    INTEGERSY, No. 35 : 101.
+150,       SEMISY, No. 19 : ;.
+151,         IFSY, No. 30 : if.
 151,       LPAESY, No. 11 : (.
+151,      IDENTSY, No. 38 : num.
+151,     LBRACKSY, No. 13 : [.
+151,    INTEGERSY, No. 35 : .
+151,     RBRACKSY, No. 14 : ].
+151,        EQUSY, No.  9 : ==.
+151,    INTEGERSY, No. 35 : 100.
 151,       RPARSY, No. 12 : ).
 151,       LPRTSY, No. 15 : {.
-152,      CONSTSY, No. 24 : const.
-152,        INTSY, No. 22 : int.
-152,      IDENTSY, No. 38 : const_int_1.
+152,      IDENTSY, No. 38 : judge.
 152,     ASSIGNSY, No. 10 : =.
+152,     ASSIGNSY, No. 10 : =.
+152,      IDENTSY, No. 38 : judge.
+152,       PLUSSY, No.  0 : +.
 152,    INTEGERSY, No. 35 : 1.
-152,      COMMASY, No. 18 : ,.
-152,      IDENTSY, No. 38 : const_int_2.
-152,     ASSIGNSY, No. 10 : =.
-152,      MINUSSY, No.  1 : -.
-152,    INTEGERSY, No. 35 : 1.
-152,      COMMASY, No. 18 : ,.
-152,      IDENTSY, No. 38 : const_int_3.
-152,     ASSIGNSY, No. 10 : =.
-152,    INTEGERSY, No. 35 : .
 152,       SEMISY, No. 19 : ;.
-153,      CONSTSY, No. 24 : const.
-153,       CHARSY, No. 23 : char.
-153,      IDENTSY, No. 38 : const_char_1.
-153,     ASSIGNSY, No. 10 : =.
-153,       SQUOSY, No. 20 : 'a'.
-153,      COMMASY, No. 18 : ,.
-153,      IDENTSY, No. 38 : const_char_2.
-153,     ASSIGNSY, No. 10 : =.
-153,       SQUOSY, No. 20 : 'A'.
-153,      COMMASY, No. 18 : ,.
-153,      IDENTSY, No. 38 : const_char_3.
-153,     ASSIGNSY, No. 10 : =.
-153,       SQUOSY, No. 20 : 'b'.
-153,       SEMISY, No. 19 : ;.
-155,        INTSY, No. 22 : int.
-155,      IDENTSY, No. 38 : int_temp_1.
-155,      COMMASY, No. 18 : ,.
-155,      IDENTSY, No. 38 : int_temp_1.
-155,      COMMASY, No. 18 : ,.
-155,      IDENTSY, No. 38 : int_temp_2.
-155,      COMMASY, No. 18 : ,.
-155,      IDENTSY, No. 38 : int_array.
-155,     LBRACKSY, No. 13 : [.
-155,    INTEGERSY, No. 35 : 2.
-155,     RBRACKSY, No. 14 : ].
-155,      COMMASY, No. 18 : ,.
-155,      IDENTSY, No. 38 : int_temp_3.
+153,       RPRTSY, No. 16 : }.
+154,         IFSY, No. 30 : if.
+154,       LPAESY, No. 11 : (.
+154,      IDENTSY, No. 38 : num.
+154,     LBRACKSY, No. 13 : [.
+154,    INTEGERSY, No. 35 : 1.
+154,     RBRACKSY, No. 14 : ].
+154,        EQUSY, No.  9 : ==.
+154,    INTEGERSY, No. 35 : 101.
+154,       RPARSY, No. 12 : ).
+154,       LPRTSY, No. 15 : {.
+155,      IDENTSY, No. 38 : judge.
+155,     ASSIGNSY, No. 10 : =.
+155,     ASSIGNSY, No. 10 : =.
+155,      IDENTSY, No. 38 : judge.
+155,       PLUSSY, No.  0 : +.
+155,    INTEGERSY, No. 35 : 1.
 155,       SEMISY, No. 19 : ;.
-156,       CHARSY, No. 23 : char.
-156,      IDENTSY, No. 38 : char_temp_1.
-156,      COMMASY, No. 18 : ,.
-156,      IDENTSY, No. 38 : char_temp_1.
-156,      COMMASY, No. 18 : ,.
-156,      IDENTSY, No. 38 : char_array.
-156,     LBRACKSY, No. 13 : [.
-156,    INTEGERSY, No. 35 : 2.
-156,     RBRACKSY, No. 14 : ].
-156,      COMMASY, No. 18 : ,.
-156,      IDENTSY, No. 38 : char_temp_2.
-156,       SEMISY, No. 19 : ;.
-158,      IDENTSY, No. 38 : int_temp_1.
-158,     ASSIGNSY, No. 10 : =.
-158,     ASSIGNSY, No. 10 : =.
-158,      IDENTSY, No. 38 : const_int_1.
-158,       PLUSSY, No.  0 : +.
+156,       RPRTSY, No. 16 : }.
+157,      IDENTSY, No. 38 : judge.
+157,     ASSIGNSY, No. 10 : =.
+157,     ASSIGNSY, No. 10 : =.
+157,      IDENTSY, No. 38 : judge.
+157,       PLUSSY, No.  0 : +.
+157,    INTEGERSY, No. 35 : 1.
+157,       SEMISY, No. 19 : ;.
+158,         IFSY, No. 30 : if.
 158,       LPAESY, No. 11 : (.
-158,      IDENTSY, No. 38 : Fibonacci.
-158,       LPAESY, No. 11 : (.
-158,      IDENTSY, No. 38 : Fibonacci.
-158,       LPAESY, No. 11 : (.
-158,      IDENTSY, No. 38 : Fibonacci.
-158,       LPAESY, No. 11 : (.
-158,    INTEGERSY, No. 35 : 5.
+158,      IDENTSY, No. 38 : const_1.
+158,        EQUSY, No.  9 : ==.
+158,    INTEGERSY, No. 35 : 1.
 158,       RPARSY, No. 12 : ).
-158,       RPARSY, No. 12 : ).
-158,       RPARSY, No. 12 : ).
-158,       PLUSSY, No.  0 : +.
-158,      IDENTSY, No. 38 : const_int_1.
-158,        DIVSY, No.  3 : /.
-158,       LPAESY, No. 11 : (.
-158,      IDENTSY, No. 38 : const_int_2.
-158,       MULTSY, No.  2 : *.
-158,      IDENTSY, No. 38 : const_int_4.
-158,       RPARSY, No. 12 : ).
-158,       RPARSY, No. 12 : ).
-158,        DIVSY, No.  3 : /.
-158,      IDENTSY, No. 38 : fac.
-158,       LPAESY, No. 11 : (.
-158,    INTEGERSY, No. 35 : 3.
-158,       RPARSY, No. 12 : ).
-158,       SEMISY, No. 19 : ;.
-159,      IDENTSY, No. 38 : int_temp_2.
+159,      IDENTSY, No. 38 : judge.
 159,     ASSIGNSY, No. 10 : =.
 159,     ASSIGNSY, No. 10 : =.
-159,      IDENTSY, No. 38 : fac.
-159,       LPAESY, No. 11 : (.
-159,      IDENTSY, No. 38 : fac.
-159,       LPAESY, No. 11 : (.
-159,    INTEGERSY, No. 35 : 3.
-159,       RPARSY, No. 12 : ).
+159,      IDENTSY, No. 38 : judge.
 159,       PLUSSY, No.  0 : +.
-159,      IDENTSY, No. 38 : fac.
-159,       LPAESY, No. 11 : (.
-159,    INTEGERSY, No. 35 : 2.
-159,       RPARSY, No. 12 : ).
-159,       RPARSY, No. 12 : ).
+159,    INTEGERSY, No. 35 : 1.
 159,       SEMISY, No. 19 : ;.
-160,      IDENTSY, No. 38 : int_array.
-160,     LBRACKSY, No. 13 : [.
-160,     LBRACKSY, No. 13 : [.
-160,      IDENTSY, No. 38 : const_int_3.
-160,     RBRACKSY, No. 14 : ].
-160,     ASSIGNSY, No. 10 : =.
-160,      IDENTSY, No. 38 : testReturnInt.
+160,         IFSY, No. 30 : if.
 160,       LPAESY, No. 11 : (.
-160,    INTEGERSY, No. 35 : .
+160,      IDENTSY, No. 38 : const_a.
+160,        EQUSY, No.  9 : ==.
+160,       SQUOSY, No. 20 : 'a'.
 160,       RPARSY, No. 12 : ).
-160,       SEMISY, No. 19 : ;.
-161,      IDENTSY, No. 38 : int_array.
-161,     LBRACKSY, No. 13 : [.
-161,     LBRACKSY, No. 13 : [.
-161,      IDENTSY, No. 38 : const_int_1.
-161,      MINUSSY, No.  1 : -.
-161,       LPAESY, No. 11 : (.
-161,      IDENTSY, No. 38 : const_int_2.
-161,       MULTSY, No.  2 : *.
-161,      IDENTSY, No. 38 : const_int_4.
-161,       PLUSSY, No.  0 : +.
-161,      IDENTSY, No. 38 : testReturnInt.
-161,       LPAESY, No. 11 : (.
-161,    INTEGERSY, No. 35 : .
-161,       RPARSY, No. 12 : ).
-161,       MULTSY, No.  2 : *.
-161,      IDENTSY, No. 38 : const_int_4.
-161,       RPARSY, No. 12 : ).
-161,     RBRACKSY, No. 14 : ].
+161,      IDENTSY, No. 38 : judge.
 161,     ASSIGNSY, No. 10 : =.
-161,      IDENTSY, No. 38 : const_int_1.
+161,     ASSIGNSY, No. 10 : =.
+161,      IDENTSY, No. 38 : judge.
 161,       PLUSSY, No.  0 : +.
-161,      IDENTSY, No. 38 : testReturnInt.
-161,       LPAESY, No. 11 : (.
-161,      IDENTSY, No. 38 : const_int_1.
-161,       RPARSY, No. 12 : ).
+161,    INTEGERSY, No. 35 : 1.
 161,       SEMISY, No. 19 : ;.
-162,      IDENTSY, No. 38 : int_temp_3.
-162,     ASSIGNSY, No. 10 : =.
-162,     ASSIGNSY, No. 10 : =.
-162,      IDENTSY, No. 38 : int_array.
-162,     LBRACKSY, No. 13 : [.
-162,      IDENTSY, No. 38 : const_int_3.
-162,     RBRACKSY, No. 14 : ].
-162,      MINUSSY, No.  1 : -.
+162,         IFSY, No. 30 : if.
 162,       LPAESY, No. 11 : (.
-162,      IDENTSY, No. 38 : int_array.
-162,     LBRACKSY, No. 13 : [.
-162,      IDENTSY, No. 38 : const_int_1.
-162,      MINUSSY, No.  1 : -.
-162,       LPAESY, No. 11 : (.
-162,      IDENTSY, No. 38 : const_int_2.
-162,       MULTSY, No.  2 : *.
-162,      IDENTSY, No. 38 : const_int_4.
-162,       PLUSSY, No.  0 : +.
-162,      IDENTSY, No. 38 : testReturnInt.
-162,       LPAESY, No. 11 : (.
-162,    INTEGERSY, No. 35 : .
+162,      IDENTSY, No. 38 : const_.
+162,        EQUSY, No.  9 : ==.
+162,       SQUOSY, No. 20 : '_'.
 162,       RPARSY, No. 12 : ).
-162,       MULTSY, No.  2 : *.
-162,      IDENTSY, No. 38 : const_int_4.
-162,       RPARSY, No. 12 : ).
-162,     RBRACKSY, No. 14 : ].
-162,       MULTSY, No.  2 : *.
-162,       LPAESY, No. 11 : (.
-162,       SQUOSY, No. 20 : 'b'.
-162,      MINUSSY, No.  1 : -.
-162,       SQUOSY, No. 20 : 'a'.
-162,       RPARSY, No. 12 : ).
-162,       RPARSY, No. 12 : ).
-162,       SEMISY, No. 19 : ;.
-163,      IDENTSY, No. 38 : char_array.
-163,     LBRACKSY, No. 13 : [.
-163,     LBRACKSY, No. 13 : [.
-163,    INTEGERSY, No. 35 : .
-163,     RBRACKSY, No. 14 : ].
+163,      IDENTSY, No. 38 : judge.
 163,     ASSIGNSY, No. 10 : =.
-163,      IDENTSY, No. 38 : testReturnChar.
-163,       LPAESY, No. 11 : (.
-163,      IDENTSY, No. 38 : int_array.
-163,     LBRACKSY, No. 13 : [.
-163,    INTEGERSY, No. 35 : .
-163,     RBRACKSY, No. 14 : ].
-163,       RPARSY, No. 12 : ).
+163,     ASSIGNSY, No. 10 : =.
+163,      IDENTSY, No. 38 : judge.
+163,       PLUSSY, No.  0 : +.
+163,    INTEGERSY, No. 35 : 1.
 163,       SEMISY, No. 19 : ;.
-164,      IDENTSY, No. 38 : char_array.
-164,     LBRACKSY, No. 13 : [.
-164,     LBRACKSY, No. 13 : [.
-164,      IDENTSY, No. 38 : const_int_1.
-164,      MINUSSY, No.  1 : -.
-164,       LPAESY, No. 11 : (.
-164,      IDENTSY, No. 38 : const_int_2.
-164,       MULTSY, No.  2 : *.
-164,      IDENTSY, No. 38 : const_int_4.
-164,       PLUSSY, No.  0 : +.
-164,      IDENTSY, No. 38 : testReturnInt.
-164,       LPAESY, No. 11 : (.
-164,    INTEGERSY, No. 35 : .
-164,       RPARSY, No. 12 : ).
-164,       MULTSY, No.  2 : *.
-164,      IDENTSY, No. 38 : const_int_4.
-164,       RPARSY, No. 12 : ).
-164,     RBRACKSY, No. 14 : ].
-164,     ASSIGNSY, No. 10 : =.
-164,      IDENTSY, No. 38 : testReturnChar.
-164,       LPAESY, No. 11 : (.
-164,      IDENTSY, No. 38 : int_array.
-164,     LBRACKSY, No. 13 : [.
-164,    INTEGERSY, No. 35 : 1.
-164,     RBRACKSY, No. 14 : ].
-164,       PLUSSY, No.  0 : +.
-164,      IDENTSY, No. 38 : const_int_1.
-164,       RPARSY, No. 12 : ).
-164,       SEMISY, No. 19 : ;.
-165,      IDENTSY, No. 38 : char_temp_1.
+165,      IDENTSY, No. 38 : y.
 165,     ASSIGNSY, No. 10 : =.
 165,     ASSIGNSY, No. 10 : =.
-165,      IDENTSY, No. 38 : char_array.
-165,     LBRACKSY, No. 13 : [.
-165,    INTEGERSY, No. 35 : .
-165,     RBRACKSY, No. 14 : ].
+165,      IDENTSY, No. 38 : const_a.
 165,       SEMISY, No. 19 : ;.
-166,      IDENTSY, No. 38 : char_temp_2.
+166,      IDENTSY, No. 38 : x.
 166,     ASSIGNSY, No. 10 : =.
 166,     ASSIGNSY, No. 10 : =.
-166,      IDENTSY, No. 38 : char_array.
-166,     LBRACKSY, No. 13 : [.
-166,      IDENTSY, No. 38 : const_int_1.
-166,      MINUSSY, No.  1 : -.
-166,       LPAESY, No. 11 : (.
-166,      IDENTSY, No. 38 : const_int_2.
-166,       MULTSY, No.  2 : *.
-166,      IDENTSY, No. 38 : const_int_4.
+166,      IDENTSY, No. 38 : y.
 166,       PLUSSY, No.  0 : +.
-166,      IDENTSY, No. 38 : testReturnInt.
-166,       LPAESY, No. 11 : (.
-166,    INTEGERSY, No. 35 : .
-166,       RPARSY, No. 12 : ).
-166,       MULTSY, No.  2 : *.
-166,      IDENTSY, No. 38 : const_int_4.
-166,       RPARSY, No. 12 : ).
-166,     RBRACKSY, No. 14 : ].
+166,      IDENTSY, No. 38 : const_a.
 166,       SEMISY, No. 19 : ;.
-167,      PRINTSY, No. 33 : printf.
+167,         IFSY, No. 30 : if.
 167,       LPAESY, No. 11 : (.
-167,      IDENTSY, No. 38 : int_temp_1.
+167,      IDENTSY, No. 38 : x.
+167,        EQUSY, No.  9 : ==.
+167,    INTEGERSY, No. 35 : 194.
 167,       RPARSY, No. 12 : ).
-167,       SEMISY, No. 19 : ;.
-168,      PRINTSY, No. 33 : printf.
-168,       LPAESY, No. 11 : (.
-168,      IDENTSY, No. 38 : int_temp_2.
-168,       RPARSY, No. 12 : ).
+167,       LPRTSY, No. 15 : {.
+168,      IDENTSY, No. 38 : judge.
+168,     ASSIGNSY, No. 10 : =.
+168,     ASSIGNSY, No. 10 : =.
+168,      IDENTSY, No. 38 : judge.
+168,       PLUSSY, No.  0 : +.
+168,    INTEGERSY, No. 35 : 1.
 168,       SEMISY, No. 19 : ;.
-169,      PRINTSY, No. 33 : printf.
-169,       LPAESY, No. 11 : (.
-169,      IDENTSY, No. 38 : int_temp_3.
-169,       RPARSY, No. 12 : ).
-169,       SEMISY, No. 19 : ;.
-170,      PRINTSY, No. 33 : printf.
-170,       LPAESY, No. 11 : (.
-170,      IDENTSY, No. 38 : int_array.
-170,     LBRACKSY, No. 13 : [.
-170,      IDENTSY, No. 38 : const_int_3.
-170,     RBRACKSY, No. 14 : ].
-170,       RPARSY, No. 12 : ).
-170,       SEMISY, No. 19 : ;.
-171,      PRINTSY, No. 33 : printf.
+169,       RPRTSY, No. 16 : }.
+171,     SWITCHSY, No. 27 : switch.
 171,       LPAESY, No. 11 : (.
-171,      IDENTSY, No. 38 : int_array.
-171,     LBRACKSY, No. 13 : [.
-171,      IDENTSY, No. 38 : const_int_1.
-171,      MINUSSY, No.  1 : -.
-171,       LPAESY, No. 11 : (.
-171,      IDENTSY, No. 38 : const_int_2.
-171,       MULTSY, No.  2 : *.
-171,      IDENTSY, No. 38 : const_int_4.
-171,       PLUSSY, No.  0 : +.
-171,      IDENTSY, No. 38 : testReturnInt.
-171,       LPAESY, No. 11 : (.
-171,    INTEGERSY, No. 35 : .
+171,      IDENTSY, No. 38 : const_1.
 171,       RPARSY, No. 12 : ).
-171,       MULTSY, No.  2 : *.
-171,      IDENTSY, No. 38 : const_int_4.
-171,       RPARSY, No. 12 : ).
-171,     RBRACKSY, No. 14 : ].
-171,       RPARSY, No. 12 : ).
-171,       SEMISY, No. 19 : ;.
-172,      PRINTSY, No. 33 : printf.
-172,       LPAESY, No. 11 : (.
-172,      IDENTSY, No. 38 : char_temp_1.
-172,       RPARSY, No. 12 : ).
-172,       SEMISY, No. 19 : ;.
-173,      PRINTSY, No. 33 : printf.
-173,       LPAESY, No. 11 : (.
-173,      IDENTSY, No. 38 : char_temp_2.
-173,       RPARSY, No. 12 : ).
+171,       LPRTSY, No. 15 : {.
+172,       CASESY, No. 28 : case.
+172,    INTEGERSY, No. 35 : 1.
+172,      COLONSY, No. 17 : :.
+172,       LPRTSY, No. 15 : {.
+173,      IDENTSY, No. 38 : judge.
+173,     ASSIGNSY, No. 10 : =.
+173,     ASSIGNSY, No. 10 : =.
+173,      IDENTSY, No. 38 : judge.
+173,       PLUSSY, No.  0 : +.
+173,    INTEGERSY, No. 35 : 1.
 173,       SEMISY, No. 19 : ;.
-174,      PRINTSY, No. 33 : printf.
-174,       LPAESY, No. 11 : (.
-174,      IDENTSY, No. 38 : char_array.
-174,     LBRACKSY, No. 13 : [.
-174,    INTEGERSY, No. 35 : .
-174,     RBRACKSY, No. 14 : ].
-174,       RPARSY, No. 12 : ).
-174,       SEMISY, No. 19 : ;.
-175,      PRINTSY, No. 33 : printf.
-175,       LPAESY, No. 11 : (.
-175,      IDENTSY, No. 38 : char_array.
-175,     LBRACKSY, No. 13 : [.
-175,      IDENTSY, No. 38 : const_int_1.
-175,     RBRACKSY, No. 14 : ].
-175,       RPARSY, No. 12 : ).
+174,       RPRTSY, No. 16 : }.
+175,    DEFAULTSY, No. 29 : default.
+175,      COLONSY, No. 17 : :.
 175,       SEMISY, No. 19 : ;.
-176,      PRINTSY, No. 33 : printf.
-176,       LPAESY, No. 11 : (.
-176,      IDENTSY, No. 38 : char_temp_1.
-176,       MULTSY, No.  2 : *.
-176,       LPAESY, No. 11 : (.
-176,      IDENTSY, No. 38 : char_array.
-176,     LBRACKSY, No. 13 : [.
-176,    INTEGERSY, No. 35 : .
-176,     RBRACKSY, No. 14 : ].
-176,       PLUSSY, No.  0 : +.
-176,      IDENTSY, No. 38 : char_array.
-176,     LBRACKSY, No. 13 : [.
-176,    INTEGERSY, No. 35 : .
-176,     RBRACKSY, No. 14 : ].
-176,       MULTSY, No.  2 : *.
-176,      IDENTSY, No. 38 : char_temp_2.
-176,       RPARSY, No. 12 : ).
-176,       RPARSY, No. 12 : ).
-176,       SEMISY, No. 19 : ;.
-177,        RETSY, No. 34 : return.
-177,       SEMISY, No. 19 : ;.
-178,       RPRTSY, No. 16 : }.
-180,       VOIDSY, No. 25 : void.
-180,      IDENTSY, No. 38 : testIO.
-180,      IDENTSY, No. 38 : testIO.
-180,       LPAESY, No. 11 : (.
-180,       RPARSY, No. 12 : ).
-180,       LPRTSY, No. 15 : {.
-181,      SCANFSY, No. 32 : scanf.
-181,       LPAESY, No. 11 : (.
-181,      IDENTSY, No. 38 : global_int_1.
-181,       RPARSY, No. 12 : ).
-181,       SEMISY, No. 19 : ;.
-182,      SCANFSY, No. 32 : scanf.
-182,       LPAESY, No. 11 : (.
-182,      IDENTSY, No. 38 : global_char_1.
-182,       RPARSY, No. 12 : ).
-182,       SEMISY, No. 19 : ;.
-183,      PRINTSY, No. 33 : printf.
-183,       LPAESY, No. 11 : (.
-183,       DQUOSY, No. 21 : ".
-183,     STRINGSY, No. 37 : "!@\n#$^&*()Qqaa123[];',./".
-183,       DQUOSY, No. 21 : "!@\n#$^&*()Qqaa123[];',./".
-183,       RPARSY, No. 12 : ).
+176,       RPRTSY, No. 16 : }.
+178,     SWITCHSY, No. 27 : switch.
+178,       LPAESY, No. 11 : (.
+178,      IDENTSY, No. 38 : const_1.
+178,       RPARSY, No. 12 : ).
+178,       LPRTSY, No. 15 : {.
+179,       CASESY, No. 28 : case.
+179,    INTEGERSY, No. 35 : .
+179,      COLONSY, No. 17 : :.
+179,       LPRTSY, No. 15 : {.
+180,      IDENTSY, No. 38 : judge.
+180,     ASSIGNSY, No. 10 : =.
+180,     ASSIGNSY, No. 10 : =.
+180,      IDENTSY, No. 38 : judge.
+180,       PLUSSY, No.  0 : +.
+180,    INTEGERSY, No. 35 : 1.
+180,       SEMISY, No. 19 : ;.
+181,       RPRTSY, No. 16 : }.
+182,    DEFAULTSY, No. 29 : default.
+182,      COLONSY, No. 17 : :.
+182,       LPRTSY, No. 15 : {.
 183,       SEMISY, No. 19 : ;.
-184,      PRINTSY, No. 33 : printf.
-184,       LPAESY, No. 11 : (.
-184,      IDENTSY, No. 38 : global_int_1.
-184,       RPARSY, No. 12 : ).
-184,       SEMISY, No. 19 : ;.
-185,      PRINTSY, No. 33 : printf.
-185,       LPAESY, No. 11 : (.
-185,      IDENTSY, No. 38 : global_char_1.
-185,       RPARSY, No. 12 : ).
-185,       SEMISY, No. 19 : ;.
-186,      SCANFSY, No. 32 : scanf.
-186,       LPAESY, No. 11 : (.
-186,      IDENTSY, No. 38 : global_int_1.
-186,      COMMASY, No. 18 : ,.
-186,      IDENTSY, No. 38 : global_char_1.
-186,       RPARSY, No. 12 : ).
-186,       SEMISY, No. 19 : ;.
-187,      PRINTSY, No. 33 : printf.
-187,       LPAESY, No. 11 : (.
-187,       DQUOSY, No. 21 : ".
-187,     STRINGSY, No. 37 : "!@\n#$^&*()Qqaa123[];',./".
-187,       DQUOSY, No. 21 : "!@\n#$^&*()Qqaa123[];',./".
-187,      COMMASY, No. 18 : ,.
-187,      IDENTSY, No. 38 : global_int_1.
-187,       RPARSY, No. 12 : ).
+184,       RPRTSY, No. 16 : }.
+185,       RPRTSY, No. 16 : }.
+187,      IDENTSY, No. 38 : x.
+187,     ASSIGNSY, No. 10 : =.
+187,     ASSIGNSY, No. 10 : =.
+187,    INTEGERSY, No. 35 : .
 187,       SEMISY, No. 19 : ;.
-188,      PRINTSY, No. 33 : printf.
+188,       LOOPSY, No. 31 : while.
 188,       LPAESY, No. 11 : (.
-188,      IDENTSY, No. 38 : global_char_1.
+188,      IDENTSY, No. 38 : x.
+188,         LSSY, No.  4 : <.
+188,      IDENTSY, No. 38 : const_2.
 188,       RPARSY, No. 12 : ).
-188,       SEMISY, No. 19 : ;.
-189,      SCANFSY, No. 32 : scanf.
-189,       LPAESY, No. 11 : (.
-189,      IDENTSY, No. 38 : global_char_1.
-189,      COMMASY, No. 18 : ,.
-189,      IDENTSY, No. 38 : global_int_1.
-189,       RPARSY, No. 12 : ).
+188,       LPRTSY, No. 15 : {.
+189,      IDENTSY, No. 38 : judge.
+189,     ASSIGNSY, No. 10 : =.
+189,     ASSIGNSY, No. 10 : =.
+189,      IDENTSY, No. 38 : judge.
+189,       PLUSSY, No.  0 : +.
+189,    INTEGERSY, No. 35 : 1.
 189,       SEMISY, No. 19 : ;.
-190,      PRINTSY, No. 33 : printf.
-190,       LPAESY, No. 11 : (.
-190,       DQUOSY, No. 21 : ".
-190,     STRINGSY, No. 37 : "!@\n#$^&*()Qqaa123[];',./".
-190,       DQUOSY, No. 21 : "!@\n#$^&*()Qqaa123[];',./".
-190,      COMMASY, No. 18 : ,.
-190,      IDENTSY, No. 38 : global_char_1.
-190,       RPARSY, No. 12 : ).
+190,      IDENTSY, No. 38 : x.
+190,     ASSIGNSY, No. 10 : =.
+190,     ASSIGNSY, No. 10 : =.
+190,      IDENTSY, No. 38 : x.
+190,       PLUSSY, No.  0 : +.
+190,    INTEGERSY, No. 35 : 1.
 190,       SEMISY, No. 19 : ;.
-191,      PRINTSY, No. 33 : printf.
-191,       LPAESY, No. 11 : (.
-191,      IDENTSY, No. 38 : global_int_1.
-191,       RPARSY, No. 12 : ).
-191,       SEMISY, No. 19 : ;.
-192,        RETSY, No. 34 : return.
-192,       SEMISY, No. 19 : ;.
-193,       RPRTSY, No. 16 : }.
-195,       VOIDSY, No. 25 : void.
-195,      IDENTSY, No. 38 : testIfWhile.
-195,      IDENTSY, No. 38 : testIfWhile.
-195,       LPAESY, No. 11 : (.
-195,       RPARSY, No. 12 : ).
-196,       LPRTSY, No. 15 : {.
-197,        INTSY, No. 22 : int.
-197,      IDENTSY, No. 38 : i.
-197,      COMMASY, No. 18 : ,.
-197,      IDENTSY, No. 38 : i.
-197,      COMMASY, No. 18 : ,.
-197,      IDENTSY, No. 38 : j.
-197,      COMMASY, No. 18 : ,.
-197,      IDENTSY, No. 38 : k.
-197,       SEMISY, No. 19 : ;.
-198,       CHARSY, No. 23 : char.
-198,      IDENTSY, No. 38 : a.
-198,      COMMASY, No. 18 : ,.
-198,      IDENTSY, No. 38 : a.
-198,      COMMASY, No. 18 : ,.
-198,      IDENTSY, No. 38 : b.
-198,      COMMASY, No. 18 : ,.
-198,      IDENTSY, No. 38 : c.
-198,      COMMASY, No. 18 : ,.
-198,      IDENTSY, No. 38 : d.
-198,       SEMISY, No. 19 : ;.
-199,      IDENTSY, No. 38 : k.
-199,     ASSIGNSY, No. 10 : =.
-199,     ASSIGNSY, No. 10 : =.
-199,    INTEGERSY, No. 35 : 10.
-199,       SEMISY, No. 19 : ;.
-200,      IDENTSY, No. 38 : a.
-200,     ASSIGNSY, No. 10 : =.
-200,     ASSIGNSY, No. 10 : =.
-200,       SQUOSY, No. 20 : '+'.
-200,       SEMISY, No. 19 : ;.
-201,      IDENTSY, No. 38 : b.
-201,     ASSIGNSY, No. 10 : =.
-201,     ASSIGNSY, No. 10 : =.
-201,       SQUOSY, No. 20 : '-'.
-201,       SEMISY, No. 19 : ;.
-202,      IDENTSY, No. 38 : c.
-202,     ASSIGNSY, No. 10 : =.
-202,     ASSIGNSY, No. 10 : =.
-202,       SQUOSY, No. 20 : '*'.
-202,       SEMISY, No. 19 : ;.
-203,      IDENTSY, No. 38 : d.
-203,     ASSIGNSY, No. 10 : =.
-203,     ASSIGNSY, No. 10 : =.
-203,       SQUOSY, No. 20 : '/'.
-203,       SEMISY, No. 19 : ;.
-204,         IFSY, No. 30 : if.
-204,       LPAESY, No. 11 : (.
-204,      IDENTSY, No. 38 : k.
-204,         GTSY, No.  6 : >.
-204,    INTEGERSY, No. 35 : .
-204,       RPARSY, No. 12 : ).
-205,       LPRTSY, No. 15 : {.
-206,         IFSY, No. 30 : if.
-206,       LPAESY, No. 11 : (.
-206,      IDENTSY, No. 38 : k.
-206,         LESY, No.  5 : <=.
-206,    INTEGERSY, No. 35 : 10.
-206,       RPARSY, No. 12 : ).
-207,       LPRTSY, No. 15 : {.
-208,      IDENTSY, No. 38 : i.
-208,     ASSIGNSY, No. 10 : =.
-208,     ASSIGNSY, No. 10 : =.
-208,    INTEGERSY, No. 35 : .
-208,       SEMISY, No. 19 : ;.
-209,       LOOPSY, No. 31 : while.
-209,       LPAESY, No. 11 : (.
-209,      IDENTSY, No. 38 : i.
-209,         LSSY, No.  4 : <.
-209,      IDENTSY, No. 38 : k.
-209,        DIVSY, No.  3 : /.
-209,    INTEGERSY, No. 35 : 2.
-209,       RPARSY, No. 12 : ).
-210,       LPRTSY, No. 15 : {.
-211,     SWITCHSY, No. 27 : switch.
-211,       LPAESY, No. 11 : (.
-211,      IDENTSY, No. 38 : i.
-211,      MINUSSY, No.  1 : -.
-211,       LPAESY, No. 11 : (.
-211,      IDENTSY, No. 38 : i.
-211,        DIVSY, No.  3 : /.
-211,    INTEGERSY, No. 35 : 2.
-211,       MULTSY, No.  2 : *.
-211,    INTEGERSY, No. 35 : 2.
-211,       RPARSY, No. 12 : ).
-211,       RPARSY, No. 12 : ).
+191,       RPRTSY, No. 16 : }.
+192,       RPRTSY, No. 16 : }.
+194,       VOIDSY, No. 25 : void.
+194,      IDENTSY, No. 38 : test_brackets.
+194,      IDENTSY, No. 38 : test_brackets.
+194,       LPAESY, No. 11 : (.
+194,       RPARSY, No. 12 : ).
+195,       LPRTSY, No. 15 : {.
+196,      IDENTSY, No. 38 : judge.
+196,     ASSIGNSY, No. 10 : =.
+196,     ASSIGNSY, No. 10 : =.
+196,      IDENTSY, No. 38 : judge.
+196,       PLUSSY, No.  0 : +.
+196,    INTEGERSY, No. 35 : 1.
+196,       SEMISY, No. 19 : ;.
+197,       LPRTSY, No. 15 : {.
+198,       LPRTSY, No. 15 : {.
+199,       LPRTSY, No. 15 : {.
+200,       RPRTSY, No. 16 : }.
+201,       RPRTSY, No. 16 : }.
+202,       RPRTSY, No. 16 : }.
+204,       LPRTSY, No. 15 : {.
+205,       SEMISY, No. 19 : ;.
+206,       RPRTSY, No. 16 : }.
+207,        RETSY, No. 34 : return.
+207,       SEMISY, No. 19 : ;.
+208,       RPRTSY, No. 16 : }.
+210,       VOIDSY, No. 25 : void.
+210,      IDENTSY, No. 38 : test_compare_operator.
+210,      IDENTSY, No. 38 : test_compare_operator.
+210,       LPAESY, No. 11 : (.
+210,       RPARSY, No. 12 : ).
 211,       LPRTSY, No. 15 : {.
-212,       CASESY, No. 28 : case.
-212,    INTEGERSY, No. 35 : .
-212,      COLONSY, No. 17 : :.
-212,       LPRTSY, No. 15 : {.
-213,      IDENTSY, No. 38 : global_char_array_3.
-213,     LBRACKSY, No. 13 : [.
-213,     LBRACKSY, No. 13 : [.
-213,      IDENTSY, No. 38 : i.
-213,     RBRACKSY, No. 14 : ].
+212,        INTSY, No. 22 : int.
+212,      IDENTSY, No. 38 : x.
+212,      COMMASY, No. 18 : ,.
+212,      IDENTSY, No. 38 : x.
+212,      COMMASY, No. 18 : ,.
+212,      IDENTSY, No. 38 : y.
+212,      COMMASY, No. 18 : ,.
+212,      IDENTSY, No. 38 : flag.
+212,       SEMISY, No. 19 : ;.
+213,      IDENTSY, No. 38 : x.
 213,     ASSIGNSY, No. 10 : =.
-213,      IDENTSY, No. 38 : a.
+213,     ASSIGNSY, No. 10 : =.
+213,    INTEGERSY, No. 35 : .
 213,       SEMISY, No. 19 : ;.
-214,       RPRTSY, No. 16 : }.
-215,       CASESY, No. 28 : case.
-215,    INTEGERSY, No. 35 : 1.
-215,      COLONSY, No. 17 : :.
-215,       LPRTSY, No. 15 : {.
-216,      IDENTSY, No. 38 : global_char_array_3.
-216,     LBRACKSY, No. 13 : [.
-216,     LBRACKSY, No. 13 : [.
-216,      IDENTSY, No. 38 : i.
-216,     RBRACKSY, No. 14 : ].
-216,     ASSIGNSY, No. 10 : =.
-216,      IDENTSY, No. 38 : b.
-216,       SEMISY, No. 19 : ;.
-217,       RPRTSY, No. 16 : }.
+214,      IDENTSY, No. 38 : y.
+214,     ASSIGNSY, No. 10 : =.
+214,     ASSIGNSY, No. 10 : =.
+214,    INTEGERSY, No. 35 : 1.
+214,       SEMISY, No. 19 : ;.
+215,      IDENTSY, No. 38 : flag.
+215,     ASSIGNSY, No. 10 : =.
+215,     ASSIGNSY, No. 10 : =.
+215,    INTEGERSY, No. 35 : .
+215,       SEMISY, No. 19 : ;.
+216,         IFSY, No. 30 : if.
+216,       LPAESY, No. 11 : (.
+216,      IDENTSY, No. 38 : x.
+216,         LSSY, No.  4 : <.
+216,      IDENTSY, No. 38 : y.
+216,       RPARSY, No. 12 : ).
+216,       LPRTSY, No. 15 : {.
+217,      IDENTSY, No. 38 : judge.
+217,     ASSIGNSY, No. 10 : =.
+217,     ASSIGNSY, No. 10 : =.
+217,      IDENTSY, No. 38 : judge.
+217,       PLUSSY, No.  0 : +.
+217,    INTEGERSY, No. 35 : 1.
+217,       SEMISY, No. 19 : ;.
 218,       RPRTSY, No. 16 : }.
-219,      PRINTSY, No. 33 : printf.
+219,         IFSY, No. 30 : if.
 219,       LPAESY, No. 11 : (.
-219,      IDENTSY, No. 38 : global_char_array_3.
-219,     LBRACKSY, No. 13 : [.
-219,      IDENTSY, No. 38 : i.
-219,     RBRACKSY, No. 14 : ].
+219,      IDENTSY, No. 38 : y.
+219,         GTSY, No.  6 : >.
+219,      IDENTSY, No. 38 : x.
 219,       RPARSY, No. 12 : ).
-219,       SEMISY, No. 19 : ;.
-220,      IDENTSY, No. 38 : i.
+219,       LPRTSY, No. 15 : {.
+220,      IDENTSY, No. 38 : judge.
 220,     ASSIGNSY, No. 10 : =.
 220,     ASSIGNSY, No. 10 : =.
-220,      IDENTSY, No. 38 : i.
+220,      IDENTSY, No. 38 : judge.
 220,       PLUSSY, No.  0 : +.
 220,    INTEGERSY, No. 35 : 1.
 220,       SEMISY, No. 19 : ;.
 221,       RPRTSY, No. 16 : }.
-222,       LOOPSY, No. 31 : while.
+222,         IFSY, No. 30 : if.
 222,       LPAESY, No. 11 : (.
-222,      IDENTSY, No. 38 : i.
-222,         LSSY, No.  4 : <.
-222,      IDENTSY, No. 38 : k.
+222,      IDENTSY, No. 38 : x.
+222,        EQUSY, No.  9 : ==.
+222,      IDENTSY, No. 38 : y.
 222,       RPARSY, No. 12 : ).
-223,       LPRTSY, No. 15 : {.
-224,     SWITCHSY, No. 27 : switch.
-224,       LPAESY, No. 11 : (.
-224,      IDENTSY, No. 38 : i.
-224,      MINUSSY, No.  1 : -.
-224,       LPAESY, No. 11 : (.
-224,      IDENTSY, No. 38 : i.
-224,        DIVSY, No.  3 : /.
-224,    INTEGERSY, No. 35 : 2.
-224,       MULTSY, No.  2 : *.
-224,    INTEGERSY, No. 35 : 2.
-224,       RPARSY, No. 12 : ).
-224,       RPARSY, No. 12 : ).
-224,       LPRTSY, No. 15 : {.
-225,       CASESY, No. 28 : case.
-225,    INTEGERSY, No. 35 : .
-225,      COLONSY, No. 17 : :.
-225,       LPRTSY, No. 15 : {.
-226,      IDENTSY, No. 38 : global_char_array_3.
-226,     LBRACKSY, No. 13 : [.
-226,     LBRACKSY, No. 13 : [.
-226,      IDENTSY, No. 38 : i.
-226,     RBRACKSY, No. 14 : ].
-226,     ASSIGNSY, No. 10 : =.
-226,      IDENTSY, No. 38 : c.
-226,       SEMISY, No. 19 : ;.
-227,       RPRTSY, No. 16 : }.
-228,    DEFAULTSY, No. 29 : default.
-228,      COLONSY, No. 17 : :.
-228,       LPRTSY, No. 15 : {.
-229,      IDENTSY, No. 38 : global_char_array_3.
-229,     LBRACKSY, No. 13 : [.
-229,     LBRACKSY, No. 13 : [.
-229,      IDENTSY, No. 38 : i.
-229,     RBRACKSY, No. 14 : ].
-229,     ASSIGNSY, No. 10 : =.
-229,      IDENTSY, No. 38 : d.
-229,       SEMISY, No. 19 : ;.
-230,       RPRTSY, No. 16 : }.
+222,       LPRTSY, No. 15 : {.
+223,      IDENTSY, No. 38 : judge.
+223,     ASSIGNSY, No. 10 : =.
+223,     ASSIGNSY, No. 10 : =.
+223,      IDENTSY, No. 38 : judge.
+223,       PLUSSY, No.  0 : +.
+223,    INTEGERSY, No. 35 : 1.
+223,       SEMISY, No. 19 : ;.
+224,      IDENTSY, No. 38 : flag.
+224,     ASSIGNSY, No. 10 : =.
+224,     ASSIGNSY, No. 10 : =.
+224,    INTEGERSY, No. 35 : 1.
+224,       SEMISY, No. 19 : ;.
+225,       RPRTSY, No. 16 : }.
+226,         IFSY, No. 30 : if.
+226,       LPAESY, No. 11 : (.
+226,      IDENTSY, No. 38 : flag.
+226,        EQUSY, No.  9 : ==.
+226,    INTEGERSY, No. 35 : .
+226,       RPARSY, No. 12 : ).
+226,       LPRTSY, No. 15 : {.
+227,      IDENTSY, No. 38 : judge.
+227,     ASSIGNSY, No. 10 : =.
+227,     ASSIGNSY, No. 10 : =.
+227,      IDENTSY, No. 38 : judge.
+227,       PLUSSY, No.  0 : +.
+227,    INTEGERSY, No. 35 : 1.
+227,       SEMISY, No. 19 : ;.
+228,       RPRTSY, No. 16 : }.
+229,         IFSY, No. 30 : if.
+229,       LPAESY, No. 11 : (.
+229,      IDENTSY, No. 38 : x.
+229,        NEQSY, No.  8 : !=.
+229,      IDENTSY, No. 38 : y.
+229,       RPARSY, No. 12 : ).
+229,       LPRTSY, No. 15 : {.
+230,      IDENTSY, No. 38 : judge.
+230,     ASSIGNSY, No. 10 : =.
+230,     ASSIGNSY, No. 10 : =.
+230,      IDENTSY, No. 38 : judge.
+230,       PLUSSY, No.  0 : +.
+230,    INTEGERSY, No. 35 : 1.
+230,       SEMISY, No. 19 : ;.
 231,       RPRTSY, No. 16 : }.
-232,      PRINTSY, No. 33 : printf.
-232,       LPAESY, No. 11 : (.
-232,      IDENTSY, No. 38 : global_char_array_3.
-232,     LBRACKSY, No. 13 : [.
-232,      IDENTSY, No. 38 : i.
-232,     RBRACKSY, No. 14 : ].
-232,       RPARSY, No. 12 : ).
+232,      IDENTSY, No. 38 : x.
+232,     ASSIGNSY, No. 10 : =.
+232,     ASSIGNSY, No. 10 : =.
+232,    INTEGERSY, No. 35 : .
 232,       SEMISY, No. 19 : ;.
-233,      IDENTSY, No. 38 : i.
-233,     ASSIGNSY, No. 10 : =.
-233,     ASSIGNSY, No. 10 : =.
-233,      IDENTSY, No. 38 : i.
-233,       PLUSSY, No.  0 : +.
+233,       LOOPSY, No. 31 : while.
+233,       LPAESY, No. 11 : (.
+233,      IDENTSY, No. 38 : x.
+233,         LESY, No.  5 : <=.
 233,    INTEGERSY, No. 35 : 1.
-233,       SEMISY, No. 19 : ;.
-234,       RPRTSY, No. 16 : }.
-235,       RPRTSY, No. 16 : }.
+233,       RPARSY, No. 12 : ).
+233,       LPRTSY, No. 15 : {.
+234,         IFSY, No. 30 : if.
+234,       LPAESY, No. 11 : (.
+234,      IDENTSY, No. 38 : x.
+234,         LESY, No.  5 : <=.
+234,      IDENTSY, No. 38 : y.
+234,       RPARSY, No. 12 : ).
+234,       LPRTSY, No. 15 : {.
+235,      IDENTSY, No. 38 : judge.
+235,     ASSIGNSY, No. 10 : =.
+235,     ASSIGNSY, No. 10 : =.
+235,      IDENTSY, No. 38 : judge.
+235,       PLUSSY, No.  0 : +.
+235,    INTEGERSY, No. 35 : 1.
+235,       SEMISY, No. 19 : ;.
 236,       RPRTSY, No. 16 : }.
-237,        RETSY, No. 34 : return.
+237,      IDENTSY, No. 38 : x.
+237,     ASSIGNSY, No. 10 : =.
+237,     ASSIGNSY, No. 10 : =.
+237,      IDENTSY, No. 38 : x.
+237,       PLUSSY, No.  0 : +.
+237,    INTEGERSY, No. 35 : 1.
 237,       SEMISY, No. 19 : ;.
 238,       RPRTSY, No. 16 : }.
-240,       VOIDSY, No. 25 : void.
-240,      IDENTSY, No. 38 : testSwitch.
-240,      IDENTSY, No. 38 : testSwitch.
+239,      IDENTSY, No. 38 : x.
+239,     ASSIGNSY, No. 10 : =.
+239,     ASSIGNSY, No. 10 : =.
+239,    INTEGERSY, No. 35 : .
+239,       SEMISY, No. 19 : ;.
+240,       LOOPSY, No. 31 : while.
 240,       LPAESY, No. 11 : (.
+240,      IDENTSY, No. 38 : x.
+240,         LESY, No.  5 : <=.
+240,    INTEGERSY, No. 35 : 1.
 240,       RPARSY, No. 12 : ).
 240,       LPRTSY, No. 15 : {.
-241,      CONSTSY, No. 24 : const.
-241,        INTSY, No. 22 : int.
-241,      IDENTSY, No. 38 : sum.
-241,     ASSIGNSY, No. 10 : =.
-241,    INTEGERSY, No. 35 : 3.
-241,       SEMISY, No. 19 : ;.
-242,        INTSY, No. 22 : int.
-242,      IDENTSY, No. 38 : int_1.
-242,      COMMASY, No. 18 : ,.
-242,      IDENTSY, No. 38 : int_1.
-242,      COMMASY, No. 18 : ,.
-242,      IDENTSY, No. 38 : i.
+241,         IFSY, No. 30 : if.
+241,       LPAESY, No. 11 : (.
+241,      IDENTSY, No. 38 : y.
+241,         GESY, No.  7 : >=.
+241,      IDENTSY, No. 38 : x.
+241,       RPARSY, No. 12 : ).
+241,       LPRTSY, No. 15 : {.
+242,      IDENTSY, No. 38 : judge.
+242,     ASSIGNSY, No. 10 : =.
+242,     ASSIGNSY, No. 10 : =.
+242,      IDENTSY, No. 38 : judge.
+242,       PLUSSY, No.  0 : +.
+242,    INTEGERSY, No. 35 : 1.
 242,       SEMISY, No. 19 : ;.
-243,       CHARSY, No. 23 : char.
-243,      IDENTSY, No. 38 : char_1.
-243,       SEMISY, No. 19 : ;.
-243,      IDENTSY, No. 38 : char_1.
-243,       SEMISY, No. 19 : ;.
-244,      IDENTSY, No. 38 : i.
+243,       RPRTSY, No. 16 : }.
+244,      IDENTSY, No. 38 : x.
 244,     ASSIGNSY, No. 10 : =.
 244,     ASSIGNSY, No. 10 : =.
-244,    INTEGERSY, No. 35 : .
+244,      IDENTSY, No. 38 : x.
+244,       PLUSSY, No.  0 : +.
+244,    INTEGERSY, No. 35 : 1.
 244,       SEMISY, No. 19 : ;.
-245,      IDENTSY, No. 38 : int_1.
-245,     ASSIGNSY, No. 10 : =.
-245,     ASSIGNSY, No. 10 : =.
-245,    INTEGERSY, No. 35 : .
-245,       SEMISY, No. 19 : ;.
-246,       LOOPSY, No. 31 : while.
-246,       LPAESY, No. 11 : (.
-246,      IDENTSY, No. 38 : i.
-246,         LSSY, No.  4 : <.
-246,      IDENTSY, No. 38 : sum.
-246,       RPARSY, No. 12 : ).
-246,       LPRTSY, No. 15 : {.
-247,     SWITCHSY, No. 27 : switch.
-247,       LPAESY, No. 11 : (.
-247,      IDENTSY, No. 38 : int_1.
-247,       RPARSY, No. 12 : ).
-247,       LPRTSY, No. 15 : {.
-248,       CASESY, No. 28 : case.
-248,    INTEGERSY, No. 35 : .
-248,      COLONSY, No. 17 : :.
-248,       LPRTSY, No. 15 : {.
-249,      IDENTSY, No. 38 : char_1.
-249,     ASSIGNSY, No. 10 : =.
-249,     ASSIGNSY, No. 10 : =.
-249,       SQUOSY, No. 20 : 'a'.
-249,       SEMISY, No. 19 : ;.
-250,      PRINTSY, No. 33 : printf.
-250,       LPAESY, No. 11 : (.
-250,      IDENTSY, No. 38 : char_1.
-250,       RPARSY, No. 12 : ).
+245,       RPRTSY, No. 16 : }.
+246,       RPRTSY, No. 16 : }.
+248,       VOIDSY, No. 25 : void.
+248,      IDENTSY, No. 38 : test_expression.
+248,      IDENTSY, No. 38 : test_expression.
+248,       LPAESY, No. 11 : (.
+248,       RPARSY, No. 12 : ).
+249,       LPRTSY, No. 15 : {.
+250,        INTSY, No. 22 : int.
+250,      IDENTSY, No. 38 : a.
+250,      COMMASY, No. 18 : ,.
+250,      IDENTSY, No. 38 : a.
+250,      COMMASY, No. 18 : ,.
+250,      IDENTSY, No. 38 : b.
 250,       SEMISY, No. 19 : ;.
-251,       RPRTSY, No. 16 : }.
-252,       CASESY, No. 28 : case.
-252,    INTEGERSY, No. 35 : 1.
-252,      COLONSY, No. 17 : :.
-252,       LPRTSY, No. 15 : {.
-253,      IDENTSY, No. 38 : char_1.
+251,       CHARSY, No. 23 : char.
+251,      IDENTSY, No. 38 : c.
+251,      COMMASY, No. 18 : ,.
+251,      IDENTSY, No. 38 : c.
+251,      COMMASY, No. 18 : ,.
+251,      IDENTSY, No. 38 : d.
+251,      COMMASY, No. 18 : ,.
+251,      IDENTSY, No. 38 : e.
+251,      COMMASY, No. 18 : ,.
+251,      IDENTSY, No. 38 : f.
+251,      COMMASY, No. 18 : ,.
+251,      IDENTSY, No. 38 : g.
+251,       SEMISY, No. 19 : ;.
+252,      IDENTSY, No. 38 : a.
+252,     ASSIGNSY, No. 10 : =.
+252,     ASSIGNSY, No. 10 : =.
+252,    INTEGERSY, No. 35 : .
+252,       SEMISY, No. 19 : ;.
+253,      IDENTSY, No. 38 : b.
 253,     ASSIGNSY, No. 10 : =.
 253,     ASSIGNSY, No. 10 : =.
-253,       SQUOSY, No. 20 : 'b'.
+253,    INTEGERSY, No. 35 : .
 253,       SEMISY, No. 19 : ;.
-254,      PRINTSY, No. 33 : printf.
-254,       LPAESY, No. 11 : (.
-254,      IDENTSY, No. 38 : char_1.
-254,       RPARSY, No. 12 : ).
+254,      IDENTSY, No. 38 : c.
+254,     ASSIGNSY, No. 10 : =.
+254,     ASSIGNSY, No. 10 : =.
+254,       SQUOSY, No. 20 : 'a'.
 254,       SEMISY, No. 19 : ;.
-255,       RPRTSY, No. 16 : }.
-256,    DEFAULTSY, No. 29 : default.
-256,      COLONSY, No. 17 : :.
-256,       LPRTSY, No. 15 : {.
-257,      IDENTSY, No. 38 : char_1.
+255,      IDENTSY, No. 38 : d.
+255,     ASSIGNSY, No. 10 : =.
+255,     ASSIGNSY, No. 10 : =.
+255,       SQUOSY, No. 20 : 'b'.
+255,       SEMISY, No. 19 : ;.
+256,      IDENTSY, No. 38 : e.
+256,     ASSIGNSY, No. 10 : =.
+256,     ASSIGNSY, No. 10 : =.
+256,       SQUOSY, No. 20 : 'c'.
+256,       SEMISY, No. 19 : ;.
+256,      IDENTSY, No. 38 : judge.
+256,     ASSIGNSY, No. 10 : =.
+256,     ASSIGNSY, No. 10 : =.
+256,      IDENTSY, No. 38 : judge.
+256,       PLUSSY, No.  0 : +.
+256,    INTEGERSY, No. 35 : 1.
+256,       SEMISY, No. 19 : ;.
+257,      IDENTSY, No. 38 : a.
 257,     ASSIGNSY, No. 10 : =.
 257,     ASSIGNSY, No. 10 : =.
-257,      IDENTSY, No. 38 : const_char_2.
+257,       PLUSSY, No.  0 : +.
+257,      IDENTSY, No. 38 : a.
 257,       SEMISY, No. 19 : ;.
-258,      PRINTSY, No. 33 : printf.
+258,         IFSY, No. 30 : if.
 258,       LPAESY, No. 11 : (.
-258,      IDENTSY, No. 38 : char_1.
+258,      IDENTSY, No. 38 : a.
+258,        EQUSY, No.  9 : ==.
+258,    INTEGERSY, No. 35 : .
 258,       RPARSY, No. 12 : ).
+258,      IDENTSY, No. 38 : judge.
+258,     ASSIGNSY, No. 10 : =.
+258,     ASSIGNSY, No. 10 : =.
+258,      IDENTSY, No. 38 : judge.
+258,       PLUSSY, No.  0 : +.
+258,    INTEGERSY, No. 35 : 1.
 258,       SEMISY, No. 19 : ;.
-259,       RPRTSY, No. 16 : }.
-260,       RPRTSY, No. 16 : }.
-261,     SWITCHSY, No. 27 : switch.
+259,      PRINTSY, No. 33 : printf.
+259,       LPAESY, No. 11 : (.
+259,      IDENTSY, No. 38 : a.
+259,       RPARSY, No. 12 : ).
+259,       SEMISY, No. 19 : ;.
+260,      IDENTSY, No. 38 : a.
+260,     ASSIGNSY, No. 10 : =.
+260,     ASSIGNSY, No. 10 : =.
+260,      MINUSSY, No.  1 : -.
+260,      IDENTSY, No. 38 : a.
+260,       SEMISY, No. 19 : ;.
+261,         IFSY, No. 30 : if.
 261,       LPAESY, No. 11 : (.
-261,      IDENTSY, No. 38 : char_1.
+261,      IDENTSY, No. 38 : a.
+261,        EQUSY, No.  9 : ==.
+261,    INTEGERSY, No. 35 : .
 261,       RPARSY, No. 12 : ).
-261,       LPRTSY, No. 15 : {.
-262,       CASESY, No. 28 : case.
-262,       SQUOSY, No. 20 : 'a'.
-262,      COLONSY, No. 17 : :.
-262,       LPRTSY, No. 15 : {.
-263,      IDENTSY, No. 38 : int_1.
+261,      IDENTSY, No. 38 : judge.
+261,     ASSIGNSY, No. 10 : =.
+261,     ASSIGNSY, No. 10 : =.
+261,      IDENTSY, No. 38 : judge.
+261,       PLUSSY, No.  0 : +.
+261,    INTEGERSY, No. 35 : 1.
+261,       SEMISY, No. 19 : ;.
+262,      PRINTSY, No. 33 : printf.
+262,       LPAESY, No. 11 : (.
+262,      IDENTSY, No. 38 : a.
+262,       RPARSY, No. 12 : ).
+262,       SEMISY, No. 19 : ;.
+263,      IDENTSY, No. 38 : a.
 263,     ASSIGNSY, No. 10 : =.
 263,     ASSIGNSY, No. 10 : =.
-263,      IDENTSY, No. 38 : i.
 263,       PLUSSY, No.  0 : +.
-263,    INTEGERSY, No. 35 : 1.
+263,      IDENTSY, No. 38 : c.
 263,       SEMISY, No. 19 : ;.
-264,      PRINTSY, No. 33 : printf.
+264,         IFSY, No. 30 : if.
 264,       LPAESY, No. 11 : (.
-264,      IDENTSY, No. 38 : int_1.
+264,      IDENTSY, No. 38 : a.
+264,        EQUSY, No.  9 : ==.
+264,    INTEGERSY, No. 35 : 97.
 264,       RPARSY, No. 12 : ).
+264,      IDENTSY, No. 38 : judge.
+264,     ASSIGNSY, No. 10 : =.
+264,     ASSIGNSY, No. 10 : =.
+264,      IDENTSY, No. 38 : judge.
+264,       PLUSSY, No.  0 : +.
+264,    INTEGERSY, No. 35 : 1.
 264,       SEMISY, No. 19 : ;.
-265,       RPRTSY, No. 16 : }.
-266,       CASESY, No. 28 : case.
-266,       SQUOSY, No. 20 : 'b'.
-266,      COLONSY, No. 17 : :.
-266,       LPRTSY, No. 15 : {.
-267,      IDENTSY, No. 38 : int_1.
+265,      PRINTSY, No. 33 : printf.
+265,       LPAESY, No. 11 : (.
+265,      IDENTSY, No. 38 : a.
+265,       RPARSY, No. 12 : ).
+265,       SEMISY, No. 19 : ;.
+266,      IDENTSY, No. 38 : a.
+266,     ASSIGNSY, No. 10 : =.
+266,     ASSIGNSY, No. 10 : =.
+266,      MINUSSY, No.  1 : -.
+266,      IDENTSY, No. 38 : c.
+266,       SEMISY, No. 19 : ;.
+267,         IFSY, No. 30 : if.
+267,       LPAESY, No. 11 : (.
+267,      IDENTSY, No. 38 : a.
+267,        EQUSY, No.  9 : ==.
+267,      MINUSSY, No.  1 : -.
+267,    INTEGERSY, No. 35 : 97.
+267,       RPARSY, No. 12 : ).
+267,      IDENTSY, No. 38 : judge.
 267,     ASSIGNSY, No. 10 : =.
 267,     ASSIGNSY, No. 10 : =.
-267,      IDENTSY, No. 38 : sum.
+267,      IDENTSY, No. 38 : judge.
+267,       PLUSSY, No.  0 : +.
+267,    INTEGERSY, No. 35 : 1.
 267,       SEMISY, No. 19 : ;.
 268,      PRINTSY, No. 33 : printf.
 268,       LPAESY, No. 11 : (.
-268,      IDENTSY, No. 38 : int_1.
+268,      IDENTSY, No. 38 : a.
 268,       RPARSY, No. 12 : ).
 268,       SEMISY, No. 19 : ;.
-269,       RPRTSY, No. 16 : }.
-270,       RPRTSY, No. 16 : }.
-271,      IDENTSY, No. 38 : i.
-271,     ASSIGNSY, No. 10 : =.
-271,     ASSIGNSY, No. 10 : =.
-271,      IDENTSY, No. 38 : i.
-271,       PLUSSY, No.  0 : +.
-271,    INTEGERSY, No. 35 : 1.
+269,      IDENTSY, No. 38 : a.
+269,     ASSIGNSY, No. 10 : =.
+269,     ASSIGNSY, No. 10 : =.
+269,      IDENTSY, No. 38 : const_3.
+269,       SEMISY, No. 19 : ;.
+270,         IFSY, No. 30 : if.
+270,       LPAESY, No. 11 : (.
+270,      IDENTSY, No. 38 : a.
+270,        EQUSY, No.  9 : ==.
+270,    INTEGERSY, No. 35 : 3.
+270,       RPARSY, No. 12 : ).
+270,      IDENTSY, No. 38 : judge.
+270,     ASSIGNSY, No. 10 : =.
+270,     ASSIGNSY, No. 10 : =.
+270,      IDENTSY, No. 38 : judge.
+270,       PLUSSY, No.  0 : +.
+270,    INTEGERSY, No. 35 : 1.
+270,       SEMISY, No. 19 : ;.
+271,      PRINTSY, No. 33 : printf.
+271,       LPAESY, No. 11 : (.
+271,      IDENTSY, No. 38 : a.
+271,       RPARSY, No. 12 : ).
 271,       SEMISY, No. 19 : ;.
-272,       RPRTSY, No. 16 : }.
-273,        RETSY, No. 34 : return.
+272,      IDENTSY, No. 38 : a.
+272,     ASSIGNSY, No. 10 : =.
+272,     ASSIGNSY, No. 10 : =.
+272,       PLUSSY, No.  0 : +.
+272,      MINUSSY, No.  1 : -.
+272,    INTEGERSY, No. 35 : 1.
+272,       SEMISY, No. 19 : ;.
+273,         IFSY, No. 30 : if.
+273,       LPAESY, No. 11 : (.
+273,      IDENTSY, No. 38 : a.
+273,        EQUSY, No.  9 : ==.
+273,      MINUSSY, No.  1 : -.
+273,    INTEGERSY, No. 35 : 1.
+273,       RPARSY, No. 12 : ).
+273,      IDENTSY, No. 38 : judge.
+273,     ASSIGNSY, No. 10 : =.
+273,     ASSIGNSY, No. 10 : =.
+273,      IDENTSY, No. 38 : judge.
+273,       PLUSSY, No.  0 : +.
+273,    INTEGERSY, No. 35 : 1.
 273,       SEMISY, No. 19 : ;.
-274,       RPRTSY, No. 16 : }.
-276,        INTSY, No. 22 : int.
-276,      IDENTSY, No. 38 : func_ret_int_1.
+274,      PRINTSY, No. 33 : printf.
+274,       LPAESY, No. 11 : (.
+274,      IDENTSY, No. 38 : a.
+274,       RPARSY, No. 12 : ).
+274,       SEMISY, No. 19 : ;.
+275,      IDENTSY, No. 38 : a.
+275,     ASSIGNSY, No. 10 : =.
+275,     ASSIGNSY, No. 10 : =.
+275,      MINUSSY, No.  1 : -.
+275,      MINUSSY, No.  1 : -.
+275,    INTEGERSY, No. 35 : 1.
+275,       SEMISY, No. 19 : ;.
+276,         IFSY, No. 30 : if.
 276,       LPAESY, No. 11 : (.
-276,      IDENTSY, No. 38 : func_ret_int_1.
-276,       LPAESY, No. 11 : (.
-276,        INTSY, No. 22 : int.
-276,      IDENTSY, No. 38 : i_1.
-276,      COMMASY, No. 18 : ,.
-276,        INTSY, No. 22 : int.
-276,      IDENTSY, No. 38 : i_2.
-276,      COMMASY, No. 18 : ,.
-276,       CHARSY, No. 23 : char.
-276,      IDENTSY, No. 38 : c_1.
-276,      COMMASY, No. 18 : ,.
-276,       CHARSY, No. 23 : char.
-276,      IDENTSY, No. 38 : c_2.
+276,      IDENTSY, No. 38 : a.
+276,        EQUSY, No.  9 : ==.
+276,    INTEGERSY, No. 35 : 1.
 276,       RPARSY, No. 12 : ).
-276,       LPRTSY, No. 15 : {.
-277,        INTSY, No. 22 : int.
-277,      IDENTSY, No. 38 : i_temp.
+276,      IDENTSY, No. 38 : judge.
+276,     ASSIGNSY, No. 10 : =.
+276,     ASSIGNSY, No. 10 : =.
+276,      IDENTSY, No. 38 : judge.
+276,       PLUSSY, No.  0 : +.
+276,    INTEGERSY, No. 35 : 1.
+276,       SEMISY, No. 19 : ;.
+277,      PRINTSY, No. 33 : printf.
+277,       LPAESY, No. 11 : (.
+277,      IDENTSY, No. 38 : a.
+277,       RPARSY, No. 12 : ).
 277,       SEMISY, No. 19 : ;.
-277,      IDENTSY, No. 38 : i_temp.
-277,       SEMISY, No. 19 : ;.
-278,       CHARSY, No. 23 : char.
-278,      IDENTSY, No. 38 : c_temp.
+278,      IDENTSY, No. 38 : a.
+278,     ASSIGNSY, No. 10 : =.
+278,     ASSIGNSY, No. 10 : =.
+278,       PLUSSY, No.  0 : +.
+278,       PLUSSY, No.  0 : +.
+278,    INTEGERSY, No. 35 : 1.
 278,       SEMISY, No. 19 : ;.
-278,      IDENTSY, No. 38 : c_temp.
-278,       SEMISY, No. 19 : ;.
-279,      PRINTSY, No. 33 : printf.
+279,         IFSY, No. 30 : if.
 279,       LPAESY, No. 11 : (.
-279,       DQUOSY, No. 21 : ".
-279,     STRINGSY, No. 37 : "INPUT of func_ret_int_1:".
-279,       DQUOSY, No. 21 : "INPUT of func_ret_int_1:".
+279,      IDENTSY, No. 38 : a.
+279,        EQUSY, No.  9 : ==.
+279,    INTEGERSY, No. 35 : 1.
 279,       RPARSY, No. 12 : ).
+279,      IDENTSY, No. 38 : judge.
+279,     ASSIGNSY, No. 10 : =.
+279,     ASSIGNSY, No. 10 : =.
+279,      IDENTSY, No. 38 : judge.
+279,       PLUSSY, No.  0 : +.
+279,    INTEGERSY, No. 35 : 1.
 279,       SEMISY, No. 19 : ;.
 280,      PRINTSY, No. 33 : printf.
 280,       LPAESY, No. 11 : (.
-280,      IDENTSY, No. 38 : i_1.
+280,      IDENTSY, No. 38 : a.
 280,       RPARSY, No. 12 : ).
 280,       SEMISY, No. 19 : ;.
-281,      PRINTSY, No. 33 : printf.
-281,       LPAESY, No. 11 : (.
-281,      IDENTSY, No. 38 : i_2.
-281,       RPARSY, No. 12 : ).
+281,      IDENTSY, No. 38 : a.
+281,     ASSIGNSY, No. 10 : =.
+281,     ASSIGNSY, No. 10 : =.
+281,      MINUSSY, No.  1 : -.
+281,       PLUSSY, No.  0 : +.
+281,    INTEGERSY, No. 35 : 1.
 281,       SEMISY, No. 19 : ;.
-282,      PRINTSY, No. 33 : printf.
+282,         IFSY, No. 30 : if.
 282,       LPAESY, No. 11 : (.
-282,      IDENTSY, No. 38 : c_1.
+282,      IDENTSY, No. 38 : a.
+282,        EQUSY, No.  9 : ==.
+282,      MINUSSY, No.  1 : -.
+282,    INTEGERSY, No. 35 : 1.
 282,       RPARSY, No. 12 : ).
+282,      IDENTSY, No. 38 : judge.
+282,     ASSIGNSY, No. 10 : =.
+282,     ASSIGNSY, No. 10 : =.
+282,      IDENTSY, No. 38 : judge.
+282,       PLUSSY, No.  0 : +.
+282,    INTEGERSY, No. 35 : 1.
 282,       SEMISY, No. 19 : ;.
 283,      PRINTSY, No. 33 : printf.
 283,       LPAESY, No. 11 : (.
-283,      IDENTSY, No. 38 : c_2.
+283,      IDENTSY, No. 38 : a.
 283,       RPARSY, No. 12 : ).
 283,       SEMISY, No. 19 : ;.
-284,      IDENTSY, No. 38 : i_temp.
+284,      IDENTSY, No. 38 : a.
 284,     ASSIGNSY, No. 10 : =.
 284,     ASSIGNSY, No. 10 : =.
-284,      IDENTSY, No. 38 : i_1.
+284,       LPAESY, No. 11 : (.
+284,       LPAESY, No. 11 : (.
+284,       LPAESY, No. 11 : (.
+284,    INTEGERSY, No. 35 : 1.
+284,       RPARSY, No. 12 : ).
+284,       RPARSY, No. 12 : ).
+284,       RPARSY, No. 12 : ).
 284,       SEMISY, No. 19 : ;.
-285,      IDENTSY, No. 38 : i_1.
+285,         IFSY, No. 30 : if.
+285,       LPAESY, No. 11 : (.
+285,      IDENTSY, No. 38 : a.
+285,        EQUSY, No.  9 : ==.
+285,    INTEGERSY, No. 35 : 1.
+285,       RPARSY, No. 12 : ).
+285,      IDENTSY, No. 38 : judge.
 285,     ASSIGNSY, No. 10 : =.
 285,     ASSIGNSY, No. 10 : =.
-285,      IDENTSY, No. 38 : i_2.
+285,      IDENTSY, No. 38 : judge.
+285,       PLUSSY, No.  0 : +.
+285,    INTEGERSY, No. 35 : 1.
 285,       SEMISY, No. 19 : ;.
-286,      IDENTSY, No. 38 : i_2.
-286,     ASSIGNSY, No. 10 : =.
-286,     ASSIGNSY, No. 10 : =.
-286,      IDENTSY, No. 38 : i_temp.
+286,      PRINTSY, No. 33 : printf.
+286,       LPAESY, No. 11 : (.
+286,      IDENTSY, No. 38 : a.
+286,       RPARSY, No. 12 : ).
 286,       SEMISY, No. 19 : ;.
-287,      IDENTSY, No. 38 : c_temp.
+287,      IDENTSY, No. 38 : a.
 287,     ASSIGNSY, No. 10 : =.
 287,     ASSIGNSY, No. 10 : =.
-287,      IDENTSY, No. 38 : c_1.
+287,    INTEGERSY, No. 35 : 3.
+287,       MULTSY, No.  2 : *.
+287,      MINUSSY, No.  1 : -.
+287,    INTEGERSY, No. 35 : 3.
 287,       SEMISY, No. 19 : ;.
-288,      IDENTSY, No. 38 : c_1.
+288,         IFSY, No. 30 : if.
+288,       LPAESY, No. 11 : (.
+288,      IDENTSY, No. 38 : a.
+288,        EQUSY, No.  9 : ==.
+288,      MINUSSY, No.  1 : -.
+288,    INTEGERSY, No. 35 : 9.
+288,       RPARSY, No. 12 : ).
+288,      IDENTSY, No. 38 : judge.
 288,     ASSIGNSY, No. 10 : =.
 288,     ASSIGNSY, No. 10 : =.
-288,      IDENTSY, No. 38 : c_2.
+288,      IDENTSY, No. 38 : judge.
+288,       PLUSSY, No.  0 : +.
+288,    INTEGERSY, No. 35 : 1.
 288,       SEMISY, No. 19 : ;.
-289,      IDENTSY, No. 38 : c_2.
-289,     ASSIGNSY, No. 10 : =.
-289,     ASSIGNSY, No. 10 : =.
-289,      IDENTSY, No. 38 : c_temp.
+289,      PRINTSY, No. 33 : printf.
+289,       LPAESY, No. 11 : (.
+289,      IDENTSY, No. 38 : a.
+289,       RPARSY, No. 12 : ).
 289,       SEMISY, No. 19 : ;.
-290,      PRINTSY, No. 33 : printf.
-290,       LPAESY, No. 11 : (.
-290,       DQUOSY, No. 21 : ".
-290,     STRINGSY, No. 37 : "OPERATE of func_ret_int_1:".
-290,       DQUOSY, No. 21 : "OPERATE of func_ret_int_1:".
-290,       RPARSY, No. 12 : ).
-290,       SEMISY, No. 19 : ;.
-291,      PRINTSY, No. 33 : printf.
-291,       LPAESY, No. 11 : (.
-291,      IDENTSY, No. 38 : i_1.
-291,       RPARSY, No. 12 : ).
+291,      IDENTSY, No. 38 : b.
+291,     ASSIGNSY, No. 10 : =.
+291,     ASSIGNSY, No. 10 : =.
+291,    INTEGERSY, No. 35 : 5.
 291,       SEMISY, No. 19 : ;.
-292,      PRINTSY, No. 33 : printf.
+292,      IDENTSY, No. 38 : a.
+292,     ASSIGNSY, No. 10 : =.
+292,     ASSIGNSY, No. 10 : =.
+292,      MINUSSY, No.  1 : -.
 292,       LPAESY, No. 11 : (.
-292,      IDENTSY, No. 38 : i_2.
+292,      IDENTSY, No. 38 : num.
+292,     LBRACKSY, No. 13 : [.
+292,      IDENTSY, No. 38 : b.
+292,     RBRACKSY, No. 14 : ].
+292,       PLUSSY, No.  0 : +.
+292,      IDENTSY, No. 38 : num.
+292,     LBRACKSY, No. 13 : [.
+292,      IDENTSY, No. 38 : b.
+292,       PLUSSY, No.  0 : +.
+292,      IDENTSY, No. 38 : const_1.
+292,     RBRACKSY, No. 14 : ].
+292,       PLUSSY, No.  0 : +.
+292,    INTEGERSY, No. 35 : 3.
 292,       RPARSY, No. 12 : ).
+292,       MULTSY, No.  2 : *.
+292,      IDENTSY, No. 38 : count_to_10.
+292,       LPAESY, No. 11 : (.
+292,       RPARSY, No. 12 : ).
+292,        DIVSY, No.  3 : /.
+292,      IDENTSY, No. 38 : const_3.
+292,       PLUSSY, No.  0 : +.
+292,       SQUOSY, No. 20 : 'a'.
+292,       PLUSSY, No.  0 : +.
+292,      IDENTSY, No. 38 : const_a.
+292,      MINUSSY, No.  1 : -.
+292,    INTEGERSY, No. 35 : 3.
+292,       MULTSY, No.  2 : *.
+292,    INTEGERSY, No. 35 : 3.
+292,        DIVSY, No.  3 : /.
+292,    INTEGERSY, No. 35 : 4.
+292,       PLUSSY, No.  0 : +.
+292,      IDENTSY, No. 38 : letter.
+292,     LBRACKSY, No. 13 : [.
+292,    INTEGERSY, No. 35 : .
+292,     RBRACKSY, No. 14 : ].
 292,       SEMISY, No. 19 : ;.
 293,      PRINTSY, No. 33 : printf.
 293,       LPAESY, No. 11 : (.
-293,      IDENTSY, No. 38 : c_1.
+293,       DQUOSY, No. 21 : ".
+293,     STRINGSY, No. 37 : "a".
+293,       DQUOSY, No. 21 : "a".
+293,      COMMASY, No. 18 : ,.
+293,      IDENTSY, No. 38 : a.
 293,       RPARSY, No. 12 : ).
 293,       SEMISY, No. 19 : ;.
-294,      PRINTSY, No. 33 : printf.
+294,         IFSY, No. 30 : if.
 294,       LPAESY, No. 11 : (.
-294,      IDENTSY, No. 38 : c_2.
+294,      IDENTSY, No. 38 : a.
+294,        EQUSY, No.  9 : ==.
+294,    INTEGERSY, No. 35 : 33.
 294,       RPARSY, No. 12 : ).
+294,      IDENTSY, No. 38 : judge.
+294,     ASSIGNSY, No. 10 : =.
+294,     ASSIGNSY, No. 10 : =.
+294,      IDENTSY, No. 38 : judge.
+294,       PLUSSY, No.  0 : +.
+294,    INTEGERSY, No. 35 : 1.
 294,       SEMISY, No. 19 : ;.
-295,        RETSY, No. 34 : return.
-295,       LPAESY, No. 11 : (.
-295,      IDENTSY, No. 38 : i_1.
-295,       RPARSY, No. 12 : ).
+295,      IDENTSY, No. 38 : a.
+295,     ASSIGNSY, No. 10 : =.
+295,     ASSIGNSY, No. 10 : =.
+295,    INTEGERSY, No. 35 : 1.
 295,       SEMISY, No. 19 : ;.
-297,       RPRTSY, No. 16 : }.
-299,       VOIDSY, No. 25 : void.
-299,      IDENTSY, No. 38 : testPara.
-299,      IDENTSY, No. 38 : testPara.
+296,      IDENTSY, No. 38 : b.
+296,     ASSIGNSY, No. 10 : =.
+296,     ASSIGNSY, No. 10 : =.
+296,    INTEGERSY, No. 35 : 1.
+296,       SEMISY, No. 19 : ;.
+297,      IDENTSY, No. 38 : f.
+297,     ASSIGNSY, No. 10 : =.
+297,     ASSIGNSY, No. 10 : =.
+297,       SQUOSY, No. 20 : 'a'.
+297,       SEMISY, No. 19 : ;.
+298,      IDENTSY, No. 38 : g.
+298,     ASSIGNSY, No. 10 : =.
+298,     ASSIGNSY, No. 10 : =.
+298,       SQUOSY, No. 20 : 'q'.
+298,       SEMISY, No. 19 : ;.
+299,      IDENTSY, No. 38 : a.
+299,     ASSIGNSY, No. 10 : =.
+299,     ASSIGNSY, No. 10 : =.
+299,      IDENTSY, No. 38 : a.
+299,       MULTSY, No.  2 : *.
 299,       LPAESY, No. 11 : (.
+299,      IDENTSY, No. 38 : b.
+299,       PLUSSY, No.  0 : +.
+299,      IDENTSY, No. 38 : c.
+299,       MULTSY, No.  2 : *.
+299,       LPAESY, No. 11 : (.
+299,      IDENTSY, No. 38 : d.
+299,       PLUSSY, No.  0 : +.
+299,       LPAESY, No. 11 : (.
+299,      IDENTSY, No. 38 : e.
+299,       PLUSSY, No.  0 : +.
+299,      IDENTSY, No. 38 : f.
+299,       MULTSY, No.  2 : *.
+299,      IDENTSY, No. 38 : g.
 299,       RPARSY, No. 12 : ).
-299,       LPRTSY, No. 15 : {.
-300,        INTSY, No. 22 : int.
-300,      IDENTSY, No. 38 : i.
-300,      COMMASY, No. 18 : ,.
-300,      IDENTSY, No. 38 : i.
-300,      COMMASY, No. 18 : ,.
-300,      IDENTSY, No. 38 : j.
+299,       RPARSY, No. 12 : ).
+299,       RPARSY, No. 12 : ).
+299,       SEMISY, No. 19 : ;.
+300,      IDENTSY, No. 38 : judge.
+300,     ASSIGNSY, No. 10 : =.
+300,     ASSIGNSY, No. 10 : =.
+300,      IDENTSY, No. 38 : judge.
+300,       PLUSSY, No.  0 : +.
+300,      IDENTSY, No. 38 : a.
+300,        DIVSY, No.  3 : /.
+300,    INTEGERSY, No. 35 : 1024.
 300,       SEMISY, No. 19 : ;.
-301,       CHARSY, No. 23 : char.
-301,      IDENTSY, No. 38 : c.
-301,      COMMASY, No. 18 : ,.
-301,      IDENTSY, No. 38 : c.
-301,      COMMASY, No. 18 : ,.
-301,      IDENTSY, No. 38 : d.
+301,        RETSY, No. 34 : return.
 301,       SEMISY, No. 19 : ;.
-302,      IDENTSY, No. 38 : i.
-302,     ASSIGNSY, No. 10 : =.
-302,     ASSIGNSY, No. 10 : =.
-302,      IDENTSY, No. 38 : const_int_1.
-302,       SEMISY, No. 19 : ;.
-303,      IDENTSY, No. 38 : j.
-303,     ASSIGNSY, No. 10 : =.
-303,     ASSIGNSY, No. 10 : =.
-303,      IDENTSY, No. 38 : const_int_4.
-303,       SEMISY, No. 19 : ;.
-304,      IDENTSY, No. 38 : c.
-304,     ASSIGNSY, No. 10 : =.
-304,     ASSIGNSY, No. 10 : =.
-304,       SQUOSY, No. 20 : 'A'.
-304,       SEMISY, No. 19 : ;.
-305,      IDENTSY, No. 38 : d.
-305,     ASSIGNSY, No. 10 : =.
-305,     ASSIGNSY, No. 10 : =.
-305,       SQUOSY, No. 20 : 'Z'.
-305,       SEMISY, No. 19 : ;.
-306,      PRINTSY, No. 33 : printf.
-306,       LPAESY, No. 11 : (.
-306,      IDENTSY, No. 38 : func_ret_int_1.
-306,       LPAESY, No. 11 : (.
-306,      IDENTSY, No. 38 : i.
+302,       RPRTSY, No. 16 : }.
+304,       VOIDSY, No. 25 : void.
+304,      IDENTSY, No. 38 : test_while.
+304,      IDENTSY, No. 38 : test_while.
+304,       LPAESY, No. 11 : (.
+304,       RPARSY, No. 12 : ).
+305,       LPRTSY, No. 15 : {.
+306,        INTSY, No. 22 : int.
+306,      IDENTSY, No. 38 : a.
 306,      COMMASY, No. 18 : ,.
-306,      IDENTSY, No. 38 : j.
+306,      IDENTSY, No. 38 : a.
 306,      COMMASY, No. 18 : ,.
-306,      IDENTSY, No. 38 : c.
-306,      COMMASY, No. 18 : ,.
-306,      IDENTSY, No. 38 : d.
-306,       RPARSY, No. 12 : ).
-306,       RPARSY, No. 12 : ).
+306,      IDENTSY, No. 38 : b.
 306,       SEMISY, No. 19 : ;.
-307,        RETSY, No. 34 : return.
-307,       SEMISY, No. 19 : ;.
-308,       RPRTSY, No. 16 : }.
-310,       VOIDSY, No. 25 : void.
-310,      IDENTSY, No. 38 : testRecursion.
-310,      IDENTSY, No. 38 : testRecursion.
+308,      IDENTSY, No. 38 : b.
+308,     ASSIGNSY, No. 10 : =.
+308,     ASSIGNSY, No. 10 : =.
+308,    INTEGERSY, No. 35 : 9.
+308,       SEMISY, No. 19 : ;.
+309,       LOOPSY, No. 31 : while.
+309,       LPAESY, No. 11 : (.
+309,      IDENTSY, No. 38 : b.
+309,         GESY, No.  7 : >=.
+309,    INTEGERSY, No. 35 : .
+309,       RPARSY, No. 12 : ).
+309,       LPRTSY, No. 15 : {.
+310,         IFSY, No. 30 : if.
 310,       LPAESY, No. 11 : (.
+310,      IDENTSY, No. 38 : b.
+310,         GESY, No.  7 : >=.
+310,    INTEGERSY, No. 35 : 5.
 310,       RPARSY, No. 12 : ).
-310,       LPRTSY, No. 15 : {.
-311,      IDENTSY, No. 38 : hanoi.
-311,       LPAESY, No. 11 : (.
-311,       LPAESY, No. 11 : (.
-311,       LPAESY, No. 11 : (.
-311,      IDENTSY, No. 38 : Fibonacci.
-311,       LPAESY, No. 11 : (.
-311,      IDENTSY, No. 38 : fac.
-311,       LPAESY, No. 11 : (.
-311,    INTEGERSY, No. 35 : 2.
-311,       RPARSY, No. 12 : ).
-311,       MULTSY, No.  2 : *.
-311,      IDENTSY, No. 38 : fac.
-311,       LPAESY, No. 11 : (.
-311,    INTEGERSY, No. 35 : 3.
-311,       RPARSY, No. 12 : ).
-311,       RPARSY, No. 12 : ).
-311,      MINUSSY, No.  1 : -.
-311,      IDENTSY, No. 38 : fac.
-311,       LPAESY, No. 11 : (.
-311,      IDENTSY, No. 38 : Fibonacci.
-311,       LPAESY, No. 11 : (.
-311,    INTEGERSY, No. 35 : 3.
-311,       RPARSY, No. 12 : ).
+311,      IDENTSY, No. 38 : judge.
+311,     ASSIGNSY, No. 10 : =.
+311,     ASSIGNSY, No. 10 : =.
+311,      IDENTSY, No. 38 : judge.
 311,       PLUSSY, No.  0 : +.
-311,      IDENTSY, No. 38 : Fibonacci.
-311,       LPAESY, No. 11 : (.
-311,    INTEGERSY, No. 35 : 4.
-311,       RPARSY, No. 12 : ).
-311,       RPARSY, No. 12 : ).
-311,       RPARSY, No. 12 : ).
-311,        DIVSY, No.  3 : /.
-311,      IDENTSY, No. 38 : fac.
-311,       LPAESY, No. 11 : (.
-311,      IDENTSY, No. 38 : Fibonacci.
-311,       LPAESY, No. 11 : (.
-311,    INTEGERSY, No. 35 : 2.
-311,       RPARSY, No. 12 : ).
-311,       PLUSSY, No.  0 : +.
-311,      IDENTSY, No. 38 : Fibonacci.
-311,       LPAESY, No. 11 : (.
-311,    INTEGERSY, No. 35 : 3.
-311,       RPARSY, No. 12 : ).
-311,       RPARSY, No. 12 : ).
-311,      COMMASY, No. 18 : ,.
-311,       SQUOSY, No. 20 : 'a'.
-311,      COMMASY, No. 18 : ,.
-311,       SQUOSY, No. 20 : 'b'.
-311,      COMMASY, No. 18 : ,.
-311,       SQUOSY, No. 20 : 'c'.
-311,       RPARSY, No. 12 : ).
+311,    INTEGERSY, No. 35 : 1.
 311,       SEMISY, No. 19 : ;.
-312,        RETSY, No. 34 : return.
+312,      IDENTSY, No. 38 : b.
+312,     ASSIGNSY, No. 10 : =.
+312,     ASSIGNSY, No. 10 : =.
+312,      IDENTSY, No. 38 : b.
+312,      MINUSSY, No.  1 : -.
+312,    INTEGERSY, No. 35 : 1.
 312,       SEMISY, No. 19 : ;.
 313,       RPRTSY, No. 16 : }.
-315,       VOIDSY, No. 25 : void.
-315,       MAINSY, No. 26 : main.
-315,       MAINSY, No. 26 : main.
-315,       LPAESY, No. 11 : (.
-315,       RPARSY, No. 12 : ).
+315,      IDENTSY, No. 38 : b.
+315,     ASSIGNSY, No. 10 : =.
+315,     ASSIGNSY, No. 10 : =.
+315,    INTEGERSY, No. 35 : .
+315,       SEMISY, No. 19 : ;.
+316,       LOOPSY, No. 31 : while.
+316,       LPAESY, No. 11 : (.
+316,      IDENTSY, No. 38 : b.
+316,         LESY, No.  5 : <=.
+316,    INTEGERSY, No. 35 : 2.
+316,       RPARSY, No. 12 : ).
 316,       LPRTSY, No. 15 : {.
-317,      PRINTSY, No. 33 : printf.
+317,     SWITCHSY, No. 27 : switch.
 317,       LPAESY, No. 11 : (.
-317,       DQUOSY, No. 21 : ".
-317,     STRINGSY, No. 37 : "************************************************".
-317,       DQUOSY, No. 21 : "************************************************".
+317,      IDENTSY, No. 38 : b.
 317,       RPARSY, No. 12 : ).
-318,      PRINTSY, No. 33 : printf.
-318,       LPAESY, No. 11 : (.
-318,       DQUOSY, No. 21 : ".
-318,     STRINGSY, No. 37 : "Start testing recursion:".
-318,       DQUOSY, No. 21 : "Start testing recursion:".
+317,       LPRTSY, No. 15 : {.
+318,       CASESY, No. 28 : case.
+318,    INTEGERSY, No. 35 : .
+318,      COLONSY, No. 17 : :.
+318,       LPRTSY, No. 15 : {.
+319,      IDENTSY, No. 38 : judge.
+319,     ASSIGNSY, No. 10 : =.
+319,     ASSIGNSY, No. 10 : =.
+319,      IDENTSY, No. 38 : judge.
+319,       PLUSSY, No.  0 : +.
+319,    INTEGERSY, No. 35 : 1.
+319,       SEMISY, No. 19 : ;.
+320,       RPRTSY, No. 16 : }.
+321,       CASESY, No. 28 : case.
+321,    INTEGERSY, No. 35 : 1.
+321,      COLONSY, No. 17 : :.
+321,       LPRTSY, No. 15 : {.
+322,      IDENTSY, No. 38 : judge.
+322,     ASSIGNSY, No. 10 : =.
+322,     ASSIGNSY, No. 10 : =.
+322,      IDENTSY, No. 38 : judge.
+322,       PLUSSY, No.  0 : +.
+322,    INTEGERSY, No. 35 : 1.
+322,       SEMISY, No. 19 : ;.
+323,       RPRTSY, No. 16 : }.
+324,    DEFAULTSY, No. 29 : default.
+324,      COLONSY, No. 17 : :.
+324,       LPRTSY, No. 15 : {.
+325,      IDENTSY, No. 38 : judge.
+325,     ASSIGNSY, No. 10 : =.
+325,     ASSIGNSY, No. 10 : =.
+325,      IDENTSY, No. 38 : judge.
+325,       PLUSSY, No.  0 : +.
+325,    INTEGERSY, No. 35 : 1.
+325,       SEMISY, No. 19 : ;.
+326,       RPRTSY, No. 16 : }.
+327,       RPRTSY, No. 16 : }.
+328,      IDENTSY, No. 38 : b.
+328,     ASSIGNSY, No. 10 : =.
+328,     ASSIGNSY, No. 10 : =.
+328,      IDENTSY, No. 38 : b.
+328,       PLUSSY, No.  0 : +.
+328,    INTEGERSY, No. 35 : 1.
+328,       SEMISY, No. 19 : ;.
+329,       RPRTSY, No. 16 : }.
+331,      IDENTSY, No. 38 : b.
+331,     ASSIGNSY, No. 10 : =.
+331,     ASSIGNSY, No. 10 : =.
+331,    INTEGERSY, No. 35 : .
+331,       SEMISY, No. 19 : ;.
+332,      IDENTSY, No. 38 : a.
+332,     ASSIGNSY, No. 10 : =.
+332,     ASSIGNSY, No. 10 : =.
+332,    INTEGERSY, No. 35 : .
+332,       SEMISY, No. 19 : ;.
+333,       LOOPSY, No. 31 : while.
+333,       LPAESY, No. 11 : (.
+333,      IDENTSY, No. 38 : a.
+333,         LESY, No.  5 : <=.
+333,    INTEGERSY, No. 35 : 2.
+333,       RPARSY, No. 12 : ).
+333,       LPRTSY, No. 15 : {.
+334,      IDENTSY, No. 38 : b.
+334,     ASSIGNSY, No. 10 : =.
+334,     ASSIGNSY, No. 10 : =.
+334,    INTEGERSY, No. 35 : .
+334,       SEMISY, No. 19 : ;.
+335,       LOOPSY, No. 31 : while.
+335,       LPAESY, No. 11 : (.
+335,      IDENTSY, No. 38 : b.
+335,         LESY, No.  5 : <=.
+335,    INTEGERSY, No. 35 : 2.
+335,       RPARSY, No. 12 : ).
+335,       LPRTSY, No. 15 : {.
+336,      IDENTSY, No. 38 : judge.
+336,     ASSIGNSY, No. 10 : =.
+336,     ASSIGNSY, No. 10 : =.
+336,      IDENTSY, No. 38 : judge.
+336,       PLUSSY, No.  0 : +.
+336,    INTEGERSY, No. 35 : 1.
+336,       SEMISY, No. 19 : ;.
+337,      IDENTSY, No. 38 : b.
+337,     ASSIGNSY, No. 10 : =.
+337,     ASSIGNSY, No. 10 : =.
+337,      IDENTSY, No. 38 : b.
+337,       PLUSSY, No.  0 : +.
+337,    INTEGERSY, No. 35 : 1.
+337,       SEMISY, No. 19 : ;.
+338,       RPRTSY, No. 16 : }.
+339,      IDENTSY, No. 38 : a.
+339,     ASSIGNSY, No. 10 : =.
+339,     ASSIGNSY, No. 10 : =.
+339,      IDENTSY, No. 38 : a.
+339,       PLUSSY, No.  0 : +.
+339,    INTEGERSY, No. 35 : 1.
+339,       SEMISY, No. 19 : ;.
+340,       RPRTSY, No. 16 : }.
+343,      IDENTSY, No. 38 : b.
+343,     ASSIGNSY, No. 10 : =.
+343,     ASSIGNSY, No. 10 : =.
+343,    INTEGERSY, No. 35 : .
+343,       SEMISY, No. 19 : ;.
+344,      IDENTSY, No. 38 : a.
+344,     ASSIGNSY, No. 10 : =.
+344,     ASSIGNSY, No. 10 : =.
+344,    INTEGERSY, No. 35 : 11.
+344,       SEMISY, No. 19 : ;.
+345,       LOOPSY, No. 31 : while.
+345,       LPAESY, No. 11 : (.
+345,      IDENTSY, No. 38 : b.
+345,         LSSY, No.  4 : <.
+345,    INTEGERSY, No. 35 : 10.
+345,       RPARSY, No. 12 : ).
+345,       LPRTSY, No. 15 : {.
+346,      IDENTSY, No. 38 : num.
+346,     LBRACKSY, No. 13 : [.
+346,     LBRACKSY, No. 13 : [.
+346,      IDENTSY, No. 38 : b.
+346,     RBRACKSY, No. 14 : ].
+346,     ASSIGNSY, No. 10 : =.
+346,      IDENTSY, No. 38 : b.
+346,       MULTSY, No.  2 : *.
+346,      IDENTSY, No. 38 : a.
+346,       SEMISY, No. 19 : ;.
+347,      IDENTSY, No. 38 : judge.
+347,     ASSIGNSY, No. 10 : =.
+347,     ASSIGNSY, No. 10 : =.
+347,      IDENTSY, No. 38 : judge.
+347,       PLUSSY, No.  0 : +.
+347,      IDENTSY, No. 38 : num.
+347,     LBRACKSY, No. 13 : [.
+347,      IDENTSY, No. 38 : b.
+347,     RBRACKSY, No. 14 : ].
+347,       SEMISY, No. 19 : ;.
+348,      IDENTSY, No. 38 : b.
+348,     ASSIGNSY, No. 10 : =.
+348,     ASSIGNSY, No. 10 : =.
+348,      IDENTSY, No. 38 : b.
+348,       PLUSSY, No.  0 : +.
+348,    INTEGERSY, No. 35 : 1.
+348,       SEMISY, No. 19 : ;.
+349,      IDENTSY, No. 38 : a.
+349,     ASSIGNSY, No. 10 : =.
+349,     ASSIGNSY, No. 10 : =.
+349,      IDENTSY, No. 38 : a.
+349,       PLUSSY, No.  0 : +.
+349,    INTEGERSY, No. 35 : 2.
+349,       SEMISY, No. 19 : ;.
+350,       RPRTSY, No. 16 : }.
+352,        RETSY, No. 34 : return.
+352,       SEMISY, No. 19 : ;.
+353,       RPRTSY, No. 16 : }.
+355,       VOIDSY, No. 25 : void.
+355,      IDENTSY, No. 38 : test_if.
+355,      IDENTSY, No. 38 : test_if.
+355,       LPAESY, No. 11 : (.
+355,       RPARSY, No. 12 : ).
+356,       LPRTSY, No. 15 : {.
+357,        INTSY, No. 22 : int.
+357,      IDENTSY, No. 38 : a.
+357,      COMMASY, No. 18 : ,.
+357,      IDENTSY, No. 38 : a.
+357,      COMMASY, No. 18 : ,.
+357,      IDENTSY, No. 38 : flag.
+357,       SEMISY, No. 19 : ;.
+358,       CHARSY, No. 23 : char.
+358,      IDENTSY, No. 38 : c.
+358,       SEMISY, No. 19 : ;.
+358,      IDENTSY, No. 38 : c.
+358,       SEMISY, No. 19 : ;.
+359,      IDENTSY, No. 38 : a.
+359,     ASSIGNSY, No. 10 : =.
+359,     ASSIGNSY, No. 10 : =.
+359,    INTEGERSY, No. 35 : .
+359,       SEMISY, No. 19 : ;.
+360,      IDENTSY, No. 38 : flag.
+360,     ASSIGNSY, No. 10 : =.
+360,     ASSIGNSY, No. 10 : =.
+360,    INTEGERSY, No. 35 : .
+360,       SEMISY, No. 19 : ;.
+361,      IDENTSY, No. 38 : judge.
+361,     ASSIGNSY, No. 10 : =.
+361,     ASSIGNSY, No. 10 : =.
+361,      IDENTSY, No. 38 : judge.
+361,       PLUSSY, No.  0 : +.
+361,    INTEGERSY, No. 35 : 1.
+361,       SEMISY, No. 19 : ;.
+362,         IFSY, No. 30 : if.
+362,       LPAESY, No. 11 : (.
+362,      IDENTSY, No. 38 : const_1.
+362,        EQUSY, No.  9 : ==.
+362,    INTEGERSY, No. 35 : 1.
+362,       RPARSY, No. 12 : ).
+362,       LPRTSY, No. 15 : {.
+364,       RPRTSY, No. 16 : }.
+366,         IFSY, No. 30 : if.
+366,       LPAESY, No. 11 : (.
+366,      IDENTSY, No. 38 : const_1.
+366,        EQUSY, No.  9 : ==.
+366,    INTEGERSY, No. 35 : 1.
+366,       RPARSY, No. 12 : ).
+367,       SEMISY, No. 19 : ;.
+369,         IFSY, No. 30 : if.
+369,       LPAESY, No. 11 : (.
+369,      IDENTSY, No. 38 : const_1.
+369,        EQUSY, No.  9 : ==.
+369,    INTEGERSY, No. 35 : 1.
+369,       RPARSY, No. 12 : ).
+369,       LPRTSY, No. 15 : {.
+370,       SEMISY, No. 19 : ;.
+371,       RPRTSY, No. 16 : }.
+373,      IDENTSY, No. 38 : a.
+373,     ASSIGNSY, No. 10 : =.
+373,     ASSIGNSY, No. 10 : =.
+373,    INTEGERSY, No. 35 : .
+373,       SEMISY, No. 19 : ;.
+374,       LOOPSY, No. 31 : while.
+374,       LPAESY, No. 11 : (.
+374,      IDENTSY, No. 38 : a.
+374,         LESY, No.  5 : <=.
+374,    INTEGERSY, No. 35 : 1.
+374,       RPARSY, No. 12 : ).
+374,       LPRTSY, No. 15 : {.
+375,         IFSY, No. 30 : if.
+375,       LPAESY, No. 11 : (.
+375,      IDENTSY, No. 38 : const_1.
+375,        EQUSY, No.  9 : ==.
+375,    INTEGERSY, No. 35 : 1.
+375,       RPARSY, No. 12 : ).
+375,       LPRTSY, No. 15 : {.
+376,         IFSY, No. 30 : if.
+376,       LPAESY, No. 11 : (.
+376,      IDENTSY, No. 38 : a.
+376,        EQUSY, No.  9 : ==.
+376,    INTEGERSY, No. 35 : .
+376,       RPARSY, No. 12 : ).
+376,       LPRTSY, No. 15 : {.
+377,      IDENTSY, No. 38 : judge.
+377,     ASSIGNSY, No. 10 : =.
+377,     ASSIGNSY, No. 10 : =.
+377,      IDENTSY, No. 38 : judge.
+377,       PLUSSY, No.  0 : +.
+377,    INTEGERSY, No. 35 : 1.
+377,       SEMISY, No. 19 : ;.
+378,      IDENTSY, No. 38 : flag.
+378,     ASSIGNSY, No. 10 : =.
+378,     ASSIGNSY, No. 10 : =.
+378,    INTEGERSY, No. 35 : 1.
+378,       SEMISY, No. 19 : ;.
+379,       RPRTSY, No. 16 : }.
+380,         IFSY, No. 30 : if.
+380,       LPAESY, No. 11 : (.
+380,      IDENTSY, No. 38 : flag.
+380,        EQUSY, No.  9 : ==.
+380,    INTEGERSY, No. 35 : .
+380,       RPARSY, No. 12 : ).
+380,       LPRTSY, No. 15 : {.
+381,      IDENTSY, No. 38 : judge.
+381,     ASSIGNSY, No. 10 : =.
+381,     ASSIGNSY, No. 10 : =.
+381,      IDENTSY, No. 38 : judge.
+381,       PLUSSY, No.  0 : +.
+381,    INTEGERSY, No. 35 : 1.
+381,       SEMISY, No. 19 : ;.
+382,       RPRTSY, No. 16 : }.
+383,       RPRTSY, No. 16 : }.
+384,      IDENTSY, No. 38 : flag.
+384,     ASSIGNSY, No. 10 : =.
+384,     ASSIGNSY, No. 10 : =.
+384,    INTEGERSY, No. 35 : .
+384,       SEMISY, No. 19 : ;.
+385,      IDENTSY, No. 38 : a.
+385,     ASSIGNSY, No. 10 : =.
+385,     ASSIGNSY, No. 10 : =.
+385,      IDENTSY, No. 38 : a.
+385,       PLUSSY, No.  0 : +.
+385,    INTEGERSY, No. 35 : 1.
+385,       SEMISY, No. 19 : ;.
+386,       RPRTSY, No. 16 : }.
+388,      IDENTSY, No. 38 : a.
+388,     ASSIGNSY, No. 10 : =.
+388,     ASSIGNSY, No. 10 : =.
+388,    INTEGERSY, No. 35 : .
+388,       SEMISY, No. 19 : ;.
+389,         IFSY, No. 30 : if.
+389,       LPAESY, No. 11 : (.
+389,      IDENTSY, No. 38 : const_1.
+389,        EQUSY, No.  9 : ==.
+389,    INTEGERSY, No. 35 : 1.
+389,       RPARSY, No. 12 : ).
+389,       LPRTSY, No. 15 : {.
+390,       LOOPSY, No. 31 : while.
+390,       LPAESY, No. 11 : (.
+390,      IDENTSY, No. 38 : a.
+390,         LSSY, No.  4 : <.
+390,    INTEGERSY, No. 35 : 2.
+390,       RPARSY, No. 12 : ).
+390,       LPRTSY, No. 15 : {.
+391,      IDENTSY, No. 38 : judge.
+391,     ASSIGNSY, No. 10 : =.
+391,     ASSIGNSY, No. 10 : =.
+391,      IDENTSY, No. 38 : judge.
+391,       PLUSSY, No.  0 : +.
+391,    INTEGERSY, No. 35 : 1.
+391,       SEMISY, No. 19 : ;.
+392,      IDENTSY, No. 38 : a.
+392,     ASSIGNSY, No. 10 : =.
+392,     ASSIGNSY, No. 10 : =.
+392,      IDENTSY, No. 38 : a.
+392,       PLUSSY, No.  0 : +.
+392,    INTEGERSY, No. 35 : 1.
+392,       SEMISY, No. 19 : ;.
+393,       RPRTSY, No. 16 : }.
+395,       RPRTSY, No. 16 : }.
+397,      IDENTSY, No. 38 : a.
+397,     ASSIGNSY, No. 10 : =.
+397,     ASSIGNSY, No. 10 : =.
+397,    INTEGERSY, No. 35 : .
+397,       SEMISY, No. 19 : ;.
+398,       LOOPSY, No. 31 : while.
+398,       LPAESY, No. 11 : (.
+398,      IDENTSY, No. 38 : a.
+398,         LESY, No.  5 : <=.
+398,    INTEGERSY, No. 35 : 1.
+398,       RPARSY, No. 12 : ).
+398,       LPRTSY, No. 15 : {.
+399,         IFSY, No. 30 : if.
+399,       LPAESY, No. 11 : (.
+399,      IDENTSY, No. 38 : const_1.
+399,        EQUSY, No.  9 : ==.
+399,    INTEGERSY, No. 35 : 1.
+399,       RPARSY, No. 12 : ).
+399,       LPRTSY, No. 15 : {.
+400,     SWITCHSY, No. 27 : switch.
+400,       LPAESY, No. 11 : (.
+400,      IDENTSY, No. 38 : a.
+400,       RPARSY, No. 12 : ).
+400,       LPRTSY, No. 15 : {.
+401,       CASESY, No. 28 : case.
+401,    INTEGERSY, No. 35 : .
+401,      COLONSY, No. 17 : :.
+401,       LPRTSY, No. 15 : {.
+402,      IDENTSY, No. 38 : judge.
+402,     ASSIGNSY, No. 10 : =.
+402,     ASSIGNSY, No. 10 : =.
+402,      IDENTSY, No. 38 : judge.
+402,       PLUSSY, No.  0 : +.
+402,    INTEGERSY, No. 35 : 1.
+402,       SEMISY, No. 19 : ;.
+403,       RPRTSY, No. 16 : }.
+404,    DEFAULTSY, No. 29 : default.
+404,      COLONSY, No. 17 : :.
+405,      IDENTSY, No. 38 : judge.
+405,     ASSIGNSY, No. 10 : =.
+405,     ASSIGNSY, No. 10 : =.
+405,      IDENTSY, No. 38 : judge.
+405,       PLUSSY, No.  0 : +.
+405,    INTEGERSY, No. 35 : 1.
+405,       SEMISY, No. 19 : ;.
+406,       RPRTSY, No. 16 : }.
+407,       RPRTSY, No. 16 : }.
+408,      IDENTSY, No. 38 : a.
+408,     ASSIGNSY, No. 10 : =.
+408,     ASSIGNSY, No. 10 : =.
+408,      IDENTSY, No. 38 : a.
+408,       PLUSSY, No.  0 : +.
+408,    INTEGERSY, No. 35 : 1.
+408,       SEMISY, No. 19 : ;.
+409,       RPRTSY, No. 16 : }.
+412,      IDENTSY, No. 38 : flag.
+412,     ASSIGNSY, No. 10 : =.
+412,     ASSIGNSY, No. 10 : =.
+412,    INTEGERSY, No. 35 : .
+412,       SEMISY, No. 19 : ;.
+413,      IDENTSY, No. 38 : c.
+413,     ASSIGNSY, No. 10 : =.
+413,     ASSIGNSY, No. 10 : =.
+413,       SQUOSY, No. 20 : 'a'.
+413,       SEMISY, No. 19 : ;.
+414,         IFSY, No. 30 : if.
+414,       LPAESY, No. 11 : (.
+414,      IDENTSY, No. 38 : c.
+414,        EQUSY, No.  9 : ==.
+414,       SQUOSY, No. 20 : 'a'.
+414,       RPARSY, No. 12 : ).
+414,       LPRTSY, No. 15 : {.
+415,      IDENTSY, No. 38 : judge.
+415,     ASSIGNSY, No. 10 : =.
+415,     ASSIGNSY, No. 10 : =.
+415,      IDENTSY, No. 38 : judge.
+415,       PLUSSY, No.  0 : +.
+415,    INTEGERSY, No. 35 : 1.
+415,       SEMISY, No. 19 : ;.
+416,       RPRTSY, No. 16 : }.
+418,         IFSY, No. 30 : if.
+418,       LPAESY, No. 11 : (.
+418,      IDENTSY, No. 38 : c.
+418,        EQUSY, No.  9 : ==.
+418,       SQUOSY, No. 20 : 'b'.
+418,       RPARSY, No. 12 : ).
+418,       LPRTSY, No. 15 : {.
+419,      IDENTSY, No. 38 : judge.
+419,     ASSIGNSY, No. 10 : =.
+419,     ASSIGNSY, No. 10 : =.
+419,      IDENTSY, No. 38 : judge.
+419,       PLUSSY, No.  0 : +.
+419,    INTEGERSY, No. 35 : 1.
+419,       SEMISY, No. 19 : ;.
+420,      IDENTSY, No. 38 : flag.
+420,     ASSIGNSY, No. 10 : =.
+420,     ASSIGNSY, No. 10 : =.
+420,    INTEGERSY, No. 35 : 1.
+420,       SEMISY, No. 19 : ;.
+421,       RPRTSY, No. 16 : }.
+422,         IFSY, No. 30 : if.
+422,       LPAESY, No. 11 : (.
+422,      IDENTSY, No. 38 : flag.
+422,        EQUSY, No.  9 : ==.
+422,    INTEGERSY, No. 35 : .
+422,       RPARSY, No. 12 : ).
+422,       LPRTSY, No. 15 : {.
+423,      IDENTSY, No. 38 : judge.
+423,     ASSIGNSY, No. 10 : =.
+423,     ASSIGNSY, No. 10 : =.
+423,      IDENTSY, No. 38 : judge.
+423,       PLUSSY, No.  0 : +.
+423,    INTEGERSY, No. 35 : 1.
+423,       SEMISY, No. 19 : ;.
+424,       RPRTSY, No. 16 : }.
+425,        RETSY, No. 34 : return.
+425,       SEMISY, No. 19 : ;.
+426,       RPRTSY, No. 16 : }.
+428,       VOIDSY, No. 25 : void.
+428,      IDENTSY, No. 38 : test_switch.
+428,      IDENTSY, No. 38 : test_switch.
+428,       LPAESY, No. 11 : (.
+428,       RPARSY, No. 12 : ).
+429,       LPRTSY, No. 15 : {.
+430,        INTSY, No. 22 : int.
+430,      IDENTSY, No. 38 : a.
+430,      COMMASY, No. 18 : ,.
+430,      IDENTSY, No. 38 : a.
+430,      COMMASY, No. 18 : ,.
+430,      IDENTSY, No. 38 : b.
+430,      COMMASY, No. 18 : ,.
+430,      IDENTSY, No. 38 : flag.
+430,      COMMASY, No. 18 : ,.
+430,      IDENTSY, No. 38 : test.
+430,       SEMISY, No. 19 : ;.
+431,       CHARSY, No. 23 : char.
+431,      IDENTSY, No. 38 : c.
+431,       SEMISY, No. 19 : ;.
+431,      IDENTSY, No. 38 : c.
+431,       SEMISY, No. 19 : ;.
+432,      IDENTSY, No. 38 : flag.
+432,     ASSIGNSY, No. 10 : =.
+432,     ASSIGNSY, No. 10 : =.
+432,    INTEGERSY, No. 35 : .
+432,       SEMISY, No. 19 : ;.
+433,      IDENTSY, No. 38 : test.
+433,     ASSIGNSY, No. 10 : =.
+433,     ASSIGNSY, No. 10 : =.
+433,    INTEGERSY, No. 35 : .
+433,       SEMISY, No. 19 : ;.
+434,      IDENTSY, No. 38 : a.
+434,     ASSIGNSY, No. 10 : =.
+434,     ASSIGNSY, No. 10 : =.
+434,    INTEGERSY, No. 35 : .
+434,       SEMISY, No. 19 : ;.
+435,      IDENTSY, No. 38 : b.
+435,     ASSIGNSY, No. 10 : =.
+435,     ASSIGNSY, No. 10 : =.
+435,    INTEGERSY, No. 35 : .
+435,       SEMISY, No. 19 : ;.
+436,       LOOPSY, No. 31 : while.
+436,       LPAESY, No. 11 : (.
+436,      IDENTSY, No. 38 : a.
+436,         LESY, No.  5 : <=.
+436,    INTEGERSY, No. 35 : 6.
+436,       RPARSY, No. 12 : ).
+436,       LPRTSY, No. 15 : {.
+437,     SWITCHSY, No. 27 : switch.
+437,       LPAESY, No. 11 : (.
+437,      IDENTSY, No. 38 : a.
+437,       RPARSY, No. 12 : ).
+437,       LPRTSY, No. 15 : {.
+438,       CASESY, No. 28 : case.
+438,    INTEGERSY, No. 35 : .
+438,      COLONSY, No. 17 : :.
+438,       LPRTSY, No. 15 : {.
+439,         IFSY, No. 30 : if.
+439,       LPAESY, No. 11 : (.
+439,      IDENTSY, No. 38 : const_1.
+439,        EQUSY, No.  9 : ==.
+439,    INTEGERSY, No. 35 : 1.
+439,       RPARSY, No. 12 : ).
+439,       LPRTSY, No. 15 : {.
+440,      IDENTSY, No. 38 : judge.
+440,     ASSIGNSY, No. 10 : =.
+440,     ASSIGNSY, No. 10 : =.
+440,      IDENTSY, No. 38 : judge.
+440,       PLUSSY, No.  0 : +.
+440,    INTEGERSY, No. 35 : 1.
+440,       SEMISY, No. 19 : ;.
+441,      IDENTSY, No. 38 : num.
+441,     LBRACKSY, No. 13 : [.
+441,     LBRACKSY, No. 13 : [.
+441,    INTEGERSY, No. 35 : .
+441,     RBRACKSY, No. 14 : ].
+441,     ASSIGNSY, No. 10 : =.
+441,      IDENTSY, No. 38 : const_3.
+441,       SEMISY, No. 19 : ;.
+442,      IDENTSY, No. 38 : num.
+442,     LBRACKSY, No. 13 : [.
+442,     LBRACKSY, No. 13 : [.
+442,      IDENTSY, No. 38 : const_3.
+442,     RBRACKSY, No. 14 : ].
+442,     ASSIGNSY, No. 10 : =.
+442,      IDENTSY, No. 38 : get_sum.
+442,       LPAESY, No. 11 : (.
+442,      IDENTSY, No. 38 : const_3.
+442,       RPARSY, No. 12 : ).
+442,       SEMISY, No. 19 : ;.
+443,       RPRTSY, No. 16 : }.
+444,         IFSY, No. 30 : if.
+444,       LPAESY, No. 11 : (.
+444,      IDENTSY, No. 38 : const_1.
+444,        EQUSY, No.  9 : ==.
+444,    INTEGERSY, No. 35 : .
+444,       RPARSY, No. 12 : ).
+444,       LPRTSY, No. 15 : {.
+445,      IDENTSY, No. 38 : judge.
+445,     ASSIGNSY, No. 10 : =.
+445,     ASSIGNSY, No. 10 : =.
+445,      IDENTSY, No. 38 : judge.
+445,       PLUSSY, No.  0 : +.
+445,    INTEGERSY, No. 35 : 1.
+445,       SEMISY, No. 19 : ;.
+446,      IDENTSY, No. 38 : flag.
+446,     ASSIGNSY, No. 10 : =.
+446,     ASSIGNSY, No. 10 : =.
+446,    INTEGERSY, No. 35 : 1.
+446,       SEMISY, No. 19 : ;.
+447,       RPRTSY, No. 16 : }.
+448,         IFSY, No. 30 : if.
+448,       LPAESY, No. 11 : (.
+448,      IDENTSY, No. 38 : flag.
+448,        EQUSY, No.  9 : ==.
+448,    INTEGERSY, No. 35 : .
+448,       RPARSY, No. 12 : ).
+448,       LPRTSY, No. 15 : {.
+449,      IDENTSY, No. 38 : judge.
+449,     ASSIGNSY, No. 10 : =.
+449,     ASSIGNSY, No. 10 : =.
+449,      IDENTSY, No. 38 : judge.
+449,       PLUSSY, No.  0 : +.
+449,    INTEGERSY, No. 35 : 1.
+449,       SEMISY, No. 19 : ;.
+450,       RPRTSY, No. 16 : }.
+451,      IDENTSY, No. 38 : test.
+451,     ASSIGNSY, No. 10 : =.
+451,     ASSIGNSY, No. 10 : =.
+451,    INTEGERSY, No. 35 : 1.
+451,       SEMISY, No. 19 : ;.
+452,       RPRTSY, No. 16 : }.
+453,       CASESY, No. 28 : case.
+453,    INTEGERSY, No. 35 : 1.
+453,      COLONSY, No. 17 : :.
+453,       LPRTSY, No. 15 : {.
+454,      IDENTSY, No. 38 : judge.
+454,     ASSIGNSY, No. 10 : =.
+454,     ASSIGNSY, No. 10 : =.
+454,      IDENTSY, No. 38 : judge.
+454,       PLUSSY, No.  0 : +.
+454,    INTEGERSY, No. 35 : 1.
+454,       SEMISY, No. 19 : ;.
+455,      IDENTSY, No. 38 : b.
+455,     ASSIGNSY, No. 10 : =.
+455,     ASSIGNSY, No. 10 : =.
+455,    INTEGERSY, No. 35 : .
+455,       SEMISY, No. 19 : ;.
+456,       LOOPSY, No. 31 : while.
+456,       LPAESY, No. 11 : (.
+456,      IDENTSY, No. 38 : b.
+456,         LESY, No.  5 : <=.
+456,    INTEGERSY, No. 35 : 2.
+456,       RPARSY, No. 12 : ).
+456,       LPRTSY, No. 15 : {.
+457,      IDENTSY, No. 38 : judge.
+457,     ASSIGNSY, No. 10 : =.
+457,     ASSIGNSY, No. 10 : =.
+457,      IDENTSY, No. 38 : judge.
+457,       PLUSSY, No.  0 : +.
+457,    INTEGERSY, No. 35 : 1.
+457,       SEMISY, No. 19 : ;.
+458,      IDENTSY, No. 38 : b.
+458,     ASSIGNSY, No. 10 : =.
+458,     ASSIGNSY, No. 10 : =.
+458,      IDENTSY, No. 38 : b.
+458,       PLUSSY, No.  0 : +.
+458,    INTEGERSY, No. 35 : 1.
+458,       SEMISY, No. 19 : ;.
+459,       RPRTSY, No. 16 : }.
+460,      IDENTSY, No. 38 : test.
+460,     ASSIGNSY, No. 10 : =.
+460,     ASSIGNSY, No. 10 : =.
+460,    INTEGERSY, No. 35 : 1.
+460,       SEMISY, No. 19 : ;.
+461,       RPRTSY, No. 16 : }.
+462,       CASESY, No. 28 : case.
+462,    INTEGERSY, No. 35 : 2.
+462,      COLONSY, No. 17 : :.
+462,       LPRTSY, No. 15 : {.
+463,       SEMISY, No. 19 : ;.
+464,       RPRTSY, No. 16 : }.
+465,    DEFAULTSY, No. 29 : default.
+465,      COLONSY, No. 17 : :.
+465,       LPRTSY, No. 15 : {.
+466,      IDENTSY, No. 38 : judge.
+466,     ASSIGNSY, No. 10 : =.
+466,     ASSIGNSY, No. 10 : =.
+466,      IDENTSY, No. 38 : judge.
+466,       PLUSSY, No.  0 : +.
+466,    INTEGERSY, No. 35 : 1.
+466,       SEMISY, No. 19 : ;.
+467,     SWITCHSY, No. 27 : switch.
+467,       LPAESY, No. 11 : (.
+467,      IDENTSY, No. 38 : a.
+467,        DIVSY, No.  3 : /.
+467,      IDENTSY, No. 38 : const_3.
+467,       RPARSY, No. 12 : ).
+467,       LPRTSY, No. 15 : {.
+468,       CASESY, No. 28 : case.
+468,    INTEGERSY, No. 35 : 1.
+468,      COLONSY, No. 17 : :.
+468,       LPRTSY, No. 15 : {.
+469,      IDENTSY, No. 38 : judge.
+469,     ASSIGNSY, No. 10 : =.
+469,     ASSIGNSY, No. 10 : =.
+469,      IDENTSY, No. 38 : judge.
+469,       PLUSSY, No.  0 : +.
+469,    INTEGERSY, No. 35 : 1.
+469,       SEMISY, No. 19 : ;.
+470,      IDENTSY, No. 38 : test.
+470,     ASSIGNSY, No. 10 : =.
+470,     ASSIGNSY, No. 10 : =.
+470,    INTEGERSY, No. 35 : 1.
+470,       SEMISY, No. 19 : ;.
+471,       RPRTSY, No. 16 : }.
+472,    DEFAULTSY, No. 29 : default.
+472,      COLONSY, No. 17 : :.
+472,       LPRTSY, No. 15 : {.
+472,       SEMISY, No. 19 : ;.
+472,       RPRTSY, No. 16 : }.
+473,       RPRTSY, No. 16 : }.
+474,         IFSY, No. 30 : if.
+474,       LPAESY, No. 11 : (.
+474,      IDENTSY, No. 38 : test.
+474,        EQUSY, No.  9 : ==.
+474,    INTEGERSY, No. 35 : .
+474,       RPARSY, No. 12 : ).
+474,       LPRTSY, No. 15 : {.
+475,      IDENTSY, No. 38 : judge.
+475,     ASSIGNSY, No. 10 : =.
+475,     ASSIGNSY, No. 10 : =.
+475,      IDENTSY, No. 38 : judge.
+475,       PLUSSY, No.  0 : +.
+475,    INTEGERSY, No. 35 : 1.
+475,       SEMISY, No. 19 : ;.
+476,       RPRTSY, No. 16 : }.
+477,      IDENTSY, No. 38 : test.
+477,     ASSIGNSY, No. 10 : =.
+477,     ASSIGNSY, No. 10 : =.
+477,    INTEGERSY, No. 35 : 1.
+477,       SEMISY, No. 19 : ;.
+478,       RPRTSY, No. 16 : }.
+479,       RPRTSY, No. 16 : }.
+481,         IFSY, No. 30 : if.
+481,       LPAESY, No. 11 : (.
+481,      IDENTSY, No. 38 : test.
+481,        EQUSY, No.  9 : ==.
+481,    INTEGERSY, No. 35 : .
+481,       RPARSY, No. 12 : ).
+481,       LPRTSY, No. 15 : {.
+482,      IDENTSY, No. 38 : judge.
+482,     ASSIGNSY, No. 10 : =.
+482,     ASSIGNSY, No. 10 : =.
+482,      IDENTSY, No. 38 : judge.
+482,       PLUSSY, No.  0 : +.
+482,    INTEGERSY, No. 35 : 1.
+482,       SEMISY, No. 19 : ;.
+483,       RPRTSY, No. 16 : }.
+484,      IDENTSY, No. 38 : test.
+484,     ASSIGNSY, No. 10 : =.
+484,     ASSIGNSY, No. 10 : =.
+484,    INTEGERSY, No. 35 : .
+484,       SEMISY, No. 19 : ;.
+485,      IDENTSY, No. 38 : a.
+485,     ASSIGNSY, No. 10 : =.
+485,     ASSIGNSY, No. 10 : =.
+485,      IDENTSY, No. 38 : a.
+485,       PLUSSY, No.  0 : +.
+485,    INTEGERSY, No. 35 : 1.
+485,       SEMISY, No. 19 : ;.
+486,       RPRTSY, No. 16 : }.
+488,      IDENTSY, No. 38 : a.
+488,     ASSIGNSY, No. 10 : =.
+488,     ASSIGNSY, No. 10 : =.
+488,    INTEGERSY, No. 35 : .
+488,       SEMISY, No. 19 : ;.
+489,       LOOPSY, No. 31 : while.
+489,       LPAESY, No. 11 : (.
+489,      IDENTSY, No. 38 : a.
+489,         LSSY, No.  4 : <.
+489,    INTEGERSY, No. 35 : 3.
+489,       RPARSY, No. 12 : ).
+489,       LPRTSY, No. 15 : {.
+490,         IFSY, No. 30 : if.
+490,       LPAESY, No. 11 : (.
+490,      IDENTSY, No. 38 : a.
+490,        EQUSY, No.  9 : ==.
+490,    INTEGERSY, No. 35 : .
+490,       RPARSY, No. 12 : ).
+491,      IDENTSY, No. 38 : c.
+491,     ASSIGNSY, No. 10 : =.
+491,     ASSIGNSY, No. 10 : =.
+491,       SQUOSY, No. 20 : 'a'.
+491,       SEMISY, No. 19 : ;.
+492,         IFSY, No. 30 : if.
+492,       LPAESY, No. 11 : (.
+492,      IDENTSY, No. 38 : a.
+492,        EQUSY, No.  9 : ==.
+492,    INTEGERSY, No. 35 : 1.
+492,       RPARSY, No. 12 : ).
+493,      IDENTSY, No. 38 : c.
+493,     ASSIGNSY, No. 10 : =.
+493,     ASSIGNSY, No. 10 : =.
+493,       SQUOSY, No. 20 : 'b'.
+493,       SEMISY, No. 19 : ;.
+494,         IFSY, No. 30 : if.
+494,       LPAESY, No. 11 : (.
+494,      IDENTSY, No. 38 : a.
+494,        EQUSY, No.  9 : ==.
+494,    INTEGERSY, No. 35 : 2.
+494,       RPARSY, No. 12 : ).
+495,      IDENTSY, No. 38 : c.
+495,     ASSIGNSY, No. 10 : =.
+495,     ASSIGNSY, No. 10 : =.
+495,       SQUOSY, No. 20 : 'c'.
+495,       SEMISY, No. 19 : ;.
+496,     SWITCHSY, No. 27 : switch.
+496,       LPAESY, No. 11 : (.
+496,      IDENTSY, No. 38 : c.
+496,       RPARSY, No. 12 : ).
+496,       LPRTSY, No. 15 : {.
+497,       CASESY, No. 28 : case.
+497,       SQUOSY, No. 20 : 'a'.
+497,      COLONSY, No. 17 : :.
+497,       LPRTSY, No. 15 : {.
+498,      IDENTSY, No. 38 : judge.
+498,     ASSIGNSY, No. 10 : =.
+498,     ASSIGNSY, No. 10 : =.
+498,      IDENTSY, No. 38 : judge.
+498,       PLUSSY, No.  0 : +.
+498,    INTEGERSY, No. 35 : 1.
+498,       SEMISY, No. 19 : ;.
+499,       RPRTSY, No. 16 : }.
+500,       CASESY, No. 28 : case.
+500,       SQUOSY, No. 20 : 'b'.
+500,      COLONSY, No. 17 : :.
+500,       LPRTSY, No. 15 : {.
+501,      IDENTSY, No. 38 : judge.
+501,     ASSIGNSY, No. 10 : =.
+501,     ASSIGNSY, No. 10 : =.
+501,      IDENTSY, No. 38 : judge.
+501,       PLUSSY, No.  0 : +.
+501,    INTEGERSY, No. 35 : 1.
+501,       SEMISY, No. 19 : ;.
+502,       RPRTSY, No. 16 : }.
+503,    DEFAULTSY, No. 29 : default.
+503,      COLONSY, No. 17 : :.
+503,       LPRTSY, No. 15 : {.
+504,      IDENTSY, No. 38 : judge.
+504,     ASSIGNSY, No. 10 : =.
+504,     ASSIGNSY, No. 10 : =.
+504,      IDENTSY, No. 38 : judge.
+504,       PLUSSY, No.  0 : +.
+504,    INTEGERSY, No. 35 : 1.
+504,       SEMISY, No. 19 : ;.
+505,       RPRTSY, No. 16 : }.
+506,       RPRTSY, No. 16 : }.
+507,      IDENTSY, No. 38 : a.
+507,     ASSIGNSY, No. 10 : =.
+507,     ASSIGNSY, No. 10 : =.
+507,      IDENTSY, No. 38 : a.
+507,       PLUSSY, No.  0 : +.
+507,    INTEGERSY, No. 35 : 1.
+507,       SEMISY, No. 19 : ;.
+508,       RPRTSY, No. 16 : }.
+510,      IDENTSY, No. 38 : a.
+510,     ASSIGNSY, No. 10 : =.
+510,     ASSIGNSY, No. 10 : =.
+510,    INTEGERSY, No. 35 : 1.
+510,       SEMISY, No. 19 : ;.
+511,     SWITCHSY, No. 27 : switch.
+511,       LPAESY, No. 11 : (.
+511,      IDENTSY, No. 38 : a.
+511,       RPARSY, No. 12 : ).
+511,       LPRTSY, No. 15 : {.
+512,       CASESY, No. 28 : case.
+512,    INTEGERSY, No. 35 : 1.
+512,      COLONSY, No. 17 : :.
+512,       SEMISY, No. 19 : ;.
+513,       RPRTSY, No. 16 : }.
+514,        RETSY, No. 34 : return.
+514,       SEMISY, No. 19 : ;.
+515,       RPRTSY, No. 16 : }.
+517,       VOIDSY, No. 25 : void.
+517,      IDENTSY, No. 38 : test_function.
+517,      IDENTSY, No. 38 : test_function.
+517,       LPAESY, No. 11 : (.
+517,       RPARSY, No. 12 : ).
+518,       LPRTSY, No. 15 : {.
+519,        INTSY, No. 22 : int.
+519,      IDENTSY, No. 38 : a.
+519,       SEMISY, No. 19 : ;.
+519,      IDENTSY, No. 38 : a.
+519,       SEMISY, No. 19 : ;.
+520,       CHARSY, No. 23 : char.
+520,      IDENTSY, No. 38 : c.
+520,       SEMISY, No. 19 : ;.
+520,      IDENTSY, No. 38 : c.
+520,       SEMISY, No. 19 : ;.
+522,      IDENTSY, No. 38 : a.
+522,     ASSIGNSY, No. 10 : =.
+522,     ASSIGNSY, No. 10 : =.
+522,    INTEGERSY, No. 35 : 11.
+522,       SEMISY, No. 19 : ;.
+523,      IDENTSY, No. 38 : c.
+523,     ASSIGNSY, No. 10 : =.
+523,     ASSIGNSY, No. 10 : =.
+523,       SQUOSY, No. 20 : 'a'.
+523,       SEMISY, No. 19 : ;.
+524,      IDENTSY, No. 38 : judge.
+524,     ASSIGNSY, No. 10 : =.
+524,     ASSIGNSY, No. 10 : =.
+524,      IDENTSY, No. 38 : judge.
+524,       PLUSSY, No.  0 : +.
+524,    INTEGERSY, No. 35 : 1.
+524,       SEMISY, No. 19 : ;.
+525,      PRINTSY, No. 33 : printf.
+525,       LPAESY, No. 11 : (.
+525,      IDENTSY, No. 38 : higher.
+525,       LPAESY, No. 11 : (.
+525,      IDENTSY, No. 38 : c.
+525,       RPARSY, No. 12 : ).
+525,       PLUSSY, No.  0 : +.
+525,      IDENTSY, No. 38 : count_to_10.
+525,       LPAESY, No. 11 : (.
+525,       RPARSY, No. 12 : ).
+525,       RPARSY, No. 12 : ).
+525,       SEMISY, No. 19 : ;.
+527,      IDENTSY, No. 38 : prt_message.
+527,       LPAESY, No. 11 : (.
+527,       LPAESY, No. 11 : (.
+527,       RPARSY, No. 12 : ).
+527,       SEMISY, No. 19 : ;.
+528,        RETSY, No. 34 : return.
+528,       SEMISY, No. 19 : ;.
+529,       RPRTSY, No. 16 : }.
+531,       VOIDSY, No. 25 : void.
+531,      IDENTSY, No. 38 : test_printf.
+531,      IDENTSY, No. 38 : test_printf.
+531,       LPAESY, No. 11 : (.
+531,       RPARSY, No. 12 : ).
+531,       LPRTSY, No. 15 : {.
+532,        INTSY, No. 22 : int.
+532,      IDENTSY, No. 38 : x.
+532,       SEMISY, No. 19 : ;.
+532,      IDENTSY, No. 38 : x.
+532,       SEMISY, No. 19 : ;.
+533,      IDENTSY, No. 38 : x.
+533,     ASSIGNSY, No. 10 : =.
+533,     ASSIGNSY, No. 10 : =.
+533,    INTEGERSY, No. 35 : 1.
+533,       SEMISY, No. 19 : ;.
+534,      IDENTSY, No. 38 : judge.
+534,     ASSIGNSY, No. 10 : =.
+534,     ASSIGNSY, No. 10 : =.
+534,      IDENTSY, No. 38 : judge.
+534,       PLUSSY, No.  0 : +.
+534,    INTEGERSY, No. 35 : 1.
+534,       SEMISY, No. 19 : ;.
+535,      PRINTSY, No. 33 : printf.
+535,       LPAESY, No. 11 : (.
+535,      IDENTSY, No. 38 : x.
+535,       RPARSY, No. 12 : ).
+535,       SEMISY, No. 19 : ;.
+537,      IDENTSY, No. 38 : x.
+537,     ASSIGNSY, No. 10 : =.
+537,     ASSIGNSY, No. 10 : =.
+537,    INTEGERSY, No. 35 : 5.
+537,       SEMISY, No. 19 : ;.
+538,      PRINTSY, No. 33 : printf.
+538,       LPAESY, No. 11 : (.
+538,      MINUSSY, No.  1 : -.
+538,       LPAESY, No. 11 : (.
+538,      IDENTSY, No. 38 : num.
+538,     LBRACKSY, No. 13 : [.
+538,      IDENTSY, No. 38 : x.
+538,     RBRACKSY, No. 14 : ].
+538,       PLUSSY, No.  0 : +.
+538,      IDENTSY, No. 38 : num.
+538,     LBRACKSY, No. 13 : [.
+538,      IDENTSY, No. 38 : x.
+538,       PLUSSY, No.  0 : +.
+538,      IDENTSY, No. 38 : const_1.
+538,     RBRACKSY, No. 14 : ].
+538,       PLUSSY, No.  0 : +.
+538,    INTEGERSY, No. 35 : 3.
+538,       RPARSY, No. 12 : ).
+538,       MULTSY, No.  2 : *.
+538,      IDENTSY, No. 38 : count_to_10.
+538,       LPAESY, No. 11 : (.
+538,       RPARSY, No. 12 : ).
+538,        DIVSY, No.  3 : /.
+538,      IDENTSY, No. 38 : const_3.
+538,       PLUSSY, No.  0 : +.
+538,       SQUOSY, No. 20 : 'a'.
+538,       PLUSSY, No.  0 : +.
+538,      IDENTSY, No. 38 : const_a.
+538,      MINUSSY, No.  1 : -.
+538,    INTEGERSY, No. 35 : 3.
+538,       MULTSY, No.  2 : *.
+538,    INTEGERSY, No. 35 : 3.
+538,        DIVSY, No.  3 : /.
+538,    INTEGERSY, No. 35 : 4.
+538,       RPARSY, No. 12 : ).
+538,       SEMISY, No. 19 : ;.
+539,        RETSY, No. 34 : return.
+539,       SEMISY, No. 19 : ;.
+540,       RPRTSY, No. 16 : }.
+542,       VOIDSY, No. 25 : void.
+542,      IDENTSY, No. 38 : test_scanf.
+542,      IDENTSY, No. 38 : test_scanf.
+542,       LPAESY, No. 11 : (.
+542,       RPARSY, No. 12 : ).
+542,       LPRTSY, No. 15 : {.
+543,        INTSY, No. 22 : int.
+543,      IDENTSY, No. 38 : x.
+543,      COMMASY, No. 18 : ,.
+543,      IDENTSY, No. 38 : x.
+543,      COMMASY, No. 18 : ,.
+543,      IDENTSY, No. 38 : y.
+543,      COMMASY, No. 18 : ,.
+543,      IDENTSY, No. 38 : z.
+543,       SEMISY, No. 19 : ;.
+544,       CHARSY, No. 23 : char.
+544,      IDENTSY, No. 38 : m.
+544,      COMMASY, No. 18 : ,.
+544,      IDENTSY, No. 38 : m.
+544,      COMMASY, No. 18 : ,.
+544,      IDENTSY, No. 38 : n.
+544,      COMMASY, No. 18 : ,.
+544,      IDENTSY, No. 38 : q.
+544,       SEMISY, No. 19 : ;.
+545,      IDENTSY, No. 38 : judge.
+545,     ASSIGNSY, No. 10 : =.
+545,     ASSIGNSY, No. 10 : =.
+545,      IDENTSY, No. 38 : judge.
+545,       PLUSSY, No.  0 : +.
+545,    INTEGERSY, No. 35 : 1.
+545,       SEMISY, No. 19 : ;.
+546,      SCANFSY, No. 32 : scanf.
+546,       LPAESY, No. 11 : (.
+546,      IDENTSY, No. 38 : x.
+546,      COMMASY, No. 18 : ,.
+546,      IDENTSY, No. 38 : m.
+546,       RPARSY, No. 12 : ).
+546,       SEMISY, No. 19 : ;.
+547,      IDENTSY, No. 38 : judge.
+547,     ASSIGNSY, No. 10 : =.
+547,     ASSIGNSY, No. 10 : =.
+547,      IDENTSY, No. 38 : judge.
+547,       PLUSSY, No.  0 : +.
+547,      IDENTSY, No. 38 : x.
+547,       PLUSSY, No.  0 : +.
+547,      IDENTSY, No. 38 : m.
+547,       SEMISY, No. 19 : ;.
+548,      SCANFSY, No. 32 : scanf.
+548,       LPAESY, No. 11 : (.
+548,      IDENTSY, No. 38 : m.
+548,       RPARSY, No. 12 : ).
+548,       SEMISY, No. 19 : ;.
+549,      IDENTSY, No. 38 : letter.
+549,     LBRACKSY, No. 13 : [.
+549,     LBRACKSY, No. 13 : [.
+549,    INTEGERSY, No. 35 : 3.
+549,     RBRACKSY, No. 14 : ].
+549,     ASSIGNSY, No. 10 : =.
+549,      IDENTSY, No. 38 : m.
+549,       SEMISY, No. 19 : ;.
+550,      IDENTSY, No. 38 : judge.
+550,     ASSIGNSY, No. 10 : =.
+550,     ASSIGNSY, No. 10 : =.
+550,      IDENTSY, No. 38 : judge.
+550,       PLUSSY, No.  0 : +.
+550,      IDENTSY, No. 38 : m.
+550,       SEMISY, No. 19 : ;.
+551,      SCANFSY, No. 32 : scanf.
+551,       LPAESY, No. 11 : (.
+551,      IDENTSY, No. 38 : x.
+551,       RPARSY, No. 12 : ).
+551,       SEMISY, No. 19 : ;.
+552,      IDENTSY, No. 38 : judge.
+552,     ASSIGNSY, No. 10 : =.
+552,     ASSIGNSY, No. 10 : =.
+552,      IDENTSY, No. 38 : judge.
+552,       PLUSSY, No.  0 : +.
+552,      IDENTSY, No. 38 : x.
+552,       SEMISY, No. 19 : ;.
+553,        RETSY, No. 34 : return.
+553,       SEMISY, No. 19 : ;.
+554,       RPRTSY, No. 16 : }.
+556,       VOIDSY, No. 25 : void.
+556,      IDENTSY, No. 38 : test_varib2.
+556,      IDENTSY, No. 38 : test_varib2.
+556,       LPAESY, No. 11 : (.
+556,       RPARSY, No. 12 : ).
+557,       LPRTSY, No. 15 : {.
+558,      IDENTSY, No. 38 : judge.
+558,     ASSIGNSY, No. 10 : =.
+558,     ASSIGNSY, No. 10 : =.
+558,      IDENTSY, No. 38 : judge.
+558,       PLUSSY, No.  0 : +.
+558,    INTEGERSY, No. 35 : 1.
+558,       SEMISY, No. 19 : ;.
+559,         IFSY, No. 30 : if.
+559,       LPAESY, No. 11 : (.
+559,      IDENTSY, No. 38 : _.
+559,        EQUSY, No.  9 : ==.
+559,    INTEGERSY, No. 35 : 1.
+559,       RPARSY, No. 12 : ).
+559,       LPRTSY, No. 15 : {.
+560,      IDENTSY, No. 38 : judge.
+560,     ASSIGNSY, No. 10 : =.
+560,     ASSIGNSY, No. 10 : =.
+560,      IDENTSY, No. 38 : judge.
+560,       PLUSSY, No.  0 : +.
+560,    INTEGERSY, No. 35 : 1.
+560,       SEMISY, No. 19 : ;.
+561,       RPRTSY, No. 16 : }.
+562,        RETSY, No. 34 : return.
+562,       SEMISY, No. 19 : ;.
+563,       RPRTSY, No. 16 : }.
+565,       VOIDSY, No. 25 : void.
+565,      IDENTSY, No. 38 : test_varib.
+565,      IDENTSY, No. 38 : test_varib.
+565,       LPAESY, No. 11 : (.
+565,       RPARSY, No. 12 : ).
+566,       LPRTSY, No. 15 : {.
+567,        INTSY, No. 22 : int.
+567,      IDENTSY, No. 38 : _.
+567,       SEMISY, No. 19 : ;.
+567,      IDENTSY, No. 38 : _.
+567,       SEMISY, No. 19 : ;.
+568,      IDENTSY, No. 38 : judge.
+568,     ASSIGNSY, No. 10 : =.
+568,     ASSIGNSY, No. 10 : =.
+568,      IDENTSY, No. 38 : judge.
+568,       PLUSSY, No.  0 : +.
+568,    INTEGERSY, No. 35 : 1.
+568,       SEMISY, No. 19 : ;.
+569,      IDENTSY, No. 38 : _.
+569,     ASSIGNSY, No. 10 : =.
+569,     ASSIGNSY, No. 10 : =.
+569,    INTEGERSY, No. 35 : 100.
+569,       SEMISY, No. 19 : ;.
+570,         IFSY, No. 30 : if.
+570,       LPAESY, No. 11 : (.
+570,      IDENTSY, No. 38 : _.
+570,        EQUSY, No.  9 : ==.
+570,    INTEGERSY, No. 35 : 100.
+570,       RPARSY, No. 12 : ).
+571,      IDENTSY, No. 38 : judge.
+571,     ASSIGNSY, No. 10 : =.
+571,     ASSIGNSY, No. 10 : =.
+571,      IDENTSY, No. 38 : judge.
+571,       PLUSSY, No.  0 : +.
+571,    INTEGERSY, No. 35 : 1.
+571,       SEMISY, No. 19 : ;.
+572,      IDENTSY, No. 38 : test_varib2.
+572,       LPAESY, No. 11 : (.
+572,       LPAESY, No. 11 : (.
+572,       RPARSY, No. 12 : ).
+572,       SEMISY, No. 19 : ;.
+573,        RETSY, No. 34 : return.
+573,       SEMISY, No. 19 : ;.
+574,       RPRTSY, No. 16 : }.
+576,       VOIDSY, No. 25 : void.
+576,      IDENTSY, No. 38 : test_para4.
+576,      IDENTSY, No. 38 : test_para4.
+576,       LPAESY, No. 11 : (.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : a.
+576,      COMMASY, No. 18 : ,.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : b.
+576,      COMMASY, No. 18 : ,.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : c.
+576,      COMMASY, No. 18 : ,.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : d.
+576,      COMMASY, No. 18 : ,.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : e.
+576,      COMMASY, No. 18 : ,.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : f.
+576,      COMMASY, No. 18 : ,.
+576,        INTSY, No. 22 : int.
+576,      IDENTSY, No. 38 : g.
+576,       RPARSY, No. 12 : ).
+577,       LPRTSY, No. 15 : {.
+578,      IDENTSY, No. 38 : judge.
+578,     ASSIGNSY, No. 10 : =.
+578,     ASSIGNSY, No. 10 : =.
+578,      IDENTSY, No. 38 : judge.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : a.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : b.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : c.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : d.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : e.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : f.
+578,       PLUSSY, No.  0 : +.
+578,      IDENTSY, No. 38 : g.
+578,       SEMISY, No. 19 : ;.
+579,        RETSY, No. 34 : return.
+579,       SEMISY, No. 19 : ;.
+580,       RPRTSY, No. 16 : }.
+582,        INTSY, No. 22 : int.
+582,      IDENTSY, No. 38 : test_para1.
+582,       LPAESY, No. 11 : (.
+582,      IDENTSY, No. 38 : test_para1.
+582,       LPAESY, No. 11 : (.
+582,        INTSY, No. 22 : int.
+582,      IDENTSY, No. 38 : a.
+582,      COMMASY, No. 18 : ,.
+582,        INTSY, No. 22 : int.
+582,      IDENTSY, No. 38 : b.
+582,       RPARSY, No. 12 : ).
+582,       LPRTSY, No. 15 : {.
+583,      IDENTSY, No. 38 : judge.
+583,     ASSIGNSY, No. 10 : =.
+583,     ASSIGNSY, No. 10 : =.
+583,      IDENTSY, No. 38 : judge.
+583,       PLUSSY, No.  0 : +.
+583,    INTEGERSY, No. 35 : 1.
+583,       SEMISY, No. 19 : ;.
+584,        RETSY, No. 34 : return.
+584,       LPAESY, No. 11 : (.
+584,    INTEGERSY, No. 35 : 1.
+584,       RPARSY, No. 12 : ).
+584,       SEMISY, No. 19 : ;.
+585,       RPRTSY, No. 16 : }.
+587,       CHARSY, No. 23 : char.
+587,      IDENTSY, No. 38 : test_para2.
+587,       LPAESY, No. 11 : (.
+587,      IDENTSY, No. 38 : test_para2.
+587,       LPAESY, No. 11 : (.
+587,       CHARSY, No. 23 : char.
+587,      IDENTSY, No. 38 : a.
+587,      COMMASY, No. 18 : ,.
+587,       CHARSY, No. 23 : char.
+587,      IDENTSY, No. 38 : b.
+587,       RPARSY, No. 12 : ).
+587,       LPRTSY, No. 15 : {.
+588,      IDENTSY, No. 38 : judge.
+588,     ASSIGNSY, No. 10 : =.
+588,     ASSIGNSY, No. 10 : =.
+588,      IDENTSY, No. 38 : judge.
+588,       PLUSSY, No.  0 : +.
+588,    INTEGERSY, No. 35 : 1.
+588,       SEMISY, No. 19 : ;.
+589,        RETSY, No. 34 : return.
+589,       LPAESY, No. 11 : (.
+589,       SQUOSY, No. 20 : 'a'.
+589,       RPARSY, No. 12 : ).
+589,       SEMISY, No. 19 : ;.
+590,       RPRTSY, No. 16 : }.
+592,       VOIDSY, No. 25 : void.
+592,      IDENTSY, No. 38 : test_para3.
+592,      IDENTSY, No. 38 : test_para3.
+592,       LPAESY, No. 11 : (.
+592,       CHARSY, No. 23 : char.
+592,      IDENTSY, No. 38 : a.
+592,      COMMASY, No. 18 : ,.
+592,        INTSY, No. 22 : int.
+592,      IDENTSY, No. 38 : b.
+592,       RPARSY, No. 12 : ).
+592,       LPRTSY, No. 15 : {.
+593,      IDENTSY, No. 38 : judge.
+593,     ASSIGNSY, No. 10 : =.
+593,     ASSIGNSY, No. 10 : =.
+593,      IDENTSY, No. 38 : judge.
+593,       PLUSSY, No.  0 : +.
+593,    INTEGERSY, No. 35 : 1.
+593,       SEMISY, No. 19 : ;.
+594,        RETSY, No. 34 : return.
+594,       SEMISY, No. 19 : ;.
+595,       RPRTSY, No. 16 : }.
+597,       VOIDSY, No. 25 : void.
+597,      IDENTSY, No. 38 : test_para.
+597,      IDENTSY, No. 38 : test_para.
+597,       LPAESY, No. 11 : (.
+597,       RPARSY, No. 12 : ).
+597,       LPRTSY, No. 15 : {.
+598,      IDENTSY, No. 38 : judge.
+598,     ASSIGNSY, No. 10 : =.
+598,     ASSIGNSY, No. 10 : =.
+598,      IDENTSY, No. 38 : judge.
+598,       PLUSSY, No.  0 : +.
+598,    INTEGERSY, No. 35 : 1.
+598,       SEMISY, No. 19 : ;.
+599,      IDENTSY, No. 38 : test_para1.
+599,       LPAESY, No. 11 : (.
+599,       LPAESY, No. 11 : (.
+599,    INTEGERSY, No. 35 : 1.
+599,      COMMASY, No. 18 : ,.
+599,    INTEGERSY, No. 35 : 2.
+599,       RPARSY, No. 12 : ).
+599,       SEMISY, No. 19 : ;.
+600,      IDENTSY, No. 38 : test_para2.
+600,       LPAESY, No. 11 : (.
+600,       LPAESY, No. 11 : (.
+600,       SQUOSY, No. 20 : 'a'.
+600,      COMMASY, No. 18 : ,.
+600,       SQUOSY, No. 20 : 'b'.
+600,       RPARSY, No. 12 : ).
+600,       SEMISY, No. 19 : ;.
+601,      IDENTSY, No. 38 : test_para3.
+601,       LPAESY, No. 11 : (.
+601,       LPAESY, No. 11 : (.
+601,       SQUOSY, No. 20 : 'a'.
+601,      COMMASY, No. 18 : ,.
+601,    INTEGERSY, No. 35 : 1.
+601,       RPARSY, No. 12 : ).
+601,       SEMISY, No. 19 : ;.
+602,      IDENTSY, No. 38 : test_para4.
+602,       LPAESY, No. 11 : (.
+602,       LPAESY, No. 11 : (.
+602,    INTEGERSY, No. 35 : 1.
+602,      COMMASY, No. 18 : ,.
+602,    INTEGERSY, No. 35 : 2.
+602,      COMMASY, No. 18 : ,.
+602,    INTEGERSY, No. 35 : 3.
+602,      COMMASY, No. 18 : ,.
+602,    INTEGERSY, No. 35 : 4.
+602,      COMMASY, No. 18 : ,.
+602,    INTEGERSY, No. 35 : 5.
+602,      COMMASY, No. 18 : ,.
+602,    INTEGERSY, No. 35 : 6.
+602,      COMMASY, No. 18 : ,.
+602,    INTEGERSY, No. 35 : 7.
+602,       RPARSY, No. 12 : ).
+602,       SEMISY, No. 19 : ;.
+603,        RETSY, No. 34 : return.
+603,       SEMISY, No. 19 : ;.
+604,       RPRTSY, No. 16 : }.
+606,       VOIDSY, No. 25 : void.
+606,       MAINSY, No. 26 : main.
+606,       MAINSY, No. 26 : main.
+606,       LPAESY, No. 11 : (.
+606,       RPARSY, No. 12 : ).
+607,       LPRTSY, No. 15 : {.
+609,        INTSY, No. 22 : int.
+609,      IDENTSY, No. 38 : x.
+609,       SEMISY, No. 19 : ;.
+609,      IDENTSY, No. 38 : x.
+609,       SEMISY, No. 19 : ;.
+610,      IDENTSY, No. 38 : judge.
+610,     ASSIGNSY, No. 10 : =.
+610,     ASSIGNSY, No. 10 : =.
+610,    INTEGERSY, No. 35 : .
+610,       SEMISY, No. 19 : ;.
+611,      IDENTSY, No. 38 : judge.
+611,     ASSIGNSY, No. 10 : =.
+611,     ASSIGNSY, No. 10 : =.
+611,      IDENTSY, No. 38 : judge.
+611,       PLUSSY, No.  0 : +.
+611,    INTEGERSY, No. 35 : 1.
+611,       SEMISY, No. 19 : ;.
+612,      IDENTSY, No. 38 : x.
+612,     ASSIGNSY, No. 10 : =.
+612,     ASSIGNSY, No. 10 : =.
+612,    INTEGERSY, No. 35 : .
+612,       SEMISY, No. 19 : ;.
+614,      IDENTSY, No. 38 : test_global_variable.
+614,       LPAESY, No. 11 : (.
+614,       LPAESY, No. 11 : (.
+614,       RPARSY, No. 12 : ).
+614,       SEMISY, No. 19 : ;.
+616,      IDENTSY, No. 38 : test_global_const.
+616,       LPAESY, No. 11 : (.
+616,       LPAESY, No. 11 : (.
+616,       RPARSY, No. 12 : ).
+616,       SEMISY, No. 19 : ;.
+618,      IDENTSY, No. 38 : test_brackets.
+618,       LPAESY, No. 11 : (.
+618,       LPAESY, No. 11 : (.
+618,       RPARSY, No. 12 : ).
+618,       SEMISY, No. 19 : ;.
+620,      IDENTSY, No. 38 : test_compare_operator.
+620,       LPAESY, No. 11 : (.
+620,       LPAESY, No. 11 : (.
+620,       RPARSY, No. 12 : ).
+620,       SEMISY, No. 19 : ;.
+622,      IDENTSY, No. 38 : test_expression.
+622,       LPAESY, No. 11 : (.
+622,       LPAESY, No. 11 : (.
+622,       RPARSY, No. 12 : ).
+622,       SEMISY, No. 19 : ;.
+624,      IDENTSY, No. 38 : test_while.
+624,       LPAESY, No. 11 : (.
+624,       LPAESY, No. 11 : (.
+624,       RPARSY, No. 12 : ).
+624,       SEMISY, No. 19 : ;.
+626,      IDENTSY, No. 38 : test_if.
+626,       LPAESY, No. 11 : (.
+626,       LPAESY, No. 11 : (.
+626,       RPARSY, No. 12 : ).
+626,       SEMISY, No. 19 : ;.
+628,      IDENTSY, No. 38 : test_switch.
+628,       LPAESY, No. 11 : (.
+628,       LPAESY, No. 11 : (.
+628,       RPARSY, No. 12 : ).
+628,       SEMISY, No. 19 : ;.
+630,      IDENTSY, No. 38 : test_function.
+630,       LPAESY, No. 11 : (.
+630,       LPAESY, No. 11 : (.
+630,       RPARSY, No. 12 : ).
+630,       SEMISY, No. 19 : ;.
+632,      IDENTSY, No. 38 : test_printf.
+632,       LPAESY, No. 11 : (.
+632,       LPAESY, No. 11 : (.
+632,       RPARSY, No. 12 : ).
+632,       SEMISY, No. 19 : ;.
+634,      IDENTSY, No. 38 : test_scanf.
+634,       LPAESY, No. 11 : (.
+634,       LPAESY, No. 11 : (.
+634,       RPARSY, No. 12 : ).
+634,       SEMISY, No. 19 : ;.
+636,      IDENTSY, No. 38 : test_varib.
+636,       LPAESY, No. 11 : (.
+636,       LPAESY, No. 11 : (.
+636,       RPARSY, No. 12 : ).
+636,       SEMISY, No. 19 : ;.
+638,      IDENTSY, No. 38 : test_para.
+638,       LPAESY, No. 11 : (.
+638,       LPAESY, No. 11 : (.
+638,       RPARSY, No. 12 : ).
+638,       SEMISY, No. 19 : ;.
+640,      PRINTSY, No. 33 : printf.
+640,       LPAESY, No. 11 : (.
+640,       DQUOSY, No. 21 : ".
+640,     STRINGSY, No. 37 : "all test:".
+640,       DQUOSY, No. 21 : "all test:".
+640,      COMMASY, No. 18 : ,.
+640,      IDENTSY, No. 38 : judge.
+640,       RPARSY, No. 12 : ).
+640,       SEMISY, No. 19 : ;.
+642,        RETSY, No. 34 : return.
+642,       SEMISY, No. 19 : ;.
+643,       RPRTSY, No. 16 : }.

@@ -99,24 +99,26 @@ void Syntaxer::retfuncdec() {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym(); // TODO: error
         parameterlist(); // get para list length
         stab.element[funcidx].number = number; // attention on this funcidx, reset the number of function
         emit(func, typl == ints ? "int" : "char", funcname, to_string(number)); // we need to use emit2
         if (symtype != LPRTSY) {
             error(NOTLPRT, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         compoundstatement();
         tmpvar[funcname] = regnum; // record the number of tmpvar
         localvar[funcname] = address / 4;
         if (symtype != RPRTSY) {
             error(NOTRPRT, linenumber);
+            return;
         }
         stab.top = stab.pindex[stab.pnum - 1];
     }
     else {
         error(NOTTYP, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a declaration of function which have returning value." << endl;
@@ -144,25 +146,27 @@ void Syntaxer::voidfuncdec() {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         parameterlist();
         stab.element[funcidx].number = number;
         emit(func, "void", funcname, to_string(number));
         if (symtype != LPRTSY) {
             error(NOTLPRT, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         compoundstatement();
         tmpvar[funcname] = regnum;
         localvar[funcname] = address / 4;
         if (symtype != RPRTSY) {
             error(NOTRPRT, linenumber);
+            return;
         }
         stab.top = stab.pindex[stab.pnum - 1];
         emit(jr, "$ra", "", "");
     }
     else {
         error(NOTVOID, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a declaration of function which don\'t have returning value." << endl;
@@ -180,29 +184,31 @@ void Syntaxer::functionmain() {
         if (symtype != MAINSY) {
             error(NOTMAIN, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         if (symtype != RPARSY) {
             error(NOTRBRA, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         if (symtype != LPRTSY) {
             error(NOTLPRT, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         compoundstatement();
         tmpvar["main"] = regnum;
         localvar["main"] = address / 4;
         if (symtype != RPRTSY) {
             error(NOTRPRT, linenumber);
+            return;
         }
         emit(label, "end", "", "");
     }
     else {
         error(NOTVOID, linenumber);
+        return;
     }
     cout << "This is a declaration of function main." << endl;
 }
@@ -242,9 +248,14 @@ void Syntaxer::parameterlist() {
                 number ++;
             } while(symtype == COMMASY);
         }
+        if (symtype != RPARSY) {
+            error(NOTRPAR, linenumber);
+            return;
+        }
     }
     else if (symtype != RPARSY) {
         error(NOTRPAR, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a parameterlist." << endl;
@@ -299,6 +310,7 @@ void Syntaxer::characterlist() {
     }
     else {
         error(NOTDQUO, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a character list." << endl;
@@ -350,14 +362,20 @@ void Syntaxer::constantdef() {
                     else {
                         error(HASBEENDEFINED, linenumber);
                     }
+                    nxtsym();
                 } else {
                     error(NOTASSIGN, linenumber);
+                    do {
+                        nxtsym();
+                    } while(symtype != COMMASY || symtype != SEMISY);
                 }
             }
             else {
                 error(NOTIDENT, linenumber);
+                do {
+                    nxtsym();
+                } while(symtype != COMMASY || symtype != SEMISY);
             }
-            nxtsym();
         }while(symtype == COMMASY);
     }
     else if (symtype == CHARSY){
@@ -379,16 +397,27 @@ void Syntaxer::constantdef() {
                     else {
                         error(HASBEENDEFINED, linenumber);
                     }
+                    nxtsym();
+                } else {
+                    error(NOTASSIGN, linenumber);
+                    do {
+                        nxtsym();
+                    } while (symtype != COMMASY || symtype != SEMISY);
                 }
             }
             else {
                 error(NOTIDENT, linenumber);
+                do {
+                    nxtsym();
+                } while(symtype != COMMASY || symtype != SEMISY);
             }
-            nxtsym();
         }while(symtype == COMMASY);
     }
     else {
         error(NOTTYP, linenumber);
+        do {
+            nxtsym();
+        } while(symtype != SEMISY);
     }
     cout << "This is a constant define." << endl;
 }
@@ -398,6 +427,9 @@ void Syntaxer::constdec() {
     cout << "This the head of constdec" << endl;
     if (symtype != CONSTSY){ // the symbol before i came in
         error(NOTCONST, linenumber);
+        do {
+            nxtsym();
+        } while(symtype != SEMISY);
     }
     else {
         nxtsym();
@@ -405,7 +437,7 @@ void Syntaxer::constdec() {
         if (symtype != SEMISY){
             error(NOTSEMI, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         if (symtype == CONSTSY) {
             constdec();
         }
@@ -429,12 +461,14 @@ void Syntaxer::vardef() {
                     if (symtype != INTEGERSY){
                         error(NOTINTEGER, linenumber);
                     }
-                    number = transNum(token); // the length of the array
+                    else {
+                        number = transNum(token); // the length of the array
+                        nxtsym();
+                    }
                     if (number <= 0){
                         error(ERRORNUM, linenumber);
                     }
-                    nxtsym();
-                    if (symtype == RBRACKSY){
+                    if (symtype == RBRACKSY){ // ']'
                         value = 0;
                         idx = searchtab(symname, variable);
                         if (idx == 0 || (level != 1 && stab.element[idx].level == 1)) {
@@ -445,11 +479,11 @@ void Syntaxer::vardef() {
                         else {
                             error(HASBEENDEFINED, linenumber);
                         }
+                        nxtsym();
                     }
                     else {
                         error(NOTRBRA, linenumber);
                     }
-                    nxtsym();
                 }
                 else { // is not array
                     value = 0;
@@ -463,6 +497,7 @@ void Syntaxer::vardef() {
                     else {
                         error(HASBEENDEFINED, linenumber);
                     }
+                    // why needn't nxtsym, beacuse we have already nxtsymed before for judge array
                 }
             }
             else {
@@ -495,7 +530,7 @@ void Syntaxer::vardec() {
         if (symtype != SEMISY){
             error(NOTSEMI, linenumber);
         }
-        nxtsym();
+        else nxtsym();
     }while(symtype == INTSY || symtype == CHARSY);
     cout << "This is a var declaration." << endl;
 }
@@ -588,11 +623,11 @@ void Syntaxer::statement() {
     else if (symtype == LPRTSY) { // '{'
         nxtsym();
         statementlist();
-        if (symtype != RPRTSY) {
+        if (symtype != RPRTSY) { // '}'
             error(NOTRPRT, linenumber);
         }
-        nxtsym();
-        return;
+        else nxtsym();
+        return; // statement list needn't semi
     }
     else if (symtype == IDENTSY) {
         strcpy(name4back, token);
@@ -611,10 +646,6 @@ void Syntaxer::statement() {
             if (idx > 0) {
                 assignment();
             }
-//            else {
-//                error();
-//                // nxtsym(); // TODO : should i stop?
-//            }
         }
         else {
             BACK
@@ -625,20 +656,15 @@ void Syntaxer::statement() {
             if (idx > 0) {
                 typ functyp = stab.element[stab.pindex[idx] - 1].type;
                 if (functyp == voids) {
-                    callvoidfunc(tmpname, funcidx);
+                    callvoidfunc(tmpname, funcidx); // call in statement
                 }
                 else {
-                    callretfunc(tmpname, funcidx);
+                    callretfunc(tmpname, funcidx); // call just in statement
                 }
             }
             else {
                 error(NOTBEENDEFINED, linenumber);
             }
-//            else {
-//                error();
-//                nxtsym(); // TODO : should i stop?
-//                return;
-//            }
         }
     }
     else if (symtype == SCANFSY) {
@@ -656,9 +682,11 @@ void Syntaxer::statement() {
     }
     else if (symtype != SEMISY) {
         error(NOTSEMI, linenumber);
+        return;
     }
     if (symtype != SEMISY) {
         error(NOTSEMI, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a statement." << endl;
@@ -763,7 +791,7 @@ void Syntaxer::factor(bool lock) {
             funcidx = idx;
             if (idx == 0) {
                 error(NOTBEENDEFINED, linenumber);
-            } else if (idx > 0 && stab.element[stab.pindex[idx] - 1].type == voids) { // find bug and fix
+            } else if (idx > 0 && stab.element[stab.pindex[idx] - 1].type == voids) { // the returning value is from void
                 error(ERRORRETVALUE, linenumber);
             }
             emit(call, tmpname, "", "");
@@ -774,19 +802,20 @@ void Syntaxer::factor(bool lock) {
             if (symtype != RPARSY) {
                 error(NOTRPAR, linenumber);
             }
+            else nxtsym();
             emit(jal, tmpname, to_string(valuenum), "");
             emit(fact, tmpto, "$v0", "");
             to = tmpto;
-            nxtsym();
         }
-        else if (symtype == LBRACKSY){ // array
+        else if (symtype == LBRACKSY){ // array ==> factor tn array[x]
             regnum ++;
             idx = searchtab(symname, variable);
             if (idx == 0) {
                 error(NOTBEENDEFINED, linenumber);
-            } else if (idx > 0 && stab.element[idx].type == voids) {
-                error(ERRORRETVALUE, linenumber);
             }
+//            else if (idx > 0 && stab.element[idx].type == voids) {
+//                error(ERRORRETVALUE, linenumber);
+//            }
             if(lock) stab.element[idx].type == ints ? ischar += 2 : ischar ++;
             int tmpaddr = stab.element[idx].address;
             bool isglobal = stab.element[idx].level == 1;
@@ -795,9 +824,9 @@ void Syntaxer::factor(bool lock) {
             if (symtype != RBRACKSY){ // missing ']'
                 error(NOTRBRA, linenumber);
             }
+            else nxtsym();
             emit(fact, tmpto, tmpname, to, isglobal, tmpaddr); // tn is the expression's value, fact to arr, i
             to = tmpto;
-            nxtsym();
         }
         else { // identifier -> variable
             regnum ++;
@@ -813,7 +842,7 @@ void Syntaxer::factor(bool lock) {
             bool isglobal = stab.element[idx].level == 1;
             emit(fact, tmpto, tmpname, "", isglobal, tmpaddr); // fact to a
             to = tmpto;
-            // why there is no nxtsym, cuz we have done it when we get in
+            // why there is no nxtsym, cuz we have done it when we get in for judge wether it is function or array
         }
     }
     else if (symtype == LPARSY){ // '(' expression ')'
@@ -822,20 +851,20 @@ void Syntaxer::factor(bool lock) {
         if (symtype != RPARSY){ // ')'
             error(NOTRPAR, linenumber);
         }
+        else nxtsym();
         if (lock) ischar += 2;
-        nxtsym();
     }
     else if (symtype == INTEGERSY || symtype == MINUSSY || symtype == PLUSSY){ // [+/-] <integer>
         isnumber();
+        nxtsym();
         if(lock) ischar += 2;
         to = to_string(value);
-        nxtsym();
     }
     else if (symtype == SQUOSY){ // character
         ischaracter();
+        nxtsym();
         if(lock) ischar ++;
         to = to_string(value);
-        nxtsym();
     }
     else {
         error(NOTIDENT, linenumber);
@@ -852,10 +881,11 @@ void Syntaxer::callretfunc(string funcname, int ix) {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         valuelist();
         if (symtype != RPARSY) {
             error(NOTRPAR, linenumber);
+            return;
         }
         emit(jal, funcname, to_string(valuenum), "");
     }
@@ -876,15 +906,17 @@ void Syntaxer::callvoidfunc(string funcname, int ix) {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         valuelist();
         if (symtype != RPARSY) {
             error(NOTRPAR, linenumber);
+            return;
         }
         emit(jal, funcname, to_string(valuenum), ""); // 1 means it is void
     }
     else {
         error(NOTIDENT, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a call of void function." << endl;
@@ -898,7 +930,6 @@ void Syntaxer::assignment() {
         if (symtype == ASSIGNSY) {
             nxtsym();
             expression(false);
-
             idx = searchtab(name4back, parameter);
             if (idx == 0) {
                 idx = searchtab(name4back, variable);
@@ -917,11 +948,10 @@ void Syntaxer::assignment() {
             if (symtype != RBRACKSY){ //
                 error(NOTRBRA, linenumber);
             }
-            nxtsym();
+            else nxtsym();
             if (symtype == ASSIGNSY){
                 nxtsym();
                 expression(false);
-
                 idx = searchtab(name4back, variable);
                 if (idx == 0) {
                     error(NOTBEENDEFINED, linenumber);
@@ -957,17 +987,17 @@ void Syntaxer::ifstatement() {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         condition();
         if (symtype != RPARSY) {
             error(NOTRPAR, linenumber);
         }
+        else nxtsym();
         labeln = "label" + to_string(labelnum);
         labelnum ++;
         emit(jump, labeln, "", "");
         emit(label, labelm, "", "");
         string tmplabel = labeln;
-        nxtsym();
         statement();
         // if statement also has label, so we should use the latest labelnum
         emit(label, tmplabel, "", "");
@@ -1024,22 +1054,20 @@ void Syntaxer::whilestatement() {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         condition();
         if (symtype != RPARSY) {
             error(NOTRPAR, linenumber);
         }
-
+        else nxtsym();
         emit(jump, whileout, "", ""); // if not equal
         emit(label, labelm, "", "");
-
-        nxtsym();
         statement();
-
         emit(jump, beginlabel, "", "");
     }
     else {
         error(NOTLOOP, linenumber);
+        return;
     }
     emit(label, whileout, "", "");
     cout << "This is a recurrent statement." << endl;
@@ -1055,25 +1083,27 @@ void Syntaxer::switchstatement() {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         expression(false);
         switchcase = to;
         if (symtype != RPARSY) {
             error(NOTRPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         if (symtype != LPRTSY) {
             error(NOTLPRT, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         caselist();
         defaultstatemnt();
         if (symtype != RPRTSY) {
             error(NOTRPRT, linenumber);
+            return;
         }
     }
     else {
         error(NOTSWITCH, linenumber);
+        return;
     }
     nxtsym();
     emit(label, tmpswitchout, "", "");
@@ -1106,6 +1136,7 @@ void Syntaxer::casestatment() {
         if (symtype != COLONSY) { // ':'
             error(NOTCOLON, linenumber);
         }
+        else nxtsym();
         string tmpswitchcase = switchcase;
         labelm = "label" + to_string(labelnum);
         labelnum ++;
@@ -1116,7 +1147,6 @@ void Syntaxer::casestatment() {
         emit(label, labelm, "", "");
         string tmplabel = labeln;
         string tmpswitchout = switchout;
-        nxtsym();
         statement();
 
         emit(jump, tmpswitchout, "", "");
@@ -1124,6 +1154,9 @@ void Syntaxer::casestatment() {
     }
     else {
         error(NOTCASE, linenumber);
+        do {
+            nxtsym();
+        } while(symtype == CASESY);
     }
     cout << "This is a case sub statement." << endl;
 }
@@ -1133,18 +1166,18 @@ void Syntaxer::defaultstatemnt() {
     cout << "This is the head of default statement." << endl;
     if (symtype == DEFAULTSY) {
         nxtsym();
-        if (symtype != COLONSY) {
+        if (symtype != COLONSY) { // ':'
             error(NOTCOLON, linenumber);
         }
-        nxtsym();
-        if (symtype != RPRTSY) {
+        else nxtsym();
+        if (symtype != RPRTSY) { // '}'
             statement();
         }
-        else {
+        else { // default : } it is wrong
             error(ERRORDEFAULT, linenumber);
         }
     }
-    else if (symtype != RPRTSY){
+    else if (symtype != RPRTSY){ // empty
         error(NOTRPRT, linenumber);
     }
     cout << "This is a default statement." << endl;
@@ -1158,7 +1191,7 @@ void Syntaxer::printfstatment() {
         if (symtype != LPARSY) {
             error(NOTLPAR, linenumber);
         }
-        nxtsym();
+        else nxtsym();
         if (token[0] != '\"') { // isn't string
             expression(true);
             emit(write, to, to_string(ischar), "");
@@ -1175,10 +1208,12 @@ void Syntaxer::printfstatment() {
         }
         if (symtype != RPARSY) {
             error(NOTRPAR, linenumber);
+            return;
         }
     }
     else {
         error(NOTPRINT, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a printf statement." << endl;
@@ -1188,11 +1223,11 @@ void Syntaxer::printfstatment() {
 void Syntaxer::scanfstatement() {
     if (symtype == SCANFSY) {
         nxtsym();
-        if (symtype == LPARSY) {
+        if (symtype == LPARSY) { // scanf(
             nxtsym();
             idx = searchtab(token, variable);
             if (idx == 0) {
-                error(NOTLPAR, linenumber);
+                error(NOTBEENDEFINED, linenumber);
             }
             string typl = stab.element[idx].type == ints ? "int" : "char";
             bool isglobal = stab.element[idx].level == 1;
@@ -1212,12 +1247,14 @@ void Syntaxer::scanfstatement() {
                 } while (symtype == COMMASY);
             }
         }
-        if (symtype != RPARSY) {
+        if (symtype != RPARSY) { // ')'
             error(NOTRPAR, linenumber);
+            return;
         }
     }
     else {
         error(NOTSCAN, linenumber);
+        return;
     }
     nxtsym();
     cout << "This is a scanf statement." << endl;
@@ -1227,16 +1264,16 @@ void Syntaxer::scanfstatement() {
 void Syntaxer::returnstatement() {
     if (symtype == RETSY) {
         nxtsym();
-        if (symtype == LPARSY) {
+        if (symtype == LPARSY) { // return (
             nxtsym();
             expression(false);
             if (symtype != RPARSY) {
                 error(NOTRPAR, linenumber);
             }
-            nxtsym();
+            else nxtsym();
             emit(ret, to, "", "", ismain, 0);
         }
-        else if(symtype == SEMISY) {
+        else if(symtype == SEMISY) { // return;
             emit(ret, "", "", "", ismain, 0);
         }
     }

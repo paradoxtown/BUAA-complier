@@ -25,6 +25,7 @@ enum errorstate{
     NOTDQUO,
     NOTSQUO,
     NOTPLUS,
+    NOTMULT,
     NOTASSIGN,
     NOTIDENT,
     NOTTYP,

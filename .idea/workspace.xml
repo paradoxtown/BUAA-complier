@@ -12,6 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73e12b6b-a064-4935-990b-8814c28eb9f4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/complier.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/complier.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/error" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/error" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/error.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error.h" beforeDir="false" afterPath="$PROJECT_DIR$/error.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/syntaxer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/syntaxer.cpp" afterDir="false" />
@@ -54,11 +61,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="21" selection-start-line="21" selection-start-column="2" selection-end-line="24" selection-end-column="30" />
+                <state relative-caret-position="404">
+                  <caret line="33" selection-start-line="33" selection-end-line="33" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
                   </folding>
@@ -114,8 +121,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/error.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+                <state relative-caret-position="399">
+                  <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
                   <folding>
                     <element signature="e#91#110#0" expanded="true" />
                   </folding>
@@ -123,11 +130,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/error.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="326">
-                  <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+                <state relative-caret-position="401">
+                  <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
                   <folding>
                     <element signature="e#41#59#0" expanded="true" />
                   </folding>
@@ -160,11 +167,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23216">
-                  <caret line="1247" selection-start-line="1247" selection-end-line="1247" />
+                <state relative-caret-position="290">
+                  <caret line="645" column="26" lean-forward="true" selection-start-line="645" selection-start-column="26" selection-end-line="645" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -193,7 +200,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="513">
+                <state relative-caret-position="456">
                   <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="22" />
                   <folding>
                     <element signature="e#89#107#0" expanded="true" />
@@ -223,17 +230,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/test1.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="361">
-                  <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+                <state relative-caret-position="133">
+                  <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cmake-build-debug/szy.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
-                  <caret line="316" column="62" selection-start-line="316" selection-start-column="62" selection-end-line="316" selection-end-column="62" />
+                <state relative-caret-position="76">
+                  <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -253,10 +260,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sub</find>
-      <find>1 == 2</find>
-      <find>divide</find>
-      <find>if (optimize)</find>
       <find>testifwhile</find>
       <find>midcode-&gt;</find>
       <find>testAss</find>
@@ -270,19 +273,23 @@
       <find>index = emit</find>
       <find>returnstatement</find>
       <find>returnsta</find>
-      <find>assignment</find>
       <find>// return</find>
       <find>program</find>
       <find>write</find>
       <find>push</find>
-      <find>statement</find>
       <find>callvoid</find>
       <find>stoi</find>
       <find>ifstatement</find>
       <find>cnt</find>
       <find>condition</find>
       <find>jal</find>
+      <find>printfstatment</find>
+      <find>statement</find>
+      <find>valuelist</find>
       <find>error</find>
+      <find>expression</find>
+      <find>assignment</find>
+      <find>init</find>
     </findStrings>
     <replaceStrings>
       <replace>nxtsym();</replace>
@@ -326,22 +333,22 @@
         <option value="$PROJECT_DIR$/quader.h" />
         <option value="$PROJECT_DIR$/lexer.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/test" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/test1.txt" />
         <option value="$PROJECT_DIR$/asmer.cpp" />
         <option value="$PROJECT_DIR$/tools.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/syntaxer.h" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/szy.txt" />
         <option value="$PROJECT_DIR$/error.h" />
         <option value="$PROJECT_DIR$/error.cpp" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/test1.txt" />
         <option value="$PROJECT_DIR$/syntaxer.cpp" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/szy.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="975" />
-    <option name="height" value="1058" />
+    <option name="x" value="-6" />
+    <option name="width" value="780" />
+    <option name="height" value="846" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -461,12 +468,12 @@
       <workItem from="1544934563673" duration="3706000" />
       <workItem from="1544938307092" duration="1206000" />
       <workItem from="1544939536276" duration="29993000" />
-      <workItem from="1545005937933" duration="2252000" />
+      <workItem from="1545005937933" duration="8263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477860000" />
+    <option name="totallyTimeSpent" value="483871000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -478,7 +485,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
@@ -486,12 +493,12 @@
       <window_info content_ui="combo" id="Project" order="2" weight="0.12793177" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36731842" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40772533" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.61266094" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.40772533" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.43435755" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.6190987" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3282123" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32939914" />
@@ -523,6 +530,11 @@
           <url>file://$PROJECT_DIR$/asmer.cpp</url>
           <line>46</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/syntaxer.cpp</url>
+          <line>926</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -785,65 +797,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memory_helper.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="21" selection-start-line="21" selection-start-column="2" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/optimizer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#89#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/rhx.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3040">
           <caret line="160" column="16" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding>
+            <element signature="e#91#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -857,37 +834,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error.h">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/szy.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="22" />
           <folding>
-            <element signature="e#91#110#0" expanded="true" />
+            <element signature="e#89#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error.cpp">
+    <entry file="file://$PROJECT_DIR$/optimizer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memory_helper.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <element signature="e#41#59#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/syntaxer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23216">
-          <caret line="1247" selection-start-line="1247" selection-end-line="1247" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/szy.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="316" column="62" selection-start-line="316" selection-start-column="62" selection-end-line="316" selection-end-column="62" />
+        <state relative-caret-position="290">
+          <caret line="645" column="26" lean-forward="true" selection-start-line="645" selection-start-column="26" selection-end-line="645" selection-end-column="26" />
         </state>
       </provider>
     </entry>

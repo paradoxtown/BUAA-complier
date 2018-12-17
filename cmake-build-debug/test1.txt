@@ -1,20 +1,9 @@
-int a;
+int global_int_array_1[5];
 
-int test1(int a){
-    return (a);
-}
-
-int test2(int b){
-    return (b);
-}
-
-int test3(int a, int b, int c){
-    return (a + b + c);
+void initGlobalArray() {
+    global_int_array_1[0] = 0;
 }
 
 void main(){
-    int b, a;
-    a = 1;
-    b = 2;
-    printf(test3(a, b, test1(a) + test2(b)));
+    initGlobalArray();
 }

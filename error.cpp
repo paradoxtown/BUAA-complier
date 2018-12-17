@@ -26,6 +26,7 @@ void errorinit() {
     sta2str[NOTDQUO] = "NOTDQUO";
     sta2str[NOTSQUO] = "NOTSQUO";
     sta2str[NOTPLUS] = "NOTPLUS";
+    sta2str[NOTMULT] = "NOTMULT";
     sta2str[NOTASSIGN] = "NOTASSIGN";
     sta2str[NOTIDENT] = "NOTIDENT";
     sta2str[NOTTYP] = "NOTTYP";
