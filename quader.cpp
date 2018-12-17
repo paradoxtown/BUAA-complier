@@ -38,6 +38,7 @@ void quaderinit(){
     op2str[write] = "write";
     op2str[ret] = "ret";
     op2str[jal] = "jal";
+    op2str[jr] = "jr";
 }
 
 void emit(operation op, string rst, string num1, string num2) {
@@ -47,6 +48,7 @@ void emit(operation op, string rst, string num1, string num2) {
     midcode.opnum1 = std::move(num1);
     midcode.opnum2 = std::move(num2);
     quadlist.push_back(midcode);
+    // return quadlist.size() - 1;
 }
 
 void emit(operation op, string rst, string num1, string num2, bool isglobal, int offset) {
@@ -61,6 +63,7 @@ void emit(operation op, string rst, string num1, string num2, bool isglobal, int
         quadlist.insert(quadlist.begin(), midcode);
     }
     else quadlist.push_back(midcode);
+    // return quadlist.size() - 1;
 }
 
 void printquads(){

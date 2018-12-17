@@ -1,1303 +1,247 @@
-string  "all test:" _str1
-string  " !#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~" _str0
-const   int const_1 1
-const   int const_2 2
-const   int const_3 3
-const   char const_a 97
-const   char const_b 98
-const   char const_c 99
-const   char const_ 95
-var     int count
-array   int num 10
-array   int letter 5
-var     char s
-var     int _
-var     int __
-var     int ___
-var     int __a__
-var     int _a_
-var     int judge
+string  "1 - 1 = true" _str2
+string  "1 == 2" _str1
+string  "2 <= 1" _str0
+const   char const_char_a 97
+const   char const_char_b 98
+const   char const_char_c 99
+const   char const_char_A 65
+const   int const_int_postive 1
+const   int const_int_zero 0
+const   int const_int_negtive -1
+const   char const_char_num 57
+const   char const_char_underline 95
+const   char const_char_add 43
+const   char const_char_mul 42
+var     int int_global_var
+var     char char_global_var
+array   int sort 10
 jump    main
-get_sum
-para    int a
-func    int get_sum 1
-var     int b
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-factor  t2 count
-add     t3 t2 1
-assign  count t3
-assign  b 0
-factor  t4 a
-bne     t4 1 label0
+testIfWhile
+func    void testIfWhile 0
+const   int test_if_1 1
+const   int test_if_2 2
+const   char const_char_a 98
+const   char const_char_b 97
+var     int test_if_result
+var     int loop_num
+assign  test_if_result 0
+assign  loop_num 0
+        T0 98 1
+        T1 97 1
+bgtz    99 98 label0
 jump    label1
 label0
-call    get_sum
-factor  t6 a
-sub     t7 t6 1
-push    t7
-jal     get_sum
-factor  t5 $v0
-assign  b t5
-factor  t8 judge
-add     t9 t8 1
-assign  judge t9
-label1
-factor  t10 b
-factor  t11 a
-add     t12 t10 t11
-ret     t12
-count_to_10
-func    int count_to_10 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-call    get_sum
-push    10
-jal     get_sum
-factor  t2 $v0
-ret     t2
-higher
-para    char a
-func    char higher 1
-ret     97
-prt_message
-func    char prt_message 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-write   _str0 1 str
-ret     97
-test_global_variable
-func    void test_global_variable 0
-var     int a
-var     int flag
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-assign  a 0
-assign  flag 0
-assign  count 2
-assign  letter 0 97
-assign  letter 1 49
-assign  letter 2 95
-assign  letter 3 43
-assign  letter 4 97
-factor  t2 count
-write   t2 2
-factor  t3 letter 0
-write   t3 2
-factor  t4 count
-beq     t4 2 label2
+label3
+bltz    0 100 label4
+jump    label2
+label4
+        T2 0 0
+assign  test_if_result 0
+        T3 0 1
+assign  loop_num 1
 jump    label3
 label2
-factor  t5 judge
-add     t6 t5 1
-assign  judge t6
-label3
-factor  t7 count
-beq     t7 1 label4
-jump    label5
-label4
-factor  t8 judge
-add     t9 t8 1
-assign  judge t9
-assign  flag 1
-label5
-factor  t10 flag
-beq     t10 0 label6
+        T4 0 100
+        T5 T4 3
+beq     -300 15 label6
 jump    label7
 label6
-factor  t11 judge
-add     t12 t11 1
-assign  judge t12
+        T6 0 10
+        T7 0 T6
+        T8 2 1
+        T9 T7 T8
+        T10 T9 117
+        T11 T10 98
+assign  test_if_result 21
+        T12 1 21
+        T13 10 97
+        T14 T12 T13
+        T15 T14 100
+        T16 T15 42
+        T17 T16 34
+        T18 2 21
+        T19 T17 T18
+assign  loop_num 968
+jump    label5
 label7
-assign  _ 1
-assign  __ 2
-assign  ___ 3
-assign  __a__ 4
-assign  _a_ 5
-assign  flag 0
-factor  t13 _
-beq     t13 1 label8
+        T20 21 4
+        T21 5 968
+        T22 T20 T21
+        T23 T22 24
+        T24 T23 97
+        T25 T24 99
+assign  test_if_result 4950
+        T26 0 968
+        T27 T26 4950
+        T28 4 97
+        T29 T27 T28
+        T30 T29 1653
+        T31 T30 453
+        T32 T31 555
+        T33 4 4950
+        T34 T32 T33
+assign  loop_num -16075
+label5
+label1
+write   4950 2
+write   -16075 2
+assign  test_if_result 0
+assign  loop_num 0
+        T35 98 1
+        T36 97 1
+bgez    99 98 label8
 jump    label9
 label8
-factor  t14 judge
-add     t15 t14 1
-assign  judge t15
-label9
-factor  t16 _
-beq     t16 0 label10
+label11
+bltz    0 10 label12
+jump    label10
+label12
+bgtz    0 2 label13
+jump    label14
+label13
+        T37 0 0
+assign  test_if_result 0
+label14
+        T38 0 1
+assign  loop_num 1
+        T39 0 2
+        T40 T39 2
+beq     0 0 label15
+jump    label16
+label15
+        T41 1 1
+assign  loop_num 2
+label16
 jump    label11
 label10
-assign  flag 1
-label11
-factor  t17 flag
-beq     t17 0 label12
-jump    label13
-label12
-factor  t18 judge
-add     t19 t18 1
-assign  judge t19
-label13
-assign  flag 0
-factor  t20 __
-beq     t20 2 label14
-jump    label15
-label14
-factor  t21 judge
-add     t22 t21 1
-assign  judge t22
-label15
-factor  t23 __
-beq     t23 0 label16
-jump    label17
-label16
-factor  t24 judge
-add     t25 t24 1
-assign  judge t25
-assign  flag 1
+label9
+write   0 2
+write   2 2
+assign  test_if_result 0
+assign  loop_num 0
+bltz    1 2 label17
+jump    label18
 label17
-factor  t26 flag
-beq     t26 0 label18
-jump    label19
-label18
-factor  t27 judge
-add     t28 t27 1
-assign  judge t28
-label19
-assign  flag 0
-factor  t29 ___
-beq     t29 3 label20
-jump    label21
 label20
-factor  t30 judge
-add     t31 t30 1
-assign  judge t31
+bltz    0 20 label21
+jump    label19
 label21
-factor  t32 ___
-beq     t32 0 label22
-jump    label23
-label22
-factor  t33 judge
-add     t34 t33 1
-assign  judge t34
-assign  flag 1
+        T42 0 2
+        T43 T42 2
+        T44 0 T43
+beq     0 0 label23
+jump    label24
 label23
-factor  t35 flag
-beq     t35 0 label24
-jump    label25
+        T45 0 1
+assign  test_if_result 1
+jump    label22
 label24
-factor  t36 judge
-add     t37 t36 1
-assign  judge t37
+beq     0 1 label25
+jump    label26
 label25
-assign  flag 0
-factor  t38 __a__
-beq     t38 4 label26
-jump    label27
+        T46 1 0
+assign  test_if_result 1
+jump    label22
 label26
-factor  t39 judge
-add     t40 t39 1
-assign  judge t40
+label22
+        T47 0 1
+assign  loop_num 1
+jump    label20
+label19
+        T48 1 2
+        T49 T48 2
+beq     1 0 label27
+jump    label28
 label27
-factor  t41 __a__
-beq     t41 0 label28
-jump    label29
+        T50 1 7
+        T51 2 1
+        T52 T50 T51
+        T53 T52 99
+        T54 T53 97
+        T55 T54 103
+assign  test_if_result 114
+        T56 0 1
+        T57 T56 114
+        T58 2 97
+        T59 T57 T58
+        T60 T59 523
+        T61 T60 53
+        T62 T61 355
+        T63 2 114
+        T64 T62 T63
+assign  loop_num -36
 label28
-factor  t42 judge
-add     t43 t42 1
-assign  judge t43
-assign  flag 1
+label18
+write   114 2
+write   -36 2
+blez    2 1 label29
+jump    label30
 label29
-factor  t44 flag
-beq     t44 0 label30
-jump    label31
+write   _str0 1 str
 label30
-factor  t45 judge
-add     t46 t45 1
-assign  judge t46
+beq     1 2 label31
+jump    label32
 label31
-assign  flag 0
-factor  t47 _a_
-beq     t47 5 label32
-jump    label33
+write   _str1 1 str
 label32
-factor  t48 judge
-add     t49 t48 1
-assign  judge t49
+assign  test_if_result 0
+assign  loop_num 0
+bne     1 2 label33
+jump    label34
 label33
-factor  t50 _a_
-beq     t50 0 label34
-jump    label35
-label34
-factor  t51 judge
-add     t52 t51 1
-assign  judge t52
-assign  flag 1
-label35
-factor  t53 flag
-beq     t53 0 label36
+        T65 0 2
+        T66 0 T65
+beq     0 0 label36
 jump    label37
 label36
-factor  t54 judge
-add     t55 t54 1
-assign  judge t55
-label37
-ret
-test_global_const
-func    void test_global_const 0
-var     int x
-var     char y
-array   int num 2
-var     int _
-assign  _ 100
-factor  t0 _
-beq     t0 100 label38
-jump    label39
-label38
-factor  t1 judge
-add     t2 t1 1
-assign  judge t2
 label39
-assign  num 0 100
-assign  num 1 101
-factor  t3 num 0
-beq     t3 100 label40
-jump    label41
+bltz    0 30 label40
+jump    label38
 label40
-factor  t4 judge
-add     t5 t4 1
-assign  judge t5
-label41
-factor  t6 num 1
-beq     t6 101 label42
+        T67 0 2
+        T68 T67 2
+        T69 T68 0
+beq     0 -1 label42
 jump    label43
 label42
-factor  t7 judge
-add     t8 t7 1
-assign  judge t8
+        T70 0 1
+assign  test_if_result 1
+jump    label41
 label43
-factor  t9 judge
-add     t10 t9 1
-assign  judge t10
-factor  t11 const_1
-beq     t11 1 label44
+beq     0 0 label44
 jump    label45
 label44
-factor  t12 judge
-add     t13 t12 1
-assign  judge t13
+        T71 1 0
+assign  test_if_result 1
+jump    label41
 label45
-factor  t14 const_a
-beq     t14 97 label46
+label41
+        T72 0 1
+assign  loop_num 1
+jump    label39
+label38
+jump    label35
+label37
+        T73 0 1
+assign  test_if_result -1
+        T74 0 1
+assign  loop_num -1
+label35
+label34
+write   -1 2
+write   -1 2
+        T75 1 1
+bne     0 0 label46
 jump    label47
 label46
-factor  t15 judge
-add     t16 t15 1
-assign  judge t16
+write   _str2 1 str
 label47
-factor  t17 const_
-beq     t17 95 label48
-jump    label49
-label48
-factor  t18 judge
-add     t19 t18 1
-assign  judge t19
-label49
-factor  t20 const_a
-assign  y t20
-factor  t21 y
-factor  t22 const_a
-add     t23 t21 t22
-assign  x t23
-factor  t24 x
-beq     t24 194 label50
-jump    label51
-label50
-factor  t25 judge
-add     t26 t25 1
-assign  judge t26
-label51
-factor  t27 const_1
-beq     t27 1 label53
-jump    label54
-label53
-factor  t28 judge
-add     t29 t28 1
-assign  judge t29
-jump    label52
-label54
-label52
-factor  t30 const_1
-beq     t30 0 label56
-jump    label57
-label56
-factor  t31 judge
-add     t32 t31 1
-assign  judge t32
-jump    label55
-label57
-label55
-assign  x 0
-label59
-factor  t33 x
-factor  t34 const_2
-bltz    t33 t34 label60
-jump    label58
-label60
-factor  t35 judge
-add     t36 t35 1
-assign  judge t36
-factor  t37 x
-add     t38 t37 1
-assign  x t38
-jump    label59
-label58
-test_brackets
-func    void test_brackets 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-ret
-test_compare_operator
-func    void test_compare_operator 0
-var     int x
-var     int y
-var     int flag
-assign  x 0
-assign  y 1
-assign  flag 0
-factor  t0 x
-factor  t1 y
-bltz    t0 t1 label61
-jump    label62
-label61
-factor  t2 judge
-add     t3 t2 1
-assign  judge t3
-label62
-factor  t4 y
-factor  t5 x
-bgtz    t4 t5 label63
-jump    label64
-label63
-factor  t6 judge
-add     t7 t6 1
-assign  judge t7
-label64
-factor  t8 x
-factor  t9 y
-beq     t8 t9 label65
-jump    label66
-label65
-factor  t10 judge
-add     t11 t10 1
-assign  judge t11
-assign  flag 1
-label66
-factor  t12 flag
-beq     t12 0 label67
-jump    label68
-label67
-factor  t13 judge
-add     t14 t13 1
-assign  judge t14
-label68
-factor  t15 x
-factor  t16 y
-bne     t15 t16 label69
-jump    label70
-label69
-factor  t17 judge
-add     t18 t17 1
-assign  judge t18
-label70
-assign  x 0
-label72
-factor  t19 x
-blez    t19 1 label73
-jump    label71
-label73
-factor  t20 x
-factor  t21 y
-blez    t20 t21 label74
-jump    label75
-label74
-factor  t22 judge
-add     t23 t22 1
-assign  judge t23
-label75
-factor  t24 x
-add     t25 t24 1
-assign  x t25
-jump    label72
-label71
-assign  x 0
-label77
-factor  t26 x
-blez    t26 1 label78
-jump    label76
-label78
-factor  t27 y
-factor  t28 x
-bgez    t27 t28 label79
-jump    label80
-label79
-factor  t29 judge
-add     t30 t29 1
-assign  judge t30
-label80
-factor  t31 x
-add     t32 t31 1
-assign  x t32
-jump    label77
-label76
-test_expression
-func    void test_expression 0
-var     int a
-var     int b
-var     char c
-var     char d
-var     char e
-var     char f
-var     char g
-assign  a 0
-assign  b 0
-assign  c 97
-assign  d 98
-assign  e 99
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-factor  t2 a
-assign  a t2
-factor  t3 a
-beq     t3 0 label81
-jump    label82
-label81
-factor  t4 judge
-add     t5 t4 1
-assign  judge t5
-label82
-factor  t6 a
-sub     t7 0 t6
-assign  a t7
-factor  t8 a
-beq     t8 0 label83
-jump    label84
-label83
-factor  t9 judge
-add     t10 t9 1
-assign  judge t10
-label84
-factor  t11 c
-assign  a t11
-factor  t12 a
-beq     t12 97 label85
-jump    label86
-label85
-factor  t13 judge
-add     t14 t13 1
-assign  judge t14
-label86
-factor  t15 c
-sub     t16 0 t15
-assign  a t16
-factor  t17 a
-sub     t18 0 97
-beq     t17 t18 label87
-jump    label88
-label87
-factor  t19 judge
-add     t20 t19 1
-assign  judge t20
-label88
-factor  t21 const_3
-assign  a t21
-factor  t22 a
-beq     t22 3 label89
-jump    label90
-label89
-factor  t23 judge
-add     t24 t23 1
-assign  judge t24
-label90
-assign  a -1
-factor  t25 a
-sub     t26 0 1
-beq     t25 t26 label91
-jump    label92
-label91
-factor  t27 judge
-add     t28 t27 1
-assign  judge t28
-label92
-sub     t29 0 -1
-assign  a t29
-factor  t30 a
-beq     t30 1 label93
-jump    label94
-label93
-factor  t31 judge
-add     t32 t31 1
-assign  judge t32
-label94
-assign  a -1
-factor  t33 a
-beq     t33 1 label95
-jump    label96
-label95
-factor  t34 judge
-add     t35 t34 1
-assign  judge t35
-label96
-sub     t36 0 -1
-assign  a t36
-factor  t37 a
-sub     t38 0 1
-beq     t37 t38 label97
-jump    label98
-label97
-factor  t39 judge
-add     t40 t39 1
-assign  judge t40
-label98
-assign  a 1
-factor  t41 a
-beq     t41 1 label99
-jump    label100
-label99
-factor  t42 judge
-add     t43 t42 1
-assign  judge t43
-label100
-mult    t44 3 -3
-assign  a t44
-factor  t45 a
-sub     t46 0 9
-beq     t45 t46 label101
-jump    label102
-label101
-factor  t47 judge
-add     t48 t47 1
-assign  judge t48
-label102
-assign  b 5
-factor  t50 b
-factor  t49 num t50
-factor  t52 b
-factor  t53 const_1
-add     t54 t52 t53
-factor  t51 num t54
-add     t55 t49 t51
-add     t56 t55 3
-call    count_to_10
-jal     count_to_10
-factor  t57 $v0
-mult    t58 t56 t57
-factor  t59 const_3
-div     t60 t58 t59
-sub     t61 0 t60
-add     t62 t61 97
-factor  t63 const_a
-add     t64 t62 t63
-mult    t65 3 3
-div     t66 t65 4
-sub     t67 t64 t66
-factor  t68 letter 0
-add     t69 t67 t68
-assign  a t69
-factor  t70 a
-beq     t70 33 label103
-jump    label104
-label103
-factor  t71 judge
-add     t72 t71 1
-assign  judge t72
-label104
-assign  a 1
-assign  b 1
-assign  f 97
-assign  g 113
-factor  t73 a
-factor  t74 b
-factor  t75 c
-factor  t76 d
-factor  t77 e
-factor  t78 f
-factor  t79 g
-mult    t80 t78 t79
-add     t81 t77 t80
-add     t82 t76 t81
-mult    t83 t75 t82
-add     t84 t74 t83
-mult    t85 t73 t84
-assign  a t85
-factor  t86 judge
-factor  t87 a
-div     t88 t87 1024
-add     t89 t86 t88
-assign  judge t89
-ret
-test_while
-func    void test_while 0
-var     int a
-var     int b
-assign  b 9
-label106
-factor  t0 b
-bgez    t0 0 label107
-jump    label105
-label107
-factor  t1 b
-bgez    t1 5 label108
-jump    label109
-label108
-factor  t2 judge
-add     t3 t2 1
-assign  judge t3
-label109
-factor  t4 b
-sub     t5 t4 1
-assign  b t5
-jump    label106
-label105
-assign  b 0
-label111
-factor  t6 b
-blez    t6 2 label112
-jump    label110
-label112
-factor  t7 b
-beq     t7 0 label114
-jump    label115
-label114
-factor  t8 judge
-add     t9 t8 1
-assign  judge t9
-jump    label113
-label115
-beq     t7 1 label116
-jump    label117
-label116
-factor  t10 judge
-add     t11 t10 1
-assign  judge t11
-jump    label113
-label117
-factor  t12 judge
-add     t13 t12 1
-assign  judge t13
-label113
-factor  t14 b
-add     t15 t14 1
-assign  b t15
-jump    label111
-label110
-assign  b 0
-assign  a 0
-label119
-factor  t16 a
-blez    t16 2 label120
-jump    label118
-label120
-assign  b 0
-label122
-factor  t17 b
-blez    t17 2 label123
-jump    label121
-label123
-factor  t18 judge
-add     t19 t18 1
-assign  judge t19
-factor  t20 b
-add     t21 t20 1
-assign  b t21
-jump    label122
-label121
-factor  t22 a
-add     t23 t22 1
-assign  a t23
-jump    label119
-label118
-assign  b 0
-assign  a 11
-label125
-factor  t24 b
-bltz    t24 10 label126
-jump    label124
-label126
-factor  t25 b
-factor  t26 b
-factor  t27 a
-mult    t28 t26 t27
-assign  num t25 t28
-factor  t29 judge
-factor  t31 b
-factor  t30 num t31
-add     t32 t29 t30
-assign  judge t32
-factor  t33 b
-add     t34 t33 1
-assign  b t34
-factor  t35 a
-add     t36 t35 2
-assign  a t36
-jump    label125
-label124
-ret
-test_if
-func    void test_if 0
-var     int a
-var     int flag
-var     char c
-assign  a 0
-assign  flag 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-factor  t2 const_1
-beq     t2 1 label127
-jump    label128
-label127
-label128
-factor  t3 const_1
-beq     t3 1 label129
-jump    label130
-label129
-label130
-factor  t4 const_1
-beq     t4 1 label131
-jump    label132
-label131
-label132
-assign  a 0
-label134
-factor  t5 a
-blez    t5 1 label135
-jump    label133
-label135
-factor  t6 const_1
-beq     t6 1 label136
-jump    label137
-label136
-factor  t7 a
-beq     t7 0 label138
-jump    label139
-label138
-factor  t8 judge
-add     t9 t8 1
-assign  judge t9
-assign  flag 1
-label139
-factor  t10 flag
-beq     t10 0 label140
-jump    label141
-label140
-factor  t11 judge
-add     t12 t11 1
-assign  judge t12
-label141
-label137
-assign  flag 0
-factor  t13 a
-add     t14 t13 1
-assign  a t14
-jump    label134
-label133
-assign  a 0
-factor  t15 const_1
-beq     t15 1 label142
-jump    label143
-label142
-label145
-factor  t16 a
-bltz    t16 2 label146
-jump    label144
-label146
-factor  t17 judge
-add     t18 t17 1
-assign  judge t18
-factor  t19 a
-add     t20 t19 1
-assign  a t20
-jump    label145
-label144
-label143
-assign  a 0
-label148
-factor  t21 a
-blez    t21 1 label149
-jump    label147
-label149
-factor  t22 const_1
-beq     t22 1 label150
-jump    label151
-label150
-factor  t23 a
-beq     t23 0 label153
-jump    label154
-label153
-factor  t24 judge
-add     t25 t24 1
-assign  judge t25
-jump    label152
-label154
-factor  t26 judge
-add     t27 t26 1
-assign  judge t27
-label152
-label151
-factor  t28 a
-add     t29 t28 1
-assign  a t29
-jump    label148
-label147
-assign  flag 0
-assign  c 97
-factor  t30 c
-beq     t30 97 label155
-jump    label156
-label155
-factor  t31 judge
-add     t32 t31 1
-assign  judge t32
-label156
-factor  t33 c
-beq     t33 98 label157
-jump    label158
-label157
-factor  t34 judge
-add     t35 t34 1
-assign  judge t35
-assign  flag 1
-label158
-factor  t36 flag
-beq     t36 0 label159
-jump    label160
-label159
-factor  t37 judge
-add     t38 t37 1
-assign  judge t38
-label160
-ret
-test_switch
-func    void test_switch 0
-var     int a
-var     int b
-var     int flag
-var     int test
-var     char c
-assign  flag 0
-assign  test 0
-assign  a 0
-assign  b 0
-label162
-factor  t0 a
-blez    t0 6 label163
-jump    label161
-label163
-factor  t1 a
-beq     t1 0 label165
-jump    label166
-label165
-factor  t2 const_1
-beq     t2 1 label167
-jump    label168
-label167
-factor  t3 judge
-add     t4 t3 1
-assign  judge t4
-factor  t5 const_3
-assign  num 0 t5
-factor  t6 const_3
-call    get_sum
-factor  t8 const_3
-push    t8
-jal     get_sum
-factor  t7 $v0
-assign  num t6 t7
-label168
-factor  t9 const_1
-beq     t9 0 label169
-jump    label170
-label169
-factor  t10 judge
-add     t11 t10 1
-assign  judge t11
-assign  flag 1
-label170
-factor  t12 flag
-beq     t12 0 label171
-jump    label172
-label171
-factor  t13 judge
-add     t14 t13 1
-assign  judge t14
-label172
-assign  test 1
-jump    label164
-label166
-beq     t1 1 label173
-jump    label174
-label173
-factor  t15 judge
-add     t16 t15 1
-assign  judge t16
-assign  b 0
-label176
-factor  t17 b
-blez    t17 2 label177
-jump    label175
-label177
-factor  t18 judge
-add     t19 t18 1
-assign  judge t19
-factor  t20 b
-add     t21 t20 1
-assign  b t21
-jump    label176
-label175
-assign  test 1
-jump    label164
-label174
-beq     t1 2 label178
-jump    label179
-label178
-jump    label164
-label179
-factor  t22 judge
-add     t23 t22 1
-assign  judge t23
-factor  t24 a
-factor  t25 const_3
-div     t26 t24 t25
-beq     t26 1 label181
-jump    label182
-label181
-factor  t27 judge
-add     t28 t27 1
-assign  judge t28
-assign  test 1
-jump    label180
-label182
-label180
-factor  t29 test
-beq     t29 0 label183
-jump    label184
-label183
-factor  t30 judge
-add     t31 t30 1
-assign  judge t31
-label184
-assign  test 1
-label164
-factor  t32 test
-beq     t32 0 label185
-jump    label186
-label185
-factor  t33 judge
-add     t34 t33 1
-assign  judge t34
-label186
-assign  test 0
-factor  t35 a
-add     t36 t35 1
-assign  a t36
-jump    label162
-label161
-assign  a 0
-label188
-factor  t37 a
-bltz    t37 3 label189
-jump    label187
-label189
-factor  t38 a
-beq     t38 0 label190
-jump    label191
-label190
-assign  c 97
-label191
-factor  t39 a
-beq     t39 1 label192
-jump    label193
-label192
-assign  c 98
-label193
-factor  t40 a
-beq     t40 2 label194
-jump    label195
-label194
-assign  c 99
-label195
-factor  t41 c
-beq     t41 97 label197
-jump    label198
-label197
-factor  t42 judge
-add     t43 t42 1
-assign  judge t43
-jump    label196
-label198
-beq     t41 98 label199
-jump    label200
-label199
-factor  t44 judge
-add     t45 t44 1
-assign  judge t45
-jump    label196
-label200
-factor  t46 judge
-add     t47 t46 1
-assign  judge t47
-label196
-factor  t48 a
-add     t49 t48 1
-assign  a t49
-jump    label188
-label187
-assign  a 1
-factor  t50 a
-beq     t50 1 label202
-jump    label203
-label202
-jump    label201
-label203
-label201
-ret
-test_function
-func    void test_function 0
-var     int a
-var     char c
-assign  a 11
-assign  c 97
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-call    higher
-factor  t3 c
-push    t3
-jal     higher
-factor  t2 $v0
-call    count_to_10
-jal     count_to_10
-factor  t4 $v0
-add     t5 t2 t4
-write   t5 3
-call    prt_message
-jal     prt_message
-ret
-test_printf
-func    void test_printf 0
-var     int x
-assign  x 1
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-factor  t2 x
-write   t2 2
-assign  x 5
-factor  t4 x
-factor  t3 num t4
-factor  t6 x
-factor  t7 const_1
-add     t8 t6 t7
-factor  t5 num t8
-add     t9 t3 t5
-add     t10 t9 3
-call    count_to_10
-jal     count_to_10
-factor  t11 $v0
-mult    t12 t10 t11
-factor  t13 const_3
-div     t14 t12 t13
-sub     t15 0 t14
-add     t16 t15 97
-factor  t17 const_a
-add     t18 t16 t17
-mult    t19 3 3
-div     t20 t19 4
-sub     t21 t18 t20
-write   t21 22
-ret
-test_scanf
-func    void test_scanf 0
-var     int x
-var     int y
-var     int z
-var     char m
-var     char n
-var     char q
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-read    x int
-read    m char
-factor  t2 judge
-factor  t3 x
-add     t4 t2 t3
-factor  t5 m
-add     t6 t4 t5
-assign  judge t6
-read    m char
-factor  t7 m
-assign  letter 3 t7
-factor  t8 judge
-factor  t9 m
-add     t10 t8 t9
-assign  judge t10
-read    x int
-factor  t11 judge
-factor  t12 x
-add     t13 t11 t12
-assign  judge t13
-ret
-test_varib2
-func    void test_varib2 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-factor  t2 _
-beq     t2 1 label204
-jump    label205
-label204
-factor  t3 judge
-add     t4 t3 1
-assign  judge t4
-label205
-ret
-test_varib
-func    void test_varib 0
-var     int _
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-assign  _ 100
-factor  t2 _
-beq     t2 100 label206
-jump    label207
-label206
-factor  t3 judge
-add     t4 t3 1
-assign  judge t4
-label207
-call    test_varib2
-jal     test_varib2
-ret
-test_para4
-para    int a
-para    int b
-para    int c
-para    int d
-para    int e
-para    int f
-para    int g
-func    void test_para4 7
-factor  t0 judge
-factor  t1 a
-add     t2 t0 t1
-factor  t3 b
-add     t4 t2 t3
-factor  t5 c
-add     t6 t4 t5
-factor  t7 d
-add     t8 t6 t7
-factor  t9 e
-add     t10 t8 t9
-factor  t11 f
-add     t12 t10 t11
-factor  t13 g
-add     t14 t12 t13
-assign  judge t14
-test_para1
-para    int a
-para    int b
-func    int test_para1 2
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-ret     1
-test_para2
-para    char a
-para    char b
-func    char test_para2 2
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-ret     97
-test_para3
-para    char a
-para    int b
-func    void test_para3 2
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-ret
-test_para
-func    void test_para 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-call    test_para1
-push    1
-push    2
-jal     test_para1
-call    test_para2
-push    97
-push    98
-jal     test_para2
-call    test_para3
-push    97
-push    1
-jal     test_para3
-call    test_para4
-push    1
-push    2
-push    3
-push    4
-push    5
-push    6
-push    7
-jal     test_para4
-ret
+        T76 0 1
+assign  int_global_var -1
+assign  char_global_var 97
+jr      $ra
 main
 func    void main 0
-var     int x
-assign  judge 0
-factor  t0 judge
-add     t1 t0 1
-assign  judge t1
-assign  x 0
-call    test_global_variable
-jal     test_global_variable
-call    test_global_const
-jal     test_global_const
-call    test_brackets
-jal     test_brackets
-call    test_compare_operator
-jal     test_compare_operator
-call    test_expression
-jal     test_expression
-call    test_while
-jal     test_while
-call    test_if
-jal     test_if
-call    test_switch
-jal     test_switch
-call    test_function
-jal     test_function
-call    test_printf
-jal     test_printf
-call    test_scanf
-jal     test_scanf
-call    test_varib
-jal     test_varib
-call    test_para
-jal     test_para
-write   _str1 1 str
-factor  t2 judge
-write   t2 2
-ret
+call    testIfWhile
+jal     testIfWhile
 end

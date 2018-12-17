@@ -4,30 +4,36 @@
 #include "syntaxer.h"
 #include "quader.h"
 #include "asmer.h"
+#include "optimizer.h"
+#include "tools.h"
+#include "error.h"
 
 using namespace std;
 
 char token[MAXN];
 symbol result;
-
 string t[REGISTERNUM];
 map<string, int>tmpvar;
 map<string, int>localvar;
+bool optimize = false;
+bool iserror = false;
 
 int main() {
+//    string judge;
+//    cout << "Do you need optimization? [y/n]:";
+//    cin >> judge;
+//    optimize = judge == "y";
     string path;
     cin >> path;
     init((char*)path.c_str());
     readcode();
+    errorinit();
     quaderinit();
-
-//    while(getsym() > 0) {}
-
     Syntaxer syntaxer;
     syntaxer.nxtsym();
     syntaxer.program();
-    printquads();
-    quad2asm();
+    if (!iserror) printquads();
+    if (!iserror) quad2asm();
 //    testoffset();
 
 //    syntaxer.expression();

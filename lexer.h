@@ -74,6 +74,7 @@ typedef struct {
     int prev;
 }syminfo;
 
+
 void init(char *path);
 void readcode();
 char getchr();
@@ -81,8 +82,6 @@ symbol isReserved(char *word);
 int transNum(char *word);
 void lexerror();
 void setinfo();
-symbol returnsym();
-char *returnname();
 void print(char *str, symbol sym);
 void getsymInit();
 int getsym();

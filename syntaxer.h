@@ -6,9 +6,14 @@
 #define COMPLIER_SYNTAXER_H
 #include "lexer.h"
 #include "main.h"
-#define NAMELEN 50
-#define ELELEN 100
-#define PINDEXLEN 100
+#include "error.h"
+#include "quader.h"
+#include <string.h>
+#include <iostream>
+#include <vector>
+#define NAMELEN 100
+#define ELELEN 500
+#define PINDEXLEN 500
 
 
 typedef struct{
@@ -19,6 +24,8 @@ typedef struct{
     int value;
     int address; // the storage address of symbol or the offset
     int number; // means the number of parameter of function or the length of array
+    bool hasvalue = false;
+    vector<typ> valuelist;
 }item;
 
 typedef struct{
@@ -52,8 +59,8 @@ public:
     void expression(bool lock);
     void term(bool lock);
     void factor(bool lock);
-    void callvoidfunc(string funcname);
-    void callretfunc(string funcname);
+    void callvoidfunc(string funcname, int ix);
+    void callretfunc(string funcname, int ix);
     void assignment();
     void statementlist();
     void compoundstatement();

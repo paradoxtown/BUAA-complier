@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/complier.dir/quader.cpp.obj"
   "CMakeFiles/complier.dir/asmer.cpp.obj"
   "CMakeFiles/complier.dir/optimizer.cpp.obj"
+  "CMakeFiles/complier.dir/tools.cpp.obj"
   "complier.pdb"
   "complier.exe"
   "complier.exe.manifest"

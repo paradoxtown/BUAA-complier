@@ -12,6 +12,7 @@
 using namespace std;
 char line[ROWLENGTH][LENGTH];
 int num = 0, rows = 0;
+int linenumber;
 int cc = 0, ll = 0, l = 0, cnt = 0;
 FILE *fin, *foutput;
 //symbol result;
@@ -103,13 +104,12 @@ char getchr(){
             return EOF;
         }
         cnt ++;
+        linenumber = cnt;
         cc = 0;
         for (ll = 0; line[cnt - 1][ll] != '\0'; ll ++);
     }
     ch = line[cnt - 1][cc ++];
-    // cout << ch << endl;
-    if (line[cnt - 1][cc - 2] == '\'' && line[cnt - 1][cc] == '\'') return ch;
-    return char(tolower(ch));
+    return ch;
 }
 
 symbol isReserved(char* word){
@@ -139,15 +139,6 @@ void print(char *str, symbol sym){
 void getsymInit(){
     memset(token, 0, sizeof(token));
     l = 0;
-}
-
-symbol returnsym(){
-    cout << "am i wrong ?" << endl;
-    return result;
-}
-
-char *returnname(){
-    return token;
 }
 
 void back(int symnumber){

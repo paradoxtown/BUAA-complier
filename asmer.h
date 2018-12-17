@@ -10,6 +10,6 @@ void initdata(quad midcode);
 void quad2asm();
 int getidx(string reg);
 bool isconst(string opnum);
-void testoffset();
+void testoffset(quad * midcode);
 
 #endif //COMPLIER_ASMER_H

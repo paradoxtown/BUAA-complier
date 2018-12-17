@@ -122,6 +122,12 @@
 		<Unit filename="C:/Users/MUSE/Desktop/complier/syntaxer.h">
 			<Option target="complier"/>
 		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/tools.cpp">
+			<Option target="complier"/>
+		</Unit>
+		<Unit filename="C:/Users/MUSE/Desktop/complier/tools.h">
+			<Option target="complier"/>
+		</Unit>
 		<Unit filename="C:/Users/MUSE/Desktop/complier/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

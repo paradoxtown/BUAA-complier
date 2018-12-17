@@ -1,19 +1,9 @@
-
-
 //
 // Created by MUSE on 2018/11/17.
 //
 #include "syntaxer.h"
-#include "lexer.h"
-#include "main.h"
-#include "error.h"
-#include "quader.h"
-#include <string.h>
-#include <iostream>
-#include <vector>
 #define BACK back(-- symnumber);
 #define MAXTABLEN 512
-#define NAMELEN 50
 
 using namespace std;
 
@@ -48,23 +38,8 @@ void Syntaxer::enter(char *name, obj object, typ type, int level, int value, int
 
 void Syntaxer::pushtab(char *name, obj object, typ type, int level, int value, int address, int number){
     if (object == function){
-//        for (int i = 1; i < stab.pnum; i ++){ // to match the sub program's name
-//            if (!strcmp(stab.element[stab.pindex[i]].name, name)){
-//                error();
-//                return;
-//            }
-//        }
         stab.pindex[stab.pnum ++] = stab.top + 1; // set this function to the stack's top
     }
-//    else { // object is const, var, typel
-//        int i = stab.pindex[stab.pnum - 1]; // find the current sub program
-//        for ( ; i < stab.top; i ++){
-//            if (!strcmp(stab.element[i].name, name) && stab.element[i].object == object){ // if it has been defined
-//                error();
-//                return;
-//            }
-//        }
-//    }
     strcpy(stab.element[stab.top].name, name);
     stab.element[stab.top].object = object;
     stab.element[stab.top].type = type;
@@ -108,7 +83,7 @@ void Syntaxer::retfuncdec() {
     if (symtype == INTSY || symtype == CHARSY) {
         address = 0;
         regnum = 0; // TODO: in the function the register can start from 0
-        emit(label, symname, "", ""); // TODO: the function name shouldn't be same with the inst
+        emit(label, symname, "1", ""); // TODO: the function name shouldn't be same with the inst
         char funcname[NAMELEN];
         typ typl = symtype == INTSY ? ints : chars;
         nxtsym();
@@ -158,7 +133,7 @@ void Syntaxer::voidfuncdec() {
     if (symtype == VOIDSY) {
         address = 0;
         regnum = 0;
-        emit(label, symname, "", "");
+        emit(label, symname, "1", "");
         char funcname[NAMELEN];
         nxtsym();
         strcpy(funcname, token);
@@ -194,6 +169,7 @@ void Syntaxer::voidfuncdec() {
             return;
         }
         stab.top = stab.pindex[stab.pnum - 1];
+        emit(jr, "$ra", "", "");
     }
     else {
         error();
@@ -303,7 +279,6 @@ void Syntaxer::valuelist() {
     expression(false);
     number ++;
     int tmpaddr = 0; // be relative to the function's address in the stack, this is the offset
-    // tn = "t" + to_string(regnum - 1);
     emit(push, to, "", "", false, tmpaddr); // TODO: use to register which is the returning value from expression
     tmpaddr += 4;
     if (symtype == COMMASY) {
@@ -311,7 +286,6 @@ void Syntaxer::valuelist() {
             nxtsym();
             expression(false);
             number ++;
-            // tn = "t" + to_string(regnum - 1);
             emit(push, to, "", "", false, tmpaddr);
             tmpaddr += 4;
         } while (symtype == COMMASY);
@@ -326,13 +300,22 @@ void Syntaxer::valuelist() {
 // ＜字符串＞ ::="｛十进制编码为32,33,35-126的ASCII字符｝"
 void Syntaxer::characterlist() {
     cout << "The string is " << token << endl;
+    int tmpidx = 0;
     if (token[0] == '\"') {
         int tokenpoint = 1;
         do {
-            // emit(write, to_string(int(token[tokenpoint])), "1", "");
+            if (token[tokenpoint] == '\\') {
+                tmpidx = tokenpoint;
+            }
             tokenpoint ++;
         } while(token[tokenpoint] != '\"');
-        emit(str, token, "_str" + to_string(strnum),  "", true, 0);
+        if (tmpidx) {
+            string tmpstr = token;
+            tmpstr = tmpstr.substr(0, (unsigned long long) tmpidx) + "\\" +
+                     tmpstr.substr((unsigned long long) tmpidx, (unsigned long long)(tokenpoint + 1 - tmpidx));
+            emit(str, tmpstr, "_str" + to_string(strnum), "", true, 0);
+        }
+        else emit(str, token, "_str" + to_string(strnum), "", true, 0);
     }
     else {
         error();
@@ -346,10 +329,7 @@ void Syntaxer::characterlist() {
 void Syntaxer::ischaracter() {
     if (token[0] == '\''/*symtype == SQUOSY*/) { // "'"
         value = token[1];
-        if (token[2] == '\''/* symtype == SQUOSY */) {
-            address++;
-        }
-        else {
+        if (token[2] != '\''/* symtype == SQUOSY */) {
             error();
             return;
         }
@@ -364,7 +344,7 @@ void Syntaxer::isnumber() {
         value = transNum(token); // may i rename the "returnname" to " returntoken"?
         value = tmpsym == PLUSSY ? value : -value;
     } else if (symtype == INTEGERSY) {
-        value = transNum(returnname());
+        value = transNum(token);
     } else {
         error();
         return;
@@ -384,7 +364,7 @@ void Syntaxer::constantdef() {
                     nxtsym();
                     isnumber();
                     idx = searchtab(symname, constant);
-                    if (idx == 0) {
+                    if (idx == 0 || (level != 1 && stab.element[idx].level == 1)) {
                         number = 1;
                         enter(symname, constant, ints, level, value, address, number);
                         emit(cons, "int", symname, to_string(value), level == 1, address);
@@ -416,11 +396,11 @@ void Syntaxer::constantdef() {
                     nxtsym();
                     ischaracter();
                     idx = searchtab(symname, constant);
-                    if (idx == 0) {
+                    if (idx == 0 || (level != 1 && stab.element[idx].level == 1)) {
                         number = 1;
                         enter(symname, constant, chars, level, value, address, number);
+                        emit(cons, "char", symname, to_string(value), level == 1, address);
                         address += 4;
-                        emit(cons, "char", symname, to_string(value), level == 1, address); // token is 'ch'
                     }
                 }
             }
@@ -683,10 +663,10 @@ void Syntaxer::statement() {
             if (idx > 0) {
                 typ functyp = stab.element[stab.pindex[idx] - 1].type;
                 if (functyp == voids) {
-                    callvoidfunc(tmpname);
+                    callvoidfunc(tmpname, funcidx);
                 }
                 else {
-                    callretfunc(tmpname);
+                    callretfunc(tmpname, funcidx);
                 }
             }
             else {
@@ -747,7 +727,7 @@ void Syntaxer::expression(bool lock) {
             nxtsym();
             term(lock);
             string preto = to;
-            to = "t" + to_string(regnum);
+            to = "T" + to_string(regnum);
             regnum ++;
             emit(sub, to, "0", preto); // to = 0 - tn
         }
@@ -759,7 +739,7 @@ void Syntaxer::expression(bool lock) {
                 nxtsym();
                 term(lock);
                 string preto = to;
-                to = "t" + to_string(regnum);
+                to = "T" + to_string(regnum);
                 regnum ++;
                 emit(tmpsym == PLUSSY ? add : sub, to, pretn, preto); // to = tn op tm
             } while (symtype == PLUSSY || symtype == MINUSSY);
@@ -775,7 +755,7 @@ void Syntaxer::expression(bool lock) {
                 nxtsym();
                 term(lock);
                 string preto = to;
-                to = "t" + to_string(regnum);
+                to = "T" + to_string(regnum);
                 regnum ++;
                 emit(tmpsym == PLUSSY ? add : sub, to, pretn, preto); // to = tn op tm
             } while (symtype == PLUSSY || symtype == MINUSSY);
@@ -792,11 +772,11 @@ void Syntaxer::term(bool lock) {
     if (symtype == MULTSY || symtype == DIVSY) {
         do {
             symbol tmpsym = symtype;
-            pretn = to; // current to is the tn = "t" + to_string(regnum - 1); but we need the value if it is constant
+            pretn = to; // current to is the tn = "T" + to_string(regnum - 1); but we need the value if it is constant
             nxtsym();
             factor(lock);
             string preto = to;
-            to = "t" + to_string(regnum);
+            to = "T" + to_string(regnum);
             regnum ++;
             emit(tmpsym == MULTSY ? mult : divide, to, pretn, preto); // to = tn op tm
         } while (symtype == MULTSY || symtype == DIVSY);
@@ -807,7 +787,7 @@ void Syntaxer::term(bool lock) {
 // ＜因子＞ ::= ＜标识符＞｜＜标识符＞'['＜表达式＞']'|'('＜表达式＞')'｜＜整数＞|＜字符＞｜＜有返回值函数调用语句＞
 void Syntaxer::factor(bool lock) {
     cout << "This is the head of factor." << endl;
-    to = "t" + to_string(regnum);
+    to = "T" + to_string(regnum);
     string tmpto = to;
     if (symtype == IDENTSY){
         char tmpname[NAMELEN];
@@ -827,13 +807,14 @@ void Syntaxer::factor(bool lock) {
             }
             emit(call, tmpname, "", "");
             if(lock) stab.element[stab.pindex[idx] - 1].type == ints ? ischar += 2 : ischar ++;
+            int valuenum = stab.element[stab.pindex[idx] - 1].number;
             nxtsym();
             valuelist();
             if (symtype != RPARSY) {
                 error();
                 return;
             }
-            emit(jal, tmpname, "", "");
+            emit(jal, tmpname, to_string(valuenum), "");
             emit(fact, tmpto, "$v0", "");
             to = tmpto;
             nxtsym();
@@ -852,9 +833,7 @@ void Syntaxer::factor(bool lock) {
             int tmpaddr = stab.element[idx].address;
             bool isglobal = stab.element[idx].level == 1;
             nxtsym();
-//            lock = false;
             expression(false); // array[ expression ]
-//            lock = true;
             if (symtype != RBRACKSY){ // missing ']'
                 error();
                 return;
@@ -911,9 +890,10 @@ void Syntaxer::factor(bool lock) {
 }
 
 // ＜有返回值函数调用语句＞ ::= ＜标识符＞'('＜值参数表＞')'
-void Syntaxer::callretfunc(string funcname) {
+void Syntaxer::callretfunc(string funcname, int ix) {
     if (symtype == IDENTSY) {
         emit(call, funcname, "", "");
+        int valuenum = stab.element[stab.pindex[ix] - 1].number;
         nxtsym();
         if (symtype != LPARSY) {
             error();
@@ -921,15 +901,11 @@ void Syntaxer::callretfunc(string funcname) {
         }
         nxtsym();
         valuelist();
-        if (number != stab.element[stab.pindex[funcidx] - 1].number) {
-            error();
-            return;
-        }
         if (symtype != RPARSY) {
             error();
             return;
         }
-        emit(jal, funcname, "", "");
+        emit(jal, funcname, to_string(valuenum), "");
     }
     else {
         error();
@@ -940,9 +916,10 @@ void Syntaxer::callretfunc(string funcname) {
 }
 
 // ＜无返回值函数调用语句＞ ::= ＜标识符＞'('＜值参数表＞')'
-void Syntaxer::callvoidfunc(string funcname) {
+void Syntaxer::callvoidfunc(string funcname, int ix) {
     if (symtype == IDENTSY) {
         emit(call, funcname, "", "");
+        int valuenum = stab.element[stab.pindex[ix] - 1].number;
         nxtsym();
         if (symtype != LPARSY) {
             error();
@@ -950,15 +927,11 @@ void Syntaxer::callvoidfunc(string funcname) {
         }
         nxtsym();
         valuelist();
-        if (number != stab.element[stab.pindex[funcidx] - 1].number) {
-            error();
-            return;
-        }
         if (symtype != RPARSY) {
             error();
             return;
         }
-        emit(jal, funcname, "", ""); // 1 means it is void
+        emit(jal, funcname, to_string(valuenum), ""); // 1 means it is void
     }
     else {
         error();
@@ -992,7 +965,6 @@ void Syntaxer::assignment() {
         else if (symtype == LBRACKSY){ // is array '['
             nxtsym();
             expression(false);
-            // string tmptn = "t" + to_string(regnum - 1); // the length of array
             string preto = to;
             if (symtype != RBRACKSY){ //
                 error();

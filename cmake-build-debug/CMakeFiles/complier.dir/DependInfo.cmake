@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/MUSE/Desktop/complier/optimizer.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/optimizer.cpp.obj"
   "C:/Users/MUSE/Desktop/complier/quader.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/quader.cpp.obj"
   "C:/Users/MUSE/Desktop/complier/syntaxer.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/syntaxer.cpp.obj"
+  "C:/Users/MUSE/Desktop/complier/tools.cpp" "C:/Users/MUSE/Desktop/complier/cmake-build-debug/CMakeFiles/complier.dir/tools.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,19 +6,17 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MUSE/Desktop/complier/lexer.cpp
-iostream
--
-cstring
--
-cstdio
--
-set
--
+C:/Users/MUSE/Desktop/complier/error.cpp
+error.h
+C:/Users/MUSE/Desktop/complier/error.h
 map
 -
-lexer.h
-C:/Users/MUSE/Desktop/complier/lexer.h
+fstream
+-
+
+C:/Users/MUSE/Desktop/complier/error.h
+iostream
+-
 main.h
 C:/Users/MUSE/Desktop/complier/main.h
 
