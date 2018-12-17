@@ -181,7 +181,7 @@ add	$t0, $t0, 0
 lw	$t0, -0($t0)
 sw	$t0, -12($s0)
 lw	$a0, -12($s0)
-li	$v0, 1
+li	$v0, 11
 syscall
 la	$a0, enter
 li	$v0, 4

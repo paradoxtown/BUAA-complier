@@ -50,10 +50,13 @@ void errorinit() {
     sta2str[NOTCOLON] = "NOTCOLON";
     sta2str[OUTSTACK] = "OUTSTACK";
     sta2str[ERRORDEFAULT] = "ERRORDEFAULT";
+    sta2str[TYPEDONTMATCH] = "TYPEDONTMATCH";
+    sta2str[PARATYPENOTMATCH] = "PARATYPENOTMATCH";
 }
 
 void error(errorstate state, int line) {
-    cout << sta2str[state] << " occurs at line : " << line << endl;
+    cout << "line: " << line << ", " << sta2str[state] << endl;
+    // cout << sta2str[state] << " occurs at line : " << line << endl;
     iserror = true;
     return;
 }

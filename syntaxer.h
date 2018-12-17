@@ -16,7 +16,7 @@
 #define PINDEXLEN 500
 
 
-typedef struct{
+typedef struct {
     char name[NAMELEN];
     obj object; // obj {constant, variable, typel, function};
     typ type; // typ {ints, chars, voids};
@@ -25,15 +25,18 @@ typedef struct{
     int address; // the storage address of symbol or the offset
     int number; // means the number of parameter of function or the length of array
     bool hasvalue = false;
-    vector<typ> valuelist;
 }item;
 
-typedef struct{
+typedef struct {
     item element[ELELEN];
     int top; // the top pointer of symbol stack
     int pnum; // the total number of the sub programs
     int pindex[PINDEXLEN]; // index of sub program
 }tab;
+
+typedef struct {
+    vector<typ> valuelist;
+}params;
 
 class Syntaxer {
 public:
@@ -44,9 +47,9 @@ public:
     void retfuncdec();
     void voidfuncdec();
     void functionmain();
-    void param();
-    void parameterlist();
-    void valuelist();
+    void param(string fname);
+    void parameterlist(string fname);
+    void valuelist(string fname);
     void characterlist();
     void ischaracter();
     void isnumber();
@@ -68,8 +71,8 @@ public:
     void condition();
     void whilestatement();
     void switchstatement();
-    void caselist();
-    void casestatment();
+    void caselist(typ expression1);
+    void casestatment(typ expression1);
     void defaultstatemnt();
     void printfstatment();
     void scanfstatement();

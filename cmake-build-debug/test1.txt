@@ -1,9 +1,11 @@
-int global_int_array_1[5];
-
-void initGlobalArray() {
-    global_int_array_1[0] = 0;
+int aaaa(int a, int b, char c){
+    return (a);
 }
 
 void main(){
-    initGlobalArray();
+    int a;
+    int b;
+    char c;
+    aaaa(a, b, a);
+    return;
 }

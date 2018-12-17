@@ -48,7 +48,9 @@ enum errorstate{
     NOTRET,
     NOTCOLON,
     OUTSTACK,
-    ERRORDEFAULT
+    ERRORDEFAULT,
+    TYPEDONTMATCH,
+    PARATYPENOTMATCH
 };
 
 void errorinit();
