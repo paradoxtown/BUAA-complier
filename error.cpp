@@ -48,6 +48,7 @@ void errorinit() {
     sta2str[NOTRET] = "NOTRET";
     sta2str[NOTCOLON] = "NOTCOLON";
     sta2str[OUTSTACK] = "OUTSTACK";
+    sta2str[ERRORDEFAULT] = "ERRORDEFAULT";
 }
 
 void error(errorstate state, int line) {

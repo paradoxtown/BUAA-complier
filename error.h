@@ -46,7 +46,8 @@ enum errorstate{
     NOTSCAN,
     NOTRET,
     NOTCOLON,
-    OUTSTACK
+    OUTSTACK,
+    ERRORDEFAULT
 };
 
 void errorinit();
