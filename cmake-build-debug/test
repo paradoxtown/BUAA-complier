@@ -1,1992 +1,698 @@
 .data
 enter:	.asciiz "\n"
-paradox_str5:	.asciiz "char_test_input = "
-paradox_str4:	.asciiz "int_test_input = "
-paradox_str3:	.asciiz " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-paradox_str2:	.asciiz "1 - 1 = true"
-paradox_str1:	.asciiz "1 == 2"
-paradox_str0:	.asciiz "2 <= 1"
-paradoxconst_char_a:	.word 97
-paradoxconst_char_b:	.word 98
-paradoxconst_char_c:	.word 99
-paradoxconst_char_A:	.word 65
-paradoxconst_int_postive:	.word 1
-paradoxconst_int_zero:	.word 0
-paradoxconst_int_negtive:	.word -1
-paradoxconst_char_num:	.word 57
-paradoxconst_char_underline:	.word 95
-paradoxconst_char_add:	.word 43
-paradoxconst_char_mul:	.word 42
-paradoxint_global_var:	.word 0
-paradoxchar_global_var:	.word 0
-paradoxsort:	.word 0: 10
+paradox_str14:	.asciiz " 10! = "
+paradox_str13:	.asciiz "          The total is "
+paradox_str12:	.asciiz "          "
+paradox_str11:	.asciiz " "
+paradox_str10:	.asciiz " ---------------------------------------------------------------          "
+paradox_str9:	.asciiz " b = "
+paradox_str8:	.asciiz " ---------------------------------------------------------------          "
+paradox_str7:	.asciiz "          "
+paradox_str6:	.asciiz "  "
+paradox_str5:	.asciiz " complete number: "
+paradox_str4:	.asciiz " OVERFLOW!          "
+paradox_str3:	.asciiz " SWAP y = "
+paradox_str2:	.asciiz " SWAP x = "
+paradox_str1:	.asciiz " y = "
+paradox_str0:	.asciiz " x = "
+paradoxMAX_NUM:	.word 1024
 .text
 j	main
-paradoxtestIfWhile:
-sub	$s0, $sp, 24
-li	$t0, 1
-sw	$t0, -0($sp)
-li	$t1, 2
-sw	$t1, -4($sp)
-li	$t2, 98
-sw	$t2, -8($sp)
-li	$t0, 97
-sw	$t0, -12($sp)
-li	$t1, 0
-sw	$t1, -16($sp)
-li	$t2, 0
-sw	$t2, -20($sp)
-lw	$t0, -8($sp)
+paradoxfactorial:
+sub	$s0, $sp, 4
+lw	$t0, -0($sp)
 sw	$t0, -0($s0)
-lw	$t1, -0($s0)
-add	$t1, $t1, 1
-sw	$t1, -4($s0)
-lw	$t2, -12($sp)
-sw	$t2, -8($s0)
-lw	$t0, -8($s0)
-add	$t0, $t0, 1
-sw	$t0, -12($s0)
-lw	$t1, -4($s0)
-lw	$t2, -12($s0)
-sub	$t2, $t1, $t2
-bgtz	$t2, label0
+li	$t1, 1
+lw	$t2, -0($s0)
+sub	$t2, $t2, $t1
+blez	$t2, label0
 j	label1
 label0:
-label3:
-lw	$t0, -16($sp)
-sw	$t0, -16($s0)
-li	$t1, 100
-lw	$t2, -16($s0)
-sub	$t2, $t2, $t1
-bltz	$t2, label4
-j	label2
-label4:
-lw	$t0, -16($sp)
-sw	$t0, -20($s0)
-lw	$t1, -20($sp)
-sw	$t1, -24($s0)
-lw	$t2, -24($s0)
-lw	$t0, -20($s0)
-add	$t0, $t0, $t2
-sw	$t0, -28($s0)
-sw	$t0, -16($sp)
-lw	$t1, -20($sp)
-sw	$t1, -32($s0)
-lw	$t2, -32($s0)
-add	$t2, $t2, 1
-sw	$t2, -36($s0)
-sw	$t2, -20($sp)
-j	label3
-label2:
-lw	$t0, -16($sp)
-sw	$t0, -40($s0)
-lw	$t1, -40($s0)
-sub	$t1, $t1, 100
-sw	$t1, -44($s0)
-lw	$t2, -44($s0)
-mul	$t2, $t2, 3
-sw	$t2, -48($s0)
-li	$t0, 15
-lw	$t1, -48($s0)
-beq	$t1, $t0, label6
-j	label7
-label6:
-lw	$t2, -16($sp)
-sw	$t2, -52($s0)
-lw	$t0, -52($s0)
-mul	$t0, $t0, 10
-sw	$t0, -56($s0)
-lw	$t1, -56($s0)
-sub	$t1, $t1, 0
-sub	$t1, $0, $t1
-sw	$t1, -60($s0)
-lw	$t2, -20($sp)
-sw	$t2, -64($s0)
-lw	$t0, -64($s0)
-mul	$t0, $t0, 2
-sw	$t0, -68($s0)
-lw	$t1, -68($s0)
-lw	$t2, -60($s0)
-add	$t2, $t2, $t1
-sw	$t2, -72($s0)
-lw	$t0, -72($s0)
-add	$t0, $t0, 117
-sw	$t0, -76($s0)
-lw	$t1, -8($sp)
-sw	$t1, -80($s0)
-lw	$t2, -80($s0)
-lw	$t0, -76($s0)
-sub	$t0, $t0, $t2
-sw	$t0, -84($s0)
-sw	$t0, -16($sp)
-lw	$t1, -20($sp)
-sw	$t1, -88($s0)
-lw	$t2, -16($sp)
-sw	$t2, -92($s0)
-lw	$t0, -92($s0)
-lw	$t1, -88($s0)
-sub	$t1, $t1, $t0
-sw	$t1, -96($s0)
-lw	$t2, -12($sp)
-sw	$t2, -100($s0)
-lw	$t0, -100($s0)
-mul	$t0, $t0, 10
-sw	$t0, -104($s0)
-lw	$t1, -104($s0)
-lw	$t2, -96($s0)
-add	$t2, $t2, $t1
-sw	$t2, -108($s0)
-lw	$t0, -108($s0)
-sub	$t0, $t0, 100
-sw	$t0, -112($s0)
-lw	$t1, -112($s0)
-add	$t1, $t1, 42
-sw	$t1, -116($s0)
-lw	$t2, -116($s0)
-add	$t2, $t2, 34
-sw	$t2, -120($s0)
-lw	$t0, -16($sp)
-sw	$t0, -124($s0)
-lw	$t1, -124($s0)
-mul	$t1, $t1, 2
-sw	$t1, -128($s0)
-lw	$t2, -128($s0)
-lw	$t0, -120($s0)
-add	$t0, $t0, $t2
-sw	$t0, -132($s0)
-sw	$t0, -20($sp)
-j	label5
-label7:
-lw	$t1, -16($sp)
-sw	$t1, -136($s0)
-lw	$t2, -136($s0)
-mul	$t2, $t2, 4
-sw	$t2, -140($s0)
-lw	$t0, -20($sp)
-sw	$t0, -144($s0)
-lw	$t1, -144($s0)
-mul	$t1, $t1, 5
-sw	$t1, -148($s0)
-lw	$t2, -148($s0)
-lw	$t0, -140($s0)
-add	$t0, $t0, $t2
-sw	$t0, -152($s0)
-lw	$t1, -152($s0)
-add	$t1, $t1, 24
-sw	$t1, -156($s0)
-lw	$t2, -12($sp)
-sw	$t2, -160($s0)
-lw	$t0, -160($s0)
-lw	$t1, -156($s0)
-sub	$t1, $t1, $t0
-sw	$t1, -164($s0)
-lw	$t2, -164($s0)
-add	$t2, $t2, 99
-sw	$t2, -168($s0)
-sw	$t2, -16($sp)
-lw	$t0, -20($sp)
-sw	$t0, -172($s0)
-lw	$t1, -172($s0)
-sub	$t1, $t1, 0
-sub	$t1, $0, $t1
-sw	$t1, -176($s0)
-lw	$t2, -16($sp)
-sw	$t2, -180($s0)
-lw	$t0, -180($s0)
-lw	$t1, -176($s0)
-add	$t1, $t1, $t0
-sw	$t1, -184($s0)
-lw	$t2, -12($sp)
-sw	$t2, -188($s0)
-lw	$t0, -188($s0)
-mul	$t0, $t0, 4
-sw	$t0, -192($s0)
-lw	$t1, -192($s0)
-lw	$t2, -184($s0)
-add	$t2, $t2, $t1
-sw	$t2, -196($s0)
-lw	$t0, -196($s0)
-sub	$t0, $t0, 1653
-sw	$t0, -200($s0)
-lw	$t1, -200($s0)
-add	$t1, $t1, 453
-sw	$t1, -204($s0)
-lw	$t2, -204($s0)
-add	$t2, $t2, 555
-sw	$t2, -208($s0)
-lw	$t0, -16($sp)
-sw	$t0, -212($s0)
-lw	$t1, -212($s0)
-mul	$t1, $t1, 4
-sw	$t1, -216($s0)
-lw	$t2, -216($s0)
-lw	$t0, -208($s0)
-sub	$t0, $t0, $t2
-sw	$t0, -220($s0)
-sw	$t0, -20($sp)
-label5:
+li	$v0, 1
+jr	$ra
 label1:
-lw	$t1, -16($sp)
-sw	$t1, -224($s0)
-lw	$a0, -224($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t2, -20($sp)
-sw	$t2, -228($s0)
-lw	$a0, -228($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-li	$t0, 0
-sw	$t0, -16($sp)
-li	$t1, 0
-sw	$t1, -20($sp)
-lw	$t2, -8($sp)
-sw	$t2, -232($s0)
-lw	$t0, -232($s0)
-add	$t0, $t0, 1
-sw	$t0, -236($s0)
-lw	$t1, -12($sp)
-sw	$t1, -240($s0)
-lw	$t2, -240($s0)
-add	$t2, $t2, 1
-sw	$t2, -244($s0)
-lw	$t0, -236($s0)
-lw	$t1, -244($s0)
-sub	$t1, $t0, $t1
-bgez	$t1, label8
-j	label9
-label8:
-label11:
-lw	$t2, -16($sp)
-sw	$t2, -248($s0)
-li	$t0, 10
-lw	$t1, -248($s0)
-sub	$t1, $t1, $t0
-bltz	$t1, label12
-j	label10
-label12:
-lw	$t2, -20($sp)
-sw	$t2, -252($s0)
-li	$t0, 2
-lw	$t1, -252($s0)
-sub	$t1, $t1, $t0
-bgtz	$t1, label13
-j	label14
-label13:
-lw	$t2, -16($sp)
-sw	$t2, -256($s0)
-lw	$t0, -20($sp)
-sw	$t0, -260($s0)
-lw	$t1, -260($s0)
-lw	$t2, -256($s0)
-add	$t2, $t2, $t1
-sw	$t2, -264($s0)
-sw	$t2, -16($sp)
-label14:
-lw	$t0, -20($sp)
-sw	$t0, -268($s0)
-lw	$t1, -268($s0)
-add	$t1, $t1, 1
-sw	$t1, -272($s0)
-sw	$t1, -20($sp)
-lw	$t2, -16($sp)
-sw	$t2, -276($s0)
-lw	$t0, -276($s0)
-div	$t0, $t0, 2
-sw	$t0, -280($s0)
-lw	$t1, -280($s0)
-mul	$t1, $t1, 2
-sw	$t1, -284($s0)
-lw	$t2, -16($sp)
-sw	$t2, -288($s0)
-lw	$t0, -284($s0)
-lw	$t1, -288($s0)
-beq	$t0, $t1, label15
-j	label16
-label15:
-lw	$t2, -20($sp)
-sw	$t2, -292($s0)
-lw	$t0, -292($s0)
-add	$t0, $t0, 1
-sw	$t0, -296($s0)
-sw	$t0, -20($sp)
-label16:
-j	label11
-label10:
-label9:
-lw	$t1, -16($sp)
-sw	$t1, -300($s0)
-lw	$a0, -300($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t2, -20($sp)
-sw	$t2, -304($s0)
-lw	$a0, -304($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-li	$t0, 0
-sw	$t0, -16($sp)
-li	$t1, 0
-sw	$t1, -20($sp)
-lw	$t2, -0($sp)
-sw	$t2, -308($s0)
-lw	$t0, -4($sp)
-sw	$t0, -312($s0)
-lw	$t1, -308($s0)
-lw	$t2, -312($s0)
-sub	$t2, $t1, $t2
-bltz	$t2, label17
-j	label18
-label17:
-label20:
-lw	$t0, -16($sp)
-sw	$t0, -316($s0)
-li	$t1, 20
-lw	$t2, -316($s0)
-sub	$t2, $t2, $t1
-bltz	$t2, label21
-j	label19
-label21:
-lw	$t0, -16($sp)
-sw	$t0, -320($s0)
-lw	$t1, -16($sp)
-sw	$t1, -324($s0)
-lw	$t2, -324($s0)
-div	$t2, $t2, 2
-sw	$t2, -328($s0)
-lw	$t0, -328($s0)
-mul	$t0, $t0, 2
-sw	$t0, -332($s0)
-lw	$t1, -332($s0)
-lw	$t2, -320($s0)
-sub	$t2, $t2, $t1
-sw	$t2, -336($s0)
-li	$t0, 0
-lw	$t1, -336($s0)
-beq	$t1, $t0, label23
-j	label24
-label23:
-lw	$t2, -16($sp)
-sw	$t2, -340($s0)
-lw	$t0, -340($s0)
-add	$t0, $t0, 1
-sw	$t0, -344($s0)
-sw	$t0, -16($sp)
-j	label22
-label24:
-li	$t1, 1
-lw	$t2, -336($s0)
-beq	$t2, $t1, label25
-j	label26
-label25:
-lw	$t0, -16($sp)
-sw	$t0, -348($s0)
-lw	$t1, -20($sp)
-sw	$t1, -352($s0)
-lw	$t2, -352($s0)
-lw	$t0, -348($s0)
-add	$t0, $t0, $t2
-sw	$t0, -356($s0)
-sw	$t0, -16($sp)
-j	label22
-label26:
-label22:
-lw	$t1, -20($sp)
-sw	$t1, -360($s0)
-lw	$t2, -360($s0)
-add	$t2, $t2, 1
-sw	$t2, -364($s0)
-sw	$t2, -20($sp)
-j	label20
-label19:
-lw	$t0, -16($sp)
-sw	$t0, -368($s0)
-lw	$t1, -16($sp)
-sw	$t1, -372($s0)
-lw	$t2, -372($s0)
-div	$t2, $t2, 2
-sw	$t2, -376($s0)
-lw	$t0, -376($s0)
-mul	$t0, $t0, 2
-sw	$t0, -380($s0)
-lw	$t1, -368($s0)
-lw	$t2, -380($s0)
-beq	$t1, $t2, label27
-j	label28
-label27:
-lw	$t0, -16($sp)
-sw	$t0, -384($s0)
-lw	$t1, -384($s0)
-mul	$t1, $t1, 7
-sw	$t1, -388($s0)
-lw	$t2, -20($sp)
-sw	$t2, -392($s0)
-lw	$t0, -392($s0)
-mul	$t0, $t0, 2
-sw	$t0, -396($s0)
-lw	$t1, -396($s0)
-lw	$t2, -388($s0)
-add	$t2, $t2, $t1
-sw	$t2, -400($s0)
-lw	$t0, -400($s0)
-add	$t0, $t0, 99
-sw	$t0, -404($s0)
-lw	$t1, -12($sp)
-sw	$t1, -408($s0)
-lw	$t2, -408($s0)
-lw	$t0, -404($s0)
-sub	$t0, $t0, $t2
-sw	$t0, -412($s0)
-lw	$t1, -412($s0)
-add	$t1, $t1, 103
-sw	$t1, -416($s0)
-sw	$t1, -16($sp)
-lw	$t2, -20($sp)
-sw	$t2, -420($s0)
-lw	$t0, -420($s0)
-sub	$t0, $t0, 0
-sub	$t0, $0, $t0
-sw	$t0, -424($s0)
-lw	$t1, -16($sp)
-sw	$t1, -428($s0)
-lw	$t2, -428($s0)
-lw	$t0, -424($s0)
-add	$t0, $t0, $t2
-sw	$t0, -432($s0)
-lw	$t1, -12($sp)
-sw	$t1, -436($s0)
-lw	$t2, -436($s0)
-mul	$t2, $t2, 2
-sw	$t2, -440($s0)
-lw	$t0, -440($s0)
-lw	$t1, -432($s0)
-add	$t1, $t1, $t0
-sw	$t1, -444($s0)
-lw	$t2, -444($s0)
-sub	$t2, $t2, 523
-sw	$t2, -448($s0)
-lw	$t0, -448($s0)
-add	$t0, $t0, 53
-sw	$t0, -452($s0)
-lw	$t1, -452($s0)
-add	$t1, $t1, 355
-sw	$t1, -456($s0)
-lw	$t2, -16($sp)
-sw	$t2, -460($s0)
-lw	$t0, -460($s0)
-mul	$t0, $t0, 2
-sw	$t0, -464($s0)
-lw	$t1, -464($s0)
-lw	$t2, -456($s0)
-sub	$t2, $t2, $t1
-sw	$t2, -468($s0)
-sw	$t2, -20($sp)
-label28:
-label18:
-lw	$t0, -16($sp)
-sw	$t0, -472($s0)
-lw	$a0, -472($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -20($sp)
-sw	$t1, -476($s0)
-lw	$a0, -476($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t2, -4($sp)
-sw	$t2, -480($s0)
 lw	$t0, -0($sp)
-sw	$t0, -484($s0)
-lw	$t1, -480($s0)
-lw	$t2, -484($s0)
-sub	$t2, $t1, $t2
-blez	$t2, label29
-j	label30
-label29:
+sw	$t0, -4($s0)
+lw	$t1, -0($sp)
+sw	$t1, -12($s0)
+lw	$t2, -12($s0)
+sub	$t2, $t2, 1
+sw	$t2, -16($s0)
+sub	$sp, $sp, 28
+sw	$ra, 0($sp)
+sub	$sp, $sp, 4
+lw	$t0, -16($s0)
+sw	$t0, -0($sp)
+jal	paradoxfactorial
+add	$sp, $sp, 4
+lw	$ra, 0($sp)
+add	$sp, $sp, 28
+add	$s0, $s0, 32
+add	$t1, $0, $v0
+sw	$t1, -8($s0)
+lw	$t2, -4($s0)
+lw	$t0, -8($s0)
+mul	$t0, $t0, $t2
+sw	$t0, -20($s0)
+lw	$v0, -20($s0)
+jr	$ra
+paradoxmod:
+sub	$s0, $sp, 8
+lw	$t1, -0($sp)
+sw	$t1, -0($s0)
+lw	$t2, -0($sp)
+sw	$t2, -4($s0)
+lw	$t0, -4($sp)
+sw	$t0, -8($s0)
+lw	$t2, -4($s0)
+lw	$t1, -8($s0)
+div	$t2, $t2, $t1
+sw	$t2, -12($s0)
+lw	$t0, -4($sp)
+sw	$t0, -16($s0)
+lw	$t1, -12($s0)
+lw	$t2, -16($s0)
+mul	$t2, $t2, $t1
+sw	$t2, -20($s0)
+lw	$t0, -20($s0)
+lw	$t1, -0($s0)
+sub	$t1, $t1, $t0
+sw	$t1, -24($s0)
+sw	$t1, -0($sp)
+lw	$t2, -0($sp)
+sw	$t2, -28($s0)
+lw	$v0, -28($s0)
+jr	$ra
+paradoxswap:
+sub	$s0, $sp, 12
 la	$a0, paradox_str0
 li	$v0, 4
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
-label30:
 lw	$t0, -0($sp)
-sw	$t0, -488($s0)
-lw	$t1, -4($sp)
-sw	$t1, -492($s0)
-lw	$t2, -488($s0)
-lw	$t0, -492($s0)
-beq	$t2, $t0, label31
-j	label32
-label31:
-la	$a0, paradox_str1
-li	$v0, 4
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-label32:
-li	$t1, 0
-sw	$t1, -16($sp)
-li	$t2, 0
-sw	$t2, -20($sp)
-lw	$t0, -0($sp)
-sw	$t0, -496($s0)
-lw	$t1, -4($sp)
-sw	$t1, -500($s0)
-lw	$t2, -496($s0)
-lw	$t0, -500($s0)
-bne	$t2, $t0, label33
-j	label34
-label33:
-lw	$t1, -16($sp)
-sw	$t1, -504($s0)
-lw	$t2, -20($sp)
-sw	$t2, -508($s0)
-lw	$t0, -508($s0)
-mul	$t0, $t0, 2
-sw	$t0, -512($s0)
-lw	$t1, -512($s0)
-lw	$t2, -504($s0)
-sub	$t2, $t2, $t1
-sw	$t2, -516($s0)
-li	$t0, 0
-lw	$t1, -516($s0)
-beq	$t1, $t0, label36
-j	label37
-label36:
-label39:
-lw	$t2, -16($sp)
-sw	$t2, -520($s0)
-li	$t0, 30
-lw	$t1, -520($s0)
-sub	$t1, $t1, $t0
-bltz	$t1, label40
-j	label38
-label40:
-lw	$t2, -16($sp)
-sw	$t2, -524($s0)
-lw	$t0, -524($s0)
-div	$t0, $t0, 2
-sw	$t0, -528($s0)
-lw	$t1, -528($s0)
-mul	$t1, $t1, 2
-sw	$t1, -532($s0)
-lw	$t2, -16($sp)
-sw	$t2, -536($s0)
-lw	$t0, -536($s0)
-lw	$t1, -532($s0)
-sub	$t1, $t1, $t0
-sw	$t1, -540($s0)
-li	$t2, -1
-lw	$t0, -540($s0)
-beq	$t0, $t2, label42
-j	label43
-label42:
-lw	$t1, -16($sp)
-sw	$t1, -544($s0)
-lw	$t2, -544($s0)
-add	$t2, $t2, 1
-sw	$t2, -548($s0)
-sw	$t2, -16($sp)
-j	label41
-label43:
-li	$t0, 0
-lw	$t1, -540($s0)
-beq	$t1, $t0, label44
-j	label45
-label44:
-lw	$t2, -16($sp)
-sw	$t2, -552($s0)
-lw	$t0, -20($sp)
-sw	$t0, -556($s0)
-lw	$t1, -556($s0)
-lw	$t2, -552($s0)
-add	$t2, $t2, $t1
-sw	$t2, -560($s0)
-sw	$t2, -16($sp)
-j	label41
-label45:
-label41:
-lw	$t0, -20($sp)
-sw	$t0, -564($s0)
-lw	$t1, -564($s0)
-add	$t1, $t1, 1
-sw	$t1, -568($s0)
-sw	$t1, -20($sp)
-j	label39
-label38:
-j	label35
-label37:
-li	$t2, -1
-sw	$t2, -16($sp)
-li	$t0, -1
-sw	$t0, -20($sp)
-label35:
-label34:
-lw	$t1, -16($sp)
-sw	$t1, -572($s0)
-lw	$a0, -572($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t2, -20($sp)
-sw	$t2, -576($s0)
-lw	$a0, -576($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t0, -0($sp)
-sw	$t0, -580($s0)
-lw	$t1, -0($sp)
-sw	$t1, -584($s0)
-lw	$t2, -584($s0)
-lw	$t0, -580($s0)
-sub	$t0, $t0, $t2
-sw	$t0, -588($s0)
-li	$t1, 0
-lw	$t2, -588($s0)
-bne	$t2, $t1, label46
-j	label47
-label46:
-la	$a0, paradox_str2
-li	$v0, 4
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-label47:
-li	$t0, -1
-la	$a0, paradoxint_global_var
-sw	$t0, 0($a0)
-li	$t1, 97
-la	$a0, paradoxchar_global_var
-sw	$t1, 0($a0)
-jr	$ra
-paradoxtestSwitchCase:
-sub	$s0, $sp, 8
-lw	$t2, -0($sp)
-sw	$t2, -0($s0)
-li	$t0, -1
-lw	$t1, -0($s0)
-beq	$t1, $t0, label49
-j	label50
-label49:
-label52:
-lw	$t2, -0($sp)
-sw	$t2, -4($s0)
-lw	$t0, -4($s0)
-mul	$t0, $t0, 20
-sw	$t0, -8($s0)
-li	$t1, 30
-div	$t1, $t1, 5
-sw	$t1, -12($s0)
-lw	$t2, -12($s0)
-lw	$t0, -8($s0)
-add	$t0, $t0, $t2
-sw	$t0, -16($s0)
-li	$t1, 10
-lw	$t2, -16($s0)
-sub	$t2, $t2, $t1
-bltz	$t2, label53
-j	label51
-label53:
-lw	$t0, -0($sp)
-sw	$t0, -20($s0)
-li	$t1, 0
-lw	$t2, -20($s0)
-sub	$t2, $t2, $t1
-blez	$t2, label54
-j	label55
-label54:
-lw	$t0, -0($sp)
-sw	$t0, -24($s0)
-lw	$t1, -24($s0)
-add	$t1, $t1, 1
-sw	$t1, -28($s0)
-sw	$t1, -0($sp)
-label55:
-j	label52
-label51:
-j	label48
-label50:
-li	$t2, 0
-lw	$t0, -0($s0)
-beq	$t0, $t2, label56
-j	label57
-label56:
-lw	$t1, -0($sp)
-sw	$t1, -32($s0)
-lw	$t2, paradoxconst_int_postive
-sw	$t2, -36($s0)
-lw	$t0, paradoxconst_int_negtive
-sw	$t0, -40($s0)
-lw	$t1, -36($s0)
-lw	$t2, -40($s0)
-mul	$t2, $t2, $t1
-sw	$t2, -44($s0)
-lw	$t0, -44($s0)
-lw	$t1, -32($s0)
-sub	$t1, $t1, $t0
-sw	$t1, -48($s0)
-li	$t2, 0
-lw	$t0, -48($s0)
-beq	$t0, $t2, label58
-j	label59
-label58:
-label61:
-lw	$t1, -0($sp)
-sw	$t1, -52($s0)
-li	$t2, 0
-lw	$t0, -52($s0)
-sub	$t0, $t0, $t2
-blez	$t0, label62
-j	label60
-label62:
-lw	$t1, -0($sp)
-sw	$t1, -56($s0)
-lw	$t2, -56($s0)
-add	$t2, $t2, 1
-sw	$t2, -60($s0)
-lw	$t0, -60($s0)
-mul	$t0, $t0, -2
-sw	$t0, -64($s0)
-sw	$t0, -0($sp)
-j	label61
-label60:
-label59:
-j	label48
-label57:
-li	$t1, 1
-lw	$t2, -0($s0)
-beq	$t2, $t1, label63
-j	label64
-label63:
-li	$t0, -233
-sw	$t0, -0($sp)
-j	label48
-label64:
-li	$t1, 233
-sw	$t1, -0($sp)
-label48:
-lw	$t2, -4($sp)
-sw	$t2, -68($s0)
-li	$t0, 97
-lw	$t1, -68($s0)
-beq	$t1, $t0, label66
-j	label67
-label66:
-lw	$t2, paradoxconst_char_a
-sw	$t2, -72($s0)
-sw	$t2, -4($sp)
-j	label65
-label67:
-li	$t0, 65
-lw	$t1, -68($s0)
-beq	$t1, $t0, label68
-j	label69
-label68:
-lw	$t2, paradoxconst_char_A
-sw	$t2, -76($s0)
-sw	$t2, -4($sp)
-j	label65
-label69:
-li	$t0, 57
-lw	$t1, -68($s0)
-beq	$t1, $t0, label70
-j	label71
-label70:
-lw	$t2, paradoxconst_char_num
-sw	$t2, -80($s0)
-sw	$t2, -4($sp)
-j	label65
-label71:
-li	$t0, 95
-lw	$t1, -68($s0)
-beq	$t1, $t0, label72
-j	label73
-label72:
-lw	$t2, paradoxconst_char_underline
-sw	$t2, -84($s0)
-sw	$t2, -4($sp)
-j	label65
-label73:
-li	$t0, 43
-lw	$t1, -68($s0)
-beq	$t1, $t0, label74
-j	label75
-label74:
-lw	$t2, paradoxconst_char_add
-sw	$t2, -88($s0)
-sw	$t2, -4($sp)
-j	label65
-label75:
-li	$t0, 42
-lw	$t1, -68($s0)
-beq	$t1, $t0, label76
-j	label77
-label76:
-lw	$t2, paradoxconst_char_mul
-sw	$t2, -92($s0)
-sw	$t2, -4($sp)
-j	label65
-label77:
-li	$t0, 119
-sw	$t0, -4($sp)
-label65:
-li	$t1, 0
-li	$t2, 0
-beq	$t1, $t2, label79
-j	label80
-label79:
-j	label78
-label80:
-label78:
-lw	$t0, -0($sp)
-sw	$t0, -96($s0)
-lw	$a0, -96($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -4($sp)
-sw	$t1, -100($s0)
-lw	$a0, -100($s0)
-li	$v0, 11
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-li	$t2, -2
-la	$a0, paradoxint_global_var
-sw	$t2, 0($a0)
-li	$t0, 98
-la	$a0, paradoxchar_global_var
-sw	$t0, 0($a0)
-jr	$ra
-paradoxreturnInt:
-sub	$s0, $sp, 0
-li	$v0, 10
-jr	$ra
-paradoxreturnChar:
-sub	$s0, $sp, 0
-li	$v0, 114
-jr	$ra
-paradoxreturnIntParameter:
-sub	$s0, $sp, 24
-lw	$t1, -0($sp)
-sw	$t1, -0($s0)
-li	$t2, 1
-lw	$t0, -0($s0)
-beq	$t0, $t2, label82
-j	label83
-label82:
-lw	$t1, -4($sp)
-sw	$t1, -4($s0)
-sw	$t1, -20($sp)
-j	label81
-label83:
-li	$t2, 2
-lw	$t0, -0($s0)
-beq	$t0, $t2, label84
-j	label85
-label84:
-lw	$t1, -8($sp)
-sw	$t1, -8($s0)
-sw	$t1, -20($sp)
-j	label81
-label85:
-li	$t2, 3
-lw	$t0, -0($s0)
-beq	$t0, $t2, label86
-j	label87
-label86:
-lw	$t1, -12($sp)
-sw	$t1, -12($s0)
-sw	$t1, -20($sp)
-j	label81
-label87:
-li	$t2, 4
-lw	$t0, -0($s0)
-beq	$t0, $t2, label88
-j	label89
-label88:
-lw	$t1, -16($sp)
-sw	$t1, -16($s0)
-sw	$t1, -20($sp)
-j	label81
-label89:
-li	$t2, 0
-sw	$t2, -20($sp)
-label81:
-lw	$t0, -20($sp)
-sw	$t0, -20($s0)
-lw	$v0, -20($s0)
-jr	$ra
-paradoxreturnCharParameter:
-sub	$s0, $sp, 20
-lw	$t1, -0($sp)
-sw	$t1, -0($s0)
-li	$t2, 1
-lw	$t0, -0($s0)
-beq	$t0, $t2, label91
-j	label92
-label91:
-lw	$t1, -4($sp)
-sw	$t1, -4($s0)
-lw	$v0, -4($s0)
-jr	$ra
-j	label90
-label92:
-li	$t2, 2
-lw	$t0, -0($s0)
-beq	$t0, $t2, label93
-j	label94
-label93:
-lw	$t1, -8($sp)
-sw	$t1, -8($s0)
-lw	$v0, -8($s0)
-jr	$ra
-j	label90
-label94:
-li	$t2, 3
-lw	$t0, -0($s0)
-beq	$t0, $t2, label95
-j	label96
-label95:
-lw	$t1, -12($sp)
-sw	$t1, -12($s0)
-lw	$v0, -12($s0)
-jr	$ra
-j	label90
-label96:
-li	$t2, 4
-lw	$t0, -0($s0)
-beq	$t0, $t2, label97
-j	label98
-label97:
-lw	$t1, -16($sp)
-sw	$t1, -16($s0)
-lw	$v0, -16($s0)
-jr	$ra
-j	label90
-label98:
-li	$v0, 48
-jr	$ra
-label90:
-paradoxtestAssign:
-sub	$s0, $sp, 36
-li	$t2, 10
-sw	$t2, -0($sp)
-lw	$t0, -0($sp)
-sw	$t0, -4($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnChar
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t1, $0, $v0
-sw	$t1, -8($s0)
-lw	$t2, paradoxconst_char_a
-sw	$t2, -12($s0)
-lw	$t0, -12($s0)
-lw	$t1, -8($s0)
-sub	$t1, $t1, $t0
-sw	$t1, -16($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t2, -16($s0)
-sw	$t2, -16($sp)
-lw	$t0, -4($s0)
-sw	$t0, -12($sp)
-li	$t1, -2
-sw	$t1, -8($sp)
-li	$t2, 1
-sw	$t2, -4($sp)
-li	$t0, 2
-sw	$t0, -0($sp)
-jal	paradoxreturnIntParameter
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 272
-add	$t1, $0, $v0
-sw	$t1, -0($s0)
-lw	$t2, paradoxconst_char_a
-sw	$t2, -20($s0)
-lw	$t0, -20($s0)
-sub	$t0, $t0, 99
-sub	$t0, $0, $t0
-sw	$t0, -24($s0)
-lw	$t1, -0($s0)
-lw	$t2, -24($s0)
-mul	$t2, $t2, $t1
-sw	$t2, -28($s0)
-lw	$t0, -28($s0)
-div	$t0, $t0, 2
-sw	$t0, -32($s0)
-lw	$t1, -32($s0)
-add	$t1, $t1, 10
-sw	$t1, -36($s0)
-sw	$t1, -4($sp)
-lw	$t2, -0($sp)
-sw	$t2, -44($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnChar
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t0, $0, $v0
-sw	$t0, -48($s0)
-lw	$t1, paradoxconst_char_a
-sw	$t1, -52($s0)
-lw	$t2, -52($s0)
-lw	$t0, -48($s0)
-sub	$t0, $t0, $t2
-sw	$t0, -56($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t1, -56($s0)
-sw	$t1, -16($sp)
-lw	$t2, -44($s0)
-sw	$t2, -12($sp)
-li	$t0, -2
-sw	$t0, -8($sp)
-li	$t1, 1
-sw	$t1, -4($sp)
-li	$t2, 2
-sw	$t2, -0($sp)
-jal	paradoxreturnIntParameter
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 272
-add	$t0, $0, $v0
-sw	$t0, -40($s0)
-lw	$a0, -40($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -4($sp)
-sw	$t1, -60($s0)
-lw	$t2, -60($s0)
-div	$t2, $t2, 4
-sw	$t2, -64($s0)
-lw	$t0, paradoxconst_char_a
-sw	$t0, -68($s0)
-lw	$t1, -68($s0)
-lw	$t2, -64($s0)
-add	$t2, $t2, $t1
-sw	$t2, -72($s0)
-lw	$t0, -72($s0)
-sub	$t0, $t0, 97
-sw	$t0, -76($s0)
-lw	$t1, -76($s0)
-sub	$t1, $t1, 2
-sw	$t1, -80($s0)
-lw	$t2, -80($s0)
-mul	$t2, $t2, 4
-add	$t2, $t2, 8
-sub	$t2, $sp, $t2
-li	$t0, 2
-sw	$t0, 0($t2)
-lw	$t1, -4($sp)
-sw	$t1, -84($s0)
-lw	$t2, -8($sp)
-sw	$t2, -88($s0)
-lw	$t1, -84($s0)
-lw	$t0, -88($s0)
-div	$t1, $t1, $t0
-sw	$t1, -92($s0)
-lw	$t2, -92($s0)
-add	$t2, $t2, -2
-sw	$t2, -96($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnInt
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t0, $0, $v0
-sw	$t0, -100($s0)
-lw	$t1, -100($s0)
-lw	$t2, -96($s0)
-add	$t2, $t2, $t1
-sw	$t2, -104($s0)
-lw	$t0, -104($s0)
-sub	$t0, $t0, 11
-sw	$t0, -108($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnInt
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t1, $0, $v0
-sw	$t1, -112($s0)
-lw	$t2, -112($s0)
-sub	$t2, $t2, 0
-sub	$t2, $0, $t2
-sw	$t2, -116($s0)
-lw	$t0, -0($sp)
-sw	$t0, -120($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnChar
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t1, $0, $v0
-sw	$t1, -124($s0)
-lw	$t2, paradoxconst_char_a
-sw	$t2, -128($s0)
-lw	$t0, -128($s0)
-lw	$t1, -124($s0)
-sub	$t1, $t1, $t0
-sw	$t1, -132($s0)
-lw	$t2, -120($s0)
-lw	$t0, -132($s0)
-mul	$t0, $t0, $t2
-sw	$t0, -136($s0)
-li	$t1, -98
-add	$t1, $t1, 99
-sw	$t1, -144($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnInt
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t2, $0, $v0
-sw	$t2, -148($s0)
-lw	$t0, -0($sp)
-sw	$t0, -152($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-li	$t1, 97
-sw	$t1, -16($sp)
-lw	$t2, -152($s0)
-sw	$t2, -12($sp)
-lw	$t0, -148($s0)
-sw	$t0, -8($sp)
-lw	$t1, -144($s0)
-sw	$t1, -4($sp)
-li	$t2, 4
-sw	$t2, -0($sp)
-jal	paradoxreturnIntParameter
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 272
-add	$t0, $0, $v0
-sw	$t0, -140($s0)
-lw	$t1, -140($s0)
-lw	$t2, -136($s0)
-add	$t2, $t2, $t1
-sw	$t2, -156($s0)
-lw	$t0, -156($s0)
-lw	$t1, -116($s0)
-add	$t1, $t1, $t0
-sw	$t1, -160($s0)
-lw	$t2, -108($s0)
-mul	$t2, $t2, 4
-add	$t2, $t2, 8
-sub	$t2, $sp, $t2
-lw	$t0, -160($s0)
-sw	$t0, 0($t2)
-lw	$t1, -12($sp)
-sw	$t1, -164($s0)
-lw	$t2, -164($s0)
-add	$t2, $t2, -255
-sw	$t2, -168($s0)
-li	$t0, 98
-mul	$t0, $t0, 2
-sw	$t0, -172($s0)
-lw	$t1, -172($s0)
-lw	$t2, -168($s0)
-add	$t2, $t2, $t1
-sw	$t2, -176($s0)
-lw	$t0, -176($s0)
-sub	$t0, $t0, 196
-sw	$t0, -180($s0)
-li	$t1, -98
-add	$t1, $t1, 99
-sw	$t1, -184($s0)
-lw	$t2, -180($s0)
-mul	$t2, $t2, 4
-add	$t2, $t2, 8
-sub	$t2, $sp, $t2
-lw	$t0, -184($s0)
-sw	$t0, 0($t2)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnChar
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t1, $0, $v0
-sw	$t1, -188($s0)
-sw	$t1, -20($sp)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnChar
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t2, $0, $v0
-sw	$t2, -196($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxreturnChar
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 248
-add	$t0, $0, $v0
-sw	$t0, -200($s0)
-lw	$t1, paradoxconst_char_a
-sw	$t1, -204($s0)
-sub	$sp, $sp, 280
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t2, -204($s0)
-sw	$t2, -16($sp)
-lw	$t0, -200($s0)
-sw	$t0, -12($sp)
-lw	$t1, -196($s0)
-sw	$t1, -8($sp)
-li	$t2, 97
-sw	$t2, -4($sp)
-li	$t0, 4
-sw	$t0, -0($sp)
-jal	paradoxreturnCharParameter
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 280
-add	$s0, $s0, 268
-add	$t1, $0, $v0
-sw	$t1, -192($s0)
-li	$t2, 0
-add	$t2, $t2, 24
-sub	$t2, $sp, $t2
-lw	$t0, -192($s0)
-sw	$t0, 0($t2)
-lw	$t1, -24($sp)
-sw	$t1, -208($s0)
-li	$t2, 4
-add	$t2, $t2, 24
-sub	$t2, $sp, $t2
-lw	$t0, -208($s0)
-sw	$t0, 0($t2)
-li	$t1, 8
-add	$t1, $t1, 24
-sub	$t1, $sp, $t1
-li	$t2, 120
-sw	$t2, 0($t1)
-lw	$t0, -4($sp)
-sw	$t0, -212($s0)
-lw	$a0, -212($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -8($sp)
-sw	$t1, -216($s0)
-lw	$a0, -216($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t2, -12($sp)
-sw	$t2, -220($s0)
-lw	$a0, -220($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t0, -16($sp)
-sw	$t0, -224($s0)
-lw	$a0, -224($s0)
-li	$v0, 1
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -20($sp)
-sw	$t1, -228($s0)
-lw	$a0, -228($s0)
-li	$v0, 11
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t2, -24($sp)
-sw	$t2, -232($s0)
-lw	$a0, -232($s0)
-li	$v0, 11
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t0, -28($sp)
-sw	$t0, -236($s0)
-lw	$a0, -236($s0)
-li	$v0, 11
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -32($sp)
-sw	$t1, -240($s0)
-lw	$a0, -240($s0)
-li	$v0, 11
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-li	$t2, -3
-la	$a0, paradoxint_global_var
-sw	$t2, 0($a0)
-li	$t0, 99
-la	$a0, paradoxchar_global_var
-sw	$t0, 0($a0)
-jr	$ra
-paradoxtestInputOutput:
-sub	$s0, $sp, 16
-li	$v0, 5
-syscall
-sw	$v0, -0($sp)
-li	$v0, 12
-syscall
-sw	$v0, -4($sp)
-la	$a0, paradox_str3
-li	$v0, 4
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-la	$a0, paradox_str4
-li	$v0, 4
-syscall
-la	$a0, enter
-li	$v0, 4
-syscall
-lw	$t1, -0($sp)
-sw	$t1, -0($s0)
+sw	$t0, -0($s0)
 lw	$a0, -0($s0)
 li	$v0, 1
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
+la	$a0, paradox_str1
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t1, -4($sp)
+sw	$t1, -4($s0)
+lw	$a0, -4($s0)
+li	$v0, 1
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t2, -0($sp)
+sw	$t2, -8($s0)
+sw	$t2, -8($sp)
+lw	$t0, -4($sp)
+sw	$t0, -12($s0)
+sw	$t0, -0($sp)
+lw	$t1, -8($sp)
+sw	$t1, -16($s0)
+sw	$t1, -4($sp)
+la	$a0, paradox_str2
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t2, -0($sp)
+sw	$t2, -20($s0)
+lw	$a0, -20($s0)
+li	$v0, 1
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+la	$a0, paradox_str3
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t0, -4($sp)
+sw	$t0, -24($s0)
+lw	$a0, -24($s0)
+li	$v0, 1
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+jr	$ra
+paradoxcomplete_num:
+sub	$s0, $sp, 568
+lw	$t1, -0($sp)
+sw	$t1, -0($s0)
+sw	$t1, -520($sp)
+label3:
+lw	$t2, -520($sp)
+sw	$t2, -4($s0)
+lw	$t0, paradoxMAX_NUM
+sw	$t0, -8($s0)
+lw	$t1, -4($s0)
+lw	$t2, -8($s0)
+sub	$t2, $t1, $t2
+bltz	$t2, label4
+j	label2
+label4:
+li	$t0, -1
+sw	$t0, -524($sp)
+lw	$t1, -520($sp)
+sw	$t1, -12($s0)
+sw	$t1, -528($sp)
+li	$t2, 1
+sw	$t2, -516($sp)
+label6:
+lw	$t0, -516($sp)
+sw	$t0, -16($s0)
+lw	$t1, -520($sp)
+sw	$t1, -20($s0)
+lw	$t2, -16($s0)
+lw	$t0, -20($s0)
+sub	$t0, $t2, $t0
+bltz	$t0, label7
+j	label5
+label7:
+lw	$t1, -520($sp)
+sw	$t1, -24($s0)
+lw	$t2, -516($sp)
+sw	$t2, -28($s0)
+lw	$t1, -24($s0)
+lw	$t0, -28($s0)
+div	$t1, $t1, $t0
+sw	$t1, -32($s0)
+lw	$t2, -516($sp)
+sw	$t2, -36($s0)
+lw	$t0, -32($s0)
+lw	$t1, -36($s0)
+mul	$t1, $t1, $t0
+sw	$t1, -40($s0)
+sw	$t1, -532($sp)
+lw	$t2, -520($sp)
+sw	$t2, -48($s0)
+lw	$t0, -516($sp)
+sw	$t0, -52($s0)
+sub	$sp, $sp, 928
+sw	$ra, 0($sp)
+sub	$sp, $sp, 4
+lw	$t1, -52($s0)
+sw	$t1, -4($sp)
+lw	$t2, -48($s0)
+sw	$t2, -0($sp)
+jal	paradoxmod
+add	$sp, $sp, 4
+lw	$ra, 0($sp)
+add	$sp, $sp, 928
+add	$s0, $s0, 372
+add	$t0, $0, $v0
+sw	$t0, -44($s0)
+li	$t1, 0
+lw	$t2, -44($s0)
+beq	$t2, $t1, label8
+j	label9
+label8:
+lw	$t0, -524($sp)
+sw	$t0, -56($s0)
+lw	$t1, -56($s0)
+add	$t1, $t1, 1
+sw	$t1, -60($s0)
+sw	$t1, -524($sp)
+lw	$t2, -528($sp)
+sw	$t2, -64($s0)
+lw	$t0, -516($sp)
+sw	$t0, -68($s0)
+lw	$t1, -68($s0)
+lw	$t2, -64($s0)
+sub	$t2, $t2, $t1
+sw	$t2, -72($s0)
+sw	$t2, -528($sp)
+lw	$t0, -524($sp)
+sw	$t0, -76($s0)
+li	$t1, 128
+lw	$t2, -76($s0)
+sub	$t2, $t2, $t1
+bgez	$t2, label10
+j	label11
+label10:
+la	$a0, paradox_str4
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+label11:
+lw	$t0, -524($sp)
+sw	$t0, -80($s0)
+li	$t1, 128
+lw	$t2, -80($s0)
+sub	$t2, $t2, $t1
+bltz	$t2, label12
+j	label13
+label12:
+lw	$t0, -524($sp)
+sw	$t0, -84($s0)
+lw	$t1, -516($sp)
+sw	$t1, -88($s0)
+lw	$t2, -84($s0)
+mul	$t2, $t2, 4
+add	$t2, $t2, 4
+sub	$t2, $sp, $t2
+lw	$t0, -88($s0)
+sw	$t0, 0($t2)
+label13:
+label9:
+lw	$t1, -516($sp)
+sw	$t1, -92($s0)
+lw	$t2, -92($s0)
+add	$t2, $t2, 1
+sw	$t2, -96($s0)
+sw	$t2, -516($sp)
+j	label6
+label5:
+lw	$t0, -528($sp)
+sw	$t0, -100($s0)
+li	$t1, 0
+lw	$t2, -100($s0)
+beq	$t2, $t1, label14
+j	label15
+label14:
 la	$a0, paradox_str5
 li	$v0, 4
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
-lw	$t2, -4($sp)
-sw	$t2, -4($s0)
-lw	$a0, -4($s0)
-li	$v0, 11
+lw	$t0, -520($sp)
+sw	$t0, -104($s0)
+lw	$a0, -104($s0)
+li	$v0, 1
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
-li	$t0, -4
-sw	$t0, -8($sp)
-li	$t1, 100
-sw	$t1, -12($sp)
-jr	$ra
-paradoxtestTrick:
-sub	$s0, $sp, 0
-jr	$ra
-paradoxjudge1:
-sub	$s0, $sp, 20
-li	$t2, 0
-sw	$t2, -16($sp)
-lw	$t0, -0($sp)
-sw	$t0, -0($s0)
-lw	$t1, -4($sp)
-sw	$t1, -4($s0)
-lw	$t2, -0($s0)
-lw	$t0, -4($s0)
-sub	$t0, $t2, $t0
-bltz	$t0, label99
-j	label100
-label99:
-lw	$t1, -8($sp)
-sw	$t1, -8($s0)
-lw	$t2, -12($sp)
-sw	$t2, -12($s0)
-lw	$t0, -8($s0)
-lw	$t1, -12($s0)
-sub	$t1, $t0, $t1
-bgez	$t1, label101
-j	label102
-label101:
-li	$t2, 1
-sw	$t2, -16($sp)
-label102:
-label100:
-lw	$t0, -16($sp)
-sw	$t0, -16($s0)
-lw	$v0, -16($s0)
-jr	$ra
-paradoxjudge2:
-sub	$s0, $sp, 20
 li	$t1, 0
-sw	$t1, -16($sp)
-lw	$t2, -0($sp)
-sw	$t2, -0($s0)
-lw	$t0, -4($sp)
-sw	$t0, -4($s0)
-lw	$t1, -0($s0)
-lw	$t2, -4($s0)
-sub	$t2, $t1, $t2
-bltz	$t2, label103
-j	label104
-label103:
-lw	$t0, -8($sp)
-sw	$t0, -8($s0)
-lw	$t1, -12($sp)
-sw	$t1, -12($s0)
-lw	$t2, -8($s0)
-lw	$t0, -12($s0)
-sub	$t0, $t2, $t0
-blez	$t0, label105
-j	label106
-label105:
-li	$t1, 1
-sw	$t1, -16($sp)
-label106:
-label104:
-lw	$t2, -16($sp)
-sw	$t2, -16($s0)
-lw	$v0, -16($s0)
-jr	$ra
-paradoxQsort:
-sub	$s0, $sp, 20
-lw	$t0, -0($sp)
-sw	$t0, -0($s0)
-sw	$t0, -8($sp)
-lw	$t1, -4($sp)
-sw	$t1, -4($s0)
-sw	$t1, -12($sp)
-lw	$t2, -8($sp)
-sw	$t2, -12($s0)
-mul	$t2, $t2, 4
-la	$t0, paradoxsort
-add	$t2, $t2, $t0
-lw	$t1, 0($t2)
-sw	$t1, -8($s0)
-sw	$t1, -16($sp)
-lw	$t2, -0($sp)
-sw	$t2, -16($s0)
-lw	$t0, -4($sp)
-sw	$t0, -20($s0)
-lw	$t1, -16($s0)
-lw	$t2, -20($s0)
-sub	$t2, $t1, $t2
-bgez	$t2, label107
-j	label108
-label107:
-jr	$ra
-label108:
-label110:
-lw	$t0, -8($sp)
-sw	$t0, -24($s0)
-lw	$t1, -12($sp)
-sw	$t1, -28($s0)
-lw	$t2, -24($s0)
-lw	$t0, -28($s0)
-sub	$t0, $t2, $t0
-bltz	$t0, label111
-j	label109
-label111:
-label113:
-lw	$t1, -8($sp)
-sw	$t1, -36($s0)
-lw	$t2, -12($sp)
-sw	$t2, -40($s0)
-lw	$t0, -12($sp)
-sw	$t0, -48($s0)
-mul	$t0, $t0, 4
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-lw	$t2, 0($t0)
-sw	$t2, -44($s0)
-lw	$t0, -16($sp)
-sw	$t0, -52($s0)
-sub	$sp, $sp, 172
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t1, -52($s0)
-sw	$t1, -12($sp)
-lw	$t2, -44($s0)
-sw	$t2, -8($sp)
-lw	$t0, -40($s0)
-sw	$t0, -4($sp)
-lw	$t1, -36($s0)
-sw	$t1, -0($sp)
-jal	paradoxjudge1
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 172
-add	$s0, $s0, 176
-add	$t2, $0, $v0
-sw	$t2, -32($s0)
-li	$t0, 1
-lw	$t1, -32($s0)
-beq	$t1, $t0, label114
-j	label112
-label114:
-lw	$t2, -12($sp)
-sw	$t2, -56($s0)
-lw	$t0, -56($s0)
-sub	$t0, $t0, 1
-sw	$t0, -60($s0)
-sw	$t0, -12($sp)
-j	label113
-label112:
-lw	$t1, -8($sp)
-sw	$t1, -64($s0)
-lw	$t2, -12($sp)
-sw	$t2, -72($s0)
-mul	$t2, $t2, 4
-la	$t0, paradoxsort
-add	$t2, $t2, $t0
-lw	$t1, 0($t2)
-sw	$t1, -68($s0)
-lw	$t2, -64($s0)
-mul	$t2, $t2, 4
-la	$t0, paradoxsort
-add	$t2, $t2, $t0
-lw	$t1, -68($s0)
-sw	$t1, 0($t2)
-label116:
-lw	$t2, -8($sp)
-sw	$t2, -80($s0)
-lw	$t0, -12($sp)
-sw	$t0, -84($s0)
-lw	$t1, -8($sp)
-sw	$t1, -92($s0)
-mul	$t1, $t1, 4
-la	$t2, paradoxsort
-add	$t1, $t1, $t2
-lw	$t0, 0($t1)
-sw	$t0, -88($s0)
-lw	$t1, -16($sp)
-sw	$t1, -96($s0)
-sub	$sp, $sp, 172
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t2, -96($s0)
-sw	$t2, -12($sp)
-lw	$t0, -88($s0)
-sw	$t0, -8($sp)
-lw	$t1, -84($s0)
-sw	$t1, -4($sp)
-lw	$t2, -80($s0)
-sw	$t2, -0($sp)
-jal	paradoxjudge2
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 172
-add	$s0, $s0, 176
-add	$t0, $0, $v0
-sw	$t0, -76($s0)
-li	$t1, 1
-lw	$t2, -76($s0)
-beq	$t2, $t1, label117
-j	label115
-label117:
-lw	$t0, -8($sp)
-sw	$t0, -100($s0)
-lw	$t1, -100($s0)
-add	$t1, $t1, 1
-sw	$t1, -104($s0)
-sw	$t1, -8($sp)
-j	label116
-label115:
-lw	$t2, -12($sp)
+sw	$t1, -516($sp)
+label17:
+lw	$t2, -516($sp)
 sw	$t2, -108($s0)
-lw	$t0, -8($sp)
-sw	$t0, -116($s0)
-mul	$t0, $t0, 4
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-lw	$t2, 0($t0)
-sw	$t2, -112($s0)
-lw	$t0, -108($s0)
-mul	$t0, $t0, 4
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
+lw	$t0, -524($sp)
+sw	$t0, -112($s0)
+lw	$t1, -108($s0)
 lw	$t2, -112($s0)
-sw	$t2, 0($t0)
-j	label110
-label109:
-lw	$t0, -8($sp)
+sub	$t2, $t1, $t2
+blez	$t2, label18
+j	label16
+label18:
+la	$a0, paradox_str6
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t0, -516($sp)
 sw	$t0, -120($s0)
-lw	$t1, -16($sp)
-sw	$t1, -124($s0)
-lw	$t2, -120($s0)
-mul	$t2, $t2, 4
-la	$t0, paradoxsort
-add	$t2, $t2, $t0
-lw	$t1, -124($s0)
-sw	$t1, 0($t2)
-lw	$t2, -0($sp)
-sw	$t2, -128($s0)
-lw	$t0, -8($sp)
-sw	$t0, -132($s0)
-lw	$t1, -132($s0)
-sub	$t1, $t1, 1
-sw	$t1, -136($s0)
-sub	$sp, $sp, 172
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t2, -136($s0)
-sw	$t2, -4($sp)
-lw	$t0, -128($s0)
-sw	$t0, -0($sp)
-jal	paradoxQsort
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 172
-add	$s0, $s0, 176
-lw	$t1, -8($sp)
-sw	$t1, -140($s0)
-lw	$t2, -140($s0)
-add	$t2, $t2, 1
-sw	$t2, -144($s0)
-lw	$t0, -4($sp)
-sw	$t0, -148($s0)
-sub	$sp, $sp, 172
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t1, -148($s0)
-sw	$t1, -4($sp)
-lw	$t2, -144($s0)
-sw	$t2, -0($sp)
-jal	paradoxQsort
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 172
-add	$s0, $s0, 176
-jr	$ra
-jr	$ra
-paradoxtestRecursion:
-sub	$s0, $sp, 4
-li	$t0, 0
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 5
-sw	$t2, 0($t0)
-li	$t0, 4
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 8
-sw	$t2, 0($t0)
-li	$t0, 8
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 3
-sw	$t2, 0($t0)
-li	$t0, 12
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 6
-sw	$t2, 0($t0)
-li	$t0, 16
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 4
-sw	$t2, 0($t0)
-li	$t0, 20
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 1
-sw	$t2, 0($t0)
-li	$t0, 24
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 2
-sw	$t2, 0($t0)
-li	$t0, 28
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-li	$t2, 7
-sw	$t2, 0($t0)
-sub	$sp, $sp, 24
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-li	$t0, 7
-sw	$t0, -4($sp)
-li	$t1, 0
-sw	$t1, -0($sp)
-jal	paradoxQsort
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 24
-add	$s0, $s0, 44
-li	$t2, 0
-sw	$t2, -0($sp)
-label119:
-lw	$t0, -0($sp)
-sw	$t0, -0($s0)
-li	$t1, 8
-lw	$t2, -0($s0)
-sub	$t2, $t2, $t1
-bltz	$t2, label120
-j	label118
-label120:
-lw	$t0, -0($sp)
-sw	$t0, -8($s0)
 mul	$t0, $t0, 4
-la	$t1, paradoxsort
-add	$t0, $t0, $t1
-lw	$t2, 0($t0)
-sw	$t2, -4($s0)
-lw	$a0, -4($s0)
+add	$t0, $t0, 4
+sub	$t0, $sp, $t0
+lw	$t1, 0($t0)
+sw	$t1, -116($s0)
+lw	$a0, -116($s0)
 li	$v0, 1
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
-lw	$t0, -0($sp)
-sw	$t0, -12($s0)
-lw	$t1, -12($s0)
-add	$t1, $t1, 1
-sw	$t1, -16($s0)
-sw	$t1, -0($sp)
-j	label119
-label118:
-li	$t2, -5
-la	$a0, paradoxint_global_var
-sw	$t2, 0($a0)
-li	$t0, 101
-la	$a0, paradoxchar_global_var
-sw	$t0, 0($a0)
-jr	$ra
-paradoxtestCallFunction:
-sub	$s0, $sp, 4
-li	$v0, 5
+lw	$t2, -516($sp)
+sw	$t2, -124($s0)
+lw	$t0, -124($s0)
+add	$t0, $t0, 1
+sw	$t0, -128($s0)
+sw	$t0, -516($sp)
+j	label17
+label16:
+la	$a0, paradox_str7
+li	$v0, 4
 syscall
-sw	$v0, -0($sp)
-lw	$t1, -0($sp)
-sw	$t1, -0($s0)
-li	$t2, 0
-lw	$t0, -0($s0)
-beq	$t0, $t2, label122
-j	label123
-label122:
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxtestIfWhile
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 52
-j	label121
-label123:
-li	$t1, 1
-lw	$t2, -0($s0)
-beq	$t2, $t1, label124
-j	label125
-label124:
-lw	$t0, paradoxconst_int_postive
-sw	$t0, -4($s0)
-lw	$t1, paradoxconst_char_a
-sw	$t1, -8($s0)
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-lw	$t2, -8($s0)
-sw	$t2, -4($sp)
-lw	$t0, -4($s0)
-sw	$t0, -0($sp)
-jal	paradoxtestSwitchCase
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 36
-lw	$t1, paradoxconst_int_negtive
-sw	$t1, -12($s0)
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-li	$t2, 43
-sw	$t2, -4($sp)
-lw	$t0, -12($s0)
-sw	$t0, -0($sp)
-jal	paradoxtestSwitchCase
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 36
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-li	$t1, 95
-sw	$t1, -4($sp)
-li	$t2, 0
-sw	$t2, -0($sp)
-jal	paradoxtestSwitchCase
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 36
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-li	$t0, 57
-sw	$t0, -4($sp)
+la	$a0, enter
+li	$v0, 4
+syscall
+label15:
+lw	$t1, -520($sp)
+sw	$t1, -132($s0)
+lw	$t2, -132($s0)
+add	$t2, $t2, 1
+sw	$t2, -136($s0)
+sw	$t2, -520($sp)
+j	label3
+label2:
+la	$a0, paradox_str8
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+li	$t0, 0
+sw	$t0, -556($sp)
+li	$t1, 0
+sw	$t1, -516($sp)
+label20:
+lw	$t2, -516($sp)
+sw	$t2, -140($s0)
+lw	$t0, paradoxMAX_NUM
+sw	$t0, -144($s0)
+lw	$t1, -140($s0)
+lw	$t2, -144($s0)
+sub	$t2, $t1, $t2
+bltz	$t2, label21
+j	label19
+label21:
+lw	$t0, -556($sp)
+sw	$t0, -148($s0)
+lw	$t1, -516($sp)
+sw	$t1, -152($s0)
+lw	$t2, -148($s0)
+lw	$t0, -152($s0)
+mul	$t0, $t0, $t2
+sw	$t0, -156($s0)
+sw	$t0, -560($sp)
+lw	$t1, -520($sp)
+sw	$t1, -160($s0)
+lw	$t2, -524($sp)
+sw	$t2, -164($s0)
+lw	$t0, -160($s0)
+lw	$t1, -164($s0)
+mul	$t1, $t1, $t0
+sw	$t1, -168($s0)
+sw	$t1, -564($sp)
+lw	$t2, -556($sp)
+sw	$t2, -172($s0)
+lw	$t0, -516($sp)
+sw	$t0, -176($s0)
+lw	$t1, -172($s0)
+lw	$t2, -176($s0)
+mul	$t2, $t2, $t1
+sw	$t2, -180($s0)
+sw	$t2, -556($sp)
+lw	$t0, -556($sp)
+sw	$t0, -184($s0)
+lw	$t1, -560($sp)
+sw	$t1, -188($s0)
+lw	$t2, -188($s0)
+lw	$t0, -184($s0)
+add	$t0, $t0, $t2
+sw	$t0, -192($s0)
+lw	$t1, -564($sp)
+sw	$t1, -196($s0)
+lw	$t2, -196($s0)
+lw	$t0, -192($s0)
+add	$t0, $t0, $t2
+sw	$t0, -200($s0)
+sw	$t0, -556($sp)
+lw	$t1, -516($sp)
+sw	$t1, -204($s0)
+lw	$t2, -204($s0)
+add	$t2, $t2, 1
+sw	$t2, -208($s0)
+sw	$t2, -516($sp)
+j	label20
+label19:
+lw	$t0, -556($sp)
+sw	$t0, -212($s0)
+sw	$t0, -560($sp)
+li	$t1, 0
+sw	$t1, -516($sp)
+label23:
+lw	$t2, -516($sp)
+sw	$t2, -216($s0)
+lw	$t0, paradoxMAX_NUM
+sw	$t0, -220($s0)
+lw	$t1, -216($s0)
+lw	$t2, -220($s0)
+sub	$t2, $t1, $t2
+bltz	$t2, label24
+j	label22
+label24:
+lw	$t0, -560($sp)
+sw	$t0, -224($s0)
+lw	$t1, -516($sp)
+sw	$t1, -228($s0)
+lw	$t2, -228($s0)
+lw	$t0, -224($s0)
+add	$t0, $t0, $t2
+sw	$t0, -232($s0)
+sw	$t0, -560($sp)
+lw	$t1, -516($sp)
+sw	$t1, -236($s0)
+lw	$t2, -236($s0)
+add	$t2, $t2, 1
+sw	$t2, -240($s0)
+sw	$t2, -516($sp)
+j	label23
+label22:
+la	$a0, paradox_str9
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t0, -560($sp)
+sw	$t0, -244($s0)
+lw	$a0, -244($s0)
+li	$v0, 1
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+la	$a0, paradox_str10
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+li	$t1, 0
+sw	$t1, -544($sp)
+li	$t2, 1
+sw	$t2, -548($sp)
+li	$t0, 2
+sw	$t0, -536($sp)
+label26:
+lw	$t1, -536($sp)
+sw	$t1, -248($s0)
+lw	$t2, paradoxMAX_NUM
+sw	$t2, -252($s0)
+lw	$t0, -248($s0)
+lw	$t1, -252($s0)
+sub	$t1, $t0, $t1
+blez	$t1, label27
+j	label25
+label27:
+lw	$t2, -536($sp)
+sw	$t2, -256($s0)
+lw	$t0, -256($s0)
+div	$t0, $t0, 2
+sw	$t0, -260($s0)
+sw	$t0, -540($sp)
 li	$t1, 2
+sw	$t1, -516($sp)
+label29:
+lw	$t2, -516($sp)
+sw	$t2, -264($s0)
+lw	$t0, -540($sp)
+sw	$t0, -268($s0)
+lw	$t1, -264($s0)
+lw	$t2, -268($s0)
+sub	$t2, $t1, $t2
+blez	$t2, label30
+j	label28
+label30:
+lw	$t0, -536($sp)
+sw	$t0, -272($s0)
+lw	$t1, -516($sp)
+sw	$t1, -276($s0)
+lw	$t0, -272($s0)
+lw	$t2, -276($s0)
+div	$t0, $t0, $t2
+sw	$t0, -280($s0)
+lw	$t1, -516($sp)
+sw	$t1, -284($s0)
+lw	$t2, -280($s0)
+lw	$t0, -284($s0)
+mul	$t0, $t0, $t2
+sw	$t0, -288($s0)
+sw	$t0, -552($sp)
+lw	$t1, -536($sp)
+sw	$t1, -296($s0)
+lw	$t2, -516($sp)
+sw	$t2, -300($s0)
+sub	$sp, $sp, 928
+sw	$ra, 0($sp)
+sub	$sp, $sp, 4
+lw	$t0, -300($s0)
+sw	$t0, -4($sp)
+lw	$t1, -296($s0)
 sw	$t1, -0($sp)
-jal	paradoxtestSwitchCase
+jal	paradoxmod
 add	$sp, $sp, 4
 lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 36
-j	label121
-label125:
-li	$t2, 2
-lw	$t0, -0($s0)
-beq	$t0, $t2, label126
-j	label127
-label126:
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxtestAssign
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 64
-j	label121
-label127:
-li	$t1, 3
-lw	$t2, -0($s0)
-beq	$t2, $t1, label128
-j	label129
-label128:
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxtestInputOutput
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 44
-j	label121
-label129:
-li	$t0, 4
-lw	$t1, -0($s0)
-beq	$t1, $t0, label130
-j	label131
-label130:
-sub	$sp, $sp, 28
-sw	$ra, 0($sp)
-sub	$sp, $sp, 4
-jal	paradoxtestRecursion
-add	$sp, $sp, 4
-lw	$ra, 0($sp)
-add	$sp, $sp, 28
-add	$s0, $s0, 32
-j	label121
-label131:
-label121:
-lw	$t2, paradoxint_global_var
-sw	$t2, -16($s0)
-lw	$a0, -16($s0)
+add	$sp, $sp, 928
+add	$s0, $s0, 372
+add	$t2, $0, $v0
+sw	$t2, -292($s0)
+li	$t0, 0
+lw	$t1, -292($s0)
+beq	$t1, $t0, label31
+j	label32
+label31:
+li	$t2, 0
+sw	$t2, -548($sp)
+label32:
+lw	$t0, -516($sp)
+sw	$t0, -304($s0)
+lw	$t1, -304($s0)
+add	$t1, $t1, 1
+sw	$t1, -308($s0)
+sw	$t1, -516($sp)
+j	label29
+label28:
+lw	$t2, -548($sp)
+sw	$t2, -312($s0)
+li	$t0, 1
+lw	$t1, -312($s0)
+beq	$t1, $t0, label33
+j	label34
+label33:
+la	$a0, paradox_str11
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t2, -536($sp)
+sw	$t2, -316($s0)
+lw	$a0, -316($s0)
 li	$v0, 1
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
-lw	$t0, paradoxchar_global_var
-sw	$t0, -20($s0)
-lw	$a0, -20($s0)
-li	$v0, 11
+lw	$t0, -544($sp)
+sw	$t0, -320($s0)
+lw	$t1, -320($s0)
+add	$t1, $t1, 1
+sw	$t1, -324($s0)
+sw	$t1, -544($sp)
+lw	$t2, -544($sp)
+sw	$t2, -328($s0)
+lw	$t0, -328($s0)
+div	$t0, $t0, 10
+sw	$t0, -332($s0)
+lw	$t1, -332($s0)
+mul	$t1, $t1, 10
+sw	$t1, -336($s0)
+sw	$t1, -552($sp)
+lw	$t2, -552($sp)
+sw	$t2, -340($s0)
+lw	$t0, -544($sp)
+sw	$t0, -344($s0)
+lw	$t1, -340($s0)
+lw	$t2, -344($s0)
+beq	$t1, $t2, label35
+j	label36
+label35:
+la	$a0, paradox_str12
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+label36:
+label34:
+li	$t0, 1
+sw	$t0, -548($sp)
+lw	$t1, -536($sp)
+sw	$t1, -348($s0)
+lw	$t2, -348($s0)
+add	$t2, $t2, 1
+sw	$t2, -352($s0)
+sw	$t2, -536($sp)
+j	label26
+label25:
+la	$a0, paradox_str13
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t0, -544($sp)
+sw	$t0, -356($s0)
+lw	$a0, -356($s0)
+li	$v0, 1
 syscall
 la	$a0, enter
 li	$v0, 4
 syscall
 jr	$ra
 main:
-sub	$s0, $sp, 0
-li	$t1, 0
-la	$a0, paradoxint_global_var
-sw	$t1, 0($a0)
-li	$t2, 95
-la	$a0, paradoxchar_global_var
-sw	$t2, 0($a0)
-sub	$sp, $sp, 0
+sub	$s0, $sp, 4
+sub	$sp, $sp, 12
 sw	$ra, 0($sp)
 sub	$sp, $sp, 4
-jal	paradoxtestCallFunction
+li	$t1, 10
+sw	$t1, -0($sp)
+jal	paradoxfactorial
 add	$sp, $sp, 4
 lw	$ra, 0($sp)
-add	$sp, $sp, 0
-add	$s0, $s0, 8
-sub	$sp, $sp, 0
+add	$sp, $sp, 12
+add	$s0, $s0, 16
+add	$t2, $0, $v0
+sw	$t2, -0($s0)
+sw	$t2, -0($sp)
+la	$a0, paradox_str14
+li	$v0, 4
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+lw	$t0, -0($sp)
+sw	$t0, -4($s0)
+lw	$a0, -4($s0)
+li	$v0, 1
+syscall
+la	$a0, enter
+li	$v0, 4
+syscall
+sub	$sp, $sp, 12
 sw	$ra, 0($sp)
 sub	$sp, $sp, 4
-jal	paradoxtestTrick
+li	$t1, 10
+sw	$t1, -4($sp)
+li	$t2, 5
+sw	$t2, -0($sp)
+jal	paradoxswap
 add	$sp, $sp, 4
 lw	$ra, 0($sp)
-add	$sp, $sp, 0
-add	$s0, $s0, 4
+add	$sp, $sp, 12
+add	$s0, $s0, 24
+sub	$sp, $sp, 12
+sw	$ra, 0($sp)
+sub	$sp, $sp, 4
+li	$t0, 2
+sw	$t0, -0($sp)
+jal	paradoxcomplete_num
+add	$sp, $sp, 4
+lw	$ra, 0($sp)
+add	$sp, $sp, 12
+add	$s0, $s0, 580
 end:

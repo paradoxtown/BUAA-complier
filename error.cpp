@@ -52,6 +52,8 @@ void errorinit() {
     sta2str[ERRORDEFAULT] = "ERRORDEFAULT";
     sta2str[TYPEDONTMATCH] = "TYPEDONTMATCH";
     sta2str[PARATYPENOTMATCH] = "PARATYPENOTMATCH";
+    sta2str[ERRORVALUENUM] = "ERRORVALUENUM";
+    sta2str[ERRORSTRUCT] = "ERRORSTRUCT";
 }
 
 void error(errorstate state, int line) {

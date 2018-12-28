@@ -158,9 +158,9 @@ void test_global_const(){
     judge = judge + 1;
     if(const_1==1)
     judge = judge + 1;
-    if(const_a=='a')
+    if((const_a)==('a'))
     judge = judge + 1;
-    if(const_=='_')
+    if((const_)==('_'))
     judge = judge + 1;
 
     y = const_a;
@@ -412,11 +412,11 @@ void test_if()
 
     flag=0;
     c='a';
-    if(c=='a'){
+    if((c)==('a')){
             judge = judge + 1;
     }
 
-    if(c=='b'){
+    if((c)==('b')){
             judge = judge + 1;
         flag=1;
     }

@@ -205,7 +205,7 @@ void Syntaxer::functionmain() {
         compoundstatement();
         tmpvar["main"] = regnum;
         localvar["main"] = address / 4;
-        if (symtype != RPRTSY) {
+        if (symtype != RPRTSY) { // '}'
             error(NOTRPRT, linenumber);
             return;
         }
@@ -269,7 +269,7 @@ void Syntaxer::parameterlist(string fname) {
 
 // ＜值参数表＞ ::= ＜表达式＞{,＜表达式＞}｜＜空＞
 void Syntaxer::valuelist(string fname) {
-    number = 0;
+    int valuenum = 0;
     if (symtype == RPARSY) {
         // empty, no emit
         return;
@@ -278,11 +278,11 @@ void Syntaxer::valuelist(string fname) {
     ischar = 0;
     expression(true);
     typ expression1 = ischar == 1 ? chars : ints;
-    if (ptab[fname].valuelist[x] != expression1) {
+    if (!ptab[fname].valuelist.empty() && ptab[fname].valuelist[x] != expression1) {
         error(PARATYPENOTMATCH, linenumber);
     }
     x ++;
-    number ++;
+    valuenum ++;
     int tmpaddr = 0; // be relative to the function's address in the stack, this is the offset
     emit(push, to, "", "", false, tmpaddr); // TODO: use to register which is the returning value from expression
     tmpaddr += 4;
@@ -292,14 +292,17 @@ void Syntaxer::valuelist(string fname) {
             ischar = 0;
             expression(true);
             expression1 = ischar == 1 ? chars : ints;
-            if (ptab[fname].valuelist[x] != expression1) {
+            if (!ptab[fname].valuelist.empty() && ptab[fname].valuelist[x] != expression1) {
                 error(PARATYPENOTMATCH, linenumber);
             }
             x ++;
-            number ++;
+            valuenum ++;
             emit(push, to, "", "", false, tmpaddr);
             tmpaddr += 4;
         } while (symtype == COMMASY);
+        if (valuenum != ptab[fname].valuelist.size()) {
+            error(ERRORVALUENUM, linenumber);
+        }
     }
     else if (symtype != RPARSY){
         error(NOTRPAR, linenumber);
@@ -660,6 +663,9 @@ void Syntaxer::statement() {
                 idx = searchtab(symname, variable);
                 if (idx == 0) {
                     error(NOTBEENDEFINED, linenumber);
+                    do {
+                        nxtsym();
+                    } while(symtype != SEMISY);
                 }
             }
             if (idx > 0) {
@@ -722,6 +728,13 @@ void Syntaxer::statementlist() {
         do {
             if (isover) return;
             statement();
+            if (symtype == INTSY || symtype == CHARSY || symtype == CONSTSY) {
+                error(ERRORSTRUCT, linenumber);
+                do {
+                    nxtsym();
+                } while(symtype != SEMISY);
+                nxtsym();
+            }
         } while (symtype == IFSY || symtype == LOOPSY || symtype == LPRTSY ||
                  symtype == IDENTSY || symtype == SCANFSY || symtype == PRINTSY ||
                  symtype == SWITCHSY || symtype == RETSY || symtype == SEMISY);
@@ -1089,7 +1102,10 @@ void Syntaxer::condition() {
         ischar = 0;
         expression(true);
         typ expression2 = ischar == 1 ? chars : ints;
-        if (expression1 != expression2) {
+//        if (expression1 != expression2) {
+//            error(TYPEDONTMATCH, linenumber);
+//        }
+        if (expression1 == chars || expression2 == chars) {
             error(TYPEDONTMATCH, linenumber);
         }
         labelm = "label" + to_string(labelnum);

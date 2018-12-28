@@ -1,14 +1,31 @@
-int aaaa(int a, int b, char c){
-    return (a);
-}
+const int a = 1, a = 1;
+const char b = 1;
+int num[100];
+char str[100];
 
 void main(){
-    int arr[10];
-    int a;
-    int b;
-    char c;
-    a = arr[-1];
-    arr[11] = 1;
-    aaaa(a, b, c);
-    return;
+    char ch;
+    int x, y, z;
+    num[101] = 1;
+    num[-1] = 1;
+    num[-2 + 1] = 1;
+    num[2 + 1] = 1;
+    num['a'] = 1;
+    num[+'a'] = 1;
+    num[('a')] = 1;
+    num[-'a'] = 1;
+    str['a'] = 1;
+    str[('a')] = 'a';
+    a = 100;
+    if (str[1] > str[2]) {
+        printf("FUCK OFF!");
+    }
+    while(str[11] < str[12]) {
+        printf("WHILE");
+    }
+    if (num[1] > str[1]) {
+        printf("PRINT");
+    }
+    c = 1;
+    printf("Hello World");
 }

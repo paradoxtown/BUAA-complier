@@ -50,7 +50,9 @@ enum errorstate{
     OUTSTACK,
     ERRORDEFAULT,
     TYPEDONTMATCH,
-    PARATYPENOTMATCH
+    PARATYPENOTMATCH,
+    ERRORVALUENUM,
+    ERRORSTRUCT
 };
 
 void errorinit();

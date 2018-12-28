@@ -1,0 +1,48 @@
+INPUT:
+12
+a
+x
+123
+
+
+OUTPUT:
+2
+a
+120
+ !#$&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~
+1
+test printf:-4318
+12ax123
+all test:2668
+
+INPUT:
+0
+p
+q
+-1
+
+OUTPUT:
+2
+a
+120
+ !#$&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~
+1
+test printf:-4318
+all test:2540
+
+INPUT:
+-100
+_
++
+3
+
+
+OUTPUT:
+2
+a
+120
+ !#$&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~
+1
+test printf:-4318
+all test:2357
+
